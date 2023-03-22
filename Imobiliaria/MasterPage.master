@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+     <link href="css/styled.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+
+         <header>
+
+            <div id="header">
+
+                <div id="img-tel">
+                    <img id="logo-header" src="img/logo-unisal.png" />
+                    <p>(11) 91427-5108</p>
+                </div>
+
+                <nav>
+                    <ul id="nav">
+                        <li>Terreno</li>
+                        <li>Imóvel</li>
+                        <li>Quem Somos</li>
+                        <li>Login</li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <footer id="footer">
+
+            <p>teste</p>
+
+        </footer>
+
+    </div>
+    </form>
+</body>
+</html>

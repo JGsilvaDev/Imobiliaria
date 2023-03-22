@@ -1,0 +1,51 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+#nav li {
+    border-radius: 15px;
+    background: green;
+    padding: 5px 50px 5px;
+    color: white;
+
+}
+
+#img-tel{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0 20px 0;
+}
+
+#img-tel p {
+    font-size: 25px;
+    color: white;
+}
+
+#logo-header {
+    width: 150px;
+}
+
+#header {
+    padding-bottom: 45px;
+    background: purple;
+}
+
+#footer {
+   
+}
+
+.icons-footer{
+    width: 50px;
+    color: black;
+}

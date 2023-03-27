@@ -1,0 +1,236 @@
+/* Login Page */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100%;
+}
+
+input{
+    width: 80%;
+	margin: 0 auto;
+	padding: 10px;
+	border: none;
+	margin-bottom: 25px !important;
+	border-radius: 10px;
+}
+
+input::placeholder, textarea::placeholder{
+    color: black;
+    padding-left: 20px;
+}
+
+#btnSubmitLogin{
+    margin-top: 10px;
+    padding: 10px 70px 10px 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: #C9801A;
+    color: white;
+}
+
+#inputs{
+    margin-top: 15%;
+}
+
+#inputs input{
+    background-color: #D3D3D3;
+}
+
+.formLogin{
+    width: 60%;
+    text-align: center;
+}
+
+.containerLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Home Page */
+.containerHome{
+    display: flex;
+    padding-top: 5%;
+    height: 100%;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap
+}
+
+input#pesquisa{
+    width: 85%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 90px;
+    padding-left: 50px;
+}
+
+.imoveis{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    width: 85%;
+}
+
+.btnEditDelete{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#btnDeletar, #btnEditar{
+    padding: 5px 35px 5px 35px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+#btnDeletar{
+    background-color: red;
+}
+
+#btnEditar{
+    background-color: #1B657A;
+    margin-bottom: 10px;
+}
+
+.imgImoveis{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.infoImoveis{
+    margin: 10px 0 10px 0;
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.btnEditDelete{
+    margin: 20px 30px 20px 30px;
+    grid-column-start: 5;
+    grid-column-end: 5;
+}
+
+/* Add Page*/
+
+.containerAdicionar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 3%;
+}
+
+.btnAdd{
+    margin-top: 20px;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    background-color: #1B657A;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+.opcoes{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+}
+
+.expand_less{
+    color: white;
+    width: 30px;
+}
+
+/* Add House Page */
+.containerAddCasa{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+.btnAddCasa{
+    margin-top: 20px;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    background-color: #1B657A;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 15px 15px 0 0; 
+}
+
+#titleCasa{
+    width: 80%;
+}
+
+#formCasa{
+    display: flex;
+    width: 80%;
+    box-sizing: border-box;
+    border: 3px solid #1B657A;
+    border-radius: 0 0 15px 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#conteudoFormCasa{
+    width: 80%;
+}
+
+#tituloCasa, #tamArea, #valorCasa{
+    height: 30px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    color: rgba(0, 0, 0, 0.41);
+}
+
+#descricao{
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+#quantQuarto1,#quantQuarto2,#quantQuarto3,
+#quantBanheiro1,#quantBanheiro2,#quantBanheiro3,
+#vaga1,#vaga2,#vaga3{
+    width: 30px;
+    opacity: 1;
+    position: relative;
+}
+
+#val1,
+#val2,
+#val3{
+    font-size: 12px;
+    color: black;
+}
+
+#inputsRadio{
+    display: flex;
+    flex-direction: column;
+}
+
+#btnSalvarCasa{
+    margin: 20px 0 20px 0;
+    padding: 10px 70px 10px 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: #C9801A;
+    color: white;
+    width: 40%;
+}
+

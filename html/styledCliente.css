@@ -1,0 +1,250 @@
+/* Pagina Principal */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100%;
+}
+
+input{
+	margin: 0 auto;
+	padding: 10px;
+	border: none;
+	margin-bottom: 25px !important;
+	border-radius: 10px;
+}
+
+input::placeholder, textarea::placeholder{
+    color: black;
+    padding-left: 20px;
+}
+
+.containerPagePrincipal{
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+    height: 100%;
+    margin-top: 5%;
+}
+
+.grid-item{
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+}
+
+#btnProcurar, #btnCodigo{
+    border: none;
+    padding: 10px 45.5px 10px 45.5px;
+    background-color: white;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 20px;
+}
+
+#btnCodigo{
+    background: #DBDBDB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#btnProcurar{
+    backdrop-filter: blur(2px);
+}
+
+#filtros{
+    display: flex;
+    align-items: center;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 15px 15px;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+}
+
+#btnTPImovel{
+    margin-top: 20px;
+    width: 90%;
+}
+
+
+#todasInfos{
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 10;
+    filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.25));
+}
+
+#pesquisa{
+    text-align: center;
+}
+
+#btnsPesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#busca{
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 90px;
+}
+
+#btnFiltros{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+#divBtnTPImoveis, #divBtnMinQuartos, #divBtnMinbanheiro, #divBtnValores{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    
+}
+
+#btnTPImovel, #btnMinQuartos, #btnMinbanheiro, #btnValores{
+    background: #585858;
+    border-radius: 15px;
+    color: white;
+    padding: 5px 80px 5px 80px;
+    width: 100%;
+    font-size: 14px;
+}
+
+#btnPesquisar, #btnVejaMais {
+    padding: 5px 70px 5px 70px;
+    background: #B77922;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#btnVejaMais{
+    padding: 15px 70px 15px 70px;;
+}
+
+#resultados{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    grid-column-start: 11;
+    grid-column-end: 29;
+    background: rgba(211, 211, 211, 0.76);
+    border-radius: 15px;
+    filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.25));
+}
+
+#destaqueImoveis{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#titleResult{
+    text-align: center;
+}
+
+#divBtnVejaMais{
+    text-align: center;
+}
+
+/* Pagina sobre */
+.containerSobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#titleSobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    padding: 15px 0 15px 0;
+    background: rgba(27, 101, 122, 0.75);
+    box-shadow: 0px 21px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    color: white;
+    margin-top: 10%;
+}
+
+#section1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+#conteudoSection1{
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+#descricao{
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+}
+
+.hr{
+    margin: 20px 0 20px 0;
+    box-sizing: border-box;
+    background: #D9D9D9;
+    height: 10px !important;
+}
+
+
+#section2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
+
+#conteudoSection2{
+    width: 100%;
+}
+
+#relatos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.relato{
+    text-align: center;
+    width: 30%;
+    background: #D9D9D9;
+    border-radius: 15px;
+}
+
+#section3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
+
+#aviso{
+    width: 100%;
+    text-align: center;
+    background: #E1E1E1;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styled.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Adicionar Casa</title>
+</head>
+<body>
+    <div class="containerAddCasa">
+        <h4 class="titleAddCasa"><b>Adicionar: </b></h4>
+
+        <div id="titleCasa">
+            <button class="btnAddCasa" id="btnCasa">Apartamento<i class="expand_less right"></i></button>
+        </div>
+        
+        <form id="formCasa">
+
+            <div id="conteudoFormCasa">
+                <h5>Titulo</h5>
+                <input type="text" class="input" name="tituloCasa" id="tituloCasa" placeholder="Adicionar um titulo">
+
+                <h5>Descrição</h5>
+                <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Adicione uma descrição"></textarea>
+
+                <h5>Quantidade de Quartos</h5>
+                <div id="inputsRadio">
+                    <div class="radio">
+                        <input type="radio" class="radio" name="quantQuarto1" id="quantQuarto1" value="1">
+                        <label id="val1"><b>1</b></label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="quantQuarto2" id="quantQuarto2" value="2">
+                        <label id="val3"><b>2</b></label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="quantQuarto3" id="quantQuarto3" value="3">
+                        <label id="val3"><b>3+</b></label>
+                    </div>
+                </div>
+
+                <h5>Quantidade de Banheiros</h5>
+                <div id="inputsRadio">
+                    <div class="radio">
+                        <input type="radio" class="radio" name="quantBanheiro1" id="quantBanheiro1" value="1">
+                        <label id="val1"><b>1</b></label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="quantBenheiro2" id="quantBanheiro2" value="2">
+                        <label id="val3"><b>2</b></label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="quantBanheiro3" id="quantBanheiro3" value="3">
+                        <label id="val3"><b>3+</b></label>
+                    </div>
+                </div>
+
+                <h5>Vaga de Garagem</h5>
+                <div id="inputsRadio">
+                    <div class="radio">
+                        <input type="radio" class="radio" name="vaga1" id="vaga1" value="1">
+                        <label id="val1"><b>1</b></label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="vaga2" id="vaga2" value="2">
+                        <label id="val3"><b>2</b></label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="vaga3" id="vaga3" value="3">
+                        <label id="val3"><b>3+</b></label>
+                    </div>
+                </div>
+
+                <h5>Tamanho da área(m²)</h5>
+                <input type="text" name="tamArea" id="tamArea" placeholder="Digite o tamanho">
+
+                <h5>Valor</h5>
+                <input type="text" name="valorCasa" id="valorCasa" placeholder="Digite o valor">
+
+                <textarea name="" id="" cols="30" rows="10"> aqui vai o input file</textarea>    
+            </div>
+            
+            <button id="btnSalvarCasa" type="submit">SALVAR</button>
+
+        </form>
+    </div>
+</body>
+</html>

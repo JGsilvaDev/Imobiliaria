@@ -9,9 +9,11 @@ use App\Http\Controllers\adminController;
 Route::get('/', [masterController::class, 'index']);
 
 Route::get('/login', [loginController::class, 'index']);
-Route::post('/login', [loginController::class, 'store']);
+Route::post('/login', [loginController::class, 'auth']);
 
 Route::get('/cadastro', [cadastroUsuarioController::class, 'index']);
 Route::post('/cadastro', [cadastroUsuarioController::class, 'store']);
 
 Route::get('/admin', [adminController::class, 'index']);
+Route::get('/admin/cadastrar', [adminController::class, 'item']);
+Route::post('/admin/cadastrar', [adminController::class, 'store']);

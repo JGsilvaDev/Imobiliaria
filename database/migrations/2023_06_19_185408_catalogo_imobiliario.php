@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catalogo', function (Blueprint $table) {
+        Schema::create('catalogos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_tp_produto');
+            $table->unsignedBigInteger('id_cliente');
             $table->string('titulo');
             $table->string('descricao');
             $table->float('area');
             $table->float('valor');
             $table->string('imagens');
+            $table->timestamps();
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');
+            $table->foreign('id_cliente')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

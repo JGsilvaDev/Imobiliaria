@@ -22,8 +22,11 @@
             <p>{{ $item->descricao }}</p>
             <p>{{ $item->area }}</p>
             <p>{{ $item->valor }}</p>
-            <p>{{ $item->imagens }}</p>
-            <img src="{{ env('APP_URL') }}public/storage/{{ $item->imagens }}" alt="Imagem">
+
+            @foreach($paths as $path)
+                <img src="{{ env('APP_URL') }}/storage/{{$path->path}}" alt="Imagem">
+            @endforeach
+
         @endforeach
     @endif
 

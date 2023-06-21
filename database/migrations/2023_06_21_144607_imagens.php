@@ -12,11 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('imagens', function (Blueprint $table) {
-            $table->string('id');
-            $table->primary('id');
+            $table->id();
+            $table->unsignedBigInteger('chave');
             $table->string('path');
             $table->timestamps();
+
+            $table->foreign('chave')->references('id')->on('catalogos')->onDelete('cascade');
+
         });
+
     }
 
     /**

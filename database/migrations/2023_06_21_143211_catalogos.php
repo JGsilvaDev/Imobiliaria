@@ -19,12 +19,10 @@ return new class extends Migration
             $table->string('descricao');
             $table->float('area');
             $table->float('valor');
-            $table->string('imagens');
             $table->timestamps();
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');
             $table->foreign('id_cliente')->references('id')->on('usuarios')->onDelete('cascade');
-            $table->foreign('imagens')->references('id')->on('imagens')->onDelete('cascade');
 
         });
     }

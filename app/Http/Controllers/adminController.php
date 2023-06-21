@@ -24,17 +24,29 @@ class adminController extends Controller
         if($dadosUsuario != null){
             if($dadosUsuario->id_permissao == 2){
                 $itens = DB::table('catalogos')
-                            ->select('id_tp_produto','titulo','descricao','area','valor','imagens')
+                            ->select('id','id_tp_produto','titulo','descricao','area','valor')
                             ->where('id_cliente', '=', $id_cliente)
                             ->get();
+
+                $imagem = DB::table('imagens')
+                            ->select('path')
+                            ->where('chave', '=', $itens[0]->id)
+                            ->get();
+
             }else{
                 $itens = DB::table('catalogos')
-                            ->select('id_tp_produto','titulo','descricao','area','valor','imagens')
+                            ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                            ->get();
+
+                $imagem = DB::table('imagens')
+                            ->select('path')
                             ->get();
             }
 
+            // dd($imagem);
+
             if($valor){
-                return view('admin/home',['itens' => $itens]);
+                return view('admin/home',['itens' => $itens, 'paths' => $imagem]);
             }else{
                 //Para limpar a sessão
                 session()->flush();
@@ -69,29 +81,7 @@ class adminController extends Controller
         $valor = session('login');
         $id_cliente = session('id');
 
-        $imagem = new Imagens();
-
         if($valor){
-
-            $folderName = $id_cliente.'_'.uniqid();
-
-            for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
-                $file = $request->allFiles()['imagem'][$i];
-
-                $fileName = $file->store('public/img/'. $folderName);
-
-                $imagem->id = $folderName;
-                $imagem->path = $fileName;
-
-                $imagem->save();
-            }
-
-            $imagens = DB::table('imagens')
-                        ->select('path')
-                        ->where('id', '=', $folderName)
-                        ->get();
-
-            // dd($imagens);
 
             $catalogo = new Catalogo();
 
@@ -101,9 +91,22 @@ class adminController extends Controller
             $catalogo->descricao = $request->descricao;
             $catalogo->area = $request->area;
             $catalogo->valor = $request->valor;
-            $catalogo->imagens = $folderName;
 
             $catalogo->save();
+
+            $folderName = $id_cliente.'_'.uniqid();
+
+            for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
+                $file = $request->allFiles()['imagem'][$i];
+
+                $fileName = $file->store('public/img/'. $folderName);
+
+                $imagem = new Imagens();
+                $imagem->chave = $catalogo->id;
+                $imagem->path = $fileName;
+                $imagem->save();
+                unset($imagem);
+            }
 
             if($request->id_produto == 1){
                 $msg = 'Terreno cadastrado com sucesso';

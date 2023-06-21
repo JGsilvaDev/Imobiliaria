@@ -23,22 +23,6 @@ class loginController extends Controller
         }
     }
 
-    public function store(Request $request)
-    {
-        $dados = DB::table('users')
-                    ->select('password')
-                    ->where('email', '=', $request->email)
-                    ->where('password', '=', $request->senha)
-                    ->count();
-
-        if($dados = 1){
-            return view('admin/home');
-        }
-
-        return view('login/login',['erro' => 'login invalido']);
-
-    }
-
     public function auth(Request $request)
     {
         $this->validate($request,[
@@ -49,20 +33,24 @@ class loginController extends Controller
             'senha.required' => 'O campo senha é obrigatório',
         ]);
 
-        $dados = DB::table('users')
+        $dados = DB::table('usuarios')
                     ->select('id', 'name')
                     ->where('email', '=', $request->email)
+                    ->where('password', '=', md5($request->senha))
                     ->first();
 
-        $session = session();
+        // dd($dados);
 
-        $session->put([
-            'id' => $dados->id,
-            'login' => true
-        ]);
+        if($dados != null){
+            $session = session();
 
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->senha])){
+            $session->put([
+                'id' => $dados->id,
+                'login' => true
+            ]);
+
             return redirect('admin');
+
         }else{
             return redirect()->back()->with('danger', 'E-mail ou senha inválido');
         }

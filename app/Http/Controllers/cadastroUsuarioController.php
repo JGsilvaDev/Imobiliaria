@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Usuarios;
 
 class cadastroUsuarioController extends Controller
 {
@@ -14,12 +14,12 @@ class cadastroUsuarioController extends Controller
 
     public function store(Request $request)
     {
-        $usuario = new User();
+        $usuario = new Usuarios();
 
         $usuario->name = $request->nome;
         $usuario->email = $request->email;
-        $usuario->password = $request->senha;
-        $usuario->id_permissao =  1;
+        $usuario->password = md5($request->senha);
+        $usuario->id_permissao =  2;
 
         $usuario->save();
 

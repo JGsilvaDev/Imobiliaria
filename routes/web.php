@@ -5,6 +5,7 @@ use App\Http\Controllers\masterController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\cadastroUsuarioController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\logoutController;
 
 Route::get('/', [masterController::class, 'index']);
 
@@ -17,3 +18,5 @@ Route::post('/cadastro', [cadastroUsuarioController::class, 'store']);
 Route::get('/admin', [adminController::class, 'index']);
 Route::get('/admin/cadastrar', [adminController::class, 'item']);
 Route::post('/admin/cadastrar', [adminController::class, 'store']);
+
+Route::post('/logout', [logoutController::class, 'index']);

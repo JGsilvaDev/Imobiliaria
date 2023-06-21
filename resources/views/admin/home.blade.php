@@ -11,13 +11,20 @@
 <body>
     <h1>Tela home admin</h1>
 
-    @foreach($itens as $item)
-        <p>{{ $item->titulo }}</p>
-        <p>{{ $item->descricao }}</p>
-        <p>{{ $item->area }}</p>
-        <p>{{ $item->valor }}</p>
-        <p>{{ $item->imagens }}</p>
-    @endforeach
+    <form action="logout" method="POST">
+        @csrf
+        <button type="submit">Sair</button>
+    </form>
+
+    @if($itens)
+        @foreach($itens as $item)
+            <p>{{ $item->titulo }}</p>
+            <p>{{ $item->descricao }}</p>
+            <p>{{ $item->area }}</p>
+            <p>{{ $item->valor }}</p>
+            <p>{{ $item->imagens }}</p>
+        @endforeach
+    @endif
 
     @if(session('success'))
         <div class="alert alert-success flash-message">

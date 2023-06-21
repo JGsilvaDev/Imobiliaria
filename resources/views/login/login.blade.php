@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="login" method="POST">
+        <form action="{{ env('APP_URL') }}/login" method="POST">
             @csrf
             <h1>Login</h1>
 

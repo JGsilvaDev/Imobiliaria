@@ -13,21 +13,35 @@ class adminController extends Controller
         $valor = session('login');
         $id_cliente = session('id');
 
-        $permissao = DB::table('users')
-                    ->select('id_permissao')
+        $dadosUsuario = DB::table('usuarios')
+                    ->select('id_permissao','name','email')
                     ->where('id', '=', $id_cliente)
                     ->first();
 
-        if($permissao->id_permissao = 2){
-            $itens = DB::table('catalogos')
-                        ->select('id_tp_produto','titulo','descricao','area','valor','imagens')
-                        ->where('id_cliente', '=', $id_cliente)
-                        ->get();
-        }else{
-            $itens = DB::table('catalogos')
-                        ->select('id_tp_produto','titulo','descricao','area','valor','imagens')
-                        ->get();
+        // dd($dadosUsuario);
+
+        if($dadosUsuario != null){
+            if($dadosUsuario->id_permissao == 2){
+                $itens = DB::table('catalogos')
+                            ->select('id_tp_produto','titulo','descricao','area','valor','imagens')
+                            ->where('id_cliente', '=', $id_cliente)
+                            ->get();
+            }else{
+                $itens = DB::table('catalogos')
+                            ->select('id_tp_produto','titulo','descricao','area','valor','imagens')
+                            ->get();
+            }
+
+            if($valor){
+                return view('admin/home',['itens' => $itens]);
+            }else{
+                //Para limpar a sessão
+                session()->flush();
+                return redirect('login');
+            }
         }
+
+        $itens = false;
 
         if($valor){
             return view('admin/home',['itens' => $itens]);

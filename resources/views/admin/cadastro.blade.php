@@ -35,24 +35,24 @@
 
     <div class="container">
         <h3>Casa</h3>
-        <form action="cadastrar" method="post">
+        <form action="cadastrar" method="post" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="id_produto" value="2">
+            <input type="hidden" name="id_produto" value="2" required>
 
             <label>Titulo</label>
-            <input type="text" name="titulo" id="titulo">
+            <input type="text" name="titulo" id="titulo" required>
 
             <label>Descrição</label>
-            <input type="text" name="descricao" id="descricao">
+            <input type="text" name="descricao" id="descricao" required>
 
             <label>Area</label>
-            <input type="text" name="area" id="area">
+            <input type="text" name="area" id="area" required>
 
             <label>Valor</label>
-            <input type="text" name="valor" id="valor">
+            <input type="text" name="valor" id="valor" required>
 
             <label>Imagem</label>
-            <input type="text" name="imagem" id="imagem">
+            <input type="file" name="imagem[]" id="imagem" multiple required>
 
             <button type="submit">Enviar</button>
         </form>

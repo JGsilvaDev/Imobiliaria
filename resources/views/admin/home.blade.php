@@ -23,6 +23,7 @@
             <p>{{ $item->area }}</p>
             <p>{{ $item->valor }}</p>
             <p>{{ $item->imagens }}</p>
+            <img src="{{ env('APP_URL') }}public/storage/{{ $item->imagens }}" alt="Imagem">
         @endforeach
     @endif
 

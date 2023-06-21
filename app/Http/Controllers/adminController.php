@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Catalogo;
 use Illuminate\Support\Facades\DB;
+use App\Models\Catalogo;
+use App\Models\Imagens;
 
 class adminController extends Controller
 {
@@ -68,7 +69,30 @@ class adminController extends Controller
         $valor = session('login');
         $id_cliente = session('id');
 
+        $imagem = new Imagens();
+
         if($valor){
+
+            $folderName = $id_cliente.'_'.uniqid();
+
+            for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
+                $file = $request->allFiles()['imagem'][$i];
+
+                $fileName = $file->store('public/img/'. $folderName);
+
+                $imagem->id = $folderName;
+                $imagem->path = $fileName;
+
+                $imagem->save();
+            }
+
+            $imagens = DB::table('imagens')
+                        ->select('path')
+                        ->where('id', '=', $folderName)
+                        ->get();
+
+            // dd($imagens);
+
             $catalogo = new Catalogo();
 
             $catalogo->id_tp_produto = $request->id_produto;
@@ -77,7 +101,7 @@ class adminController extends Controller
             $catalogo->descricao = $request->descricao;
             $catalogo->area = $request->area;
             $catalogo->valor = $request->valor;
-            $catalogo->imagens = $request->imagem;
+            $catalogo->imagens = $folderName;
 
             $catalogo->save();
 

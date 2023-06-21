@@ -23,7 +23,8 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');
-            $table->foreign('id_cliente')->references('id')->on('usuario')->onDelete('cascade');
+            $table->foreign('id_cliente')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('imagens')->references('id')->on('imagens')->onDelete('cascade');
 
         });
     }

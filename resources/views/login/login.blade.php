@@ -17,6 +17,8 @@
             <label>Senha</label>
             <input type="password" id="senha" name="senha">
 
+            <button type="submit">Acessar</button>
+
             @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -27,13 +29,11 @@
                 </div>
             @endif
 
-            @if(session('danger'))
+            @if($erro)
                 <div class="alert alert-danger">
-                    {{ session('danger') }}
+                    {{ $erro }}
                 </div>
             @endif
-
-            <button type="submit">Acessar</button>
         </form>
     </div>
 </body>

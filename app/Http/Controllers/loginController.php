@@ -13,13 +13,14 @@ class loginController extends Controller
     public function index()
     {
         $valor = session('login');
+        $erro = session('erro_login');
 
         if($valor){
             return redirect('admin');
         }else{
             //Para limpar a sessão
             session()->flush();
-            return view('login/login');
+            return view('login/login',['erro' => $erro]);
         }
     }
 
@@ -52,7 +53,13 @@ class loginController extends Controller
             return redirect('admin');
 
         }else{
-            return redirect()->back()->with('danger', 'E-mail ou senha inválido');
+            $session = session();
+
+            $session->put([
+                'erro_login' => 'Usuário e/ou Senha inválidos!'
+            ]);
+
+            return redirect()->back();
         }
     }
 }

@@ -17,4 +17,5 @@ class Catalogo extends Model
         'valor',
         'imagens'
     ];
+
 }

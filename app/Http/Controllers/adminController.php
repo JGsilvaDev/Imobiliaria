@@ -34,19 +34,23 @@ class adminController extends Controller
                             ->get();
 
             }else{
+
                 $itens = DB::table('catalogos')
                             ->select('id','id_tp_produto','titulo','descricao','area','valor')
                             ->get();
 
-                $imagem = DB::table('imagens')
-                            ->select('path')
+
+                $imagem = DB::table('catalogos as cat')
+                            ->select('cat.id','im.path')
+                            ->join('imagens as im','im.chave', '=', 'cat.id' )
                             ->get();
+
+                // dd($imagem[0]);
+
             }
 
-            // dd($imagem);
-
             if($valor){
-                return view('admin/home',['itens' => $itens, 'paths' => $imagem]);
+                return view('admin/home',['itens' => $itens, 'paths' => $imagem[0]]);
             }else{
                 //Para limpar a sessão
                 session()->flush();
@@ -101,9 +105,11 @@ class adminController extends Controller
 
                 $fileName = $file->store('public/img/'. $folderName);
 
+                $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
+
                 $imagem = new Imagens();
                 $imagem->chave = $catalogo->id;
-                $imagem->path = $fileName;
+                $imagem->path = $fileNameFormat;
                 $imagem->save();
                 unset($imagem);
             }

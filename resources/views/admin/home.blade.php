@@ -23,9 +23,9 @@
             <p>{{ $item->area }}</p>
             <p>{{ $item->valor }}</p>
 
-            @foreach($paths as $path)
-                <img src="{{ env('APP_URL') }}/storage/{{$path->path}}" alt="Imagem">
-            @endforeach
+            @if($item->id == $paths->id)
+                <img src="{{ env('APP_URL') }}{{asset($paths->path)}}" alt="Imagem">
+            @endif
 
         @endforeach
     @endif

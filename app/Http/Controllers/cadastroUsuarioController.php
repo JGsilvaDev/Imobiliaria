@@ -9,20 +9,40 @@ class cadastroUsuarioController extends Controller
 {
     public function index()
     {
-        return view('login/cadastro');
+        $erro = session('erro_cadastro');
+
+        if($erro){
+            $erro = 0;
+            session()->flush();
+        }
+
+        return view('login/cadastro',['erro' => $erro]);
+
+
     }
 
     public function store(Request $request)
     {
         $usuario = new Usuarios();
 
-        $usuario->name = $request->nome;
-        $usuario->email = $request->email;
-        $usuario->password = md5($request->senha);
-        $usuario->id_permissao =  2;
+        if($request->senha == $request->confirmSenha){
+            $usuario->name = $request->nome;
+            $usuario->email = $request->email;
+            $usuario->password = md5($request->senha);
+            $usuario->id_permissao =  2;
+            $usuario->telefone = trim($request->telefone);
 
-        $usuario->save();
+            $usuario->save();
 
-        return redirect('/login');
+            return redirect('/login');
+        }
+
+        $session = session();
+
+        $session->put([
+            'erro_cadastro' => 'Senha e Confirmação de senha não batem'
+        ]);
+
+        return redirect()->back();
     }
 }

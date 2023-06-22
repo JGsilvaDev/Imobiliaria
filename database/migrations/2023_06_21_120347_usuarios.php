@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_permissao');
             $table->string('email');
             $table->string('password');
+            $table->string('telefone');
             $table->timestamps();
 
             $table->foreign('id_permissao')->references('id')->on('user_permissions')->onDelete('cascade');

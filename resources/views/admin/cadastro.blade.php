@@ -10,7 +10,7 @@
     <h1>Tela que vai os drops downs para cadastrar</h1>
     <div class="container">
         <h3>Terreno</h3>
-        <form action="cadastrar" method="post">
+        <form action="cadastrar" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id_produto" value="1">
 
@@ -27,7 +27,7 @@
             <input type="text" name="valor" id="valor">
 
             <label>Imagem</label>
-            <input type="text" name="imagem" id="imagem">
+            <input type="file" name="imagem[]" id="imagem" multiple required>
 
             <button type="submit">Enviar</button>
         </form>
@@ -60,7 +60,7 @@
 
     <div class="container">
         <h3>Apartamento</h3>
-        <form action="cadastrar" method="post">
+        <form action="cadastrar" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id_produto" value="3">
 
@@ -77,7 +77,7 @@
             <input type="text" name="valor" id="valor">
 
             <label>Imagem</label>
-            <input type="text" name="imagem" id="imagem">
+            <input type="file" name="imagem[]" id="imagem" multiple required>
 
             <button type="submit">Enviar</button>
         </form>

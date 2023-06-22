@@ -16,6 +16,7 @@ Route::get('/cadastro', [cadastroUsuarioController::class, 'index']);
 Route::post('/cadastro', [cadastroUsuarioController::class, 'store']);
 
 Route::get('/admin', [adminController::class, 'index']);
+Route::post('/admin', [adminController::class, 'search']);
 Route::get('/admin/cadastrar', [adminController::class, 'item']);
 Route::post('/admin/cadastrar', [adminController::class, 'store']);
 

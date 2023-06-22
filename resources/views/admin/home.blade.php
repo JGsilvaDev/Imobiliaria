@@ -16,6 +16,11 @@
         <button type="submit">Sair</button>
     </form>
 
+    <form action="admin" method="post">
+        @csrf
+        <input type="text" name="search" id="search">
+    </form>
+
     @if($itens)
         @foreach($itens as $item)
             <p>{{ $item->titulo }}</p>
@@ -23,9 +28,12 @@
             <p>{{ $item->area }}</p>
             <p>{{ $item->valor }}</p>
 
-            @if($item->id == $paths->id)
-                <img src="{{ env('APP_URL') }}{{asset($paths->path)}}" alt="Imagem">
-            @endif
+            @foreach ($paths as $path)
+                @if($item->id == $path->id)
+                    <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
+                    @break
+                @endif
+            @endforeach
 
         @endforeach
     @endif

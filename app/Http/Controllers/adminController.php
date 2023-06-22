@@ -13,44 +13,58 @@ class adminController extends Controller
         //Pegar valor da sessão
         $valor = session('login');
         $id_cliente = session('id');
+        $search = session('search');
 
         $dadosUsuario = DB::table('usuarios')
                     ->select('id_permissao','name','email')
                     ->where('id', '=', $id_cliente)
                     ->first();
 
-        // dd($dadosUsuario);
 
         if($dadosUsuario != null){
             if($dadosUsuario->id_permissao == 2){
-                $itens = DB::table('catalogos')
-                            ->select('id','id_tp_produto','titulo','descricao','area','valor')
-                            ->where('id_cliente', '=', $id_cliente)
-                            ->get();
+                if($search){
+                    $itens = DB::table('catalogos')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                ->where('id_cliente', '=', $id_cliente)
+                                ->where('titulo', 'like', $search)
+                                ->get();
+
+                }else{
+                    $itens = DB::table('catalogos')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                ->where('id_cliente', '=', $id_cliente)
+                                ->get();
+                }
 
                 $imagem = DB::table('imagens')
                             ->select('path')
                             ->where('chave', '=', $itens[0]->id)
+                            ->orderBy('cat.id', 'desc')
                             ->get();
-
             }else{
-
-                $itens = DB::table('catalogos')
-                            ->select('id','id_tp_produto','titulo','descricao','area','valor')
-                            ->get();
-
+                if($search){
+                    $itens = DB::table('catalogos')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                ->where('titulo', 'like', $search)
+                                ->get();
+                }else{
+                    $itens = DB::table('catalogos')
+                                    ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                    ->get();
+                }
 
                 $imagem = DB::table('catalogos as cat')
                             ->select('cat.id','im.path')
                             ->join('imagens as im','im.chave', '=', 'cat.id' )
+                            ->orderBy('cat.id', 'desc')
                             ->get();
 
-                // dd($imagem[0]);
-
+                // dd($imagem);
             }
 
             if($valor){
-                return view('admin/home',['itens' => $itens, 'paths' => $imagem[0]]);
+                return view('admin/home',['itens' => $itens, 'paths' => $imagem]);
             }else{
                 //Para limpar a sessão
                 session()->flush();
@@ -79,6 +93,16 @@ class adminController extends Controller
             session()->flush();
             return redirect('login');
         }
+    }
+
+    public function search(Request $request){
+        $session = session();
+
+        $session->put([
+            'search' => $request->search
+        ]);
+
+        return redirect('admin');
     }
 
     public function store(Request $request){

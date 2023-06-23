@@ -21,7 +21,9 @@ Route::post('/admin', [adminController::class, 'search']);
 Route::get('/admin/cadastrar', [adminController::class, 'item']);
 Route::post('/admin/cadastrar', [adminController::class, 'store']);
 
-Route::post('/admin/edit', [editController::class, 'index']);
-Route::post('/admin/edit/salvar', [editController::class, 'store']);
+Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
+
+Route::post('/salvar/{id}', [editController::class, 'update']);
+Route::delete('/deletar/{id}', [editController::class, 'destroy']);
 
 Route::post('/logout', [logoutController::class, 'index']);

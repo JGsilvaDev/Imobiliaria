@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>Editando</h1>
-    <form action="admin/edit/salvar" method="post">
+    <form action="/salvar/{{ $item->id }}" method="post">
+        @csrf
         <label>Tipo de Produto</label>
         @if ($item->id_tp_produto == 1)
             <select name="id_tp_produto" id="id_tp_produto">
@@ -29,11 +30,6 @@
                 <option value="3" selected>Apartamento</option>
             </select>
         @endif
-        <select name="id_tp_produto" id="id_tp_produto">
-            <option value="1">Terreno</option>
-            <option value="2">Casa</option>
-            <option value="3">Apartamento</option>
-        </select>
 
         <label>Titulo</label>
         <input type="text" name="titulo" id="titulo" value="{{ $item->titulo }}">

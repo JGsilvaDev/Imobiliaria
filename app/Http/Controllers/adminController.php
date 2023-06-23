@@ -37,11 +37,15 @@ class adminController extends Controller
                                 ->get();
                 }
 
-                $imagem = DB::table('imagens')
-                            ->select('path')
-                            ->where('chave', '=', $itens[0]->id)
-                            ->orderBy('cat.id', 'desc')
-                            ->get();
+                if(empty($itens)){
+                    $imagem = DB::table('imagens')
+                                ->select('path')
+                                ->where('chave', '=', $itens[0]->id)
+                                ->get();
+                }else{
+                    $imagem = 0;
+                }
+
             }else{
                 if($search){
                     $itens = DB::table('catalogos')
@@ -60,8 +64,9 @@ class adminController extends Controller
                             ->orderBy('cat.id', 'desc')
                             ->get();
 
-                // dd($imagem);
             }
+
+            // dd($imagem[0]->id);
 
             if($valor){
                 return view('admin/home',['itens' => $itens, 'paths' => $imagem]);
@@ -119,6 +124,7 @@ class adminController extends Controller
             $catalogo->descricao = $request->descricao;
             $catalogo->area = $request->area;
             $catalogo->valor = $request->valor;
+            $catalogo->localidade = $request->localidade;
 
             $catalogo->save();
 

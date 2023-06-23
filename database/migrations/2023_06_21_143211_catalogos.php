@@ -17,8 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('id_cliente');
             $table->string('titulo');
             $table->string('descricao');
-            $table->float('area');
-            $table->float('valor');
+            $table->decimal('area',12,3);
+            $table->decimal('valor',12,3);
+            $table->string('localidade');
             $table->timestamps();
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');

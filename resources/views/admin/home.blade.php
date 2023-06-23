@@ -28,12 +28,20 @@
             <p>{{ $item->area }}</p>
             <p>{{ $item->valor }}</p>
 
-            @foreach ($paths as $path)
-                @if($item->id == $path->id)
-                    <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
-                    @break
-                @endif
-            @endforeach
+            @if($paths[0]->id != 0)
+                @foreach ($paths as $path)
+                    @if($item->id == $path->id)
+                        <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
+                        @break
+                    @endif
+                @endforeach
+            @endif
+
+            <form action="admin/edit" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{ $item->id }}">
+                <button type="submit">Editar</button>
+            </form>
 
         @endforeach
     @endif

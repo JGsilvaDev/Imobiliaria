@@ -26,6 +26,9 @@
             <label>Valor</label>
             <input type="text" name="valor" id="valor">
 
+            <label>Localidade</label>
+            <input type="text" name="localidade" id="localidade">
+
             <label>Imagem</label>
             <input type="file" name="imagem[]" id="imagem" multiple required>
 
@@ -51,6 +54,9 @@
             <label>Valor</label>
             <input type="text" name="valor" id="valor" required>
 
+            <label>Localidade</label>
+            <input type="text" name="localidade" id="localidade">
+
             <label>Imagem</label>
             <input type="file" name="imagem[]" id="imagem" multiple required>
 
@@ -75,6 +81,9 @@
 
             <label>Valor</label>
             <input type="text" name="valor" id="valor">
+
+            <label>Localidade</label>
+            <input type="text" name="localidade" id="localidade">
 
             <label>Imagem</label>
             <input type="file" name="imagem[]" id="imagem" multiple required>

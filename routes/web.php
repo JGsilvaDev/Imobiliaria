@@ -7,14 +7,18 @@ use App\Http\Controllers\cadastroUsuarioController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\editController;
 use App\Http\Controllers\logoutController;
+use App\Http\Controllers\emailController;
 
 Route::get('/', [masterController::class, 'index']);
+Route::post('/enviarEnviar', [emailController::class, 'store']);
+Route::post('/logout', [logoutController::class, 'index']);
 
 Route::get('/login', [loginController::class, 'index']);
 Route::post('/login', [loginController::class, 'auth']);
 
 Route::get('/cadastro', [cadastroUsuarioController::class, 'index']);
 Route::post('/cadastro', [cadastroUsuarioController::class, 'store']);
+
 
 Route::get('/admin', [adminController::class, 'index']);
 Route::post('/admin', [adminController::class, 'search']);
@@ -25,5 +29,3 @@ Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
 
 Route::post('/salvar/{id}', [editController::class, 'update']);
 Route::delete('/deletar/{id}', [editController::class, 'destroy']);
-
-Route::post('/logout', [logoutController::class, 'index']);

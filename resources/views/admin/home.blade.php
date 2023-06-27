@@ -48,7 +48,8 @@
             <form action="/deletar/{{ $item->id }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button id="btnDelete" onclick="deletar(this)">Deletar</button>
+                <button id="btnDelete">Deletar</button>
+                {{-- onclick="deletar(this)" --}}
             </form>
         </div>
         @endforeach

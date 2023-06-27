@@ -25,24 +25,35 @@ class cadastroUsuarioController extends Controller
     {
         $usuario = new Usuarios();
 
-        if($request->senha == $request->confirmSenha){
-            $usuario->name = $request->nome;
-            $usuario->email = $request->email;
-            $usuario->password = md5($request->senha);
-            $usuario->id_permissao =  2;
-            $usuario->telefone = trim($request->telefone);
+        if($request->senha != $request->confirmSenha){
+            $session = session();
 
-            $usuario->save();
+            $session->put([
+                'erro_cadastro' => 'Senha e Confirmação de senha não batem'
+            ]);
 
-            return redirect('/login');
+            return redirect()->back();
         }
 
-        $session = session();
+        if($request->email != $request->email_conf){
+            $session = session();
 
-        $session->put([
-            'erro_cadastro' => 'Senha e Confirmação de senha não batem'
-        ]);
+            $session->put([
+                'erro_cadastro' => 'Email e confirmar email não batem'
+            ]);
 
-        return redirect()->back();
+            return redirect()->back();
+        }
+
+        $usuario->name = $request->nome;
+        $usuario->email = $request->email;
+        $usuario->password = md5($request->senha);
+        $usuario->id_permissao =  2;
+        $usuario->telefone = trim($request->telefone);
+
+        $usuario->save();
+
+        return redirect('/login');
+
     }
 }

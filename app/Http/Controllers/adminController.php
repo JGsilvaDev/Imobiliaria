@@ -43,7 +43,8 @@ class adminController extends Controller
                                 ->where('chave', '=', $itens[0]->id)
                                 ->get();
                 }else{
-                    $imagem = 0;
+                    $imagem = new \stdClass();
+                    $imagem->id = 0;
                 }
 
             }else{

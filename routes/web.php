@@ -29,3 +29,4 @@ Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
 
 Route::post('/salvar/{id}', [editController::class, 'update']);
 Route::delete('/deletar/{id}', [editController::class, 'destroy']);
+Route::delete('/deletar/img/{id}', [editController::class, 'destroyImg']);

@@ -46,7 +46,26 @@
         <label>Localidade</label>
         <input type="text" name="localidade" id="localidade" value="{{ $item->localidade }}">
 
+        <label>Imagens</label>
+        <input type="file" name="imagem[]" id="imagem" multiple required>
+
         <button type="submit">Salvar</button>
     </form>
+
+    @foreach ($imagem as $img)
+        <form action="/deletar/img/{{ $img->id }}" method="post">
+            @csrf
+            @method('DELETE')
+            <img src="{{ env('APP_URL') }}{{asset($img->path)}}" alt="Imagem">
+            <button type="submit">Excluir</button>
+        </form>
+    @endforeach
+
+    @if(session('excluir'))
+        <div class="alert alert-success flash-message">
+            {{ session('excluir') }}
+        </div>
+    @endif
+
 </body>
 </html>

@@ -1,32 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-</head>
-<body>
-    <div class="container">
-        <form action="cadastro" method="POST">
+@extends('layouts.main_login')
+
+@section('title','Cadastro')
+
+@section('content')
+
+    <div class="login-container">
+        <form action="cadastro" class="register-content" method="POST">
             @csrf
-            <h1>Cadastro</h1>
+            <h1>Por favor, cadastre-se</h1>
 
-            <label>Nome</label>
-            <input type="text" autocomplete="off" id="nome" name="nome" required>
+            <p>Por favor, forneça todas as informações necessárias para concluir o cadastro.</p>
 
-            <label>Telefone</label>
-            <input type="tel" autocomplete="off" id="telefone" name="telefone" placeholder="12 991574256" maxlength="12" required>
+            <div class="registro-input-layout">
+                <input type="text" autocomplete="off" name="nome" id="cadastro-nome" class="input-reg" placeholder="Insira seu nome">
+                <input type="tel" autocomplete="off" id="cadastro-celular" placeholder="12 999999999" class="input-reg" maxlength="12" required>
+            </div>
 
-            <label>E-mail</label>
-            <input type="email" autocomplete="off" id="email" name="email" required>
+            <div class="registro-input-layout">
+                <input type="email" autocomplete="off" id="email" class="input-reg" placeholder="Insira seu email" name="email" required>
+                <input type="email" autocomplete="off" id="email_conf" class="input-reg" placeholder="Confirme seu email" name="email_conf" required>
+            </div>
 
-            <label>Senha</label>
-            <input type="password" autocomplete="off" id="senha" name="senha" required>
+            <div class="registro-input-layout">
+                <input type="password" autocomplete="off" id="cadastro-senha" class="input-reg" placeholder="Insira sua senha" name="senha" require>
+                <input type="password" autocomplete="off" id="cadastro-conf-senha" class="input-reg" placeholder="Confirme sua senha" name="confirmSenha" require>
+            </div>
 
-            <label>Confirmação de Senha</label>
-            <input type="password" autocomplete="off" id="confirmSenha" name="confirmSenha" required>
-
-            <button type="submit">Criar</button>
+            <button id="btn-registrar" class="btn-reg">Cadastrar</button>
 
             @if($erro)
                 <div class="alert alert-danger">
@@ -36,5 +36,5 @@
 
         </form>
     </div>
-</body>
-</html>
+
+@endsection

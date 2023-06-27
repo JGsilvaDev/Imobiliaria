@@ -1,40 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-</head>
-<body>
-    <div class="container">
-        <form action="{{ env('APP_URL') }}/login" method="POST">
-            @csrf
-            <h1>Login</h1>
+@extends('layouts.main_login')
 
-            <label>E-mail</label>
-            <input type="text" id="email" name="email">
+@section('title','Login')
 
-            <label>Senha</label>
-            <input type="password" id="senha" name="senha">
+@section('content')
 
-            <button type="submit">Acessar</button>
+<div class="login-container">
+    <form class="login-content" action="login" method="POST">
+        @csrf
+        <h1 id="login-welcome">BEM VINDO(A)!</h1>
 
-            @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+        <input type="text" id="login-input-email" name="email" class="input-log" placeholder="Digite seu email">
 
-            @if($erro)
-                <div class="alert alert-danger">
-                    {{ $erro }}
-                </div>
-            @endif
-        </form>
-    </div>
-</body>
-</html>
+        <input type="password" id="login-input-password" class="input-log" placeholder="Digite sua senha" name="senha">
+
+        <p id="forgot-password"><a href="#">Esqueci minha senha</a></p>
+
+        <button id="btn-logar" class="btn-reg">Entrar</button>
+        <p id="no-account"><a href="#">Ainda não tem uma conta?</a></p>
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        @if($erro)
+            <div class="alert alert-danger">
+                {{ $erro }}
+            </div>
+        @endif
+    </form>
+</div>
+
+
+@endsection

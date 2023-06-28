@@ -70,7 +70,7 @@ class adminController extends Controller
             // dd($imagem[0]->id);
 
             if($valor){
-                return view('admin/home',['itens' => $itens, 'paths' => $imagem]);
+                return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario]);
             }else{
                 //Para limpar a sessão
                 session()->flush();

@@ -1,4 +1,4 @@
-@extends('layouts.main_login')
+@extends('layouts.font_import')
 
 @section('title','Gerenciador de imóveis')
 

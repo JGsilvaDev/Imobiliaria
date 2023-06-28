@@ -1,5 +1,4 @@
 :root {
-    --color_primary: #fff;
     --background-color: #f3f3f3;
     --input-color: #D3D3D3;
     --text-color: #000000;
@@ -8,12 +7,12 @@
 body{
     font-size:18px;
     margin: 0;
-    background-color:var(--color_primary);
+    background-color:var(--background-color);
     color: var(--text-color);
 }
 
 * {
-    font-family: 'roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
 }
 
 .login-container {
@@ -67,11 +66,11 @@ body{
     color:black;
 }
 
-#forgot-password, a {
-    text-align: right;
+#forgot-password a {
+
     color:red;
-    text-decoration: none;
 }
+
 
 /* cadastro */
 

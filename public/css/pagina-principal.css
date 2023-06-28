@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+.section-title {
+    color: #1B657A;
+    padding:50px 0 10px 0;
+}
+
+#pesquisa-container { 
+    background-image: url("/img/fundo.png");
+    background-position: center 600px;
+    background-attachment: fixed;
+    background-size: 100%;
+    padding:100px;
+}
+
+#filtro {
+    display:flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 3vh 1.5vw;
+    gap: 10px;
+
+    background-color: rgba(255, 255, 255, 0.13);
+backdrop-filter: blur(5.5px);
+}
+#filtro button {
+    width:15vw;
+    background-color: white;
+    border: none;
+}
+#filtro button:hover {
+    background-color: rgb(212, 212, 212);
+}
+#filtro input {
+    flex-grow: 1;
+
+    border:none;
+    padding: 10px;
+
+}
+#filtro * {
+    height: 6vh;
+}
+
+
+#destaques-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10vw;
+
+}
+
+#destaques-item {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #D9D9D9;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+#destaques-endereco-info {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#destaque-endereco-info p {
+    text-align: center;
+}
+
+#item-dados {
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+}
+
+.btn-detalhes {
+    border: none;
+    background-color: #1B657A;
+    color: white;
+    padding: 10px 20px;
+}
+
+#ajuda {
+    background-color: #D9D9D9;
+}
+
+#ajuda-itens {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5vw;
+    flex-wrap: wrap;
+}
+
+#ajuda-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#ajuda-item p {
+    text-align: center;
+}
+.ajuda-icon {
+    width: 10vw;
+
+}
+
+
+/* Caso a tela em questão seja menor que 600px */
+@media (max-width: 600px) {
+    .filtro-btn {
+        display: none;
+    }
+
+    #pesquisa-container {
+        background-position: center 800px;
+        background-attachment: fixed;
+        background-size: 200%;
+    }
+
+    #ajuda-itens {
+        flex-direction: column;
+    }
+
+    #filtro {
+        padding: 0;
+    }
+}

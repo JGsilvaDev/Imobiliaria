@@ -8,6 +8,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\editController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\emailController;
+use App\Http\Controllers\imoveisController;
 
 Route::get('/', [masterController::class, 'index']);
 Route::post('/enviarEnviar', [emailController::class, 'store']);
@@ -19,6 +20,8 @@ Route::post('/login', [loginController::class, 'auth']);
 Route::get('/cadastro', [cadastroUsuarioController::class, 'index']);
 Route::post('/cadastro', [cadastroUsuarioController::class, 'store']);
 
+Route::get('/imoveis', [imoveisController::class, 'index']);
+Route::post('/imoveis', [imoveisController::class, 'search']);
 
 Route::get('/admin', [adminController::class, 'index']);
 Route::post('/admin', [adminController::class, 'search']);

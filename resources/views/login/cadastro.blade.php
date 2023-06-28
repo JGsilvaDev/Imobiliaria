@@ -1,9 +1,9 @@
-@extends('layouts.main_login')
+@extends('layouts.font_import')
 
 @section('title','Cadastro')
 
 @section('content')
-
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <div class="login-container">
         <form action="cadastro" class="register-content" method="POST">
             @csrf
@@ -13,7 +13,7 @@
 
             <div class="registro-input-layout">
                 <input type="text" autocomplete="off" name="nome" id="cadastro-nome" class="input-reg" placeholder="Insira seu nome">
-                <input type="tel" autocomplete="off" id="cadastro-celular" placeholder="12 999999999" class="input-reg" maxlength="12" required>
+                <input type="tel" autocomplete="off" name="telefone" id="cadastro-celular" placeholder="12 999999999" class="input-reg" maxlength="12" required>
             </div>
 
             <div class="registro-input-layout">

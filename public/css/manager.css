@@ -1,0 +1,180 @@
+/* NAVBAR */
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+body {
+    background-color:#fff;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+#imovel-header {
+    /* estilização */
+    background-color:#949494;
+
+    /* layout */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+#header-botoes {
+    /* botões */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+}
+
+#hello-user {
+    font-size: 24px;
+}
+
+/* botões */
+.imovel-btn {
+    padding: 1vh 0.5vw;
+    border:none;
+    color:white;
+}
+
+.nav-btn {
+    padding: 1vh 0.5vw;
+    border:none;
+    color:white;
+    border-radius: 15px;
+    width:15vw;
+}
+
+#novo-imovel {
+    
+    background-color:#C9801A;
+
+    transition: all 0.2s;
+}
+#novo-imovel:hover {
+    background-color: white;
+    color: #B77922;
+    text-decoration: underline;
+}
+
+#sair {
+    background-color:#c9261a;
+    transition: all 0.2s;
+}
+#sair:hover {
+    background-color: white;
+    color: #c9261a;
+    text-decoration: underline;
+}
+
+
+/* BARRA DE PESQUISA */
+#pesquisa {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#search {
+    font-size:15px;
+    text-align: center;
+    width:80vw;
+    
+    padding:10px;
+    border-radius: 90px;
+    border:none;
+}
+
+/* CONTAINER DO IMÓVEL */
+#imoveis-lista {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.imovel-container {
+    width: 100vw;
+}
+.imovel-content {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/* conteúdo completo */
+.content-info {
+
+    /* estilo */
+    background-color: #dfdfdf;
+    padding: 10px 30px;
+
+
+    /* layout */
+    width:75vw;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* layout das informações dentro do container */
+#informacoes {
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+}
+
+/* layout dos botões */
+#imovel-botoes {
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+#imovel-img {
+    width:10vh;
+    height: 10vh;
+}
+
+#imovel-editar {
+    background-color: #247B22;
+    border-radius: 5px;
+}
+#imovel-editar:hover {
+    background-color: white;
+    color: #247B22;
+    text-decoration: underline;
+}
+#imovel-remover {
+    background-color: #FF0000;
+    border-radius: 5px;
+}
+#imovel-remover:hover {
+    background-color: white;
+    color: #FF0000;
+    text-decoration: underline;
+}
+
+.btn-icon {
+    
+    display:none;
+}
+
+@media (max-width: 600px) {
+    .imovel-btn {
+        padding: 3vw;
+    }
+    .btn-icon {
+        width: 5vw;
+        display: block;
+    }
+    .btn-texto {
+        display:none;
+    }
+    #novo-imovel {
+        width: 32vw;
+    }
+}

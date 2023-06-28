@@ -7,8 +7,8 @@
     <div class="login-container">
         <form action="cadastro" class="register-content" method="POST">
             @csrf
+            
             <h1>Por favor, cadastre-se</h1>
-
             <p>Por favor, forneça todas as informações necessárias para concluir o cadastro.</p>
 
             <div class="registro-input-layout">

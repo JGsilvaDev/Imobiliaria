@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background-color: #CBCBCB;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.about-title {
+    background-color: #1B657A;
+    color:white;
+    margin: 0;
+    padding: 3vw 50px;
+    text-align: center;
+}
+
+#sobre-mim {
+    display:flex;
+    gap: 5vw;
+}
+.about-subtitle {
+    text-align: center;
+    color: #1B657A;
+}
+
+#depoimentos {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pessoa{
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    text-align: center;
+}
+.pessoa img {
+    border-radius: 15px 15px 0 0;
+}
+
+#aviso {
+    text-align: center;
+    padding: 2vw 2vh;
+    background-color: #515050;
+    color: #D9D9D9;
+}
+
+
+@media (max-width: 600px) {
+    #sobre-mim {
+        flex-direction: column;
+    }
+}

@@ -11,8 +11,12 @@ use App\Http\Controllers\emailController;
 use App\Http\Controllers\imoveisController;
 
 Route::get('/', [masterController::class, 'index']);
+Route::post('/', [masterController::class, 'store']);
+
 Route::post('/enviarEnviar', [emailController::class, 'store']);
 Route::post('/logout', [logoutController::class, 'index']);
+
+Route::get('/sobre', [masterController::class, 'sobre']);
 
 Route::get('/login', [loginController::class, 'index']);
 Route::post('/login', [loginController::class, 'auth']);
@@ -27,6 +31,9 @@ Route::get('/admin', [adminController::class, 'index']);
 Route::post('/admin', [adminController::class, 'search']);
 Route::get('/admin/cadastrar', [adminController::class, 'item']);
 Route::post('/admin/cadastrar', [adminController::class, 'store']);
+
+Route::get('/admin/editUsuario', [adminController::class, 'user']);
+Route::post('/admin/editUsuario', [adminController::class, 'editUser']);
 
 Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
 

@@ -23,7 +23,7 @@
             <p>{{ $item->descricao }}</p>
             @foreach ($imagens as $path)
                 @if($item->id == $path->chave)
-                    <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
+                    <img src="{{asset($path->path)}}" alt="Imagem">
                     @break
                 @endif
             @endforeach

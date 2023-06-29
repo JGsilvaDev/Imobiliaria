@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Catalogo;
 use App\Models\Imagens;
+use App\Models\Usuarios;
 
 class adminController extends Controller
 {
@@ -168,5 +169,35 @@ class adminController extends Controller
             session()->flush();
             return redirect('login');
         }
+    }
+
+    public function user(){
+        $valor = session('login');
+        $id_cliente = session('id');
+
+        $usuario = Usuarios::findOrFail($id_cliente);
+
+        if($valor){
+            return view('login/editPerfil',['usuario' => $usuario]);
+        }else{
+            //Para limpar a sessão
+            session()->flush();
+            return redirect('login');
+        }
+    }
+
+    public function editUser(Request $request){
+
+        $id_cliente = session('id');
+
+        $editUser = Usuarios::findOrFail($id_cliente);
+
+        $editUser->name = $request->nome;
+        $editUser->telefone = $request->telefone;
+        $editUser->email = $request->email;
+
+        $editUser->save();
+
+        return redirect('/admin');
     }
 }

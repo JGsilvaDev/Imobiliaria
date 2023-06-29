@@ -25,7 +25,10 @@
                 <button id="filtro-item" class="filtro-btn">Casa</button>
             </form>
 
-            <input type="text" name="" id="filtro-input" placeholder="pesquisa">
+            <form action="" method="post">
+                @csrf
+                <input type="text" name="infoPesquisa" id="filtro-input" placeholder="pesquisa">
+            </form>
         </div>
     </section>
 
@@ -38,7 +41,7 @@
                 <div id="destaques-item">
                     @foreach ($imagens as $path)
                         @if($iten->id == $path->chave)
-                            <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
+                            <img src="{{asset($path->path)}}" alt="Imagem">
                             @break
                         @endif
                     @endforeach

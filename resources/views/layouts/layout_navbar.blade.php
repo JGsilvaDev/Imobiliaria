@@ -15,10 +15,10 @@
             <p>LOGO</p>
         </div>
         <div id="nav-buttons">
-            <button class="nav-btn">Imóveis</button>
-            <button class="nav-btn">Sobre nós</button>
-            <button class="nav-btn">Contato</button>
-            <button class="nav-btn">Entrar</button>
+            <a href="/imoveis"><button class="nav-btn">Imóveis</button></a>
+            <a href="/sobre"><button class="nav-btn">Sobre nós</button></a>
+            <a href=""><button class="nav-btn">Contato</button></a>
+            <a href="/login"><button class="nav-btn">Entrar</button></a>
         </div>
     </div>
 

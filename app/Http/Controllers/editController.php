@@ -47,8 +47,6 @@ class editController extends Controller
 
         $folderName = $id_cliente.'_'.uniqid();
 
-        // dd($request->allFiles());
-
         for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
             $file = $request->allFiles()['imagem'][$i];
 

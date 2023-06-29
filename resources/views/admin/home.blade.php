@@ -35,7 +35,7 @@
                         @if($paths[0]->chave != 0)
                             @foreach ($paths as $path)
                                 @if($item->id == $path->chave)
-                                    <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
+                                    <img src="{{asset($path->path)}}" alt="Imagem">
                                     @break
                                 @endif
                             @endforeach
@@ -49,13 +49,13 @@
                         <section id="imovel-botoes">
                             <form action="admin/edit/{{ $item->id }}" method="post">
                                 @csrf
-                                <button type="submit" id="imovel-editar" class="imovel-btn"><img src="./img/add.svg" alt="" class="btn-icon"><span class="btn-texto">editar</span></button>
+                                <button type="submit" id="imovel-editar" class="imovel-btn"><img src="{{ asset('img/add.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Editar</span></button>
                             </form>
 
                             <form action="/deletar/{{ $item->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button id="imovel-remover" class="imovel-btn"><img src="./img/remover.svg" alt="" class="btn-icon"><span class="btn-texto">remover</span></button>
+                                <button id="imovel-remover" class="imovel-btn"><img src="{{ asset('img/remover.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Remover</span></button>
                             </form>
                         </section>
                     </section>

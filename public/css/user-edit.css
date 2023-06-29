@@ -1,0 +1,89 @@
+/* configurações gerais */
+body {
+    margin: 0;
+    background-color: #CBCBCB;
+}
+
+* {
+    font-size:18px;
+    font-family: 'roboto', sans-serif;
+}
+
+#user-dados {
+    width:100vw;
+}
+
+/* divs */
+#user-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+#user-options {
+    display: flex;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    gap:15px;
+}
+
+.user-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+/* input */
+.user-input {
+    width: 40vw;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 1vw;
+}
+
+/* botões */
+.user-btn {
+    border: none;
+    padding: 10px 15vw;
+    border-radius: 15px;
+    color:white;
+}
+#btn-salvar {
+    background-color: #B77922;
+}
+#btn-sair {
+    background-color: rgb(216, 20, 20);
+}
+
+#user-options p {
+    color: rgb(216, 20, 20);
+}
+
+/* img */
+#user-picture {
+    border-radius: 100%;
+}
+.svg-icon {
+    width: 50px;
+}
+@media (max-width: 600px) {
+    .user-input {
+        width: 70vw;
+    }
+    #user-options {
+        flex-direction: column;
+    }
+    #user-options p {
+        text-align: center;
+    }
+    .user-btn {
+        padding: 10px 20vw;
+    }
+}

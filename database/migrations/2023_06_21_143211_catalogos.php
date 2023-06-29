@@ -17,6 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('id_cliente');
             $table->string('titulo');
             $table->string('descricao');
+            $table->integer('qtdBanheiros')->nullable();
+            $table->integer('qtdQuartos')->nullable();
+            $table->integer('qtdVagas')->nullable();
             $table->decimal('area',12,3);
             $table->decimal('valor',12,3);
             $table->string('localidade');

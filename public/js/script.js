@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Seleciona o elemento da flash message e define o tempo de exibição (em milissegundos)
     var flashMessage = $('.flash-message');
     var displayTime = 3000; // 5 segundos

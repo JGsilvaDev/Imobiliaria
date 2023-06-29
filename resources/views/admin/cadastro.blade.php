@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ asset('css/cadastro-imovel.css') }}">
+    <script src="{{ asset('js/slider.js') }}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <title>Cadastrar produto</title>
 </head>
@@ -17,7 +18,7 @@
         <button id="btn-aba-terreno" onclick="openTerreno()" class="aba-option">terreno</button>
     </div>
     <form id="adicionar-casa-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data">
-        
+
         <h1 id="casa-titulo">Adicionar casa</h1>
         @csrf
         <input type="hidden" name="id_produto" value="2" required>
@@ -28,14 +29,14 @@
         <p for="" id="desc-label" class="add-label">Descrição</p>
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
-        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="casa-qtd-banheiro-valor">0</span></p>
-        <input type="range" name="qtd-banheiros"  min="1" max="3" value="1" id="casa-qtd-banheiros" class="slider">
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">1</span></p>
+        <input type="range" name="qtd_banheiros" min="0" max="5" value="1" id="sliderBanheiroCasa" class="slider">
 
-        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="casa-qtd-quarto-valor">0</span></p>
-        <input type="range" name="qtd-quartos"  min="1" max="3" value="1" id="casa-qtd-quartos" class="slider">
+        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">1</span></p>
+        <input type="range" name="qtd_quartos" min="0" max="5" value="1" id="sliderQuartosCasa" class="slider">
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="casa-qtd-vaga-valor">0</span></p>
-        <input type="range" name="qtd-vagas"  min="1" max="3" value="1" id="casa-qtd-vagas" class="slider">
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasCasa">1</span></p>
+        <input type="range" name="qtd_vagas" min="0" max="5" value="1" id="sliderVagasCasa" class="slider">
 
         <p id="local-label">Localidade</p>
         <input name="localidade" type="text" id="casa-local-input" min="1" class="add-input">
@@ -63,21 +64,20 @@
         <p for="" id="desc-label" class="add-label">Descrição</p>
         <textarea name="descricao" id="apt-desc-input" cols="30" rows="10" class="add-input"></textarea>
 
-        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="apt-qtd-banheiro-valor">0</span></p>
-        <input type="range" name="qtd-banheiros"  min="1" max="3" value="1" id="apt-qtd-banheiros" class="slider">
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheirosAp">1</span></p>
+        <input type="range" name="qtd-banheiros"  min="0" max="5" value="1" id="sliderBanheirosAp" class="slider">
 
-        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="apt-qtd-quarto-valor">0</span></p>
-        <input type="range" name="qtd-quartos"  min="1" max="3" value="1" id="apt-qtd-quartos" class="slider">
+        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosAp">1</span></p>
+        <input type="range" name="qtd-quartos"  min="0" max="5" value="1" id="sliderQuartosAp" class="slider">
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="apt-qtd-vaga-valor">0</span></p>
-        <input type="range" name="qtd-vagas"  min="1" max="3" value="1" id="apt-qtd-vagas" class="slider">
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasAp">1</span></p>
+        <input type="range" name="qtd-vagas"  min="0" max="5" value="1" id="sliderVagasAp" class="slider">
 
         <p id="local-label">Localidade</p>
         <input name="localidade" type="text" id="apt-local-input" min="1" class="add-input">
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
         <input name="area" type="number" id="apt-tam-area-input" min="1" class="add-input" >
-
 
         <p id="valor-label">Valor</p>
         <input type="number" name="valor" id="apt-valor-input" min="1" class="add-input">

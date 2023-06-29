@@ -37,14 +37,14 @@ class adminController extends Controller
                                 ->get();
                 }
 
-                if(empty($itens)){
+                if($itens->isEmpty()){
                     $imagem = DB::table('imagens')
                                 ->select('path')
                                 ->where('chave', '=', $itens[0]->id)
                                 ->get();
                 }else{
                     $imagem = new \stdClass();
-                    $imagem->id = 0;
+                    $imagem->chave = 0;
                 }
 
             }else{
@@ -59,15 +59,12 @@ class adminController extends Controller
                                     ->get();
                 }
 
-                $imagem = DB::table('catalogos as cat')
-                            ->select('cat.id','im.path')
-                            ->join('imagens as im','im.chave', '=', 'cat.id' )
-                            ->orderBy('cat.id', 'desc')
-                            ->get();
+                $imagem = DB::table('imagens')
+                                ->select('chave','path')
+                                ->where('chave', '=', $itens[0]->id)
+                                ->get();
 
             }
-
-            // dd($itens);
 
             if($valor){
                 return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario]);
@@ -126,6 +123,16 @@ class adminController extends Controller
             $catalogo->area = $request->area;
             $catalogo->valor = $request->valor;
             $catalogo->localidade = $request->localidade;
+
+            if($request->id_produto != 1 ){
+                $catalogo->qtdBanheiros = $request->qtd_banheiros;
+                $catalogo->qtdQuartos = $request->qtd_quartos;
+                $catalogo->qtdVagas = $request->qtd_vagas;
+            }else{
+                $catalogo->qtdBanheiros = '';
+                $catalogo->qtdQuartos = '';
+                $catalogo->qtdVagas = "";
+            }
 
             $catalogo->save();
 

@@ -32,9 +32,9 @@
             <div class="imovel-container">
                 <div class="imovel-content">
                     <section id="content-num-001" class="content-info">
-                        @if($paths[0]->id != 0)
+                        @if($paths[0]->chave != 0)
                             @foreach ($paths as $path)
-                                @if($item->id == $path->id)
+                                @if($item->id == $path->chave)
                                     <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
                                     @break
                                 @endif

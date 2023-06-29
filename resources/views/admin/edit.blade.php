@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Editando</h1>
-    <form action="/salvar/{{ $item->id }}" method="post">
+    <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data">
         @csrf
         <label>Tipo de Produto</label>
         @if ($item->id_tp_produto == 1)

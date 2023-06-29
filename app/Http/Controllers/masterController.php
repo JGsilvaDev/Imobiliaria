@@ -17,11 +17,10 @@ class masterController extends Controller
                     ->get();
 
         $imagem = DB::table('imagens')
-                    ->select('path')
-                    ->where('chave', '=', $catalogo[0]->id)
+                    ->select('chave','path')
                     ->get();
 
-        // dd($catalogo);
+        // dd($catalogo, $imagem);
 
         return view('index',['itens' => $catalogo, 'imagens' => $imagem]);
     }

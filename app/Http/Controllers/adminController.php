@@ -67,7 +67,7 @@ class adminController extends Controller
 
             }
 
-            dd($itens);
+            // dd($itens);
 
             if($valor){
                 return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario]);

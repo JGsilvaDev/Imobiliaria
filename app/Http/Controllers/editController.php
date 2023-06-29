@@ -47,7 +47,7 @@ class editController extends Controller
 
         $folderName = $id_cliente.'_'.uniqid();
 
-        dd($request->allFiles());
+        // dd($request->allFiles());
 
         for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
             $file = $request->allFiles()['imagem'][$i];
@@ -71,6 +71,7 @@ class editController extends Controller
     public function destroy($id){
 
         $item = Catalogo::findOrFail($id);
+
         $item->delete();
 
         session()->flash('excluir', 'Item excluido com sucesso');
@@ -87,7 +88,7 @@ class editController extends Controller
 
         session()->flash('excluir', 'Item excluido com sucesso');
 
-        return redirect('admin/edit/{{id}}');
+        return redirect('admin');
 
     }
 

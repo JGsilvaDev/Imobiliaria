@@ -37,7 +37,7 @@
 
                 <div id="destaques-item">
                     @foreach ($imagens as $path)
-                        @if($iten->id == $path->id)
+                        @if($iten->id == $path->chave)
                             <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
                             @break
                         @endif
@@ -51,7 +51,7 @@
                         <p id="endedreco-info-cidade">{{ $iten->localidade}}</p>
                     </div>
                     <div id="item-dados">
-                        <p id="dados-area">{{ $iten->area }}<sup>2</sup></p>
+                        <p id="dados-area">{{ $iten->area }}</p>
                         <p id="dados-vagas">{{ $iten->valor}}</p>
                         {{-- <p id="dados-banheiros">2</p> --}}
                     </div>

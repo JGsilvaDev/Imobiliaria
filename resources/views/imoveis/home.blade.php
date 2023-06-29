@@ -15,14 +15,25 @@
     </form>
 
     @foreach ($imoveis as $item)
-        <p>{{ $item->titulo }}</p>
-        <p>{{ $item->localidade }}</p>
-        <p>{{ $item->area }}</p>
-        <p>{{ $item->valor }}</p>
-        <p>{{ $item->descricao }}</p>
-        <p>{{ $item->path }}</p>
+        @if($item->id != 0)
+            <p>{{ $item->titulo }}</p>
+            <p>{{ $item->localidade }}</p>
+            <p>{{ $item->area }}</p>
+            <p>{{ $item->valor }}</p>
+            <p>{{ $item->descricao }}</p>
+            @foreach ($imagens as $path)
+                @if($item->id == $path->chave)
+                    <img src="{{ env('APP_URL') }}{{asset($path->path)}}" alt="Imagem">
+                    @break
+                @endif
+            @endforeach
 
-        <br>
+            <br>
+        @else
+            <div class="alert alert-success flash-message">
+                <p>Nenhum item encontrado com esse titulo</p>
+            </div>
+        @endif
     @endforeach
 </body>
 </html>

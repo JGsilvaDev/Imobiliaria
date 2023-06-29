@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use function PHPUnit\Framework\isEmpty;
+
 class imoveisController extends Controller
 {
     public function index(){
@@ -13,22 +15,28 @@ class imoveisController extends Controller
         if($search){
             $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                ->join('imagens','imagens.chave','=','catalogos.id')
-                ->select('catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','imagens.path')
+                ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
                 ->where('catalogos.titulo','like',$search)
                 ->get();
 
         }else{
             $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                ->join('imagens','imagens.chave','=','catalogos.id')
-                ->select('catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','imagens.path')
+                ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
                 ->get();
         }
 
-        // dd($imoveis);
+        $imagem = DB::table('imagens')
+                    ->select('chave','path')
+                    ->get();
 
-        return view('imoveis.home',['imoveis' => $imoveis]);
+        if($imoveis->isEmpty()){
+            $imagem = new \stdClass();
+
+            $imagem->id = 0;
+        }
+
+        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem]);
     }
 
     public function search(Request $request){
@@ -38,6 +46,6 @@ class imoveisController extends Controller
             'search' => $request->search
         ]);
 
-        return redirect('admin');
+        return redirect()->back();
     }
 }

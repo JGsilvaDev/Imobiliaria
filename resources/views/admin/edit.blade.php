@@ -56,7 +56,7 @@
         <form action="/deletar/img/{{ $img->id }}" method="post">
             @csrf
             @method('DELETE')
-            <img src="{{ env('APP_URL') }}{{asset($img->path)}}" alt="Imagem">
+            <img src="{{asset($img->path)}}" alt="Imagem">
             <button type="submit">Excluir</button>
         </form>
     @endforeach

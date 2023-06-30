@@ -28,6 +28,12 @@
                 @endif
             @endforeach
 
+            <form action="/imoveis/{{ $item->id }}" method="post">
+                @csrf
+                <input type="hidden" name="idImovel">
+                <button type="submit">Detalhe</button>
+            </form>
+
             <br>
         @else
             <div class="alert alert-success flash-message">

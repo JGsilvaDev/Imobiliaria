@@ -6,6 +6,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\cadastroUsuarioController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\editController;
+use App\Http\Controllers\editUserController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\emailController;
 use App\Http\Controllers\imoveisController;
@@ -17,6 +18,7 @@ Route::post('/enviarEnviar', [emailController::class, 'store']);
 Route::post('/logout', [logoutController::class, 'index']);
 
 Route::get('/sobre', [masterController::class, 'sobre']);
+Route::get('/contato', [masterController::class, 'contato']);
 
 Route::get('/login', [loginController::class, 'index']);
 Route::post('/login', [loginController::class, 'auth']);
@@ -32,8 +34,8 @@ Route::post('/admin', [adminController::class, 'search']);
 Route::get('/admin/cadastrar', [adminController::class, 'item']);
 Route::post('/admin/cadastrar', [adminController::class, 'store']);
 
-Route::get('/admin/editUsuario', [adminController::class, 'user']);
-Route::post('/admin/editUsuario', [adminController::class, 'editUser']);
+Route::get('/admin/editUsuario', [editUserController::class, 'user']);
+Route::post('/admin/editUsuario', [editUserController::class, 'editUser']);
 
 Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
 

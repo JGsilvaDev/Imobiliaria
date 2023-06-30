@@ -10,7 +10,10 @@
     <div id="user-dados">
         <form id="user-container" action="/admin/editUsuario" method="POST">
             @csrf
-            <img src="./pfp.png" alt="" id="user-picture" width="300px">
+            {{-- <img src="./pfp.png" alt="" id="user-picture" width="300px"> --}}
+            <div id="user-picture">
+                <h1>{{ $perfil }}</h1>
+            </div>
 
             <div class="user-input-container">
                 <input type="text" name="nome" id="user-name" class="user-input" value="{{ $usuario->name }}" placeholder="Nome de usuário">

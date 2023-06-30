@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 
 class loginController extends Controller
@@ -43,8 +44,11 @@ class loginController extends Controller
         if($dados != null){
             $session = session();
 
+            $nomeReduzido = Str::before($dados->name,' ');
+
             $session->put([
                 'id' => $dados->id,
+                'name' => $nomeReduzido,
                 'login' => true
             ]);
 

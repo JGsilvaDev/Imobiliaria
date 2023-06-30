@@ -69,7 +69,18 @@ body {
 /* img */
 #user-picture {
     border-radius: 100%;
+    background-color: #B77922;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#user-picture h1{
+    font-size: 50px;
+}
+
 .svg-icon {
     width: 50px;
 }

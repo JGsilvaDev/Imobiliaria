@@ -1,0 +1,19 @@
+body {
+}
+* {
+    font-family: 'roboto', sans-serif;
+}
+
+#contato-container h1{
+    color: #1B657A;
+    
+}
+#contato-container {
+    background-color: #CBCBCB;
+    padding: 1vh 2vw;
+}
+
+a {
+    text-decoration: none;
+    color: #1B657A;
+}

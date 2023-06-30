@@ -20,7 +20,16 @@ class masterController extends Controller
                     ->select('chave','path')
                     ->get();
 
-        return view('index',['itens' => $catalogo, 'imagens' => $imagem]);
+        $opcoes = [
+            (object) ['id' => 1, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
+            (object) ['id' => 2, 'name' => 'Sair','path' => '/logout']
+        ];
+
+        $opcaoSelecionada = 'admin';
+
+        // dd($opcoes);
+
+        return view('index',['itens' => $catalogo, 'imagens' => $imagem, 'opcoes' => $opcoes, 'selecionada' => $opcaoSelecionada]);
     }
 
     public function store(Request $request){
@@ -58,5 +67,9 @@ class masterController extends Controller
 
     public function sobre(){
         return view('sobre');
+    }
+
+    public function contato(){
+        return view('contato');
     }
 }

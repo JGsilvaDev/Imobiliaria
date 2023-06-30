@@ -4,8 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('#dropdown').change(function() {
         var option = $('#dropdown').find(":selected").text();
+        console.log(option);
 
-        if(option == 'Editar Perfil'){
+        if(option == 'Home'){
+            window.location.href = '/admin';
+        };
+
+        if(option == 'Editar Perfil' || option == 'Perfil'){
             window.location.href = '/admin/editUsuario';
         };
 

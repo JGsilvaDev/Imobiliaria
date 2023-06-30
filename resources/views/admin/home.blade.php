@@ -5,15 +5,26 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/dropDown.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <div id="imovel-header">
     <p id="hello-user">Olá, {{ $usuario->name }}</p>
     <section id="header-botoes">
         <a href="/admin/cadastrar"><button class="nav-btn" id="novo-imovel">Novo imóvel</button></a>
+        <select name="opcao" class="nav-btn" id="dropdown">
+            <option disabled selected>Editar</option>
+            @foreach ($opcoes as $op)
+                <option value="{{ $op->id }}" id="{{ $op->id }}">{{ $op->name }}</option>
+            @endforeach
+        </select>
+
         <form action="logout" method="POST">
             @csrf
-            <button class="nav-btn" id="sair" type="submit">Sair</button>
+            <button class="nav-btn" id="sair" type="submit" style="display: none"></button>
         </form>
     </section>
 
@@ -42,7 +53,7 @@
                         @endif
 
                         <section id="informacoes">
-                            <p id="imovel-titulo">{{ $item->titulo }}l</p>
+                            <p id="imovel-titulo">{{ $item->titulo }}</p>
                             <p id="imovel-valor"><p>R$ {{ $item->valor }}</p></p>
                         </section>
 
@@ -52,10 +63,12 @@
                                 <button type="submit" id="imovel-editar" class="imovel-btn"><img src="{{ asset('img/add.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Editar</span></button>
                             </form>
 
+                            <button id="imovel-remover" onclick="excluir();" class="imovel-btn"><img src="{{ asset('img/remover.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Remover</span></button>
+
                             <form action="/deletar/{{ $item->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button id="imovel-remover" class="imovel-btn"><img src="{{ asset('img/remover.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Remover</span></button>
+                                <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
                             </form>
                         </section>
                     </section>
@@ -73,19 +86,19 @@
 
 
 @if(session('success'))
-    <div class="alert alert-success flash-message">
+    <div class="alert alert-success" id="flash-message">
         {{ session('success') }}
     </div>
 @endif
 
 @if(session('editado'))
-    <div class="alert alert-success flash-message">
+    <div class="alert alert-success" id="flash-message">
         {{ session('editado') }}
     </div>
 @endif
 
 @if(session('excluir'))
-    <div class="alert alert-success flash-message">
+    <div class="alert alert-success" id="flash-message">
         {{ session('excluir') }}
     </div>
 @endif

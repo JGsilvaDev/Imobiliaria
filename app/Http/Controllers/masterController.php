@@ -21,15 +21,12 @@ class masterController extends Controller
                     ->get();
 
         $opcoes = [
-            (object) ['id' => 1, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
-            (object) ['id' => 2, 'name' => 'Sair','path' => '/logout']
+            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
+            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
+            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 
-        $opcaoSelecionada = 'admin';
-
-        // dd($opcoes);
-
-        return view('index',['itens' => $catalogo, 'imagens' => $imagem, 'opcoes' => $opcoes, 'selecionada' => $opcaoSelecionada]);
+        return view('index',['itens' => $catalogo, 'imagens' => $imagem, 'opcoes' => $opcoes]);
     }
 
     public function store(Request $request){

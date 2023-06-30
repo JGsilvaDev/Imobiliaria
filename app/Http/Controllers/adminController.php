@@ -73,8 +73,13 @@ class adminController extends Controller
 
             }
 
+            $opcoes = [
+                (object) ['id' => 1, 'name' => 'Perfil', 'path' => '/admin/editUsuario'],
+                (object) ['id' => 2, 'name' => 'Sair','path' => '/logout'],
+            ];
+
             if($valor){
-                return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario]);
+                return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario, 'opcoes' => $opcoes]);
             }else{
                 //Para limpar a sessão
                 session()->flush();
@@ -136,9 +141,9 @@ class adminController extends Controller
                 $catalogo->qtdQuartos = $request->qtd_quartos;
                 $catalogo->qtdVagas = $request->qtd_vagas;
             }else{
-                $catalogo->qtdBanheiros = '';
-                $catalogo->qtdQuartos = '';
-                $catalogo->qtdVagas = "";
+                $catalogo->qtdBanheiros = 0;
+                $catalogo->qtdQuartos = 0;
+                $catalogo->qtdVagas = 0;
             }
 
             $catalogo->save();

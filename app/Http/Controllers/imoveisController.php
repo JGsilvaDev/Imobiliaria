@@ -76,8 +76,16 @@ class imoveisController extends Controller
                     ->select('chave','path')
                     ->get();
 
-        // dd($item);
+        $semelhante = DB::table('catalogos')
+                    ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
+                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
+                    ->where('catalogos.id','!=',$id)
+                    ->where('produtos.descricao','=',$item->descricao)
+                    ->limit(2)
+                    ->get();
 
-        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem]);
+        // dd($semelhante);
+
+        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'semelhante' => $semelhante]);
     }
 }

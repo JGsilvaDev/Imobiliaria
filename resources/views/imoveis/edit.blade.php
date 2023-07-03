@@ -90,32 +90,32 @@
             <section id="semelhantes" class="margin-spaced padding-spaced">
                 <div id="semelhante-container">
                     <h1 class="detalhes-titulo">Conheça semelhantes</h1>
-                    <div id="semelhante-produtos-itens">
-                        <div class="semelhante-produto-card">
-                            <img src="./template.png" alt="" class="semelhante-produto-img">
-                            <p class="semelhante-produto-titulo">Título do produto semelhante</p>
-                            <p class="semelhante-produto-localidade">Localidade - Pindamonhangaba</p>
-                            <div id="semelhante-produto-info" class="flex-row">
-                                <p class="semelhante-produto-area">250m2</p>
-                                <p class="semelhante-produto-vagas">35 mil vagas</p>
-                            </div>
-                            <p class="semelhante-produto-descricao">Descrição do produto</p>
+                @if($semelhante)
+                    @foreach( $semelhante as $sem )
+                        <div id="semelhante-produtos-itens">
+                            <div class="semelhante-produto-card">
+                                @foreach ($imagens as $path)
+                                    @if($sem->id == $path->chave)
+                                        <img src="{{asset($path->path)}}" alt="Imagem">
+                                    @endif
+                                @endforeach
+                                <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>
+                                <p class="semelhante-produto-localidade">Localidade - {{ $sem->localidade }}</p>
+                                <div id="semelhante-produto-info" class="flex-row">
+                                    <p class="semelhante-produto-area">{{ $sem->area }}</p>
+                                    <p class="semelhante-produto-vagas">{{ $sem->qtdVagas }}</p>
+                                </div>
+                                <form action="/imoveis/{{ $sem->id }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="idImovel">
+                                    <button class="produto-saber-mais" type="submit">Detalhe</button>
+                                </form>
 
-                        </div>
-                        <div class="semelhante-produto-card">
-                            <img src="./template.png" alt="" class="semelhante-produto-img">
-                            <p class="semelhante-produto-titulo">Título do produto semelhante</p>
-                            <p class="semelhante-produto-localidade">Localidade - Pindamonhangaba</p>
-                            <div id="semelhante-produto-info" class="flex-row">
-                                <p class="semelhante-produto-area">250m2</p>
-                                <p class="semelhante-produto-vagas">35 mil vagas</p>
                             </div>
-                            <p class="semelhante-produto-descricao">Descrição do produto</p>
-
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </section>
+
         </div>
 
     </div>

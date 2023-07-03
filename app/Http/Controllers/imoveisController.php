@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -12,11 +13,13 @@ class imoveisController extends Controller
     public function index(){
         $search = session('search');
 
+        // dd($search[0]);
+
         if($search){
             $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                 ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                ->where('catalogos.titulo','like',$search)
+                ->where('catalogos.titulo','like',$search[0]->titulo)
                 ->get();
 
         }else{
@@ -42,8 +45,20 @@ class imoveisController extends Controller
     public function search(Request $request){
         $session = session();
 
+        $search = [
+            (object) [
+                'titulo' => $request->titulo,
+                'localidade' => $request->localidade,
+                'quartos' => $request->qtdQuartos,
+                'banheiros' => $request->qtdBanheiros,
+                'vagas' => $request->vagas,
+                'valor' => $request->valor,
+                'area' => $request->area
+            ],
+        ];
+
         $session->put([
-            'search' => $request->search
+            'search' => $search
         ]);
 
         return redirect()->back();

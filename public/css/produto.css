@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+
+    /* estilo */
+    background-color:#CBCBCB;
+}
+* {
+    font-family: 'roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.margin-spaced {
+    margin: 1vh 0.5vw;
+}
+.padding-spaced {
+    padding: 2vh 1vw;
+}
+
+#interesse {
+    position: sticky;
+    top: 1vh;
+}
+
+.flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-center-center-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+.flex-center-center-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mostrar {
+    display: none;
+    position: fixed;
+    z-index: 2;
+
+    color: white;
+    background-color: red;
+}
+
+#pagina-layout {
+    width:100%;
+    display: flex;
+    align-items: start;
+}
+
+#imovel-info-main {
+    text-align: center;
+
+    /* estilo */
+    background-color:white;
+}
+
+#produto-carrossel img{
+    width: 75vw;
+    height: 50vh;
+}
+
+.detalhes-itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20vw 5vw;
+}
+
+#interesse-contato-container {
+    gap: 5px;
+}
+
+#semelhante-produtos-itens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.semelhante-produto-card {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
+}
+
+
+
+/* estilos */
+
+#imovel-titulo h1 {
+    color: #1B657A;
+}
+#valor {
+    color: #1B657A;
+}
+
+#descricao-container {
+     background-color: white;
+     padding:10px;
+}
+
+#mais-detalhes {
+    background-color: white;
+}
+
+#interesse {
+    background-color: white;
+}
+
+#semelhantes {
+    background-color: white;
+}
+
+.detalhes-titulo {
+    color: #B77922;
+    padding-bottom: 10px;
+    border-bottom: #B77922 solid 3px;
+}
+
+.mais-detalhes-subtitulo {
+    color: #B77922;
+    background-color: #D9D9D9;
+    padding: 0.5vh 1vw;
+}
+
+#interesse h1 {
+    color: #1B657A;
+}
+
+.interesse-contato-input {
+    border: #1B657A solid 3px;
+    width:100%;
+}
+#interesse-contato-container input {
+    height: 5vh;
+}
+.interesse-contato-input textarea {
+    height: 50vh;
+}
+#interesse-btn {
+    background-color: #1B657A;
+    border:none;
+    color: white;
+    width: 100.5%;
+    height: 6vh;
+    transition: all 0.3s;
+}
+#interesse-btn:hover {
+    background-color: white;
+    color:#1B657A;
+    text-decoration: underline;
+    border:#1B657A solid 3px;
+}
+
+#semelhante-produto-card *{
+    text-align: center;
+}
+
+#fechar-icone {
+    display: none;
+}
+
+/* #fechar-icone-container {
+    width:100%;
+    text-align: right;
+} */
+#mostrar-container {
+    width:100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+
+@media (max-width: 1250px){
+    #fechar-icone {
+        display: block;
+    }
+    #fechar-icone-container {
+        display:block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    #mostrar {
+        display: block;
+        width: 100vw;
+        height: 6vh;
+        border-radius: 15px;
+
+        font-size: 18px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.597);
+
+        border: none;
+        background-color:#1B657A;
+    }
+    #interesse {
+        display:none;
+        top: 0;
+        left: 0;
+        height: 99vh;
+        width: 99vw;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        
+        z-index: 1;
+    }
+    .interesse-contato-input {
+        width: 95vw;
+    }
+}
+@media (max-width: 600px) {
+    #pagina-layout {
+        width: 90vw;
+    }
+    #imovel-dados {
+        flex-direction: column;
+        text-align: left;
+    }
+    #semelhante-produtos-itens {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    #produto-carrossel img{
+        width: 100vw;
+        height: 30vh;
+    }
+    .semelhante-produto-card {
+        width: 75vw;
+        margin: 10px;
+    }
+    .semelhante-produto-img {
+        width: 80vw;
+    }
+}

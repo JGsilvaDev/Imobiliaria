@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+/* Painel de pesquisa */
+
+#pagina {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 10px;
+
+}
+
+.input-text {
+    width: 90%;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+}
+#painel-pesquisa-float {
+    position: sticky;
+    top: 0;
+    width: 26vw;
+    background-color: #C1C1C1;
+    padding: 10px;
+    border-radius: 15px;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+#painel-pesquisa-titulo {
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    background-color: #CE990F;
+    border-radius: 15px;
+}
+#painel-pesquisa-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.radio-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.radio-options-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input[type='radio']:checked:after { /* quando selecionado */
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #ffa500;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+}
+
+/* painel de pesquisa LATERAL (para mobile) */
+
+#painel-pesquisa-lateral {
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    background-color:#C1C1C1;
+    padding: 0 10px;
+    flex-direction: row;
+    align-items: start;
+    z-index: 2;
+}
+#painel-pesquisa-lateral * {
+    font-size: 18px;
+}
+#painel-pesquisa-lateral button {
+    width: 25vw;
+}
+#painel-pesquisa-opcoes-lateral {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.radio-options-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#button-buscar-container {
+    text-align: center;
+}
+.busca-painel-btn {
+    background-color:#ffa500;
+    padding: 10px;
+    border:none;
+    color:white;
+    border-radius: 15px;
+    transition: all 0.2s;
+    
+}
+.busca-painel-btn:hover {
+    background-color:#FFFFFF;
+    color:#ffa500;
+    text-decoration: underline;
+}
+
+#mobile-buscar {
+    position:fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color:#ffa500;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+
+    display: none;
+}
+
+/* produto */
+#lista-produtos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0.5vw;
+}
+
+.produto-container {
+    background-color: #C1C1C1;
+    border-radius: 15px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.produto-imagem {
+    width: 300px;
+    height: 200px;
+
+    background-color: black;
+    border-radius: 15px;
+}
+.produto-titulo {
+    color: #1B657A;
+    font-size: 18px;
+}
+.produto-titulo,.produto-descricao {
+    text-align: center;
+}
+.produto-dados {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.produto-saber-mais {
+    background-color:#1B657A;
+    color:white;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    transition:all 0.2s
+}
+.produto-saber-mais:hover {
+    background-color:#FFFFFF;
+    color:#1B657A;
+    text-decoration: underline;
+}
+
+/* classes de animação e keyframes */
+
+@keyframes abrir-painel {
+    from {
+        transform: translateX(-500px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fechar-painel {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-20000vw);
+        display:none;
+    }
+}
+
+.search-show {
+    animation-duration: 0.2s;
+    animation-name: abrir-painel;
+
+    display:flex;
+}
+.search-hidden {
+    animation-duration: 0.5s;
+    animation-name: fechar-painel;
+    display:none;
+}
+.dark {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo preta com 50% de opacidade */
+    filter: brightness(0.5); /* Aplica um filtro de brilho de 50% */
+}
+
+
+/* media query */
+@media (max-width: 1264px) {
+    #painel-pesquisa-float {
+        display: none;
+    }
+    #mobile-buscar {
+        display: block;
+    }
+}
+
+@media(max-width: 1000px ) and (min-width: 600px){
+    #lista-produtos {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .produto-container {
+        padding: 10px;
+        width: 40%;
+    }
+}

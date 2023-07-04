@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.layout_navbar')
+
+@section('title','Sobre nós')
+
+@section('content')
+
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap" rel="stylesheet">
-    <title>Sobre nós</title>
-</head>
-<body>
     <h1 class="about-title">Saiba mais sobre a imobiliária Eunice Solowski</h1>
 
     <h1 id="ola" class="about-subtitle">Olá, meu nome é Eunice, muito prazer</h1>
@@ -39,5 +34,5 @@
         <h2>Aviso sobre valores</h2>
         <p>Em alguns casos, os preços podem variar dependendo do proprietário, na dúvida, entre em contato com o proprietário antes de realizara compra.</p>
     </section>
-</body>
-</html>
+
+@endsection

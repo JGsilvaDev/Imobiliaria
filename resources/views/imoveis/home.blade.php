@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.layout_navbar')
+
+@section('title','Todos Produtos')
+
+@section('content')
+
     <link rel="stylesheet" href="{{ asset('css/listar-produtos.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap" rel="stylesheet">
-    <title>Listando Imoveis</title>
-</head>
-<body>
     <h1>Todos os imoveis</h1>
 
     <div id="pagina">
@@ -197,5 +192,5 @@
     </div>
     <img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()">
     <script src="{{ asset('js/mostrarPainel.js') }}"></script>
-</body>
-</html>
+
+@endsection

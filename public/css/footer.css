@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+#footer-container {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    /* estilo */
+    padding: 10px;
+    background-color: #BCBCBC;
+}

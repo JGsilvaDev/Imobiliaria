@@ -163,33 +163,30 @@
             </form>
         </div>
 
-
-
         @foreach ($imoveis as $item)
             @if($item->id != 0)
-
-            <div id="lista-produtos">
-
-                <div class="produto-container">
-                    <div class="produto-imagem">
-                        @foreach ($imagens as $path)
-                            @if($item->id == $path->chave)
-                                <img src="{{asset($path->path)}}" alt="Imagem">
-                                @break
-                            @endif
-                        @endforeach
+                <div id="lista-produtos">
+                    <div class="produto-container">
+                        <div class="produto-imagem">
+                            @foreach ($imagens as $path)
+                                @if($item->id == $path->chave)
+                                    <img src="{{asset($path->path)}}" alt="Imagem">
+                                    @break
+                                @endif
+                            @endforeach
+                        </div>
+                        <p class="produto-titulo">{{ $item->titulo }}</p>
+                        <p class="produto-descricao">{{ $item->descricao }}</p>
+                        <div class="produto-dados">
+                            <p class="produto-valor">{{ $item->valor }}</p>
+                            <p class="produto-vagas">{{ $item->qtdQuartos }}quartos, {{ $item->qtdBanheiros }}banheiros e {{ $item->qtdVagas }} vagas</p>
+                        </div>
+                        <form action="/imoveis/{{ $item->id }}" method="post">
+                            @csrf
+                            <input type="hidden" name="idImovel">
+                            <button class="produto-saber-mais" type="submit">Detalhe</button>
+                        </form>
                     </div>
-                    <p class="produto-titulo">{{ $item->titulo }}</p>
-                    <p class="produto-descricao">{{ $item->descricao }}</p>
-                    <div class="produto-dados">
-                        <p class="produto-valor">{{ $item->valor }}</p>
-                        <p class="produto-vagas">{{ $item->qtdQuartos }}quartos, {{ $item->qtdBanheiros }}banheiros e {{ $item->qtdVagas }} vagas</p>
-                    </div>
-                    <form action="/imoveis/{{ $item->id }}" method="post">
-                        @csrf
-                        <input type="hidden" name="idImovel">
-                        <button class="produto-saber-mais" type="submit">Detalhe</button>
-                    </form>
                 </div>
             @else
                 <div class="alert alert-success flash-message">

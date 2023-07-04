@@ -115,10 +115,7 @@
                     @endforeach
                 @endif
             </section>
-
         </div>
-
     </div>
-
 </body>
 </html>

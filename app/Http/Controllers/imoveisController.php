@@ -13,9 +13,9 @@ class imoveisController extends Controller
     public function index(){
         $search = session('search');
 
-        // dd($search[0]);
+        // dd($search);
 
-        if($search){
+        if($search and $search != 'sem filtro'){
             $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                 ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
@@ -43,23 +43,38 @@ class imoveisController extends Controller
     }
 
     public function search(Request $request){
-        $session = session();
 
-        $search = [
-            (object) [
-                'titulo' => $request->titulo,
-                'localidade' => $request->localidade,
-                'quartos' => $request->qtdQuartos,
-                'banheiros' => $request->qtdBanheiros,
-                'vagas' => $request->vagas,
-                'valor' => $request->valor,
-                'area' => $request->area
-            ],
-        ];
+        if(
+           $request->titulo != null or $request->localidade != null or
+           $request->qtdQuartos != null or $request->qtdBanheiros != null or
+           $request->vagas != null or $request->valor != null or $request->area != null
+        ){
 
-        $session->put([
-            'search' => $search
-        ]);
+            $session = session();
+
+            $search = [
+                (object) [
+                    'titulo' => $request->titulo,
+                    'localidade' => $request->localidade,
+                    'quartos' => $request->qtdQuartos,
+                    'banheiros' => $request->qtdBanheiros,
+                    'vagas' => $request->vagas,
+                    'valor' => $request->valor,
+                    'area' => $request->area
+                ],
+            ];
+
+            $session->put([
+                'search' => $search
+            ]);
+
+        }else{
+            $session = session();
+
+            $session->put([
+                'search' => 'sem filtro'
+            ]);
+        }
 
         return redirect()->back();
     }

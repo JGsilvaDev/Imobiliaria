@@ -32,7 +32,7 @@
         </form>
     </div>
 
-    <form id="user-options" action="logout" method="POST">
+    <form id="user-options" action="/logout" method="POST">
         @csrf
         <button class="nav-btn" id="sair" type="submit">Sair</button>
     </form>

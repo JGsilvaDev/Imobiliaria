@@ -30,13 +30,19 @@ class imoveisController extends Controller
                     ->select('chave','path')
                     ->get();
 
+        $opcoes = [
+            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
+            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
+            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
+        ];
+
         if($imoveis->isEmpty()){
             $imagem = new \stdClass();
 
             $imagem->id = 0;
         }
 
-        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem]);
+        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem, 'opcoes' => $opcoes]);
     }
 
     public function search(Request $request){
@@ -95,8 +101,12 @@ class imoveisController extends Controller
                     ->limit(2)
                     ->get();
 
-        // dd($semelhante);
+        $opcoes = [
+            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
+            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
+            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
+        ];
 
-        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'semelhante' => $semelhante]);
+        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'semelhante' => $semelhante, 'opcoes' => $opcoes]);
     }
 }

@@ -12,6 +12,11 @@ body {
     gap:10px;
 }
 
+img{
+    width: 180px;
+    height: 130px;
+}
+
 #imovel-header {
     /* estilização */
     background-color:#949494;
@@ -51,7 +56,7 @@ body {
 }
 
 #novo-imovel {
-    
+
     background-color:#C9801A;
 
     transition: all 0.2s;
@@ -84,7 +89,7 @@ body {
     font-size:15px;
     text-align: center;
     width:80vw;
-    
+
     padding:10px;
     border-radius: 90px;
     border:none;
@@ -159,7 +164,7 @@ body {
 }
 
 .btn-icon {
-    
+
     display:none;
 }
 

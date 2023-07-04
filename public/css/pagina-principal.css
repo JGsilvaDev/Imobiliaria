@@ -9,12 +9,18 @@ body {
 h1 {
     text-align: center;
 }
+
+img{
+    width: 300px;
+    height: 230px;
+}
+
 .section-title {
     color: #1B657A;
     padding:50px 0 10px 0;
 }
 
-#pesquisa-container { 
+#pesquisa-container {
     background-image: url("/img/fundo.png");
     background-position: center 600px;
     background-attachment: fixed;

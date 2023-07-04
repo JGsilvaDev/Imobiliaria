@@ -44,7 +44,6 @@ class adminController extends Controller
                 }else{
                     $imagem = DB::table('imagens')
                                 ->select('chave','path')
-                                ->where('chave', '=', $itens[0]->id)
                                 ->get();
                 }
 
@@ -67,7 +66,6 @@ class adminController extends Controller
                 }else{
                     $imagem = DB::table('imagens')
                                 ->select('chave','path')
-                                ->where('chave', '=', $itens[0]->id)
                                 ->get();
                 }
 

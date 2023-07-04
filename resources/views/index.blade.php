@@ -5,6 +5,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/pagina-principal.css') }}">
+<script src="{{ asset('js/reload.js') }}"></script>
 <section id="pesquisa-container">
         <div id="filtro">
             <form action="" method="post">

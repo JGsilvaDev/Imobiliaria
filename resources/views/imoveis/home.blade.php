@@ -170,9 +170,9 @@
                         <div class="produto-imagem">
                             @foreach ($imagens as $path)
                                 @if($item->id == $path->chave)
-                                    <img src="{{asset($path->path)}}" alt="Imagem">
-                                    @break
-                                @endif
+                                        <img src="{{asset($path->path)}}" alt="Imagem">
+                                        @break
+                                    @endif
                             @endforeach
                         </div>
                         <p class="produto-titulo">{{ $item->titulo }}</p>

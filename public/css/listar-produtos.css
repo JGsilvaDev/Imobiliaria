@@ -6,6 +6,12 @@ body {
     font-size: 14px;
     margin: 0;
 }
+
+img{
+    width: 300px;
+    height: 200px;
+}
+
 /* Painel de pesquisa */
 
 #pagina {
@@ -110,7 +116,7 @@ input[type='radio']:checked:after { /* quando selecionado */
     color:white;
     border-radius: 15px;
     transition: all 0.2s;
-    
+
 }
 .busca-painel-btn:hover {
     background-color:#FFFFFF;

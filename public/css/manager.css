@@ -15,6 +15,9 @@ body {
 .img{
     width: 180px;
     height: 130px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #imovel-header {

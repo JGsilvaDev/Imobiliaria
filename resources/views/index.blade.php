@@ -17,13 +17,13 @@
 
             <form action="" method="post">
                 @csrf
-                <input type="hidden" name="infoPesquisa" value="2">
+                <input type="hidden" name="infoPesquisa" value="1">
                 <button id="filtro-item" class="filtro-btn">Terreno</button>
             </form>
 
             <form action="" method="post">
                 @csrf
-                <input type="hidden" name="infoPesquisa" value="1">
+                <input type="hidden" name="infoPesquisa" value="2">
                 <button id="filtro-item" class="filtro-btn">Casa</button>
             </form>
 

@@ -33,7 +33,7 @@ class masterController extends Controller
 
         $tipo = strlen($request->infoPesquisa);
 
-        if($tipo == 1 or $tipo == 2 or $tipo == 3 ){
+        if($tipo == 1){
 
             $imoveis = DB::table('catalogos')
                         ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
@@ -58,8 +58,13 @@ class masterController extends Controller
                         ->get();
         }
 
+        $opcoes = [
+            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
+            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
+            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
+        ];
 
-        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem]);
+        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem,'opcoes' => $opcoes]);
     }
 
     public function sobre(){

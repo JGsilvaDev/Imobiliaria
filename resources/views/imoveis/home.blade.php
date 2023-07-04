@@ -170,7 +170,7 @@
                         <div class="produto-imagem">
                             @foreach ($imagens as $path)
                                 @if($item->id == $path->chave)
-                                        <img src="{{asset($path->path)}}" alt="Imagem">
+                                    <div class="img" style="background-image: url('{{asset($path->path)}}')"></div>
                                         @break
                                     @endif
                             @endforeach

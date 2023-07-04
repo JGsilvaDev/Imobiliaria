@@ -19,7 +19,7 @@ class imoveisController extends Controller
             $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                 ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                ->where('catalogos.titulo','like',$search[0]->titulo)
+                ->where('catalogos.titulo','LIKE',$search[0]->titulo)
                 ->get();
 
         }else{
@@ -44,13 +44,13 @@ class imoveisController extends Controller
 
     public function search(Request $request){
 
+        $session = session();
+
         if(
            $request->titulo != null or $request->localidade != null or
            $request->qtdQuartos != null or $request->qtdBanheiros != null or
            $request->vagas != null or $request->valor != null or $request->area != null
         ){
-
-            $session = session();
 
             $search = [
                 (object) [
@@ -69,7 +69,6 @@ class imoveisController extends Controller
             ]);
 
         }else{
-            $session = session();
 
             $session->put([
                 'search' => 'sem filtro'

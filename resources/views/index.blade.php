@@ -42,11 +42,11 @@
                 <div id="destaques-item">
                     @foreach ($imagens as $path)
                         @if($iten->id == $path->chave)
-                            <img src="{{asset($path->path)}}" alt="Imagem">
+                            <div class="img" style="background-image: url('{{asset($path->path)}}')"></div>
                             @break
                         @endif
                     @endforeach
-                    {{-- <img src="{{ $iten->path }}" alt=""> --}}
+
 
                     <div id="destaque-endereco-info">
                         <p id="endereco-info-tipo">{{ $iten->titulo }}</p>

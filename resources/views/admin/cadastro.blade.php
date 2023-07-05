@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="add.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@extends('layouts.font_import')
+
+@section('title','Cadastrar produto')
+
+@section('content')
+
     <link rel="stylesheet" href="{{ asset('css/cadastro-imovel.css') }}">
     <script src="{{ asset('js/slider.js') }}"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-    <title>Cadastrar produto</title>
-</head>
-<body>
+
+
     <div id="abas">
         <button id="btn-aba-casa" onclick="openCasa()" class="aba-option">casa</button>
         <button id="btn-aba-apartamento" onclick="openApartamento()" class="aba-option">apartamento</button>
@@ -46,6 +42,12 @@
 
         <p id="valor-label">Valor</p>
         <input type="number" name="valor" id="casa-valor-input" min="1" class="add-input">
+
+        <p>Aluguel ou Venda</p>
+        <select name="tp_contrato" id="">
+            <option value="aluguel">Alguel</option>
+            <option value="venda">Venda</option>
+        </select>
 
         <p id="imagem-label">Imagem</p>
         <input type="file" name="imagem[]" id="imagem" multiple required>
@@ -82,6 +84,12 @@
         <p id="valor-label">Valor</p>
         <input type="number" name="valor" id="apt-valor-input" min="1" class="add-input">
 
+        <p>Aluguel ou Venda</p>
+        <select name="tp_contrato" id="">
+            <option value="aluguel">Alguel</option>
+            <option value="venda">Venda</option>
+        </select>
+
         <p>Imagem</p>
         <input type="file" name="imagem[]" id="imagem" multiple required>
 
@@ -117,5 +125,4 @@
     </form>
 
     <script src="{{ asset('js/cadastro-abas.js') }}"></script>
-</body>
-</html>
+@endsection

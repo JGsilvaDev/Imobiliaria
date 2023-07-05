@@ -135,10 +135,12 @@ class adminController extends Controller
             $catalogo->localidade = $request->localidade;
 
             if($request->id_produto != 1 ){
+                $catalogo->tp_contrato = $request->tp_contrato;
                 $catalogo->qtdBanheiros = $request->qtd_banheiros;
                 $catalogo->qtdQuartos = $request->qtd_quartos;
                 $catalogo->qtdVagas = $request->qtd_vagas;
             }else{
+                $catalogo->tp_contrato = 'compra';
                 $catalogo->qtdBanheiros = 0;
                 $catalogo->qtdQuartos = 0;
                 $catalogo->qtdVagas = 0;

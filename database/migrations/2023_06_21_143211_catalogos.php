@@ -23,6 +23,7 @@ return new class extends Migration
             $table->decimal('area',12,3);
             $table->decimal('valor',12,3);
             $table->string('localidade');
+            $table->string('tp_contrato');
             $table->timestamps();
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');

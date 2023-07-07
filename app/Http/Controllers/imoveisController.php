@@ -10,17 +10,19 @@ class imoveisController extends Controller
     public function index(){
         $search = session('search');
 
-        $titulo = $search[0]->titulo;
-        $localidade = $search[0]->localidade;
-        $quartos = $search[0]->quartos;
-        $banheiros = $search[0]->banheiros;
-        $vagas = $search[0]->vagas;
-        $area = $search[0]->area;
-        $valor = $search[0]->valor;
 
         // dd($search[0]);
 
         if($search and $search != 'sem filtro'){
+
+            $titulo = $search[0]->titulo;
+            $localidade = $search[0]->localidade;
+            $quartos = $search[0]->quartos;
+            $banheiros = $search[0]->banheiros;
+            $vagas = $search[0]->vagas;
+            $area = $search[0]->area;
+            $valor = $search[0]->valor;
+
             //------ TITULO ------
             //titulo
             if($titulo != null and $localidade == null and $quartos == null and $banheiros == null and $vagas == null and $area == null and $valor == null){
@@ -342,6 +344,8 @@ class imoveisController extends Controller
                     ->where('produtos.descricao','=',$item->descricao)
                     ->limit(2)
                     ->get();
+
+        // dd($imagem);
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],

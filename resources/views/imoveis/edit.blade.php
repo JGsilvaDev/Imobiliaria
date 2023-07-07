@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/produto.css') }}">
     <script src="{{ asset('js/mostrar-interesse.js') }}"></script>
+    <script src="{{ asset('js/carocel.js') }}"></script>
 
     <button id="mostrar" onclick="changeVisibility()">Tenho interesse!</button>
 
@@ -30,11 +31,12 @@
                 <div id="imovel-titulo">
                     <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
                     <div id="produto-carrossel" class="flex-center-center">
-                        @foreach ($imagens as $path)
+                        @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
-                                <img src="{{asset($path->path)}}" alt="Imagem">
+                                <img id="imagem-{{ $index }}" src="{{asset($path->path)}}" alt="Imagem">
                             @endif
                         @endforeach
+                        <button id="mudar-imagem">Mudar Imagem</button>
                     </div>
                     <h2 id="valor">R${{ $detalhes->valor }}</h2>
                     <div id="imovel-dados" class="flex-row">

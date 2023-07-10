@@ -16,6 +16,7 @@ Route::post('/', [masterController::class, 'store']);
 
 Route::post('/enviarEnviar', [emailController::class, 'store']);
 Route::post('/logout', [logoutController::class, 'index']);
+Route::post('/limparFiltro', [logoutController::class, 'filtro']);
 
 Route::get('/sobre', [masterController::class, 'sobre']);
 Route::get('/contato', [masterController::class, 'contato']);

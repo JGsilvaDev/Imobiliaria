@@ -27,7 +27,7 @@ class adminController extends Controller
                     $itens = DB::table('catalogos')
                                 ->select('id','id_tp_produto','titulo','descricao','area','valor')
                                 ->where('id_cliente', '=', $id_cliente)
-                                ->where('titulo', 'like', $search)
+                                ->where('titulo', 'like','%'. $search.'%')
                                 ->get();
 
                 }else{
@@ -51,7 +51,7 @@ class adminController extends Controller
                 if($search){
                     $itens = DB::table('catalogos')
                                 ->select('id','id_tp_produto','titulo','descricao','area','valor')
-                                ->where('titulo', 'like', $search)
+                                ->where('titulo', 'like','%'. $search .'%')
                                 ->get();
                 }else{
                     $itens = DB::table('catalogos')

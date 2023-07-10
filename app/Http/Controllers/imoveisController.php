@@ -10,8 +10,11 @@ class imoveisController extends Controller
     public function index(){
         $search = session('search');
 
+        // dd($search);
 
-        // dd($search[0]);
+        $imoveis = DB::table('catalogos')
+                ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
+                ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',);
 
         if($search and $search != 'sem filtro'){
 
@@ -23,252 +26,70 @@ class imoveisController extends Controller
             $area = $search[0]->area;
             $valor = $search[0]->valor;
 
-            //------ TITULO ------
-            //titulo
-            if($titulo != null and $localidade == null and $quartos == null and $banheiros == null and $vagas == null and $area == null and $valor == null){
-                $imoveis = DB::table('catalogos')
-                    ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                    ->where('catalogos.titulo','LIKE',$titulo)
-                    ->get();
+            // dd($search);
 
-            //titulo e localidade
-            }else if($titulo != null and $localidade != null and $quartos == null and $banheiros == null and $vagas == null and $area == null and $valor == null){
-                $imoveis = DB::table('catalogos')
-                    ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                    ->where('catalogos.titulo','LIKE',$titulo)
-                    ->where('catalogos.localidade','LIKE',$localidade)
-                    ->get();
-
-            //titulo, localidade e quartos
-            }else if($titulo != null and $localidade != null and $quartos != null and $banheiros == null and $vagas == null and $area == null and $valor == null){
-
-                if($quartos < 3){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->whereBetween('catalogos.qtdQuartos', [ 0, $quartos])
-                        ->get();
-
-                }else{
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos', '>',$quartos)
-                        ->get();
-                }
-
-            //titulo, localidade, quartos e banheiros
-            }else if($titulo != null and $localidade != null and $quartos != null and $banheiros != null and $vagas == null and $area == null and $valor == null){
-
-                if($quartos < 3 and $banheiros < 3){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->whereBetween('catalogos.qtdQuartos', [ 0, $quartos])
-                        ->whereBetween('catalogos.qtdBanheiros', [ 0, $banheiros])
-                        ->get();
-
-                }else if($quartos < 3 and $banheiros >= 3){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->whereBetween('catalogos.qtdQuartos', [ 0, $quartos])
-                        ->where('catalogos.qtdBanheiros','>', $banheiros)
-                        ->get();
-
-                }else if($quartos > 3 and $banheiros < 3){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos', '>',$quartos)
-                        ->whereBetween('catalogos.qtdBanheiros', [ 0, $banheiros])
-                        ->get();
-
-                }else{
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos', '>',$quartos)
-                        ->where('catalogos.qtdBanheiros','>', $banheiros)
-                        ->get();
-                }
-
-            //titulo, localidade, quartos, banheiros e vagas
-            }else if($titulo != null and $localidade != null and $quartos != null and $banheiros != null and $vagas != null and $area == null and $valor == null){
-
-                if($quartos < 3 and $banheiros < 3 and $vagas < 3){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->whereBetween('catalogos.qtdQuartos', [ 0, $quartos])
-                        ->whereBetween('catalogos.qtdBanheiros', [ 0, $banheiros])
-                        ->whereBetween('catalogos.qtdVagas', [ 0, $vagas])
-                        ->get();
-
-                }else if($quartos < 3 and $banheiros >= 3){
-                    if($vagas < 3){
-                        $imoveis = DB::table('catalogos')
-                            ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                            ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                            ->where('catalogos.titulo','LIKE', $titulo)
-                            ->where('catalogos.localidade','LIKE', $localidade)
-                            ->whereBetween('catalogos.qtdQuartos', [ 0, $quartos])
-                            ->where('catalogos.qtdBanheiros','>', $banheiros)
-                            ->whereBetween('catalogos.qtdVagas', [ 0, $vagas])
-                            ->get();
-
-                    }else{
-                        $imoveis = DB::table('catalogos')
-                            ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                            ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                            ->where('catalogos.titulo','LIKE', $titulo)
-                            ->where('catalogos.localidade','LIKE', $localidade)
-                            ->whereBetween('catalogos.qtdQuartos', [ 0, $quartos])
-                            ->where('catalogos.qtdBanheiros','>', $banheiros)
-                            ->where('catalogos.qtdVagas','>', $vagas)
-                            ->get();
-                    }
-
-                }else if($quartos > 3 and $banheiros < 3){
-                    if($vagas < 3){
-                        $imoveis = DB::table('catalogos')
-                            ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                            ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                            ->where('catalogos.titulo','LIKE', $titulo)
-                            ->where('catalogos.localidade','LIKE', $localidade)
-                            ->where('catalogos.qtdQuartos', '>',$quartos)
-                            ->whereBetween('catalogos.qtdBanheiros', [ 0, $banheiros])
-                            ->whereBetween('catalogos.qtdVagas', [ 0, $vagas])
-                            ->get();
-                    }else{
-                        $imoveis = DB::table('catalogos')
-                            ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                            ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                            ->where('catalogos.titulo','LIKE', $titulo)
-                            ->where('catalogos.localidade','LIKE', $localidade)
-                            ->where('catalogos.qtdQuartos', '>',$quartos)
-                            ->whereBetween('catalogos.qtdBanheiros', [ 0, $banheiros])
-                            ->where('catalogos.qtdVagas','>', $vagas)
-                            ->get();
-                    }
-
-                }else{
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos', '>',$quartos)
-                        ->where('catalogos.qtdBanheiros','>', $banheiros)
-                        ->where('catalogos.qtdVagas','>', $vagas)
-                        ->get();
-                }
-
-            //titulo, localidade, quartos, banheiros, vagas e area
-            }else if($titulo != null and $localidade != null and $quartos != null and $banheiros != null and $vagas != null and $area != null and $valor == null){
-
-                if($area == 1 ){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos','=', $quartos)
-                        ->where('catalogos.qtdBanheiros','=', $banheiros)
-                        ->where('catalogos.qtdVagas','=', $vagas)
-                        ->whereBetween('catalogos.area', [ 0, 150])
-                        ->get();
-
-                }else if($area == 2){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos','=', $quartos)
-                        ->where('catalogos.qtdBanheiros','=', $banheiros)
-                        ->where('catalogos.qtdVagas','=', $vagas)
-                        ->whereBetween('catalogos.area', [ 150, 250])
-                        ->get();
-                }else{
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos','=', $quartos)
-                        ->where('catalogos.qtdBanheiros','=', $banheiros)
-                        ->where('catalogos.qtdVagas','=', $vagas)
-                        ->where('catalogos.area','>', 250)
-                        ->get();
-                }
-
-            //titulo, localidade, quartos, banheiros, vagas, area e valor
-            }else if($titulo != null and $localidade != null and $quartos != null and $banheiros != null and $vagas != null and $area != null and $valor != null){
-               if($valor == 1){
-                   $imoveis = DB::table('catalogos')
-                       ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                       ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                       ->where('catalogos.titulo','LIKE', $titulo)
-                       ->where('catalogos.localidade','LIKE', $localidade)
-                       ->where('catalogos.qtdQuartos','=', $quartos)
-                       ->where('catalogos.qtdBanheiros','=', $banheiros)
-                       ->where('catalogos.qtdVagas','=', $vagas)
-                       ->where('catalogos.area','=', $area)
-                       ->whereBetween('catalogos.valor', [ 0, 100000])
-                       ->get();
-
-               }else if($valor == 2){
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos','=', $quartos)
-                        ->where('catalogos.qtdBanheiros','=', $banheiros)
-                        ->where('catalogos.qtdVagas','=', $vagas)
-                        ->where('catalogos.area','=', $area)
-                        ->whereBetween('catalogos.valor', [ 100000, 300000])
-                        ->get();
-               }else{
-                    $imoveis = DB::table('catalogos')
-                        ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                        ->where('catalogos.titulo','LIKE', $titulo)
-                        ->where('catalogos.localidade','LIKE', $localidade)
-                        ->where('catalogos.qtdQuartos','=', $quartos)
-                        ->where('catalogos.qtdBanheiros','=', $banheiros)
-                        ->where('catalogos.qtdVagas','=', $vagas)
-                        ->where('catalogos.area','=', $area)
-                        ->where('catalogos.valor','>', 300000)
-                        ->get();
-               }
-
+            if ($titulo != null) {
+                $imoveis->where('catalogos.titulo', 'like','%'.$titulo.'%');
             }
 
+            if ($localidade != null) {
+                $imoveis->where('catalogos.localidade', 'like','%'.$localidade.'%');
+            }
 
-        }else{
-            $imoveis = DB::table('catalogos')
-                ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',)
-                ->get();
+            if ($banheiros != 3 and $banheiros != null) {
+                $imoveis->where('catalogos.qtdBanheiros', '=', $banheiros);
+            }
+
+            if ($banheiros == 3 and $banheiros != null) {
+                $imoveis->where('catalogos.qtdBanheiros', '>', 3);
+            }
+
+            if ($quartos != 3 and $quartos != null) {
+                $imoveis->where('catalogos.qtdQuartos', '=', $quartos);
+            }
+
+            if ($quartos == 3 and $quartos != null) {
+                $imoveis->where('catalogos.qtdQuartos', '>', 3);
+            }
+
+            if ($vagas != 3 and $vagas != null) {
+                $imoveis->where('catalogos.qtdVagas', '=', $vagas);
+            }
+
+            if ($vagas == 3 and $vagas != null) {
+                $imoveis->where('catalogos.qtdVagas', '>', 3);
+            }
+
+            if($valor == 1 and $valor != null){
+                $imoveis->where('catalogos.valor','<',100000);
+            }
+
+            if($valor == 2 and $valor != null){
+                $imoveis->whereBetween('catalogos.valor',[100000, 300000]);
+            }
+
+            if($valor == 3 and $valor != null){
+                $imoveis->where('catalogos.valor','>',300000);
+            }
+
+            if($area == 1 and $area != null){
+                $imoveis->where('catalogos.area','<',150);
+            }
+
+            if($area == 2 and $area != null){
+                $imoveis->whereBetween('catalogos.area',[150, 250]);
+            }
+
+            if($area == 3 and $area != null){
+                $imoveis->where('catalogos.area','>',250);
+            }
+
         }
+
+
+        $imoveis = $imoveis->get();
+
+        // dd($imoveis);
 
         $imagem = DB::table('imagens')
                     ->select('chave','path')

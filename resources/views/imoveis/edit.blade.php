@@ -31,6 +31,7 @@
                 <div id="imovel-titulo">
                     <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
                     <div id="produto-carrossel" class="flex-center-center">
+                        <button id="voltar-imagem">Voltar Imagem</button>
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
                                 <img id="imagem-{{ $index }}" src="{{asset($path->path)}}" alt="Imagem">

@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         exibirImagem(indiceAtual);
     });
 
+    document.getElementById('voltar-imagem').addEventListener('click', () => {
+        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length; // Volta para o índice anterior circularmente
+        exibirImagem(indiceAtual);
+    });
+
     exibirImagem(indiceAtual);
 
 });

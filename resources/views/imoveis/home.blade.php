@@ -424,9 +424,18 @@
             </div>
 
             <h1>Filtros</h1>
+            @foreach ($filtro as $item)
+                {{ $item[0] }} {{ $item[1] }}
+                <form action="/limparFiltroIndidual" method="post">
+                    @csrf
+                    <input type="hidden" name="filtro" value="{{ $item[0] }}">
+                    <button type="submit">X</button>
+                </form>
+            @endforeach
+
             <form action="/limparFiltro" method="post">
                 @csrf
-                <button type="submit">Limpar</button>
+                <button type="submit">Limpar Todos</button>
             </form>
 
 

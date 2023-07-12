@@ -546,9 +546,9 @@
                             @foreach ($imagens as $path)
                                 @if ($item->id == $path->chave)
                                     <div class="img" style="background-image: url('{{ asset($path->path) }}')"></div>
-                                @break
-                            @endif
-                        @endforeach
+                                    @break
+                                @endif
+                            @endforeach
                     </div>
                     <p class="produto-titulo">{{ $item->titulo }}</p>
                     <p class="produto-descricao">{{ $item->descricao }}</p>

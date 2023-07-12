@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use App\Models\Catalogo;
 use App\Models\Imagens;
 
@@ -19,7 +20,6 @@ class adminController extends Controller
                     ->select('id_permissao','name','email')
                     ->where('id', '=', $id_cliente)
                     ->first();
-
 
         if($dadosUsuario != null){
             if($dadosUsuario->id_permissao == 2){
@@ -173,6 +173,8 @@ class adminController extends Controller
             }
 
             session()->flash('success', $msg);
+
+            Session::forget('search');
 
             return redirect('admin');
         }else{

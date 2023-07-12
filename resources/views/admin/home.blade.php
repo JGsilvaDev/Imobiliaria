@@ -64,7 +64,7 @@
                                 <button type="submit" id="imovel-editar" class="imovel-btn"><img src="{{ asset('img/add.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Editar</span></button>
                             </form>
 
-                            <button id="imovel-remover" onclick="excluir();" class="imovel-btn"><img src="{{ asset('img/remover.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Remover</span></button>
+                            <button id="imovel-remover" onclick="excluir();" class="imovel-btn"><img src="{{ asset('img/remover.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Excluir</span></button>
 
                             <form action="/deletar/{{ $item->id }}" method="POST">
                                 @csrf

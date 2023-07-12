@@ -18,14 +18,14 @@ class editController extends Controller
     public function processaDados($id){
 
         $item =  DB::table('catalogos')
-                ->select('id','id_tp_produto','titulo','descricao','area','valor','localidade')
-                ->where('id', '=', $id)
-                ->first();
+                    ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
+                    ->select('catalogos.id','catalogos.id_tp_produto','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
+                    ->where('catalogos.id','=',$id)
+                    ->first();
 
         $imagem = DB::table('imagens')
-                    ->select('id','path')
-                    ->where('chave', '=', $item->id)
-                    ->get();
+                ->select('id','chave','path')
+                ->get();
 
         return view('admin/edit',['item' => $item, 'imagem' => $imagem]);
     }
@@ -47,18 +47,21 @@ class editController extends Controller
 
         $folderName = $id_cliente.'_'.uniqid();
 
-        for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
-            $file = $request->allFiles()['imagem'][$i];
+        if($request->allFiles() != []){
 
-            $fileName = $file->store('public/img/'. $folderName);
+            for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
+                $file = $request->allFiles()['imagem'][$i];
 
-            $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
+                $fileName = $file->store('public/img/'. $folderName);
 
-            $imagem = new Imagens();
-            $imagem->chave = $id;
-            $imagem->path = $fileNameFormat;
-            $imagem->save();
-            unset($imagem);
+                $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
+
+                $imagem = new Imagens();
+                $imagem->chave = $id;
+                $imagem->path = $fileNameFormat;
+                $imagem->save();
+                unset($imagem);
+            }
         }
 
         session()->flash('editado', 'Item editado com sucesso');
@@ -84,9 +87,7 @@ class editController extends Controller
 
         $item->delete();
 
-        session()->flash('excluir', 'Item excluido com sucesso');
-
-        return redirect('admin');
+        return response()->json(['mensagem' => 'Item excluído com sucesso']);;
 
     }
 

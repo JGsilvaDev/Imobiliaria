@@ -423,21 +423,7 @@
                 </form>
             </div>
 
-            <h1>Filtros</h1>
-            @foreach ($filtro as $item)
-                {{ $item[0] }} {{ $item[1] }}
-                <form action="/limparFiltroIndidual" method="post">
-                    @csrf
-                    <input type="hidden" name="filtro" value="{{ $item[0] }}">
-                    <button type="submit">X</button>
-                </form>
-            @endforeach
-
-            <form action="/limparFiltro" method="post">
-                @csrf
-                <button type="submit">Limpar Todos</button>
-            </form>
-
+            
 
             @else
             <div id="painel-pesquisa-float">
@@ -537,39 +523,59 @@
                 </form>
             </div>
         @endif
-
-        @foreach ($imoveis as $item)
-            @if ($item->id != 0)
-                <div id="lista-produtos">
-                    <div class="produto-container">
-                        <div class="produto-imagem">
-                            @foreach ($imagens as $path)
-                                @if ($item->id == $path->chave)
-                                    <div class="img" style="background-image: url('{{ asset($path->path) }}')"></div>
-                                    @break
-                                @endif
-                            @endforeach
-                    </div>
-                    <p class="produto-titulo">{{ $item->titulo }}</p>
-                    <p class="produto-descricao">{{ $item->descricao }}</p>
-                    <div class="produto-dados">
-                        <p class="produto-valor">{{ $item->valor }}</p>
-                        <p class="produto-vagas">{{ $item->qtdQuartos }}quartos, {{ $item->qtdBanheiros }}banheiros e
-                            {{ $item->qtdVagas }} vagas</p>
-                    </div>
-                    <form action="/imoveis/{{ $item->id }}" method="post">
+        <div id="pesquisa-result">
+            <div id="filtros-container">
+                    <h1>Filtros:</h1>
+                    @foreach ($filtro as $item)
+                    <div class="filtro-content">
+                        {{ $item[0] }}: {{ $item[1] }}
+                            <form action="/limparFiltroIndidual" method="post">
+                                @csrf
+                                <input type="hidden" name="filtro" value="{{ $item[0] }}">
+                                <button type="submit">X</button>
+                            </form>
+                        </div>
+                    @endforeach
+        
+                    <form action="/limparFiltro" method="post">
                         @csrf
-                        <input type="hidden" name="idImovel">
-                        <button class="produto-saber-mais" type="submit">Detalhe</button>
+                        <button type="submit">Limpar Todos</button>
                     </form>
-                </div>
             </div>
-        @else
-            <div class="alert alert-success flash-message">
-                <p>Nenhum item encontrado com esse titulo</p>
+            
+            <div id="lista-produtos">
+                @foreach ($imoveis as $item)
+                @if ($item->id != 0)
+                        <div class="produto-container">
+                            <div class="produto-imagem">
+                                @foreach ($imagens as $path)
+                                    @if ($item->id == $path->chave)
+                                        <div class="img" style="background-image: url('{{ asset($path->path) }}')"></div>
+                                        @break
+                                    @endif
+                                @endforeach
+                        </div>
+                        <p class="produto-titulo">{{ $item->titulo }}</p>
+                        <p class="produto-descricao">{{ $item->descricao }}</p>
+                        <div class="produto-dados">
+                            <p class="produto-valor">{{ $item->valor }}</p>
+                            <p class="produto-vagas">{{ $item->qtdQuartos }}quartos, {{ $item->qtdBanheiros }}banheiros e
+                                {{ $item->qtdVagas }} vagas</p>
+                        </div>
+                        <form action="/imoveis/{{ $item->id }}" method="post">
+                            @csrf
+                            <input type="hidden" name="idImovel">
+                            <button class="produto-saber-mais" type="submit">Detalhe</button>
+                        </form>
+                    </div>
+                    @else
+                    <div class="alert alert-success flash-message">
+                        <p>Nenhum item encontrado com esse titulo</p>
+                    </div>
+                    @endif
+                    @endforeach
             </div>
-        @endif
-    @endforeach
+        </div>
 </div>
 <img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()">
 <script src="{{ asset('js/mostrarPainel.js') }}"></script>

@@ -84,8 +84,8 @@ input[type='radio']:checked:after { /* quando selecionado */
 
 #painel-pesquisa-lateral {
     width: 70%;
-    height: 100%;
-    position: fixed;
+    height: auto;
+    position: absolute;
     background-color:#C1C1C1;
     padding: 0 10px;
     flex-direction: row;
@@ -232,6 +232,28 @@ input[type='radio']:checked:after { /* quando selecionado */
     filter: brightness(0.5); /* Aplica um filtro de brilho de 50% */
 }
 
+#filtros-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.filtro-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    background-color:#1B657A;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+#pesquisa-result {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 /* media query */
 @media (max-width: 1264px) {
@@ -245,10 +267,12 @@ input[type='radio']:checked:after { /* quando selecionado */
 
 @media(max-width: 1000px ) and (min-width: 600px){
     #lista-produtos {
+        flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
     }
     .produto-container {
+
         padding: 10px;
         width: 40%;
     }

@@ -7,7 +7,7 @@ async function abrirPainel() {
     painelPesquisa.className = 'search-show';
     botaoPesquisa.style.display = 'none';
     paginaProdutos.classList.add('dark');
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
 
     // Adicionar o event listener
     await setTimeout(function() { document.addEventListener("click", handleOutsideClick); }, 500);
@@ -17,7 +17,7 @@ function fecharPainel() {
     painelPesquisa.className = 'search-hidden';
     botaoPesquisa.style.display = 'block';
     paginaProdutos.classList.remove('dark');
-    document.body.style.overflow = 'auto';
+    // document.body.style.overflow = 'auto';
     // Remover o event listener
     document.removeEventListener("click", handleOutsideClick);
 }

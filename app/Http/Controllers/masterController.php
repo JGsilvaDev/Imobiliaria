@@ -68,10 +68,24 @@ class masterController extends Controller
     }
 
     public function sobre(){
-        return view('sobre');
+
+        $opcoes = [
+            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
+            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
+            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
+        ];
+
+        return view('sobre',['opcoes' => $opcoes]);
     }
 
     public function contato(){
-        return view('contato');
+
+        $opcoes = [
+            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
+            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
+            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
+        ];
+
+        return view('contato',['opcoes' => $opcoes]);
     }
 }

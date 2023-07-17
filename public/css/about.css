@@ -17,11 +17,14 @@ body {
     margin: 0;
     padding: 3vw 50px;
     text-align: center;
+    font-size: 24px;
 }
 
 #sobre-mim {
     display:flex;
-    gap: 5vw;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 .about-subtitle {
     text-align: center;

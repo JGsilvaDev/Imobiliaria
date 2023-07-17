@@ -44,6 +44,8 @@ class editUserController extends Controller
 
         $editUser->save();
 
+        session()->flush();
+
         return redirect('admin');
     }
 }

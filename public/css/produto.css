@@ -156,6 +156,7 @@ body {
     height: 5vh;
 }
 .interesse-contato-input textarea {
+    resize: none;
     height: 50vh;
 }
 #interesse-btn {
@@ -190,6 +191,40 @@ body {
     display: flex;
     justify-content: end;
     align-items: start;
+}
+
+.carrossel-img-frame {
+    width: 30vw;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}
+.produto-info-box {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+#produto-layout {
+    width: 100%;
+}
+.img-navigation {
+    background-color: rgba(255,255,255,0.5);
+    padding: 20px;
+    border: none;
+}
+.img-navigation:hover {
+    background-color:#1B657A;
+    color: white;
+}
+
+#voltar-imagem {
+    position: relative;
+    left: 49px;
+}
+#mudar-imagem {
+    position: relative;
+    right: 49px;
 }
 
 @media (max-width: 1250px){
@@ -233,7 +268,7 @@ body {
 }
 @media (max-width: 600px) {
     #pagina-layout {
-        width: 90vw;
+        width: 100vw;
     }
     #imovel-dados {
         flex-direction: column;
@@ -246,8 +281,14 @@ body {
         align-items: center;
         flex-wrap: wrap;
     }
-    #produto-carrossel img{
-        width: 100vw;
+    #produto-carrossel{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #produto-carrossel .carrossel-img-frame{
+        width: 80vw;
         height: 30vh;
     }
     .semelhante-produto-card {

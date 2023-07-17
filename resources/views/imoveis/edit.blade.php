@@ -14,7 +14,7 @@
 
         <section id="interesse" class="margin-spaced padding-spaced">
             <div id="fechar-icone-container" onclick="changeVisibility()">
-                <img src="./fechar-icone.svg" alt="" id="fechar-icone">
+                <img src="{{ asset('img/fechar-icone.svg') }}" alt="" id="fechar-icone">
             </div>
             <div id="interesse-contato-container" class="flex-center-center-column">
                 <h1>Se interessou pelo imóvel? fale conosco!</h1>
@@ -25,95 +25,83 @@
                 <button id="interesse-btn">Enviar</button>
             </div>
         </section>
+        <!-- <div class="produto-info-box">
 
-        <div id="produto-layout">
-            <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
-                <div id="imovel-titulo">
-                    <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
-                    <div id="produto-carrossel" class="flex-center-center">
-                        <button id="voltar-imagem">Voltar Imagem</button>
-                        @foreach ($imagens as $index => $path)
-                            @if($detalhes->id == $path->chave)
-                                <img id="imagem-{{ $index }}" src="{{asset($path->path)}}" alt="Imagem">
-                            @endif
-                        @endforeach
-                        <button id="mudar-imagem">Mudar Imagem</button>
+            </div> -->
+            <div id="produto-layout">
+                <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
+                    <div id="imovel-titulo">
+                        <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
+                        <div id="produto-carrossel" class="flex-center-center">
+                            <button id="voltar-imagem" class="img-navigation">&lt</button>
+                            @foreach ($imagens as $index => $path)
+                                @if($detalhes->id == $path->chave)
+                                    <!-- <img id="imagem-{{ $index }}" src="{{asset($path->path)}}" alt="Imagem"> -->
+                                    <div class="carrossel-img-frame" id="imagem-{{ $index }}" style="background-image: url('{{asset($path->path)}}')"></div>
+                                @endif
+                            @endforeach
+                            <button id="mudar-imagem" class="img-navigation">&gt</button>
+                        </div>
+                        <h2 id="valor">R${{ $detalhes->valor }}</h2>
+                        <div id="imovel-dados" class="flex-row">
+                            <!-- <p id="local">{{ $detalhes->localidade }}</p>
+                            <p id="quartos">{{ $detalhes->qtdQuartos }} de quartos, {{ $detalhes->qtdBanheiros }} banheiros</p>
+                            <p id="area">{{ $detalhes->area }} m<sup>2</sup></p> -->
+                        </div>
                     </div>
-                    <h2 id="valor">R${{ $detalhes->valor }}</h2>
-                    <div id="imovel-dados" class="flex-row">
-                        <p id="local">{{ $detalhes->localidade }}</p>
-                        <p id="quartos">{{ $detalhes->qtdQuartos }} de quartos, {{ $detalhes->qtdBanheiros }} banheiros</p>
-                        <p id="area">{{ $detalhes->area }} m<sup>2</sup></p>
+                </section>
+    
+                <section id="descricao" >
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Tipo de contrato</h2>
+                        <p id="desc-texto">TIPO DO CONTRATO</p>
                     </div>
-                </div>
-            </section>
-
-            <section id="descricao" >
-                <div id="descricao-container" class="margin-spaced padding-spaced">
-                    <h2 class="detalhes-titulo">Descrição do produto</h2>
-                    <p id="desc-texto">{{ $detalhes->descricao }}</p>
-                </div>
-            </section>
-
-            <section id="mais-detalhes" class="margin-spaced padding-spaced">
-                <h2 class="detalhes-titulo">Mais detalhes</h2>
-                <div id="mais-detalhes-container">
-                    <h3 class="mais-detalhes-subtitulo">Básico</h3>
-                    <div class="detalhes-itens">
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Descrição do produto</h2>
+                        <p id="desc-texto">{{ $detalhes->descricao }}</p>
                     </div>
-                    <h3 class="mais-detalhes-subtitulo">Serviço</h3>
-                    <div class="detalhes-itens">
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
+                </section>
+    
+                <section id="mais-detalhes" class="margin-spaced padding-spaced">
+                    <h2 class="detalhes-titulo">Mais detalhes</h2>
+                    <div id="mais-detalhes-container">
+                        <ul>
+                            <li>3 Banheiros</li>
+                            <li>4 quartos</li>
+                            <li>3 vagas</li>
+                        </ul>
                     </div>
-                    <h3 class="mais-detalhes-subtitulo">Lazer</h3>
-                    <div class="detalhes-itens">
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                        <p class="detalhes-item">Água</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="semelhantes" class="margin-spaced padding-spaced">
-                <div id="semelhante-container">
-                    <h1 class="detalhes-titulo">Conheça semelhantes</h1>
-                @if($semelhante)
-                    @foreach( $semelhante as $sem )
-                        <div id="semelhante-produtos-itens">
-                            <div class="semelhante-produto-card">
-                                @foreach ($imagens as $path)
-                                    @if($sem->id == $path->chave)
-                                        <img src="{{asset($path->path)}}" alt="Imagem">
-                                    @endif
-                                @endforeach
-                                <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>
-                                <p class="semelhante-produto-localidade">Localidade - {{ $sem->localidade }}</p>
-                                <div id="semelhante-produto-info" class="flex-row">
-                                    <p class="semelhante-produto-area">{{ $sem->area }}</p>
-                                    <p class="semelhante-produto-vagas">{{ $sem->qtdVagas }}</p>
+                </section>
+    
+                <section id="semelhantes" class="margin-spaced padding-spaced">
+                    <div id="semelhante-container">
+                        <h1 class="detalhes-titulo">Conheça semelhantes</h1>
+                    @if($semelhante)
+                        @foreach( $semelhante as $sem )
+                            <div id="semelhante-produtos-itens">
+                                <div class="semelhante-produto-card">
+                                    @foreach ($imagens as $path)
+                                        @if($sem->id == $path->chave)
+                                            <img src="{{asset($path->path)}}" alt="Imagem">
+                                        @endif
+                                    @endforeach
+                                    <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>
+                                    <p class="semelhante-produto-localidade">Localidade - {{ $sem->localidade }}</p>
+                                    <div id="semelhante-produto-info" class="flex-row">
+                                        <p class="semelhante-produto-area">{{ $sem->area }}</p>
+                                        <p class="semelhante-produto-vagas">{{ $sem->qtdVagas }}</p>
+                                    </div>
+                                    <form action="/imoveis/{{ $sem->id }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="idImovel">
+                                        <button class="produto-saber-mais" type="submit">Detalhe</button>
+                                    </form>
+    
                                 </div>
-                                <form action="/imoveis/{{ $sem->id }}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="idImovel">
-                                    <button class="produto-saber-mais" type="submit">Detalhe</button>
-                                </form>
-
-                            </div>
-                    @endforeach
-                @endif
-            </section>
-        </div>
+                        @endforeach
+                    @endif
+                </section>
+            </div>
     </div>
 
 @endsection

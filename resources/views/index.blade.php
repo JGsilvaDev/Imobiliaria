@@ -6,6 +6,10 @@
 
 <link rel="stylesheet" href="{{ asset('css/pagina-principal.css') }}">
 <script src="{{ asset('js/reload.js') }}"></script>
+<script src="{{ asset('js/caroselDestaque.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
 <section id="pesquisa-container">
         <div id="filtro">
@@ -34,20 +38,20 @@
         </div>
     </section>
 
-    <h1 class="section-title">LISTA DE DESTAQUES</h1>
-    <section id="destaques-container">
+    <input type="hidden" id="count" value="{{ $count }}">
 
-        <div id="destaques-content">
+    <h1 class="section-title">LISTA DE DESTAQUES</h1>
+    <section id="destaques-container" class="carousel-container"> {{-- carousel-container --}}
+        <div id="destaques-content"> {{-- carousel --}}
             @foreach($itens as $iten)
 
-                <div id="destaques-item">
+                <div id="destaques-item" class="carousel-item">
                     @foreach ($imagens as $path)
                         @if($iten->id == $path->chave)
                             <div class="img" style="background-image: url('{{asset($path->path)}}')"></div>
                             @break
                         @endif
                     @endforeach
-
 
                     <div id="destaque-endereco-info">
                         <p id="endereco-info-tipo">{{ $iten->titulo }}</p>
@@ -61,12 +65,15 @@
                         {{-- <p id="dados-banheiros">2</p> --}}
                     </div>
 
-                    <button class="btn-detalhes">Detalhes</button>
+                    <form action="/imoveis/{{ $iten->id }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn-detalhes">Detalhes</button>
+                    </form>
                 </div>
-
             @endforeach
         </div>
     </section>
+
 
     <section id="ajuda">
         <h1 class="section-title">Como podemos ajudar?</h1>
@@ -86,7 +93,6 @@
             </div>
         </div>
     </section>
-
 
 <!--
 @if(session('email'))

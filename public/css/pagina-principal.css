@@ -128,6 +128,44 @@ backdrop-filter: blur(5.5px);
 
 }
 
+/* Carosel */
+/* Estilos personalizados do carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item {
+    text-align: center;
+    color: #fff;
+    background: #4CAF50;
+    margin: 0 10px; /* Adiciona um espaço horizontal de 10 pixels entre os itens */
+    flex: 0 0 33.33%; /* Distribui os itens igualmente em 3 colunas */
+    display: flex; /* Usa flexbox para alinhar verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+#destaque-endereco-info {
+    /* Estilos para o bloco de informações (ajuste conforme necessário) */
+    padding: 10px;
+}
+
+#item-dados {
+    /* Estilos para o bloco de dados (ajuste conforme necessário) */
+    padding: 10px;
+}
+
+.btn-detalhes {
+    /* Estilos para o botão Detalhes (ajuste conforme necessário) */
+    cursor: pointer;
+}
+
+
+.slick-dots {
+    display: none !important;
+}
+
 
 /* Caso a tela em questão seja menor que 600px */
 @media (max-width: 600px) {

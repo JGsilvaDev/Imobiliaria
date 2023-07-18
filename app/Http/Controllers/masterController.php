@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Catalogo;
 
 class masterController extends Controller
 {
@@ -13,12 +13,13 @@ class masterController extends Controller
         $catalogo = DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                     ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
-                    ->limit(3)
                     ->get();
 
         $imagem = DB::table('imagens')
                     ->select('chave','path')
                     ->get();
+
+        $count = Catalogo::count();
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
@@ -26,7 +27,7 @@ class masterController extends Controller
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 
-        return view('index',['itens' => $catalogo, 'imagens' => $imagem, 'opcoes' => $opcoes]);
+        return view('index',['itens' => $catalogo, 'imagens' => $imagem, 'opcoes' => $opcoes, 'count' => $count]);
     }
 
     public function store(Request $request){

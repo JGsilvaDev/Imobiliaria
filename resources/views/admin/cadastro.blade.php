@@ -45,8 +45,8 @@
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="">
-            <option value="aluguel">Alguel</option>
-            <option value="venda">Venda</option>
+            <option value="Aluguel">Alguel</option>
+            <option value="Venda">Venda</option>
         </select>
 
         <p id="imagem-label">Imagem</p>
@@ -86,8 +86,8 @@
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="">
-            <option value="aluguel">Alguel</option>
-            <option value="venda">Venda</option>
+            <option value="Aluguel">Alguel</option>
+            <option value="Venda">Venda</option>
         </select>
 
         <p>Imagem</p>

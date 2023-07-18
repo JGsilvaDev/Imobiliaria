@@ -58,20 +58,22 @@
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Descrição do produto</h2>
-                        <p id="desc-texto">{{ $detalhes->descricao }}</p>
+                        <p id="desc-texto">{{ $detalhes->desc }}</p>
                     </div>
                 </section>
 
-                <section id="mais-detalhes" class="margin-spaced padding-spaced">
-                    <h2 class="detalhes-titulo">Mais detalhes</h2>
-                    <div id="mais-detalhes-container">
-                        <ul>
-                            <li>{{ $detalhes->qtdBanheiros }} banheiros</li>
-                            <li>{{ $detalhes->qtdQuartos }} quartos</li>
-                            <li>{{ $detalhes->qtdVagas }} vagas</li>
-                        </ul>
-                    </div>
-                </section>
+                @if ($detalhes->descricao != 'Terreno')
+                    <section id="mais-detalhes" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Mais detalhes</h2>
+                        <div id="mais-detalhes-container">
+                            <ul>
+                                <li>{{ $detalhes->qtdBanheiros }} banheiros</li>
+                                <li>{{ $detalhes->qtdQuartos }} quartos</li>
+                                <li>{{ $detalhes->qtdVagas }} vagas</li>
+                            </ul>
+                        </div>
+                    </section>
+                @endif
 
                 <section id="semelhantes" class="margin-spaced padding-spaced">
                     <div id="semelhante-container">

@@ -140,7 +140,7 @@ class adminController extends Controller
                 $catalogo->qtdQuartos = $request->qtd_quartos;
                 $catalogo->qtdVagas = $request->qtd_vagas;
             }else{
-                $catalogo->tp_contrato = 'compra';
+                $catalogo->tp_contrato = 'Venda';
                 $catalogo->qtdBanheiros = 0;
                 $catalogo->qtdQuartos = 0;
                 $catalogo->qtdVagas = 0;

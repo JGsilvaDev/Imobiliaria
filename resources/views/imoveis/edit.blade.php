@@ -50,29 +50,29 @@
                         </div>
                     </div>
                 </section>
-    
+
                 <section id="descricao" >
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Tipo de contrato</h2>
-                        <p id="desc-texto">TIPO DO CONTRATO</p>
+                        <p id="desc-texto">{{ $detalhes->tp_contrato }}</p>
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Descrição do produto</h2>
                         <p id="desc-texto">{{ $detalhes->descricao }}</p>
                     </div>
                 </section>
-    
+
                 <section id="mais-detalhes" class="margin-spaced padding-spaced">
                     <h2 class="detalhes-titulo">Mais detalhes</h2>
                     <div id="mais-detalhes-container">
                         <ul>
-                            <li>3 Banheiros</li>
-                            <li>4 quartos</li>
-                            <li>3 vagas</li>
+                            <li>{{ $detalhes->qtdBanheiros }} banheiros</li>
+                            <li>{{ $detalhes->qtdQuartos }} quartos</li>
+                            <li>{{ $detalhes->qtdVagas }} vagas</li>
                         </ul>
                     </div>
                 </section>
-    
+
                 <section id="semelhantes" class="margin-spaced padding-spaced">
                     <div id="semelhante-container">
                         <h1 class="detalhes-titulo">Conheça semelhantes</h1>
@@ -96,7 +96,7 @@
                                         <input type="hidden" name="idImovel">
                                         <button class="produto-saber-mais" type="submit">Detalhe</button>
                                     </form>
-    
+
                                 </div>
                         @endforeach
                     @endif

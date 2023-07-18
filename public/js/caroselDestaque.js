@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(count > 3){
             $("#destaques-content").slick({
                 dots: true,
-                infinite: false,
+                infinite: true,
                 speed: 500,
                 slidesToShow: 3,
                 slidesToScroll: 3,

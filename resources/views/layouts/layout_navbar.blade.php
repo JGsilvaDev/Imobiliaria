@@ -17,7 +17,8 @@
 <body>
     <div id="navbar">
         <div id="nav-logo">
-            <img src="{{ asset('img/icone.png') }}" alt="">
+            <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/icone.png') }}')"></div></a>
+
         </div>
         <div id="nav-buttons">
             <a href="/imoveis"><button class="nav-btn">Imóveis</button></a>

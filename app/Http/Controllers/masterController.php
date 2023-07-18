@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Catalogo;
+use App\Models\Contatos;
 
 class masterController extends Controller
 {
@@ -88,5 +89,19 @@ class masterController extends Controller
         ];
 
         return view('contato',['opcoes' => $opcoes]);
+    }
+
+    public function envioContato(Request $request){
+
+        $contatos =  new Contatos();
+
+        $contatos->nome = $request->nome;
+        $contatos->email = $request->email;
+        $contatos->telefone = $request->telefone;
+        $contatos->mensagem = $request->mensagem;
+
+        $contatos->save();
+
+        return redirect()->back();
     }
 }

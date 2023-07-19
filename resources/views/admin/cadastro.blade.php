@@ -5,8 +5,10 @@
 @section('content')
 
     <link rel="stylesheet" href="{{ asset('css/cadastro-imovel.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{ asset('js/slider.js') }}"></script>
     <script src="{{ asset('js/imagem.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <div id="abas">
         <button id="btn-aba-casa" onclick="openCasa()" class="aba-option">casa</button>
@@ -51,6 +53,8 @@
 
         <p id="imagem-label">Imagem</p>
         <input type="file" name="imagem[]" id="imagemCasa" multiple>
+
+        <input type="file" name="imagemCasaPrincipal" id="imagemCasaPrincipal">
 
         <div id="imagePreviewCasa"></div>
 

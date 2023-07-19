@@ -87,7 +87,7 @@ class editController extends Controller
 
         $item->delete();
 
-        return response()->json(['mensagem' => 'Item excluído com sucesso']);;
+        return response()->json(['mensagem' => 'Item excluído com sucesso']);
 
     }
 

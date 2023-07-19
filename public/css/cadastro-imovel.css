@@ -108,6 +108,9 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #imagePreviewCasa,
@@ -115,6 +118,10 @@ h1 {
 #imagePreviewTerreno{
     display: flex;
     gap: 30px;
+}
+
+.opaco {
+    opacity: 0.5; /* Opacidade inicial */
 }
 
 

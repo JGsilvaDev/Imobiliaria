@@ -10,6 +10,7 @@ use App\Http\Controllers\editUserController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\emailController;
 use App\Http\Controllers\imoveisController;
+use App\Http\Controllers\imagensController;
 
 Route::get('/', [masterController::class, 'index']);
 Route::post('/', [masterController::class, 'store']);
@@ -44,6 +45,7 @@ Route::get('/admin/editUsuario', [editUserController::class, 'user']);
 Route::post('/admin/editUsuario', [editUserController::class, 'editUser']);
 
 Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
+Route::post('/imagens', [imagensController::class, 'store']);
 
 Route::post('/salvar/{id}', [editController::class, 'update']);
 Route::delete('/deletar/{id}', [editController::class, 'destroy']);

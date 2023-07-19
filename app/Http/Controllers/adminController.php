@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\Catalogo;
 use App\Models\Imagens;
+use App\Models\ImagensPrincipais;
 
 class adminController extends Controller
 {
@@ -42,7 +43,7 @@ class adminController extends Controller
                     $imagem->chave = 0;
 
                 }else{
-                    $imagem = DB::table('imagens')
+                    $imagem = DB::table('imagens_principais')
                                 ->select('chave','path')
                                 ->get();
                 }
@@ -64,7 +65,7 @@ class adminController extends Controller
                     $imagem->chave = 0;
 
                 }else{
-                    $imagem = DB::table('imagens')
+                    $imagem = DB::table('imagens_principais')
                                 ->select('chave','path')
                                 ->get();
                 }
@@ -122,6 +123,8 @@ class adminController extends Controller
         $valor = session('login');
         $id_cliente = session('id');
 
+        // dd($request->imagemCasaPrincipal, $request->allFiles()['imagem']);
+
         if($valor){
 
             $catalogo = new Catalogo();
@@ -148,11 +151,6 @@ class adminController extends Controller
 
             $catalogo->save();
 
-            $urlsImagens = implode(',', $request->input('imagens'));
-            $arrayUrls = explode(',', $urlsImagens);
-
-            dd($arrayUrls);
-
             $folderName = $id_cliente.'_'.uniqid();
 
             for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
@@ -168,6 +166,20 @@ class adminController extends Controller
                 $imagem->save();
                 unset($imagem);
             }
+
+            /* Imagem Principal */
+            $filePrincipal = $request->imagemCasaPrincipal;
+
+            $fileNamePrincipal = $filePrincipal->store('public/img/'. $folderName);
+
+            $fileNamePrincipalFormat = str_replace('public/img/','storage/img/',$fileNamePrincipal);
+
+            $imagem =  new ImagensPrincipais();
+
+            $imagem->chave = $catalogo->id;
+            $imagem->path = $fileNamePrincipalFormat;
+
+            $imagem->save();
 
             if($request->id_produto == 1){
                 $msg = 'Terreno cadastrado com sucesso';

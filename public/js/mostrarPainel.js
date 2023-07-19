@@ -7,6 +7,7 @@ async function abrirPainel() {
     painelPesquisa.className = 'search-show';
     botaoPesquisa.style.display = 'none';
     paginaProdutos.classList.add('dark');
+    window.scrollTo(0, 0)
     // document.body.style.overflow = 'hidden';
 
     // Adicionar o event listener

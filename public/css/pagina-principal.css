@@ -212,4 +212,5 @@ backdrop-filter: blur(5.5px);
     .carousel-item {
         flex: 0; /* Distribui os itens igualmente em 3 colunas */
     }
+
 }

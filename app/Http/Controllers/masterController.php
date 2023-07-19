@@ -16,7 +16,7 @@ class masterController extends Controller
                     ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
                     ->get();
 
-        $imagem = DB::table('imagens')
+        $imagem = DB::table('imagens_principais')
                     ->select('chave','path')
                     ->get();
 

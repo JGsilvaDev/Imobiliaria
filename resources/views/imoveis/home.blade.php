@@ -5,7 +5,6 @@
 @section('content')
 
     <link rel="stylesheet" href="{{ asset('css/listar-produtos.css') }}">
-    <h1>Todos os imoveis</h1>
 
     <div id="pagina">
         <form action="imoveis" method="post" id="painel-pesquisa-lateral" class="search-hidden">

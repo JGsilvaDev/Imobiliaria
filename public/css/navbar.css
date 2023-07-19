@@ -10,7 +10,7 @@ body * {
 }
 
 .imgHeader{
-    width: 120px;
+    width: 140px;
     height: 120px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,10 +27,10 @@ body * {
 
     /* estilo */
     background-color: #BCBCBC;
-    padding: 0 10px;
+    padding: 0 50px;
 }
 
-.nav-buttons {
+#nav-buttons {
     display:flex;
     flex-direction: row;
 }
@@ -40,14 +40,24 @@ body * {
     border: none;
     color: white;
     width: 10vw;
-    height: 6vh;
-    transition: all 0.3s
+    height: 7vh;
+    transition: all 0.2s
 
 }
 .nav-btn:hover {
     background-color: white;
     color: #B77922;
     text-decoration: underline;
+}
+
+#dropdown {
+    text-align: center;
+}
+#btn-nav-entrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 600px) {

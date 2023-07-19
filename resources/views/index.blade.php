@@ -13,6 +13,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,-25" />
 
 <section id="pesquisa-container">
+    <div class="contato-container" style="display:none">
+        
+        <form action="/contato" method="POST" id="contato-content" autocomplete="off" >
+            <h1 class="contato-title">Fale conosco!</h1>
+            @csrf
+            <input type="text" name="nome" id="" class="contato-input" placeholder="nome">
+            <input type="text" name="telefone" id="" class="contato-input" placeholder="telefone">
+            <input type="email" name="email" id="" class="contato-input" placeholder="email">
+            <textarea name="mensagem" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="mensagem"></textarea>
+
+            <button type="submit" class="contato-enviar">Enviar</button>
+        </form>
+    </div>
         <div id="filtro">
             <form action="" method="post">
                 @csrf

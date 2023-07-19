@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -17,7 +18,7 @@
 <body>
     <div id="navbar">
         <div id="nav-logo">
-            <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/icone.png') }}')"></div></a>
+            <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
 
         </div>
         <div id="nav-buttons">
@@ -38,7 +39,7 @@
                     <button class="nav-btn" id="sair" type="submit" style="display: none"></button>
                 </form>
             @else
-                <a href="/login"><button class="nav-btn">Entrar</button></a>
+                <a href="/login" id="btn-nav-entrar"><button class="nav-btn">Entrar <span class="material-symbols-outlined">login</span></button></a>
             @endif
         </div>
     </div>
@@ -54,3 +55,13 @@
     </div>
 </body>
 </html>
+
+<style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+</style>

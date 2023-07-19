@@ -13,7 +13,7 @@
         <button id="btn-aba-apartamento" onclick="openApartamento()" class="aba-option">apartamento</button>
         <button id="btn-aba-terreno" onclick="openTerreno()" class="aba-option">terreno</button>
     </div>
-    <form id="adicionar-casa-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data">
+    <form id="adicionar-casa-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
 
         <h1 id="casa-titulo">Adicionar casa</h1>
         @csrf
@@ -55,7 +55,7 @@
         <button type="submit" id="btn-casa-enviar" class="btn-add-prod">Enviar</button>
     </form>
 
-    <form id="adicionar-apartamento-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data">
+    <form id="adicionar-apartamento-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
         <h1 id="apartamento-titulo">Adicionar apartamento</h1>
         @csrf
         <input type="hidden" name="id_produto" value="3">
@@ -97,7 +97,7 @@
     </form>
 
 
-    <form id="adicionar-terreno-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data">
+    <form id="adicionar-terreno-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
 
         <h1 id="terreno-titulo">Adicionar terreno</h1>
         @csrf

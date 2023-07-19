@@ -10,6 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,-25" />
 
 <section id="pesquisa-container">
         <div id="filtro">
@@ -31,7 +32,7 @@
                 <button id="filtro-item" class="filtro-btn">Casa</button>
             </form>
 
-            <form action="" method="post">
+            <form action="" method="post" id="form-search">
                 @csrf
                 <input type="text" name="infoPesquisa" id="filtro-input" placeholder="pesquisa">
             </form>
@@ -48,20 +49,20 @@
                 <div id="destaques-item" class="carousel-item">
                     @foreach ($imagens as $path)
                         @if($iten->id == $path->chave)
-                            <div class="img" style="background-image: url('{{asset($path->path)}}')"></div>
+                            <div class="carrossel-img" style="background-image: url('{{asset($path->path)}}')"></div>
                             @break
                         @endif
                     @endforeach
 
                     <div id="destaque-endereco-info">
                         <p id="endereco-info-tipo">{{ $iten->titulo }}</p>
-                        <p id="endereco-info-tipo">{{ $iten->descricao }}</p>
+                        <!-- <p id="endereco-info-tipo">{{ $iten->descricao }}</p> -->
                         {{-- <p id="endereco-info-local">Centro</p> --}}
-                        <p id="endedreco-info-cidade">{{ $iten->localidade}}</p>
+                        <p id="endedreco-info-cidade"><span class="material-symbols-outlined">location_on</span> {{ $iten->localidade}}</p>
                     </div>
                     <div id="item-dados">
-                        <p id="dados-area">{{ $iten->area }}</p>
-                        <p id="dados-vagas">{{ $iten->valor}}</p>
+                        <p id="dados-area">{{ $iten->area }}m²</p>
+                        <p id="dados-vagas">R${{ $iten->valor}}</p>
                         {{-- <p id="dados-banheiros">2</p> --}}
                     </div>
 

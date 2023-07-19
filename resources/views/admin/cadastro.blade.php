@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/cadastro-imovel.css') }}">
     <script src="{{ asset('js/slider.js') }}"></script>
-
+    <script src="{{ asset('js/imagem.js') }}"></script>
 
     <div id="abas">
         <button id="btn-aba-casa" onclick="openCasa()" class="aba-option">casa</button>
@@ -17,13 +17,13 @@
 
         <h1 id="casa-titulo">Adicionar casa</h1>
         @csrf
-        <input type="hidden" name="id_produto" value="2" required>
+        <input type="hidden" name="id_produto" value="2" >
 
         <p for="" id="titulo-label" class="add-label">Título</p>
-        <input type="text" id="casa-titulo-input" name="titulo" class="add-input" required>
+        <input type="text" id="casa-titulo-input" name="titulo" class="add-input" >
 
         <p for="" id="desc-label" class="add-label">Descrição</p>
-        <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
+        <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input"></textarea>
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">1</span></p>
         <input type="range" name="qtd_banheiros" min="0" max="5" value="1" id="sliderBanheiroCasa" class="slider">
@@ -50,7 +50,9 @@
         </select>
 
         <p id="imagem-label">Imagem</p>
-        <input type="file" name="imagem[]" id="imagem" multiple required>
+        <input type="file" name="imagem[]" id="imagemCasa" multiple>
+
+        <div id="imagePreviewCasa"></div>
 
         <button type="submit" id="btn-casa-enviar" class="btn-add-prod">Enviar</button>
     </form>
@@ -91,9 +93,11 @@
         </select>
 
         <p>Imagem</p>
-        <input type="file" name="imagem[]" id="imagem" multiple required>
+        <input type="file" name="imagem[]" id="imagemAp" multiple required>
 
-        <button id="btn-apt-enviar" onclick="simularSalvamento_apt()" class="btn-add-prod">Enviar</button>
+        <div id="imagePreviewAp"></div>
+
+        <button id="btn-apt-enviar" class="btn-add-prod">Enviar</button>
     </form>
 
 
@@ -119,7 +123,9 @@
         <input type="number" name="valor" id="trn-valor-input" min="1" class="add-input">
 
         <p>Imagem</p>
-        <input type="file" name="imagem[]" id="imagem" multiple required>
+        <input type="file" name="imagem[]" id="imagemTerreno" multiple required>
+
+        <div id="imagePreviewTerreno"></div>
 
         <button type="submit" id="btn-trn-enviar" class="btn-add-prod">Enviar</button>
     </form>

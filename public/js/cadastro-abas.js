@@ -1,10 +1,19 @@
-const abas = [document.getElementById("adicionar-casa-container"),document.getElementById("adicionar-apartamento-container"),document.getElementById("adicionar-terreno-container")]
+const abas = [
+    document.getElementById("adicionar-casa-container"),
+    document.getElementById("adicionar-apartamento-container"),
+    document.getElementById("adicionar-terreno-container")
+]
 
-const abas_buttons = [document.getElementById("btn-aba-casa"), document.getElementById("btn-aba-apartamento"), document.getElementById("btn-aba-terreno")]
+const abas_buttons = [
+    document.getElementById("btn-aba-casa"),
+    document.getElementById("btn-aba-apartamento"),
+    document.getElementById("btn-aba-terreno")
+]
 
 //por padrão, a casa vem ativada
 abas[1].style = "display:none";
 abas[2].style = "display:none";
+abas_buttons[0].classList.add("aba-option-selected");
 
 function openCasa() {
     resetDisplay();
@@ -14,6 +23,7 @@ function openCasa() {
 
     abas_buttons[0].classList.add("aba-option-selected");
 }
+
 function openApartamento() {
     resetDisplay();
     resetClass();
@@ -22,10 +32,11 @@ function openApartamento() {
 
     abas_buttons[1].classList.add("aba-option-selected");
 }
+
 function openTerreno() {
     resetDisplay();
     resetClass();
-    
+
     abas[2].style = "display:flex";
 
     abas_buttons[2].classList.add("aba-option-selected");

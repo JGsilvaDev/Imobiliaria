@@ -11,10 +11,10 @@ class loginController extends Controller
 {
     public function index()
     {
-        $valor = session('login');
+        $login = session('login');
         $erro = session('erro_login');
 
-        if($valor){
+        if($login){
             return redirect('admin');
         }else{
             //Para limpar a sessão

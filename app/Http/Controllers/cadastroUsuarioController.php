@@ -10,15 +10,18 @@ class cadastroUsuarioController extends Controller
     public function index()
     {
         $erro = session('erro_cadastro');
+        $logado = session('login');
 
         if($erro){
             $erro = 0;
             session()->flush();
         }
 
-        return view('login/cadastro',['erro' => $erro]);
+        if($logado){
+            return view('login/cadastro',['erro' => $erro]);
+        }
 
-
+        return redirect('/');
     }
 
     public function store(Request $request)

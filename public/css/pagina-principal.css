@@ -203,8 +203,13 @@ backdrop-filter: blur(5.5px);
     #ajuda-itens {
         flex-direction: column;
     }
-
+    #form-search {
+        width: 100vw;
+    }
     #filtro {
         padding: 0;
+    }
+    .carousel-item {
+        flex: 0; /* Distribui os itens igualmente em 3 colunas */
     }
 }

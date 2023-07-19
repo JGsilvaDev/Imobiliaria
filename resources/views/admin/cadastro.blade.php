@@ -54,7 +54,7 @@
         <p id="imagem-label">Imagem</p>
         <input type="file" name="imagem[]" id="imagemCasa" multiple>
 
-        <input type="file" name="imagemCasaPrincipal" id="imagemCasaPrincipal">
+        <input type="file" name="imagemCasaPrincipal" id="imagemCasaPrincipal" style="display: none">
 
         <div id="imagePreviewCasa"></div>
 
@@ -99,6 +99,8 @@
         <p>Imagem</p>
         <input type="file" name="imagem[]" id="imagemAp" multiple required>
 
+        <input type="file" name="imagemApPrincipal" id="imagemApPrincipal" style="display: none">
+
         <div id="imagePreviewAp"></div>
 
         <button id="btn-apt-enviar" class="btn-add-prod">Enviar</button>
@@ -128,6 +130,8 @@
 
         <p>Imagem</p>
         <input type="file" name="imagem[]" id="imagemTerreno" multiple required>
+
+        <input type="file" name="imagemTerrenoPrincipal" id="imagemTerrenoPrincipal" style="display: none">
 
         <div id="imagePreviewTerreno"></div>
 

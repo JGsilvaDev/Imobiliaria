@@ -91,7 +91,7 @@
         @if (session('search') != 'sem filtro' and session('search') != null)
             <div id="painel-pesquisa-float">
                 <div id="painel-pesquisa-titulo">
-                    <h1>Pesquisa avançada teste</h1>
+                    <h1>Pesquisa avançada</h1>
                 </div>
                 <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
                     @csrf

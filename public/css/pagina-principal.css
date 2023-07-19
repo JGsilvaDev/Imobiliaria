@@ -47,13 +47,13 @@ h1 {
     text-align: center;
     justify-content: space-around;
     padding: 3vh 1.5vw;
-    gap: 10px;
+    /* gap: 0; */
 
     background-color: rgba(255, 255, 255, 0.13);
 backdrop-filter: blur(5.5px);
 }
 #filtro button {
-    width:15vw;
+    width:18vw;
     background-color: white;
     border: none;
 }

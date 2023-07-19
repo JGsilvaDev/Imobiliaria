@@ -148,6 +148,11 @@ class adminController extends Controller
 
             $catalogo->save();
 
+            $urlsImagens = implode(',', $request->input('imagens'));
+            $arrayUrls = explode(',', $urlsImagens);
+
+            dd($arrayUrls);
+
             $folderName = $id_cliente.'_'.uniqid();
 
             for($i = 0; $i < count($request->allFiles()['imagem']); $i++){

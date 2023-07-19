@@ -20,7 +20,7 @@ body {
   display:flex;
   flex-direction: column;
   gap: 15px;
-  
+
 }
 
 * {
@@ -100,6 +100,24 @@ h1 {
   padding: 10px;
   border-radius: 15px 15px 0 0;
 }
+
+/* Setando tamanho da imagem que irá aparecer */
+.img{
+    width: 300px;
+    height: 230px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imagePreviewCasa,
+#imagePreviewAp,
+#imagePreviewTerreno{
+    display: flex;
+    gap: 30px;
+}
+
+
 
 .btn-add-prod {
   background-color: #CE990F;

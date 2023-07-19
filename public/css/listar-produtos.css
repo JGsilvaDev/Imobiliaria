@@ -26,21 +26,47 @@ body {
     margin: 20px 0;
 
 }
-
+.search-title {
+    background-color: #585858;
+    color: white;
+    padding: 5px;
+    border-radius: 15px 15px 0 0;
+    
+    margin-top: 10px;
+}
+.search-body {
+    border-radius: 0 0 15px 15px;
+    background-color: white;
+    padding: 5px;
+}
 .input-text {
-    width: 90%;
+    width: 91%;
     border: none;
     border-radius: 15px;
     padding: 10px;
 }
-#painel-pesquisa-float {
+.input-title {
+    text-align: center;
+}
+.input-search-group {
+    width: 100%;
+}
+#localidade-titulo {
+    margin-top: 10px;
+}
+#painel-pesquisa-float-completo {
     position: sticky;
     top: 0;
-    width: 26vw;
+}
+#painel-pesquisa-float-completo * {
+    font-size: 13px;
+}
+
+#painel-pesquisa-float {
+    width: 16vw;
     background-color: #C1C1C1;
-    padding: 10px;
-    border-radius: 15px;
-    gap: 10px;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
 
     display: flex;
     flex-direction: column;
@@ -51,12 +77,11 @@ body {
     text-align: center;
     color: white;
     background-color: #CE990F;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 #painel-pesquisa-opcoes {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 .radio-options {
     display: flex;
@@ -121,6 +146,7 @@ input[type='radio']:checked:after { /* quando selecionado */
     color:white;
     border-radius: 15px;
     transition: all 0.2s;
+    margin-top: 10px;
 
 }
 .busca-painel-btn:hover {
@@ -259,7 +285,7 @@ input[type='radio']:checked:after { /* quando selecionado */
 
 /* media query */
 @media (max-width: 1264px) {
-    #painel-pesquisa-float {
+    #painel-pesquisa-float-completo {
         display: none;
     }
     #mobile-buscar {

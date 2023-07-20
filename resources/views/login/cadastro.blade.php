@@ -7,8 +7,10 @@
     <div class="login-container">
         <form action="cadastro" class="register-content" method="POST">
             @csrf
-            
-            <h1>Por favor, cadastre-se</h1>
+
+            <img src="{{ asset('img/icone.png') }}" alt="" class="icone">
+
+            <h1>CADASTRE-SE</h1>
             <p>Por favor, forneça todas as informações necessárias para concluir o cadastro.</p>
 
             <div class="registro-input-layout">
@@ -26,7 +28,7 @@
                 <input type="password" autocomplete="off" id="cadastro-conf-senha" class="input-reg" placeholder="Confirme sua senha" name="confirmSenha" require>
             </div>
 
-            <button id="btn-registrar" class="btn-reg">Cadastrar</button>
+            <button id="btn-registrar" class="btn-reg">CADASTRAR</button>
 
             @if($erro)
                 <div class="alert alert-danger">

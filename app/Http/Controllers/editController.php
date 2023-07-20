@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalogo;
 use App\Models\Imagens;
+use App\Models\ImagensPrincipais;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,7 +20,7 @@ class editController extends Controller
 
         $item =  DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.id_tp_produto','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
+                    ->select('catalogos.id','catalogos.descricao as desc','catalogos.id_tp_produto','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
                     ->where('catalogos.id','=',$id)
                     ->first();
 
@@ -27,7 +28,12 @@ class editController extends Controller
                 ->select('id','chave','path')
                 ->get();
 
-        return view('admin/edit',['item' => $item, 'imagem' => $imagem]);
+        $imagemPrincipal = DB::table('imagens_principais')
+                ->select('id','chave','path')
+                ->where('chave','=', $id)
+                ->first();
+
+        return view('admin/edit',['item' => $item, 'imagem' => $imagem, 'imagemPrincipal' => $imagemPrincipal]);
     }
 
     public function update(Request $request, $id){
@@ -89,6 +95,26 @@ class editController extends Controller
 
         return response()->json(['mensagem' => 'Item excluído com sucesso']);
 
+    }
+
+    public function alterarImgPrincipal($id){
+
+        $imagem = Imagens::findOrFail($id);
+
+        $chave = $imagem->chave;
+
+        $imagemPrincipal = DB::table('imagens_principais')
+                ->select('id','chave','path')
+                ->where('chave','=', $chave)
+                ->first();
+
+        $itenAlterado = ImagensPrincipais::findOrFail($imagemPrincipal->id);
+
+        $itenAlterado->path = $imagem->path;
+
+        $itenAlterado->save();
+
+        return response()->json(['mensagem' => 'Imagem principal alterada com sucesso']);
     }
 
 }

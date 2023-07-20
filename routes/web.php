@@ -45,7 +45,6 @@ Route::get('/admin/editUsuario', [editUserController::class, 'user']);
 Route::post('/admin/editUsuario', [editUserController::class, 'editUser']);
 
 Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
-Route::post('/imagens', [imagensController::class, 'store']);
 
 Route::post('/salvar/{id}', [editController::class, 'update']);
 Route::delete('/deletar/{id}', [editController::class, 'destroy']);

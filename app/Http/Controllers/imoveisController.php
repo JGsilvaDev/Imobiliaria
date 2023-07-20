@@ -141,7 +141,6 @@ class imoveisController extends Controller
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 
@@ -198,7 +197,7 @@ class imoveisController extends Controller
                     ->where('catalogos.id','=',$id)
                     ->first();
 
-        $imagem = DB::table('imagens')
+        $imagem = DB::table('imagens_principais')
                     ->select('chave','path')
                     ->get();
 
@@ -214,7 +213,6 @@ class imoveisController extends Controller
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 

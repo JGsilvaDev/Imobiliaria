@@ -24,7 +24,6 @@ class masterController extends Controller
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 
@@ -62,7 +61,6 @@ class masterController extends Controller
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 
@@ -73,7 +71,6 @@ class masterController extends Controller
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 
@@ -84,7 +81,6 @@ class masterController extends Controller
 
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 2, 'name' => 'Editar Perfil', 'path' => '/admin/editUsuario'],
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 

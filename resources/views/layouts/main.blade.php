@@ -8,9 +8,5 @@
 </head>
 <body>
 @yield('content')
-
-    <footer>
-        <p>teste footer layout</p>
-    </footer>
 </body>
 </html>

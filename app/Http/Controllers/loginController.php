@@ -27,9 +27,10 @@ class loginController extends Controller
     {
         $this->validate($request,[
             'email' => 'required|email',
-            'senha' => ['required' /*Password::min(8)*/]
+            'senha' => ['required', Password::min(8)]
         ],[
             'email.required' => 'O campo email é obrigatório',
+            'email.email' => 'E-mail inválido',
             'senha.required' => 'O campo senha é obrigatório',
         ]);
 
@@ -38,8 +39,6 @@ class loginController extends Controller
                     ->where('email', '=', $request->email)
                     ->where('password', '=', md5($request->senha))
                     ->first();
-
-        // dd($dados);
 
         if($dados != null){
             $session = session();

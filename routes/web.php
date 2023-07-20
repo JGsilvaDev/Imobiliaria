@@ -10,7 +10,6 @@ use App\Http\Controllers\editUserController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\emailController;
 use App\Http\Controllers\imoveisController;
-use App\Http\Controllers\imagensController;
 
 Route::get('/', [masterController::class, 'index']);
 Route::post('/', [masterController::class, 'store']);

@@ -4,7 +4,6 @@
 
 @section('content')
 
-
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
 <div class="login-container">
@@ -16,8 +15,6 @@
         <input type="text" id="login-input-email" name="email" class="input-log" placeholder="Digite seu email">
 
         <input type="password" id="login-input-password" class="input-log" placeholder="Digite sua senha" name="senha">
-
-        <p id="forgot-password"><a href="#">Esqueci minha senha</a></p>
 
         <button id="btn-logar" class="btn-reg">Entrar</button>
         <p id="no-account"><a href="/cadastro">Ainda não tem uma conta?</a></p>
@@ -39,6 +36,5 @@
         @endif
     </form>
 </div>
-
 
 @endsection

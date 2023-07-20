@@ -61,6 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var imagePreview = document.getElementById('imagePreviewAp');
         var inputFilePrincipal = document.getElementById('imagemApPrincipal');
 
+        imagePreview.innerHTML = '';
+
+        var dataTransfer = new DataTransfer();
+        var fileMap = {};
+
         for (var i = 0; i < input.files.length; i++) {
             reader = new FileReader();
 
@@ -101,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     imagePreview.appendChild(divElement);
                 };
             }(i);
+
             reader.readAsDataURL(input.files[i]);
         }
     });
@@ -111,6 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var imagePreview = document.getElementById('imagePreviewTerreno');
         var inputFilePrincipal = document.getElementById('imagemTerrenoPrincipal');
 
+        imagePreview.innerHTML = '';
+
+        var dataTransfer = new DataTransfer();
+        var fileMap = {};
+
         for (var i = 0; i < input.files.length; i++) {
             reader = new FileReader();
 
@@ -151,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     imagePreview.appendChild(divElement);
                 };
             }(i);
+
             reader.readAsDataURL(input.files[i]);
         }
     });

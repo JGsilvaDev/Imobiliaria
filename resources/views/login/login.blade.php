@@ -9,8 +9,8 @@
 <div class="login-container">
     <form class="login-content" action="login" method="POST">
         @csrf
-        <img src="{{ asset('img/icone.png') }}" alt="" class="icone">
-        <h1 id="login-welcome">BEM VINDO(A)!</h1>
+        <div class="img" style="background-image: url('{{ asset('img/icone.png') }}')"></div>
+        <p id="login-welcome">BEM VINDO(A)!</p>
 
         <input type="text" id="login-input-email" name="email" class="input-log" placeholder="Digite seu email">
 

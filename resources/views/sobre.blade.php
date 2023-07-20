@@ -15,8 +15,8 @@
     </section>
 
     <hr class="divisor">
-    
-    <h1 class="about-subtitle">depoimentos sobre a corretora</h1>
+
+    <h1 class="about-subtitle">Depoimentos sobre a corretora</h1>
     <section id="depoimentos">
         <div class="pessoa">
             <img src="{{ asset('img/gabriel.png') }}" alt="">
@@ -31,9 +31,9 @@
             <p>Gabriel silva</p>
         </div>
     </section>
-    
+
     <hr class="divisor">
-    
+
     <section id="aviso">
         <h2>Aviso sobre valores</h2>
         <hr class="divisor-aviso">

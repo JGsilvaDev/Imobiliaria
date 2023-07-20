@@ -10,14 +10,16 @@
     <script src="{{ asset('js/imagem.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+    <div id="titleAdicionar">
+        <h2>Adicionar</h2>
+    </div>
+
     <div id="abas">
-        <button id="btn-aba-casa" onclick="openCasa()" class="aba-option">casa</button>
-        <button id="btn-aba-apartamento" onclick="openApartamento()" class="aba-option">apartamento</button>
-        <button id="btn-aba-terreno" onclick="openTerreno()" class="aba-option">terreno</button>
+        <button id="btn-aba-casa" onclick="openCasa()" class="aba-option">Casa</button>
+        <button id="btn-aba-apartamento" onclick="openApartamento()" class="aba-option">Apartamento</button>
+        <button id="btn-aba-terreno" onclick="openTerreno()" class="aba-option">Terreno</button>
     </div>
     <form id="adicionar-casa-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
-
-        <h1 id="casa-titulo">Adicionar casa</h1>
         @csrf
         <input type="hidden" name="id_produto" value="2" >
 
@@ -28,13 +30,13 @@
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input"></textarea>
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">1</span></p>
-        <input type="range" name="qtd_banheiros" min="0" max="5" value="1" id="sliderBanheiroCasa" class="slider">
+        <input type="range" name="qtd_banheiros" min="0" max="50" value="1" id="sliderBanheiroCasa" class="slider">
 
         <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">1</span></p>
-        <input type="range" name="qtd_quartos" min="0" max="5" value="1" id="sliderQuartosCasa" class="slider">
+        <input type="range" name="qtd_quartos" min="0" max="50" value="1" id="sliderQuartosCasa" class="slider">
 
         <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasCasa">1</span></p>
-        <input type="range" name="qtd_vagas" min="0" max="5" value="1" id="sliderVagasCasa" class="slider">
+        <input type="range" name="qtd_vagas" min="0" max="50" value="1" id="sliderVagasCasa" class="slider">
 
         <p id="local-label">Localidade</p>
         <input name="localidade" type="text" id="casa-local-input" min="1" class="add-input">
@@ -58,11 +60,12 @@
 
         <div id="imagePreviewCasa"></div>
 
-        <button type="submit" id="btn-casa-enviar" class="btn-add-prod">Enviar</button>
+        <div class="divBtnEnviar">
+            <button type="submit" id="btn-casa-enviar" class="btn-add-prod">SALVAR</button>
+        </div>
     </form>
 
     <form id="adicionar-apartamento-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
-        <h1 id="apartamento-titulo">Adicionar apartamento</h1>
         @csrf
         <input type="hidden" name="id_produto" value="3">
 
@@ -73,13 +76,13 @@
         <textarea name="descricao" id="apt-desc-input" cols="30" rows="10" class="add-input"></textarea>
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheirosAp">1</span></p>
-        <input type="range" name="qtd-banheiros"  min="0" max="5" value="1" id="sliderBanheirosAp" class="slider">
+        <input type="range" name="qtd-banheiros"  min="0" max="50" value="1" id="sliderBanheirosAp" class="slider">
 
         <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosAp">1</span></p>
-        <input type="range" name="qtd-quartos"  min="0" max="5" value="1" id="sliderQuartosAp" class="slider">
+        <input type="range" name="qtd-quartos"  min="0" max="50" value="1" id="sliderQuartosAp" class="slider">
 
         <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasAp">1</span></p>
-        <input type="range" name="qtd-vagas"  min="0" max="5" value="1" id="sliderVagasAp" class="slider">
+        <input type="range" name="qtd-vagas"  min="0" max="50" value="1" id="sliderVagasAp" class="slider">
 
         <p id="local-label">Localidade</p>
         <input name="localidade" type="text" id="apt-local-input" min="1" class="add-input">
@@ -103,13 +106,12 @@
 
         <div id="imagePreviewAp"></div>
 
-        <button id="btn-apt-enviar" class="btn-add-prod">Enviar</button>
+        <div class="divBtnEnviar">
+            <button id="btn-apt-enviar" class="btn-add-prod">SALVAR</button>
+        </div>
     </form>
 
-
     <form id="adicionar-terreno-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
-
-        <h1 id="terreno-titulo">Adicionar terreno</h1>
         @csrf
         <input type="hidden" name="id_produto" value="1">
 
@@ -135,7 +137,9 @@
 
         <div id="imagePreviewTerreno"></div>
 
-        <button type="submit" id="btn-trn-enviar" class="btn-add-prod">Enviar</button>
+        <div class="divBtnEnviar">
+            <button type="submit" id="btn-trn-enviar" class="btn-add-prod">SALVAR</button>
+        </div>
     </form>
 
     <script src="{{ asset('js/cadastro-abas.js') }}"></script>

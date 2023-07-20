@@ -44,8 +44,10 @@ button {
 }
 
 .aba-option {
-  padding: 2vh 5vw;
+  padding: 2vh 12vw;
   transition: all 0.2s;
+
+  text-decoration: none !important;
 }
 .aba-option:hover {
   background-color:white;
@@ -84,12 +86,14 @@ button {
   display:flex;
   flex-direction: column;
   justify-self: center;
-  padding: 0 1vw;
-  margin: 0 2vw;
+  padding: 2vw 6vw;
+  margin: 0 6vw 2vw 6vw;
 
   /* border-left:#1B657A solid 2px;
   border-right:#1B657A solid 2px; */
   border-radius: 20px;
+  border-style: solid;
+  border-color: #1B657A;
 
 }
 h1 {
@@ -99,6 +103,11 @@ h1 {
   color: white;
   padding: 10px;
   border-radius: 15px 15px 0 0;
+}
+
+#titleAdicionar{
+    display: flex;
+    justify-content: center;
 }
 
 /* Setando tamanho da imagem que irá aparecer */
@@ -117,20 +126,34 @@ h1 {
 #imagePreviewAp,
 #imagePreviewTerreno{
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 75px;
+    padding: 2vw;
+    margin-top: 2vw;
+
+    border-width: 2px;
+    border-style: dashed;
+    border-color: black;
 }
+
+
 
 .opaco {
     opacity: 0.5; /* Opacidade inicial */
 }
 
-
+.divBtnEnviar{
+    display: flex;
+    justify-content: center;
+}
 
 .btn-add-prod {
   background-color: #CE990F;
-  padding: 3vh 5vw;
-  border-radius:  0 0 15px 15px;
-  margin-top: 10px;
+  padding: 3vh 3vw;
+  border-radius: 15px;
+  margin-top: 30px;
+  width: 60%;
+  text-decoration: none !important;
 
   transition: all 0.2s;
 }

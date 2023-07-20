@@ -27,11 +27,12 @@ class loginController extends Controller
     {
         $this->validate($request,[
             'email' => 'required|email',
-            'senha' => ['required', Password::min(8)]
+            'senha' => ['required'/*, Password::min(8)*/]
         ],[
             'email.required' => 'O campo email é obrigatório',
             'email.email' => 'E-mail inválido',
             'senha.required' => 'O campo senha é obrigatório',
+            'senha.min' => 'Senha deve conter mais de 8 caracteres'
         ]);
 
         $dados = DB::table('usuarios')

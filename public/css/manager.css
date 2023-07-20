@@ -9,12 +9,12 @@ body {
     background-color:#fff;
     display:flex;
     flex-direction: column;
-    gap:10px;
+    gap:15px;
 }
 
 .img{
-    width: 180px;
-    height: 130px;
+    width: 220px;
+    height: 170px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -91,7 +91,8 @@ body {
 #search {
     font-size:15px;
     text-align: center;
-    width:80vw;
+    width:75vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
     padding:10px;
     border-radius: 90px;
@@ -119,6 +120,7 @@ body {
     /* estilo */
     background-color: #dfdfdf;
     padding: 10px 30px;
+    border-radius: 3px;
 
 
     /* layout */
@@ -169,6 +171,19 @@ body {
 .btn-icon {
 
     display:none;
+}
+
+#imovel-titulo{
+    font-size: 32px;
+}
+
+#imovel-descricao{
+    font-size: 24px;
+}
+
+#imovel-valor{
+    font-size: 32px;
+    color: #008C1F;
 }
 
 @media (max-width: 600px) {

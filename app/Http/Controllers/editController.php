@@ -42,7 +42,6 @@ class editController extends Controller
 
         $id_cliente = session('id');
 
-        $modelo->id_tp_produto = $request->id_tp_produto;
         $modelo->titulo = $request->titulo;
         $modelo->descricao = $request->descricao;
         $modelo->area = $request->area;

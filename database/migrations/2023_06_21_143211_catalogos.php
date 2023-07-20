@@ -16,12 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('id_tp_produto');
             $table->unsignedBigInteger('id_cliente');
             $table->string('titulo');
-            $table->string('descricao');
+            $table->string('descricao', 5000);
             $table->integer('qtdBanheiros')->nullable();
             $table->integer('qtdQuartos')->nullable();
             $table->integer('qtdVagas')->nullable();
-            $table->decimal('area',12,3);
-            $table->decimal('valor',12,3);
+            $table->unsignedBigInteger('area');
+            $table->unsignedBigInteger('valor');
             $table->string('localidade');
             $table->string('tp_contrato');
             $table->timestamps();

@@ -55,7 +55,8 @@
 
                         <section id="informacoes">
                             <p id="imovel-titulo">{{ $item->titulo }}</p>
-                            <p id="imovel-valor"><p>R$ {{ $item->valor }}</p></p>
+                            <p id="imovel-descricao">{{ $item->descricao }}</p>
+                            <p id="imovel-valor">R$ {{ $item->valor }}</p>
                         </section>
 
                         <section id="imovel-botoes">

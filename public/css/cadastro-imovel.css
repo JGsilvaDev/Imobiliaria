@@ -124,7 +124,8 @@ h1 {
 
 #imagePreviewCasa,
 #imagePreviewAp,
-#imagePreviewTerreno{
+#imagePreviewTerreno,
+#imagemPreviewEdit{
     display: flex;
     flex-wrap: wrap;
     gap: 75px;

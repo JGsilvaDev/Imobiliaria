@@ -13,7 +13,7 @@
     <title>Edit Imovel</title>
 </head>
 <body>
-    <h1>Editando</h1>
+    <h1>Editar</h1>
     <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">
         @csrf
         <p for="" id="titulo-label" class="add-label">Título</p>
@@ -52,7 +52,7 @@
                 <div class="edit-img-frame" style="background-image: url('{{ asset($img->path) }}')"></div>
                 <input type="hidden" name="id" value="{{ $img->id }}">
                 <button id="bntTrocarPrincipal" onclick="trocarPrincipal(this)">Trocar</button>
-                <button id="imovel-remover" onclick="excluir(this);" class="btn-delete-image">Excluir</button>
+                <button id="imovel-remover" onclick="excluirImg(this);" class="btn-delete-image">Excluir</button>
             </div>
         @endif
     @endforeach

@@ -80,6 +80,10 @@
     @endforeach
 @endif
 
+<div id="admin-footer">
+    <img src="{{ asset('img/logo.png') }}" alt="">
+</div>
+
 {{-- <div id="conteudo">
     <p>{{ $item->id }}</p>
     <p>{{ $item->descricao }}</p>

@@ -5,8 +5,13 @@
 @section('content')
 
     <link rel="stylesheet" href="{{ asset('css/produto.css') }}">
+
     <script src="{{ asset('js/mostrar-interesse.js') }}"></script>
-    <script src="{{ asset('js/carocel.js') }}"></script>
+    <script src="{{ asset('js/caroselDetalhe.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
     <button id="mostrar" onclick="changeVisibility()">Tenho interesse!</button>
 
@@ -30,24 +35,32 @@
             </div> -->
             <div id="produto-layout">
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
-                    <div id="imovel-titulo">
-                        <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
-                        <div id="produto-carrossel" class="flex-center-center">
-                            <button id="voltar-imagem" class="img-navigation">&lt</button>
-                            @foreach ($imagens as $index => $path)
-                                @if($detalhes->id == $path->chave)
-                                    <!-- <img id="imagem-{{ $index }}" src="{{asset($path->path)}}" alt="Imagem"> -->
-                                    <div class="carrossel-img-frame" id="imagem-{{ $index }}" style="background-image: url('{{asset($path->path)}}')"></div>
-                                @endif
-                            @endforeach
-                            <button id="mudar-imagem" class="img-navigation">&gt</button>
-                        </div>
+                    <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
+                    <div id="produto-carrossel" class="flex-center-center slider-for">
+                        {{-- <button id="voltar-imagem" class="img-navigation">&lt</button> --}}
+                        @foreach ($imagens as $index => $path)
+                            @if($detalhes->id == $path->chave)
+                                <div><div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div></div>
+                            @endif
+                        @endforeach
+                        {{-- <button id="mudar-imagem" class="img-navigation">&gt</button> --}}
+                    </div>
+
+                    <div id="produto-carrossel-nav" class="flex-center-center slider-nav">
+                        {{-- <button id="voltar-imagem" class="img-navigation">&lt</button> --}}
+                        @foreach ($imagens as $index => $path)
+                            @if($detalhes->id == $path->chave)
+                                <div><div class="carrossel-img-frame img-nav" style="background-image: url('{{asset($path->path)}}')"></div></div>
+                            @endif
+                        @endforeach
+                        {{-- <button id="mudar-imagem" class="img-navigation">&gt</button> --}}
+                    </div>
+
+                    <div id="imovel-dados" class="flex-row">
                         <h2 id="valor">R${{ $detalhes->valor }}</h2>
-                        <div id="imovel-dados" class="flex-row">
-                            <!-- <p id="local">{{ $detalhes->localidade }}</p>
-                            <p id="quartos">{{ $detalhes->qtdQuartos }} de quartos, {{ $detalhes->qtdBanheiros }} banheiros</p>
-                            <p id="area">{{ $detalhes->area }} m<sup>2</sup></p> -->
-                        </div>
+                        <p id="local">{{ $detalhes->localidade }}</p>
+                        <p id="area">{{ $detalhes->area }} m<sup>2</sup></p>
+                        <p id="quartos">{{ $detalhes->qtdQuartos }} de quartos, {{ $detalhes->qtdBanheiros }} banheiros</p>
                     </div>
                 </section>
 
@@ -67,9 +80,9 @@
                         <h2 class="detalhes-titulo">Mais detalhes</h2>
                         <div id="mais-detalhes-container">
                             <ul>
-                                <li>{{ $detalhes->qtdBanheiros }} banheiros</li>
+                                {{-- <li>{{ $detalhes->qtdBanheiros }} banheiros</li>
                                 <li>{{ $detalhes->qtdQuartos }} quartos</li>
-                                <li>{{ $detalhes->qtdVagas }} vagas</li>
+                                <li>{{ $detalhes->qtdVagas }} vagas</li> --}}
                             </ul>
                         </div>
                     </section>
@@ -84,7 +97,7 @@
                                 <div class="semelhante-produto-card">
                                     @foreach ($imagemPrincipal as $path)
                                         @if($sem->id == $path->chave)
-                                        <div class="img" style="background-image: url('{{ asset($path->path) }}')"></div>
+                                            <div class="img" style="background-image: url('{{ asset($path->path) }}')"></div>
                                         @endif
                                     @endforeach
                                     <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>

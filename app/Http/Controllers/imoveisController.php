@@ -197,9 +197,13 @@ class imoveisController extends Controller
                     ->where('catalogos.id','=',$id)
                     ->first();
 
-        $imagem = DB::table('imagens_principais')
+        $imagem = DB::table('imagens')
                     ->select('chave','path')
                     ->get();
+
+        $imagemPrincipal = DB::table('imagens_principais')
+                        ->select('chave','path')
+                        ->get();
 
         $semelhante = DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
@@ -216,6 +220,6 @@ class imoveisController extends Controller
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
         ];
 
-        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'semelhante' => $semelhante, 'opcoes' => $opcoes]);
+        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'imagemPrincipal' => $imagemPrincipal, 'semelhante' => $semelhante, 'opcoes' => $opcoes]);
     }
 }

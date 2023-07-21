@@ -62,7 +62,7 @@
                     </div>
                 </section>
 
-                @if ($detalhes->descricao != 'Terreno')
+                @if ($detalhes->tp_contrato != 'Terreno')
                     <section id="mais-detalhes" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Mais detalhes</h2>
                         <div id="mais-detalhes-container">
@@ -82,9 +82,9 @@
                         @foreach( $semelhante as $sem )
                             <div id="semelhante-produtos-itens">
                                 <div class="semelhante-produto-card">
-                                    @foreach ($imagens as $path)
+                                    @foreach ($imagemPrincipal as $path)
                                         @if($sem->id == $path->chave)
-                                            <img src="{{asset($path->path)}}" alt="Imagem">
+                                        <div class="img" style="background-image: url('{{ asset($path->path) }}')"></div>
                                         @endif
                                     @endforeach
                                     <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>

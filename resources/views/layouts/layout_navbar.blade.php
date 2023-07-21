@@ -13,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="{{ asset('js/dropDown.js') }}"></script>
+    <script src="{{ asset('js/reload.js') }}"></script>
     <title>@yield('title')</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
         <div id="nav-buttons">
             <a href="/imoveis"><button class="nav-btn">Imóveis</button></a>
             <a href="/sobre"><button class="nav-btn">Sobre nós</button></a>
-            <a href="#"><button class="nav-btn">Contato</button></a>
+            <button class="nav-btn" onclick="modal();">Contato</button>
 
             @if(session('login'))
                 <select name="opcao" class="nav-btn" id="dropdown">
@@ -47,7 +48,7 @@
     @yield('content')
 
     <div id="footer-container">
-        <img src="{{asset('img/logo.png')}}" alt="">
+        <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
         <div id="footer-contato-info">
             <p>(12) 9999-9999</p>
             <p>@imobiliaria-vendas</p>

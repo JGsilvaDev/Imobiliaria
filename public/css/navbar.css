@@ -10,11 +10,12 @@ body * {
 }
 
 .imgHeader{
-    width: 140px;
-    height: 120px;
+    width: 100px;
+    height: 80px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 50%;
 }
 
 
@@ -27,7 +28,7 @@ body * {
 
     /* estilo */
     background-color: #BCBCBC;
-    padding: 0 50px;
+    padding: 10px 50px;
 }
 
 #nav-buttons {

@@ -422,7 +422,7 @@
                 </form>
             </div>
 
-        
+
             @else
             <div id="painel-pesquisa-float-completo">
                 <div id="painel-pesquisa-titulo">
@@ -479,7 +479,7 @@
                             <div class="radio-option">
                                 <input type="radio" name="vagas" id="" value="2"> <label
                                     for="">2</label>
-    
+
                             </div>
                             <div class="radio-option">
                                 <input type="radio" name="vagas" id="" value="3"> <label
@@ -528,25 +528,27 @@
             </div>
         @endif
         <div id="pesquisa-result">
-            <div id="filtros-container">
-                    <h1>Filtros:</h1>
-                    @foreach ($filtro as $item)
-                    <div class="filtro-content">
-                        {{ $item[0] }}: {{ $item[1] }}
-                            <form action="/limparFiltroIndidual" method="post">
-                                @csrf
-                                <input type="hidden" name="filtro" value="{{ $item[0] }}">
-                                <button type="submit">X</button>
-                            </form>
-                        </div>
-                    @endforeach
-        
-                    <form action="/limparFiltro" method="post">
-                        @csrf
-                        <button type="submit">Limpar Todos</button>
-                    </form>
-            </div>
-            
+            @if (session('search') != null)
+                <div id="filtros-container">
+                        <h1>Filtros:</h1>
+                        @foreach ($filtro as $item)
+                        <div class="filtro-content">
+                            {{ $item[0] }}: {{ $item[1] }}
+                                <form action="/limparFiltroIndidual" method="post">
+                                    @csrf
+                                    <input type="hidden" name="filtro" value="{{ $item[0] }}">
+                                    <button type="submit">X</button>
+                                </form>
+                            </div>
+                        @endforeach
+
+                        <form action="/limparFiltro" method="post">
+                            @csrf
+                            <button type="submit">Limpar Todos</button>
+                        </form>
+                </div>
+            @endif
+
             <div id="lista-produtos">
                 @foreach ($imoveis as $item)
                 @if ($item->id != 0)

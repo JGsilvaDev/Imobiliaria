@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="{{ asset('css/user-edit.css') }}">
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="{{ asset('js/dropDown.js') }}"></script>
@@ -43,14 +43,6 @@
     </div>
 
     @yield('content')
-
-    <div id="footer-container">
-        <img src="{{asset('img/logo.png')}}" alt="">
-        <div id="footer-contato-info">
-            <p>(12) 9999-9999</p>
-            <p>@imobiliaria-vendas</p>
-        </div>
-    </div>
 </body>
 </html>
 

@@ -6,9 +6,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 
     /* estilo */
     padding: 10px;
-    background-color: #BCBCBC;
+    background-color: #D7D7D7;
 }

@@ -111,13 +111,14 @@ backdrop-filter: blur(5.5px);
 
 
 #ajuda {
-    background-color: #D9D9D9;
+    background-color: #EDEDED;
+    margin-bottom: 100px;
 }
 
 #ajuda-itens {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     gap:5vw;
     flex-wrap: wrap;
 }
@@ -146,7 +147,7 @@ backdrop-filter: blur(5.5px);
 .carousel-item {
     text-align: center;
     color: #1B657A;
-    /* background: #af604c; */
+    /* background: #EDEDED; */
     padding: 10px;
 
     border-radius: 15px;

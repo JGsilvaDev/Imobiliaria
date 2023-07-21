@@ -19,12 +19,12 @@
             <button onclick="modal();">X</button>
         </div>
 
-        <form action="/contato" method="POST" id="contato-content" autocomplete="off" >
+        <form action="/contato" method="POST" id="contato-content" autocomplete="off">
             @csrf
-            <input type="text" name="nome" id="" class="contato-input" placeholder="nome">
-            <input type="text" name="telefone" id="" class="contato-input" placeholder="telefone">
+            <input type="text" name="nome" id="" class="contato-input" placeholder="nome" required>
+            <input type="text" name="telefone" id="" class="contato-input" placeholder="telefone" required>
             <input type="email" name="email" id="" class="contato-input" placeholder="email">
-            <textarea name="mensagem" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="mensagem"></textarea>
+            <textarea name="mensagem" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="mensagem" required></textarea>
             <button type="submit" class="contato-enviar">Enviar</button>
 
             <div id="divisor">
@@ -79,15 +79,13 @@
                     @endforeach
 
                     <div id="destaque-endereco-info">
+                        <p id="endereco-info-tipo">{{ $iten->descricao }}</p>
                         <p id="endereco-info-tipo">{{ $iten->titulo }}</p>
-                        <!-- <p id="endereco-info-tipo">{{ $iten->descricao }}</p> -->
-                        {{-- <p id="endereco-info-local">Centro</p> --}}
                         <p id="endedreco-info-cidade"><span class="material-symbols-outlined">location_on</span> {{ $iten->localidade}}</p>
                     </div>
                     <div id="item-dados">
                         <p id="dados-area">{{ $iten->area }}m²</p>
                         <p id="dados-vagas">R${{ $iten->valor}}</p>
-                        {{-- <p id="dados-banheiros">2</p> --}}
                     </div>
 
                     <form action="/imoveis/{{ $iten->id }}" method="post">
@@ -100,9 +98,9 @@
     </section>
 
 
-    <section id="ajuda">
-        <h1 class="section-title">Como podemos ajudar?</h1>
+    <h1 class="section-title">Como podemos ajudar?</h1>
 
+    <section id="ajuda">
         <div id="ajuda-itens">
             <div id="ajuda-item">
                 <img src="img/casa.svg" alt="" class="ajuda-icon">

@@ -11,11 +11,12 @@
 <script src="{{ asset('js/reload.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div id="imovel-header">
     <p id="hello-user">Olá, {{ $usuario->name }}</p>
     <section id="header-botoes">
-        <a href="/admin/cadastrar"><button class="nav-btn" id="novo-imovel">Novo imóvel</button></a>
+        <a href="/admin/cadastrar"><button class="nav-btn" id="novo-imovel">Adicionar</button></a>
         <select name="opcao" class="nav-btn" id="dropdown">
             <option disabled selected>Editar</option>
             @foreach ($opcoes as $op)
@@ -31,10 +32,13 @@
 
 </div>
 
-<div id="pesquisa">
+<div id="pesquisa"> {{--div pai--}}
     <form action="admin" method="post">
         @csrf
-        <input type="text" name="search" id="search" placeholder="Pesquisar imóvel">
+        <div class="search-container"> {{--div filho--}}
+            <input type="text" name="search" id="search" placeholder="Pesquisar imóvel">
+            <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
+        </div>
     </form>
 </div>
 
@@ -62,10 +66,12 @@
                         <section id="imovel-botoes">
                             <form action="admin/edit/{{ $item->id }}" method="post">
                                 @csrf
-                                <button type="submit" id="imovel-editar" class="imovel-btn"><img src="{{ asset('img/add.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Editar</span></button>
+                                <button type="submit" id="imovel-editar" class="imovel-btn">
+                                <span class="btn-texto">Editar</span></button>
                             </form>
 
-                            <button id="imovel-remover" onclick="excluir();" class="imovel-btn"><img src="{{ asset('img/remover.svg')}}" alt="" class="btn-icon"><span class="btn-texto">Excluir</span></button>
+                            <button id="imovel-remover" onclick="excluir();" class="imovel-btn">
+                            <span class="btn-texto">Remover</span></button>
 
                             <form action="/deletar/{{ $item->id }}" method="POST">
                                 @csrf
@@ -81,7 +87,7 @@
 @endif
 
 <div id="admin-footer">
-    <img src="{{ asset('img/logo.png') }}" alt="">
+    <div class="img_footer" style="background-image: url({{ asset('img/logo.png') }})"></div>
 </div>
 
 {{-- <div id="conteudo">

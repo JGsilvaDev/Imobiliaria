@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.slider-nav').slick({
           infinite: true,
           slidesToScroll: 1,
-          slidesToShow: 5,
+          slidesToShow:1,
           asNavFor: '.slider-for',
           dots: true,
           centerMode: true,

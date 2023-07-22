@@ -13,8 +13,8 @@ body {
 }
 
 .img{
-    width: 220px;
-    height: 170px;
+    width: 180px;
+    height: 120px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -28,7 +28,7 @@ body {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 10px;
+    padding: 18px;
 }
 
 #header-botoes {
@@ -45,9 +45,22 @@ body {
 
 /* botões */
 .imovel-btn {
-    padding: 1vh 0.5vw;
-    border:none;
-    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 50px 50px;
+    min-width: 120px;
+    height: 35px;
+}
+
+.imovel-btn:hover {
+    background-color: white;
+    color: #247B22;
+    text-decoration: none;
 }
 
 .nav-btn {
@@ -67,7 +80,7 @@ body {
 #novo-imovel:hover {
     background-color: white;
     color: #B77922;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #sair {
@@ -77,27 +90,48 @@ body {
 #sair:hover {
     background-color: white;
     color: #c9261a;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
 /* BARRA DE PESQUISA */
 #pesquisa {
-    display:flex;
+    display: flex;
     text-align: center;
     justify-content: center;
+    position: relative;
+}
+
+.search-container {
+    position: relative; /*Assim o filho consegue entrar nela*/
 }
 
 #search {
-    font-size:15px;
+    font-size: 15px;
     text-align: center;
-    width:75vw;
+    width: 79.25vw;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-    padding:10px;
+    padding: 10px;
     border-radius: 90px;
-    border:none;
+    border: none;
+    padding-right: 40px; /*Aqui o icone entra onde esta certo*/
 }
+
+#search-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%); /*Aqui o icone fica centralizado*/
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+#search-button i {
+    font-size: 18px; /*Estilo para o ícone de pesquisa */
+}
+
 
 /* CONTAINER DO IMÓVEL */
 #imoveis-lista {
@@ -107,7 +141,7 @@ body {
 }
 
 .imovel-container {
-    width: 100vw;
+    width: 100%;
 }
 .imovel-content {
     display:flex;
@@ -150,49 +184,39 @@ body {
 }
 
 #imovel-editar {
-    background-color: #247B22;
+    background-color: #1B657A;
     border-radius: 5px;
 }
 #imovel-editar:hover {
     background-color: white;
-    color: #247B22;
-    text-decoration: underline;
+    color: #1B657A;
+    text-decoration: none;
 }
 #imovel-remover {
-    background-color: #FF0000;
+    background-color: #E12B2B;
     border-radius: 5px;
 }
 #imovel-remover:hover {
     background-color: white;
     color: #FF0000;
-    text-decoration: underline;
-}
-
-.btn-icon {
-
-    display:none;
+    text-decoration: none;
 }
 
 #imovel-titulo{
-    font-size: 32px;
+    font-size: 28px;
 }
 
 #imovel-descricao{
-    font-size: 24px;
+    font-size: 18px;
 }
 
 #imovel-valor{
-    font-size: 32px;
-    color: #008C1F;
+    font-size: 28px;
+    color: #247B22;
 }
-body {
-    height: 1500px;
-}
+
 #admin-footer {
     background-color:#949494;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 
     padding: 10px;
     display:flex;
@@ -200,14 +224,20 @@ body {
     align-items: center;
 }
 
+.img_footer {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 @media (max-width: 600px) {
     .imovel-btn {
         padding: 3vw;
     }
-    .btn-icon {
-        width: 5vw;
-        display: block;
-    }
+
     .btn-texto {
         display:none;
     }

@@ -17,7 +17,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <div id="navbar">
+    <div id="navbar" class="background-blur">
         <div id="nav-logo">
             <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
 
@@ -47,7 +47,7 @@
 
     @yield('content')
 
-    <div id="footer-container">
+    <div id="footer-container" class="background-blur">
         <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
         <div id="footer-contato-info">
             <p>(12) 9999-9999</p>

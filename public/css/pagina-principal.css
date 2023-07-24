@@ -280,6 +280,12 @@ backdrop-filter: blur(5.5px);
     margin: 0;
 }
 
+#btn-fechar-contato {
+    background-color: #A8A8A8;
+    border: none;
+    color: white;
+}
+
 @media (max-width: 1130px) {
 }
 /* Caso a tela em questão seja menor que 600px */
@@ -305,6 +311,14 @@ backdrop-filter: blur(5.5px);
     }
     .carousel-item {
         flex: 0; /* Distribui os itens igualmente em 3 colunas */
+    }
+
+    .contato-container {
+        height: 90vh;
+        width: 90vw;
+    }
+    #contato-content {
+        width: 100%;
     }
 
 }

@@ -18,7 +18,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    grid-row: 1;
 }
+
 
 #imovel-header {
     /* estilização */
@@ -151,6 +153,11 @@ body {
 /* conteúdo completo */
 .content-info {
 
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    justify-items: start;
+    align-items: center;
+
     /* estilo */
     background-color: #dfdfdf;
     padding: 10px 30px;
@@ -159,16 +166,16 @@ body {
 
     /* layout */
     width:75vw;
-    display:flex;
+    /* display:flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
 }
 
 /* layout das informações dentro do container */
 #informacoes {
-    text-align: center;
     display:flex;
     flex-direction: column;
+    padding: 0 30px;
 }
 
 /* layout dos botões */
@@ -213,6 +220,7 @@ body {
 #imovel-valor{
     font-size: 28px;
     color: #247B22;
+    margin-top: 10px;
 }
 
 #admin-footer {

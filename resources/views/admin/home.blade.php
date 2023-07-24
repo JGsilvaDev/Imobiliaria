@@ -52,7 +52,6 @@
                             @foreach ($paths as $path)
                                 @if($item->id == $path->chave)
                                     <div class="img" style="background-image: url('{{asset($path->path)}}')"></div>
-                                    @break
                                 @endif
                             @endforeach
                         @endif

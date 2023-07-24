@@ -19,7 +19,7 @@ body {
 
   display:flex;
   flex-direction: column;
-  gap: 15px;
+  /* gap: 15px; */
 
 }
 
@@ -91,7 +91,7 @@ button {
 
   /* border-left:#1B657A solid 2px;
   border-right:#1B657A solid 2px; */
-  border-radius: 20px;
+  border-radius: 0 0 20px 20px;
   border-style: solid;
   border-color: #1B657A;
 
@@ -130,7 +130,7 @@ h1 {
     flex-wrap: wrap;
     gap: 75px;
     padding: 2vw;
-    margin-top: 2vw;
+    margin: 2vw 0;
 
     border-width: 2px;
     border-style: dashed;
@@ -207,6 +207,22 @@ h1 {
   position: relative;
   top: 0;
   z-index: 1;
+}
+
+#title-editar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#title-editar h1{
+    width: 88%;
+}
+
+#title-editar p {
+    font-size: 28px;
+    font-weight: bold;
 }
 
 

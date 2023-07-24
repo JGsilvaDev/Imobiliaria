@@ -13,7 +13,10 @@
     <title>Edit Imovel</title>
 </head>
 <body>
-    <h1>Editar</h1>
+    <div id="title-editar">
+        <p>Editar</p>
+        <h1>{{ $item->descricao }}</h1>
+    </div>
     <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">
         @csrf
         <p for="" id="titulo-label" class="add-label">Título</p>

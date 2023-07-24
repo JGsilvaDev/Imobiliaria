@@ -131,7 +131,7 @@ class imoveisController extends Controller
         }
 
         if($nItens == null){
-            $imoveis->limit(6);
+            $imoveis->limit(9);
         }else{
             $imoveis->limit($nItens);
         }
@@ -235,7 +235,7 @@ class imoveisController extends Controller
         $session = session();
         $nItens = session('nItens');
 
-        $nItens += 6;
+        $nItens += 9;
 
         $session->put([
             'nItens' => $nItens,

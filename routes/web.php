@@ -32,6 +32,7 @@ Route::post('/cadastro', [cadastroUsuarioController::class, 'store']);
 
 Route::get('/imoveis', [imoveisController::class, 'index']);
 Route::post('/imoveis', [imoveisController::class, 'search']);
+Route::post('/maisItens', [imoveisController::class, 'maisItens']);
 
 Route::post('/imoveis/{id}', [imoveisController::class, 'detalhe']);
 

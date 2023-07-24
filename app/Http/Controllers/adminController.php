@@ -123,8 +123,6 @@ class adminController extends Controller
         $valor = session('login');
         $id_cliente = session('id');
 
-        // dd($request->imagemCasaPrincipal, $request->allFiles()['imagem']);
-
         if($valor){
 
             $catalogo = new Catalogo();

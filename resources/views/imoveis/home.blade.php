@@ -581,6 +581,11 @@
                     @endif
                     @endforeach
             </div>
+            <form action="/maisItens" method="post">
+                @csrf
+                <input type="hidden" name="mostrarMais" value="2">
+                <button>Mostrar mais</button>
+            </form>
         </div>
 </div>
 <img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()">

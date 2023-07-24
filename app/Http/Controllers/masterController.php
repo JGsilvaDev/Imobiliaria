@@ -59,24 +59,6 @@ class masterController extends Controller
                         ->get();
         }
 
-        // $session = session();
-
-        // $search = [
-        //     (object) [
-        //         'titulo' => $imoveis->titulo,
-        //         'localidade' => $imoveis->localidade,
-        //         'quartos' => $imoveis->qtdQuartos,
-        //         'banheiros' => $imoveis->qtdBanheiros,
-        //         'vagas' => $imoveis->vagas,
-        //         'valor' => $imoveis->valor,
-        //         'area' => $imoveis->area
-        //     ],
-        // ];
-
-        // $session->put([
-        //     'search' => $search
-        // ]);
-
         $opcoes = [
             (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
             (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],

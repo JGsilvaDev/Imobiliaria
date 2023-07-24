@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class imoveisController extends Controller
 {
     public function index(){
         $search = session('search');
-
-        // dd($search);
+        $nItens = session('nItens');
 
         $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
@@ -28,14 +28,11 @@ class imoveisController extends Controller
             $area = $search[0]->area;
             $valor = $search[0]->valor;
 
-            // dd($search);
-
             if ($titulo != null) {
                 $imoveis->where('catalogos.titulo', 'like','%'.$titulo.'%');
 
                 $filtro->titulo[] = 'titulo';
                 $filtro->titulo[] = $titulo;
-
 
             }
 
@@ -133,6 +130,12 @@ class imoveisController extends Controller
 
         }
 
+        if($nItens == null){
+            $imoveis->limit(6);
+        }else{
+            $imoveis->limit($nItens);
+        }
+
         $imoveis = $imoveis->get();
 
         $imagem = DB::table('imagens')
@@ -149,6 +152,8 @@ class imoveisController extends Controller
 
             $imagem->id = 0;
         }
+
+        // Session::forget('nItens');
 
         return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem, 'opcoes' => $opcoes, 'filtro' => $filtro]);
     }
@@ -186,6 +191,8 @@ class imoveisController extends Controller
             ]);
         }
 
+        Session::forget('nItens');
+
         return redirect()->back();
     }
 
@@ -221,5 +228,19 @@ class imoveisController extends Controller
         ];
 
         return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'imagemPrincipal' => $imagemPrincipal, 'semelhante' => $semelhante, 'opcoes' => $opcoes]);
+    }
+
+    public function maisItens(){
+
+        $session = session();
+        $nItens = session('nItens');
+
+        $nItens += 6;
+
+        $session->put([
+            'nItens' => $nItens,
+        ]);
+
+        return redirect()->back();
     }
 }

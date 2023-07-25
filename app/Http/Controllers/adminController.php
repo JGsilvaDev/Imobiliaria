@@ -179,7 +179,7 @@ class adminController extends Controller
                 $catalogo->qtdVagas = $request->qtd_vagas;
                 $catalogo->areaUtil = $request->areaUtil;
                 $catalogo->areaConstruida = $request->areaConstruida;
-                $catalogo->areaConstruida = $request->areaTerreno;
+                $catalogo->areaTerreno = $request->areaTerreno;
             }else{
                 $catalogo->tp_contrato = 'Venda';
                 $catalogo->qtdBanheiros = 0;

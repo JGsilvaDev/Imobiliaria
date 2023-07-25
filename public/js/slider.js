@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const sliderVagaAp = document.getElementById('sliderVagasAp');
     const outputVagaAp = document.getElementById('sliderValueVagasAp');
 
+    const sliderSuiteAp = document.getElementById('sliderSuiteAp');
+    const outputSuiteAp = document.getElementById('sliderValueSuiteAp');
+
     sliderBanheiroAp.addEventListener('input', function() {
         outputBanheiroAp.textContent = sliderBanheiroAp.value;
     });
@@ -47,5 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sliderVagaAp.addEventListener('input', function() {
         outputVagaAp.textContent = sliderVagaAp.value;
+    });
+
+    sliderSuiteAp.addEventListener('input', function() {
+        outputSuiteAp.textContent = sliderSuiteAp.value;
     });
 });

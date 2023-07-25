@@ -54,6 +54,10 @@ body{
 
 }
 
+.alert-danger {
+    color: red;
+}
+
 #login-welcome{
     font-size: 35px;
     font-weight: bold;

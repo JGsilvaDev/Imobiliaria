@@ -138,7 +138,7 @@ class imoveisController extends Controller
 
         $imoveis = $imoveis->get();
 
-        $imagem = DB::table('imagens')
+        $imagem = DB::table('imagens_principais')
                     ->select('chave','path')
                     ->get();
 

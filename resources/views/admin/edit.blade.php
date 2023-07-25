@@ -21,6 +21,9 @@
     </div>
     <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">
         @csrf
+
+        <input type="hidden" name="id_produto" value="{{ $item->id_tp_produto }}">
+
         <p for="" id="titulo-label" class="add-label">Título</p>
         <input type="text" id="casa-titulo-input" name="titulo" class="add-input" value="{{ $item->titulo }}" required>
 

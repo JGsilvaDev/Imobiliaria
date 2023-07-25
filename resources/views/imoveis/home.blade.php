@@ -246,10 +246,10 @@
                     @endif
                     @endforeach
             </div>
-            <form action="/maisItens" method="post">
+            <form action="/maisItens" method="post" id="mais-itens">
                 @csrf
                 <input type="hidden" name="mostrarMais" value="2">
-                <button>Mostrar mais</button>
+                <button id="btn-mostrar-mais">Mostrar mais</button>
             </form>
         </div>
 </div>

@@ -226,6 +226,20 @@ input[type='radio']:checked:after { /* quando selecionado */
     text-decoration: underline;
 }
 
+#mais-itens {
+    display:flex;
+    width: 100%;
+
+    justify-content: center;
+}
+#btn-mostrar-mais {
+    background-color:#ffa500;
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
 /* classes de animação e keyframes */
 
 @keyframes abrir-painel {

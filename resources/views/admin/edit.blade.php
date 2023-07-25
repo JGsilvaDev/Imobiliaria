@@ -16,6 +16,7 @@
 <body>
     <div id="title-editar">
         <p>Editar</p>
+        <a href="/admin">Voltar</a>
         <h1>{{ $item->descricao }}</h1>
     </div>
     <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">

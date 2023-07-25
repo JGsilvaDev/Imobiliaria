@@ -110,20 +110,25 @@ input[type='radio']:checked:after { /* quando selecionado */
 }
 
 /* painel de pesquisa LATERAL (para mobile) */
-
+.lateral-title {
+    background-color:#585858;
+    color: white;
+    padding: 0 5px;
+}
 #painel-pesquisa-lateral {
-    width: 70%;
-    height: auto;
+    width: 80%;
+    height: 100vh;
     position: absolute;
     background-color:#D7D7D7;
-    padding: 0 10px;
+    padding: 10px;
     flex-direction: row;
     align-items: start;
     z-index: 2;
-    margin-left: 50px;
+    margin-left: 0;
+    top: 0;
 }
 #painel-pesquisa-lateral * {
-    font-size: 18px;
+    font-size: 1em;
 }
 #painel-pesquisa-lateral button {
     width: 25vw;
@@ -169,6 +174,7 @@ input[type='radio']:checked:after { /* quando selecionado */
 
     display: none;
 }
+
 
 /* produto */
 #lista-produtos {

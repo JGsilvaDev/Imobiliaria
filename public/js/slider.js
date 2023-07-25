@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const sliderVagaCasa = document.getElementById('sliderVagasCasa');
     const outputVagaCasa = document.getElementById('sliderValueVagasCasa');
 
+    const sliderSuiteCasa = document.getElementById('sliderSuiteCasa');
+    const outputSuiteCasa = document.getElementById('sliderValueSuiteCasa');
+
 
     sliderBanheiroCasa.addEventListener('input', function() {
         outputBanheiroCasa.textContent = sliderBanheiroCasa.value;
@@ -19,6 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sliderVagaCasa.addEventListener('input', function() {
         outputVagaCasa.textContent = sliderVagaCasa.value;
+    });
+
+    sliderSuiteCasa.addEventListener('input', function() {
+        outputSuiteCasa.textContent = sliderSuiteCasa.value;
     });
 
     const sliderBanheiroAp = document.getElementById('sliderBanheirosAp');

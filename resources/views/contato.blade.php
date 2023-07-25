@@ -4,6 +4,7 @@
 
 @section('content')
 
+    {{--
     <link rel="stylesheet" href="{{ asset('css/contato.css') }}">
     <div class="contato-container">
         <h1 class="contato-title">Fale conosco!</h1>
@@ -17,7 +18,9 @@
 
             <button type="submit" class="contato-enviar">Enviar</button>
         </form>
-    </div>
+    </div> --}}
+
+    <h1>Página não encontrada</h1>
 
     {{-- <p id="voltar-btn"><a href="#">Voltar para página inicial</a></p> --}}
 @endsection

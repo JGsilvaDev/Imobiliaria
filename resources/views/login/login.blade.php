@@ -16,24 +16,22 @@
 
         <input type="password" id="login-input-password" class="input-log" placeholder="Digite sua senha" name="senha">
 
-        <button id="btn-logar" class="btn-reg">Entrar</button>
-        <p id="no-account"><a href="/cadastro">Ainda não tem uma conta?</a></p>
-
         @if($errors->any())
             <div class="alert alert-danger">
-                <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        <p>{{ $error }}</p>
                     @endforeach
-                </ul>
             </div>
         @endif
-
         @if($erro)
             <div class="alert alert-danger">
                 {{ $erro }}
             </div>
         @endif
+        <button id="btn-logar" class="btn-reg">Entrar</button>
+        <p id="no-account"><a href="/cadastro">Ainda não tem uma conta?</a></p>
+
+
     </form>
 </div>
 

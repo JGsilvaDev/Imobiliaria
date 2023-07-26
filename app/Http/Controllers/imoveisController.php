@@ -200,7 +200,18 @@ class imoveisController extends Controller
 
         $item =  DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.descricao as desc','catalogos.tp_contrato','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
+                    ->select('catalogos.id','catalogos.descricao as desc','catalogos.id_tp_produto',
+                      'catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo',
+                      'catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
+                      'catalogos.areaUtil','catalogos.areaTerreno','catalogos.areaConstruida','catalogos.valorCondominio',
+                      'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
+                      'catalogos.pavimentação','catalogos.areaServico','catalogos.banheiroAuxiliar','catalogos.banheiroEmpregada',
+                      'catalogos.cozinha','catalogos.cozinhaPlanejada','catalogos.despensa','catalogos..lavanderias',
+                      'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira',
+                      'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet',
+                      'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
+                      'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
+                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.tp_contrato')
                     ->where('catalogos.id','=',$id)
                     ->first();
 

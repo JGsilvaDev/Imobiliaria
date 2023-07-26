@@ -14,6 +14,7 @@
     
     <div id="titleAdicionar">
         <h2>Adicionar</h2>
+        <a href="/admin">Voltar</a>
     </div>
 
     <div id="abas">

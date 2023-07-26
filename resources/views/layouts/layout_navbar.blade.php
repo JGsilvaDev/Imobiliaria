@@ -47,15 +47,54 @@
 
     @yield('content')
 
-    <div id="footer-container" class="background-blur enable-dark">
-        <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
-        <div id="footer-contato-info">
-            <p>(12) 9999-9999</p>
-            <p>@imobiliaria-vendas</p>
+    <div id="footer-container" class="paragrafos">
+        <hr class="style_hr">
+
+        <div class="style_paragrafo">
+            <div>
+                <p>Institutional</p>
+                <p>page page page 1</p>
+                <p>page page 1</p>
+                <p>page</p>
+            </div>
+            <div>
+                <p>Institutional</p>
+                <p>page page page 1</p>
+                <p>page page 1</p>
+                <p>page</p>
+            </div>
+            <div>
+                <p>Institutional</p>
+                <p>page page page 1</p>
+                <p>page page 1</p>
+                <p>page</p>
+            </div>
+            <div>
+                <p>Fale conosco</p>
+                <p>Localização</p>
+                <p>Número do whats</p>
+                <p>Robson</p>
+                <p>Clobeson</p>
+            </div>
+            <div>
+                <img src="{{asset('img/logo.png')}}">
+            </div>
+        </div>
+
+        <hr class="style_hr">
+        
+        <div class="separacao_filhos">
+            <div>
+                <p id="color_squad">©2023 Desenvolvido por pineapple squad</p>
+            </div>
+            <div class="separacao_icones">
+                <img src="{{asset('img/facebook.svg')}}" alt="">
+                <img src="{{asset('img/instagram.svg')}}" alt="">
+                <img src="{{asset('img/whatsapp.svg')}}" alt="">
+            </div>
         </div>
     </div>
-</body>
-</html>
+
 
 <style>
 .material-symbols-outlined {

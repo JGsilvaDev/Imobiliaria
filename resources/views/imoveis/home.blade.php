@@ -193,7 +193,7 @@
                 </div>
             </div>
         <div id="pesquisa-result">
-            @if (session('search') != null)
+            @if (session('search') != null and session('search') != 'sem filtro' )
                 <div id="filtros-container">
                         <h1>Filtros:</h1>
                         @foreach ($filtro as $item)

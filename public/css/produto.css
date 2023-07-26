@@ -253,6 +253,13 @@ body {
     right: 49px;
 }
 
+.terreno-area-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
 @media (max-width: 1250px){
     #fechar-icone {
         display: block;
@@ -293,6 +300,9 @@ body {
     }
 }
 @media (max-width: 600px) {
+    .terreno-area-container {
+        flex-direction: column;
+    }
     #pagina-layout {
         width: 100vw;
     }

@@ -58,20 +58,6 @@
 
                     <div id="imovel-dados" class="flex-row">
                         <h2 id="valor">R${{ $detalhes->valor }}</h2>
-                        <div>
-                            <p>Condominio</p>
-                            <p>R${{ $detalhes->valorCondominio }}</p>
-                            <p>IPTU Mensal</p>
-                            <p>R${{ $detalhes->iptuMensal }}</p>
-                        </div>
-                        <p id="local"><span class="material-symbols-outlined">location_on</span>{{ $detalhes->localidade }}</p>
-                        <div>
-                            <p id="area"><span class="material-symbols-outlined">zoom_out_map</span>{{ $detalhes->area }} m<sup>2</sup> total</p>
-                            <p id="area"><span class="material-symbols-outlined">zoom_out_map</span>{{ $detalhes->areaUtil }} m<sup>2</sup >util</p>
-                            <p id="area"><span class="material-symbols-outlined">zoom_out_map</span>{{ $detalhes->areaTerreno }} m<sup>2</sup> terreno</p>
-                            <p id="area"><span class="material-symbols-outlined">zoom_out_map</span>{{ $detalhes->areaConstruida }} m<sup>2</sup> construida</p>
-                        </div>
-                        <p id="quartos">{{ $detalhes->qtdQuartos }} de quartos, {{ $detalhes->qtdBanheiros }} banheiros sendo {{ $detalhes->qtdSuites }} suites, {{ $detalhes->qtdVagas }} vagas</p>
                     </div>
                 </section>
 
@@ -84,6 +70,64 @@
                         <h2 class="detalhes-titulo">Descrição do produto</h2>
                         <p id="desc-texto">{{ $detalhes->desc }}</p>
                     </div>
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Localização</h2>
+                        <p id="desc-texto">{{ $detalhes->localidade }}</p>
+                    </div>
+                    
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Informações sobre área</h2>
+
+                        <div class="terreno-area-container">
+                            <div class="terreno-area-content">
+                                <p id="area">Área total: {{ $detalhes->area }} m²</p>
+                            </div>
+                            <div class="terreno-area-content">
+                                <p id="area">Área útil: {{ $detalhes->areaUtil }} m²</p>
+                            </div>
+
+                            <div class="terreno-area-content">
+                                <p id="area">Área do terreno: {{ $detalhes->areaTerreno }} m²</p>
+                            </div>
+
+                            <div class="terreno-area-content">
+                                <p id="area">Área construída: {{ $detalhes->areaConstruida }} m²</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Valores</h2>
+
+                        <div class="terreno-area-container">
+                            <div class="terreno-area-content">
+                                <p>Condomínio: R${{ $detalhes->valorCondominio }}</p>
+                            </div>
+                            <div class="terreno-area-content">
+                                <p>IPTU mensal: R${{ $detalhes->iptuMensal }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Acomodações</h2>
+                        <div class="terreno-area-container">
+                            <div class="terreno-area-content">
+                                <p id="quartos">{{ $detalhes->qtdQuartos }} quarto(s)</p>
+                            </div>
+                            <div class="terreno-area-content">
+                                <p id="quartos">{{ $detalhes->qtdBanheiros }} banheiro(s)</p>
+                            </div>
+                            <div class="terreno-area-content">
+                                <p id="quartos"> {{ $detalhes->qtdSuites }} suite(s)</p>
+                            </div>
+                            <div class="terreno-area-content">
+                                <p id="quartos">{{ $detalhes->qtdVagas }} vaga(s)</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </section>
 
                 @if ($detalhes->descricao != 'Terreno')

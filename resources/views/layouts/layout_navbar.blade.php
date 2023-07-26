@@ -17,7 +17,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <div id="navbar" class="background-blur">
+    <div id="navbar" class="background-blur enable-dark">
         <div id="nav-logo">
             <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
 

@@ -10,6 +10,8 @@
     <script src="{{ asset('js/imagem.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+    <button id="btn-voltar">Voltar</button>
+    
     <div id="titleAdicionar">
         <h2>Adicionar</h2>
     </div>

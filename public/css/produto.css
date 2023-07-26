@@ -255,10 +255,22 @@ body {
     right: 49px;
 }
 
-.terreno-area-container {
+.area-container {
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: start;
+    flex-wrap:wrap;
+
+    margin: 0 5px;
+}
+
+.area-content {
+    width: 33.33%;
+    /* box-shadow: inset 0 0 10px #ff0000; */
+}
+.p-align-icon {
+    display: flex;
+    align-items: center;
 }
 
 

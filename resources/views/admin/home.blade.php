@@ -44,29 +44,29 @@
 </div>
 
 @if($itens)
-    @foreach($itens as $item)
         <div id="imoveis-lista">
+            @foreach($itens as $item)
             <div class="imovel-container">
                 <div class="imovel-content">
                     <section id="content-num-001" class="content-info">
                         @if($paths[0]->chave != 0)
                             @foreach ($paths as $path)
                                 @if($item->id == $path->chave)
-                                    <div class="img" style="background-image: url('{{asset($path->path)}}')"></div>
+                                    <div class="img produto-item-flex" style="background-image: url('{{asset($path->path)}}')"></div>
                                 @endif
                             @endforeach
                         @endif
 
-                        <section id="informacoes">
+                        <section id="informacoes" class="produto-item-flex">
                             <p id="imovel-titulo">{{ $item->titulo }}</p>
                             <p id="imovel-descricao">{{ $item->descricao }}</p>
                             <p id="imovel-valor">R$ {{ $item->valor }}</p>
                         </section>
 
-                        <section id="imovel-botoes">
-                            <form action="admin/edit/{{ $item->id }}" method="post">
+                        <section id="imovel-botoes" class="produto-item-flex">
+                            <form action="admin/edit/{{ $item->id }}" method="post" id="imovel-editar" class="imovel-btn">
                                 @csrf
-                                <button type="submit" id="imovel-editar" class="imovel-btn">
+                                <button type="submit" id="" class="imovel-btn">
                                 <span class="btn-texto">Editar</span></button>
                             </form>
 
@@ -82,8 +82,8 @@
                     </section>
                 </div>
             </div>
+            @endforeach
         </div>
-    @endforeach
 @endif
 
 <div id="admin-footer">

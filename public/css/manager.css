@@ -18,7 +18,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    grid-row: 1;
+    /* grid-row: 1; */
 }
 
 
@@ -150,6 +150,8 @@ body {
 
 .imovel-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .imovel-content {
     display:flex;
@@ -158,9 +160,14 @@ body {
 }
 /* conteúdo completo */
 .content-info {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 10fr 1fr;
     justify-items: start;
+    align-items: center; */
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 
     /* estilo */
@@ -175,12 +182,17 @@ body {
     justify-content: space-between;
     align-items: center; */
 }
+.produto-item-flex {
+    width: 33.33%;
+}
 
 /* layout das informações dentro do container */
 #informacoes {
     display:flex;
     flex-direction: column;
     padding: 0 30px;
+
+    width: 100%;
 }
 
 /* layout dos botões */
@@ -206,7 +218,6 @@ body {
     text-decoration: none;
 }
 #imovel-remover {
-    width: 100%;
     background-color: #E12B2B;
     border-radius: 5px;
 }
@@ -249,14 +260,23 @@ body {
 }
 
 @media (max-width: 600px) {
-    .imovel-btn {
-        padding: 3vw;
+    .imovel-content {
+        width:70vw;
+    }
+    .content-info {
+        flex-direction: column;
+    }
+    .content-info * {
+        text-align: center;
     }
 
-    .btn-texto {
-        display:none;
+    .img {
+        width: 75%;
     }
-    #novo-imovel {
-        width: 32vw;
+
+    #imovel-botoes {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
     }
 }

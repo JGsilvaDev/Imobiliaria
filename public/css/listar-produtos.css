@@ -319,12 +319,12 @@ input[type='radio']:checked:after { /* quando selecionado */
 @media(max-width: 1000px ) and (min-width: 600px){
     #lista-produtos {
         flex-direction: column;
-        justify-content: center;
+        /* justify-content: center; */
         flex-wrap: wrap;
     }
     .produto-container {
 
-        padding: 10px;
-        width: 40%;
+        /* padding: 10px;
+        width: 40%; */
     }
 }

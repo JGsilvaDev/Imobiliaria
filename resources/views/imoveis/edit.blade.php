@@ -74,7 +74,7 @@
                         <h2 class="detalhes-titulo">Localização</h2>
                         <p id="desc-texto">{{ $detalhes->localidade }}</p>
                     </div>
-                    
+
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Informações sobre área</h2>
 
@@ -140,24 +140,35 @@
                                 or $detalhes->murado == 1 or $detalhes->pavimentação == 1)
                                 <h3>Básico</h3>
                                 <div class="area-container">
-                                    <div class="area-content">
-                                        @if($detalhes->agua == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Agua</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->esgoto == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Esgoto</p>@endif
-                                    </div>
+                                    @if($detalhes->agua == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Agua</p>
+                                        </div>
+                                    @endif
 
-                                    <div class="area-content">
-                                        @if($detalhes->energia == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Energia</p>@endif
-                                    </div>
+                                    @if($detalhes->esgoto == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Esgoto</p>
+                                        </div>
+                                    @endif
 
-                                    <div class="area-content">
-                                        @if($detalhes->murado == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Murado</p>@endif
-                                    </div>
+                                    @if($detalhes->energia == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Energia</p>
+                                        </div>
+                                    @endif
 
-                                    <div class="area-content">
-                                        @if($detalhes->pavimentação == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Pavimentação</p>@endif
-                                    </div>
+                                    @if($detalhes->murado == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Murado</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->pavimentação == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Pavimentação</p>
+                                        </div>
+                                    @endif
                                 </div>
                             @endif
 
@@ -167,41 +178,59 @@
                                 <h3>Serviços</h3>
 
                                 <div class="area-container">
-                                    <div class="area-content">
-                                        @if($detalhes->areaServico == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Area de Serviço</p>@endif
-                                    </div>
+                                    @if($detalhes->areaServico == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Area de Serviço</p>
+                                        </div>
+                                    @endif
 
-                                    <div class="area-content">
-                                        @if($detalhes->banheiroAuxiliar == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Banheiro Auxiliar</p>@endif
-                                    </div>
+                                    @if($detalhes->banheiroAuxiliar == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Banheiro Auxiliar</p>
+                                        </div>
+                                    @endif
 
-                                    <div class="area-content">
-                                        @if($detalhes->banheiroEmpregada == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Banheiro Empregada</p>@endif
-                                    </div>
-                                    
-                                    <div class="area-content">
-                                        @if($detalhes->cozinha == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Cozinha</p>@endif
-                                    </div>
-                                    
-                                    <div class="area-content">
-                                        @if($detalhes->cozinhaPlanejada == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Cozinha Planejada</p>@endif
-                                    </div>
-                                    
-                                    <div class="area-content">
-                                        @if($detalhes->despensa == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Despensa</p>@endif
-                                    </div>
-                                    
-                                    <div class="area-content">
-                                        @if($detalhes->lavanderias == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Lavanderia</p>@endif
-                                    </div>
-                                    
-                                    <div class="area-content">
-                                        @if($detalhes->guarita == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Guarita</p>@endif
-                                    </div>
+                                    @if($detalhes->banheiroEmpregada == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Banheiro Empregada</p>
+                                        </div>
+                                    @endif
 
-                                    <div class="area-content">
-                                        @if($detalhes->portaria24h == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portaria 24h</p>@endif
-                                    </div>
+                                    @if($detalhes->cozinha == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Cozinha</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->cozinhaPlanejada == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Cozinha Planejada</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->despensa == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Despensa</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->lavanderias == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Lavanderia</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->guarita == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Guarita</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->portaria24h == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portaria 24h</p>
+                                        </div>
+                                    @endif
 
                                 </div>
                             @endif
@@ -209,60 +238,92 @@
                             @if($detalhes->areaLazer == 1 or $detalhes->churrasqueira == 1 or $detalhes->playground == 1 or $detalhes->quadra == 1)
                                 <h3>Lazer</h3>
                                 <div class="area-container">
-                                    <div class="area-content">
-                                        @if($detalhes->areaLazer == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Area de Lazer</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->churrasqueira == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Churrasqueira</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->playground == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Playground</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->quadra == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quadra</p>@endif
-                                    </div>
+                                    @if($detalhes->areaLazer == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Area de Lazer</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->churrasqueira == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Churrasqueira</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->playground == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Playground</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->quadra == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quadra</p>
+                                        </div>
+                                    @endif
                                 </div>
                             @endif
 
                             @if($detalhes->varanda == 1 or $detalhes->varandaGourmet)
                                 <h3>Social</h3>
                                 <div class="area-container">
-                                    <div class="area-content">
-                                        @if($detalhes->varanda == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Varanda</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->varandaGourmet == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Varanda Gourmet</p>@endif
-                                    </div>
+                                    @if($detalhes->varanda == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Varanda</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->varandaGourmet == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Varanda Gourmet</p>
+                                        </div>
+                                    @endif
                                 </div>
                             @endif
-                            
-                            @if($detalhes->lavado == 1 or $detalhes->roupeiro == 1 or $detalhes->suiteMaster == 1 or $detalhes->closet == 0)
+
+                            @if($detalhes->lavado == 1 or $detalhes->roupeiro == 1 or $detalhes->suiteMaster == 1 or $detalhes->closet == 1)
                                 <h3>Intima</h3>
                                 <div class="area-container">
-                                    <div class="area-content">
-                                        @if($detalhes->lavado == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Lavado</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->roupeiro == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Roupeiro</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->suiteMaster == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Suite Master</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->closet == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Closet</p>@endif
-                                    </div>
+                                    @if($detalhes->lavado == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Lavado</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->roupeiro == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Roupeiro</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->suiteMaster == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Suite Master</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->closet == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Closet</p>
+                                        </div>
+                                    @endif
                                 </div>
                             @endif
 
                             @if($detalhes->pisoFrio == 1 or $detalhes->porcelanato == 1)
                                 <h3>Acabamento</h3>
                                 <div class="area-container">
-                                    <div class="area-content">
-                                        @if($detalhes->pisoFrio == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Piso frio</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->porcelanato == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Porcelanato</p>@endif
-                                    </div>
+                                    @if($detalhes->pisoFrio == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Piso frio</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->porcelanato == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Porcelanato</p>
+                                        </div>
+                                    @endif
                                 </div>
                             @endif
 
@@ -270,24 +331,41 @@
                                 or $detalhes->portaoEletronico == 1 or $detalhes->quintal == 1)
                                 <h3>Destaque</h3>
                                 <div class="area-container">
-                                    <div class="area-content">
-                                        @if($detalhes->entradaServico == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Entrada de serviço</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->escritorio == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Escritorio</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->jardim == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Jardim</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->moveisPlanejados == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Moveis Planejados</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->portaoEletronico == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portão eletronico</p>@endif
-                                    </div>
-                                    <div class="area-content">
-                                        @if($detalhes->quintal == 1)<p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quintal</p>@endif
-                                    </div>
+                                    @if($detalhes->entradaServico == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Entrada de serviço</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->escritorio == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Escritorio</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->jardim == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Jardim</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->moveisPlanejados == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Moveis Planejados</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->portaoEletronico == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portão eletronico</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->quintal == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quintal</p>
+                                        </div>
+                                    @endif
                                 </div>
                             @endif
                         </div>

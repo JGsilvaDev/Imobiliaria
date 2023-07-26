@@ -158,7 +158,6 @@ body {
 }
 /* conteúdo completo */
 .content-info {
-
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
     justify-items: start;
@@ -196,6 +195,7 @@ body {
     height: 10vh;
 }
 
+
 #imovel-editar {
     background-color: #1B657A;
     border-radius: 5px;
@@ -206,6 +206,7 @@ body {
     text-decoration: none;
 }
 #imovel-remover {
+    width: 100%;
     background-color: #E12B2B;
     border-radius: 5px;
 }

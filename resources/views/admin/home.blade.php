@@ -16,7 +16,8 @@
 <div id="imovel-header">
     <p id="hello-user">Olá, {{ $usuario->name }}</p>
     <section id="header-botoes">
-        <a href="/admin/cadastrar"><button class="nav-btn" id="novo-imovel">Adicionar</button></a>
+        <button class="nav-btn" id="novo-imovel" onclick="window.location.href='/admin/cadastrar'">Adicionar</button>
+
         <select name="opcao" class="nav-btn" id="dropdown">
             <option disabled selected>Editar</option>
             @foreach ($opcoes as $op)

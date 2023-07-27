@@ -114,3 +114,5 @@
         {{ session('excluir') }}
     </div>
 @endif
+
+<script src="{{ asset('js/check-scroll.js') }}"></script>

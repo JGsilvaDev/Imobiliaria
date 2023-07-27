@@ -246,6 +246,7 @@ body {
 
 #admin-footer {
     background-color:#949494;
+    width:98.7%;
 
     padding: 10px;
     display:flex;

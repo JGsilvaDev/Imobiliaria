@@ -26,6 +26,7 @@ body {
 
 }
 .search-title {
+    margin: 0;
     background-color: #585858;
     color: white;
     padding: 5px;
@@ -109,57 +110,76 @@ input[type='radio']:checked:after { /* quando selecionado */
 }
 
 /* painel de pesquisa LATERAL (para mobile) */
-.lateral-title {
-    background-color:#585858;
-    color: white;
-    padding: 0 5px;
-}
 #painel-pesquisa-lateral {
-    width: 80%;
+    width:100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed; top: 0; left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background-color:#D7D7D7;
-    padding: 10px;
-    flex-direction: row;
-    align-items: start;
-    z-index: 2;
-    margin-left: 0;
-    top: 0;
-}
-#painel-pesquisa-lateral * {
-    font-size: 1em;
-}
-#painel-pesquisa-lateral button {
-    width: 25vw;
 }
 #painel-pesquisa-opcoes-lateral {
-    flex-grow: 1;
+    /* layout */
     display: flex;
     flex-direction: column;
-    gap: 5px;
-}
-.radio-options-lateral {
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
+    width: 95%;
     gap: 10px;
 }
+#painel-pesquisa-opcoes-lateral * {
+    margin: 0;
+}
+
+.radio-options-lateral {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.radio-options-lateral-valor {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.radio-options-lateral, .radio-options-lateral-valor {
+    background-color:#c1c1c1;
+    border-radius: 0 0 15px 15px;
+    padding: 5px;
+}
+.lateral-title {
+    background-color:#585858;
+    padding: 5px;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
 #button-buscar-container {
-    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .busca-painel-btn {
-    background-color:#ffa500;
-    padding: 10px;
-    border:none;
-    color:white;
-    border-radius: 15px;
-    transition: all 0.2s;
-    margin-top: 10px;
 
+    background-color:#ffa500;
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 15px;
 }
-.busca-painel-btn:hover {
-    background-color:#FFFFFF;
-    color:#ffa500;
-    text-decoration: underline;
+
+#painel-lateral-fechar {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    background-color:#d7d7d7;
+    border:none;
 }
 
 #mobile-buscar {
@@ -213,6 +233,7 @@ input[type='radio']:checked:after { /* quando selecionado */
     text-align: center;
 }
 .produto-dados {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -245,42 +266,13 @@ input[type='radio']:checked:after { /* quando selecionado */
     border-radius: 15px;
 }
 
-/* classes de animação e keyframes */
-
-@keyframes abrir-painel {
-    from {
-        transform: translateX(-500px);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes fechar-painel {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-20000vw);
-        display:none;
-    }
-}
-
 .search-show {
-    animation-duration: 0.2s;
-    animation-name: abrir-painel;
-
     display:flex;
 }
 .search-hidden {
-    animation-duration: 0.5s;
-    animation-name: fechar-painel;
-    display:none;
+    display:none; 
 }
-.dark {
-    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo preta com 50% de opacidade */
-    filter: brightness(0.5); /* Aplica um filtro de brilho de 50% */
-}
+
 
 #filtros-container {
     display: flex;

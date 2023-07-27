@@ -6,81 +6,100 @@
 
     <link rel="stylesheet" href="{{ asset('css/listar-produtos.css') }}">
 
-    <form action="imoveis" method="post" id="painel-pesquisa-lateral" class="search-hidden">
+    <form action="imoveis" method="post" id="painel-pesquisa-lateral" style="display:none">
         @csrf
         <div id="painel-pesquisa-opcoes-lateral">
+            <button type="button" id="painel-lateral-fechar" onclick="fecharPainel()">X</button>
             <p>Título do imóvel:</p>
             <input type="text" name="titulo" class="input-text" id="painel-titulo-lateral"
                 placeholder="Pesquisar imóvel">
             <p>Localidade:</p>
             <input type="text" name="localidade" id="painel-local-lateral" class="input-text"
                 placeholder="Pesquisar Localidade">
-            <p class="lateral-title">Quantidade de quartos:</p>
-            <div class="radio-options-lateral">
-                <div class="radio-option-lateral">
-                    <input type="radio" name="qtdQuartos" id=""> <label for="">1</label>
-                </div>
-                <div class="radio-option">
-                    <input type="radio" name="qtdQuartos" id=""> <label for="">2</label>
-                </div>
-                <div class="radio-option">
-                    <input type="radio" name="qtdQuartos" id=""> <label for="">3+</label>
-                </div>
-            </div>
-            <p class="lateral-title">Quantidade de banheiros:</p>
-            <div class="radio-options-lateral">
-                <div class="radio-option-lateral">
-                    <input type="radio" name="qtdBanheiros" id=""> <label for="">1</label>
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="qtdBanheiros" id=""> <label for="">2</label>
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="qtdBanheiros" id=""> <label for="">3+</label>
+                
+            <div class="radio-container">
+                <p class="lateral-title">Quantidade de quartos:</p>
+                <div class="radio-options-lateral">
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="qtdQuartos" id=""> <label for="">1</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="qtdQuartos" id=""> <label for="">2</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="qtdQuartos" id=""> <label for="">3+</label>
+                    </div>
                 </div>
             </div>
-            <p class="lateral-title">Quantidade de vagas:</p>
-            <div class="radio-options-lateral">
-                <div class="radio-option-lateral">
-                    <input type="radio" name="qtdVagas" id=""> <label for="">1</label>
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="qtdVagas" id=""> <label for="">2</label>
 
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="qtdVagas" id=""> <label for="">3+</label>
-                </div>
-            </div>
-            <p class="lateral-title">Valor:</p>
-            <div class="radio-options-lateral">
-                <div class="radio-option-lateral">
-                    <input type="radio" name="valor" id=""> <label for="">Até R$100.000</label>
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="valor" id=""> <label for="">Entre R$100.000 e
-                        R$300.000</label>
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="valor" id=""> <label for="">Mais que
-                        R$300.000</label>
+            <div class="radio-container">
+                <p class="lateral-title">Quantidade de banheiros:</p>
+                <div class="radio-options-lateral">
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="qtdBanheiros" id=""> <label for="">1</label>
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="qtdBanheiros" id=""> <label for="">2</label>
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="qtdBanheiros" id=""> <label for="">3+</label>
+                    </div>
                 </div>
             </div>
-            <p class="lateral-title">Area:</p>
-            <div class="radio-options-lateral">
-                <div class="radio-option-lateral">
-                    <input type="radio" name="area" id=""> <label for="">Até
-                        150m<sup>2</sup></label>
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="area" id=""> <label for="">Entre 150m<sup>2</sup> e
-                        250m<sup>2</sup></label>
-                </div>
-                <div class="radio-option-lateral">
-                    <input type="radio" name="area" id=""> <label for="">Mais que
-                        250m<sup>2</sup></label>
+
+            <div class="radio-container">
+                <p class="lateral-title">Quantidade de vagas:</p>
+                <div class="radio-options-lateral">
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="qtdVagas" id=""> <label for="">1</label>
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="qtdVagas" id=""> <label for="">2</label>
+    
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="qtdVagas" id=""> <label for="">3+</label>
+                    </div>
                 </div>
             </div>
+            
+            <div class="radio-container">
+                <p class="lateral-title">Valor:</p>
+                <div class="radio-options-lateral-valor">
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="valor" id=""> <label for="">Até R$100.000</label>
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="valor" id=""> <label for="">Entre R$100.000 e
+                            R$300.000</label>
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="valor" id=""> <label for="">Mais que
+                            R$300.000</label>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="radio-container">
+                <p class="lateral-title">Area:</p>
+                <div class="radio-options-lateral-valor">
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="area" id=""> <label for="">Até
+                            150m²</label>
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="area" id=""> <label for="">Entre 150m² e
+                            250m²</label>
+                    </div>
+                    <div class="radio-option-lateral">
+                        <input type="radio" name="area" id=""> <label for="">Mais que
+                            250m²</label>
+                    </div>
+                </div>
+            </div>
+
+
             <div id="button-buscar-container">
                 <button type="submit" class="busca-painel-btn">Procurar</button>
             </div>
@@ -88,110 +107,108 @@
     </form>
     <div id="pagina" class="enable-dark">
 
-
-
-            <div id="painel-pesquisa-float-completo">
-                <div id="painel-pesquisa-titulo">
-                    <h1>Pesquisa avançada</h1>
-                </div>
-
-                <div id="painel-pesquisa-float">
-                    <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
-                        @csrf
-                        <div class="input-search-group">
-                            <p>Título do imóvel</p>
-                            <input type="text" name="titulo" class="input-text" id="painel-titulo" placeholder="Pesquisar imóvel">
-                            <p id="localidade-titulo">Localidade</p>
-                            <input type="text" name="localidade" id="painel-local" class="input-text" placeholder="localidade">
-                        </div>
-
-                        <p class="search-title input-title ">Quantidade de quartos</p>
-                        <div class="radio-options search-body">
-                            <div class="radio-option">
-                                <input type="radio" name="qtdQuartos" id="" value="1"> <label
-                                    for="">1</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="qtdQuartos" id="" value="2"> <label
-                                    for="">2</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="qtdQuartos" id="" value="3"> <label
-                                    for="">3+</label>
-                            </div>
-                        </div>
-
-                        <p class="search-title input-title ">Quantidade de banheiros</p>
-                        <div class="radio-options search-body" >
-                            <div class="radio-option">
-                                <input type="radio" name="qtdBanheiros" id="" value="1"> <label
-                                    for="">1</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="qtdBanheiros" id="" value="2"> <label
-                                    for="">2</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="qtdBanheiros" id="" value="3"> <label
-                                    for="">3+</label>
-                            </div>
-                        </div>
-                        <p class="search-title input-title ">Quantidade de vagas</p>
-                        <div class="radio-options search-body">
-                            <div class="radio-option">
-                                <input type="radio" name="vagas" id="" value="1"> <label
-                                    for="">1</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="vagas" id="" value="2"> <label
-                                    for="">2</label>
-
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="vagas" id="" value="3"> <label
-                                    for="">3+</label>
-                            </div>
-                        </div>
-                        <p class="search-title input-title ">Valor</p>
-                        <div class="radio-options-column search-body">
-                            <div class="radio-option">
-                                <input type="radio" name="valor" id="" value="1"> <label
-                                    for="">Até
-                                    R$100.000</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="valor" id="" value="2"> <label
-                                    for="">Entre
-                                    R$100.000 e R$300.000</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="valor" id="" value="3"> <label
-                                    for="">Mais
-                                    que R$300.000</label>
-                            </div>
-                        </div>
-                        <p class="search-title input-title ">Area</p>
-                        <div class="radio-options-column search-body">
-                            <div class="radio-option">
-                                <input type="radio" name="area" id="" value="1"> <label
-                                    for="">Até
-                                    150m<sup>2</sup></label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="area" id="" value="2"> <label
-                                    for="">Entre
-                                    150m<sup>2</sup> e 250m<sup>2</sup></label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="area" id="" value="3"> <label
-                                    for="">Mais
-                                    que 250m<sup>2</sup></label>
-                            </div>
-                        </div>
-                        <button type="submit" class="busca-painel-btn">Procurar</button>
-                    </form>
-                </div>
+        <div id="painel-pesquisa-float-completo">
+            <div id="painel-pesquisa-titulo">
+                <h1>Pesquisa avançada</h1>
             </div>
+
+            <div id="painel-pesquisa-float">
+                <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
+                    @csrf
+                    <div class="input-search-group">
+                        <p>Título do imóvel</p>
+                        <input type="text" name="titulo" class="input-text" id="painel-titulo" placeholder="Pesquisar imóvel">
+                        <p id="localidade-titulo">Localidade</p>
+                        <input type="text" name="localidade" id="painel-local" class="input-text" placeholder="localidade">
+                    </div>
+
+                    <p class="search-title input-title ">Quantidade de quartos</p>
+                    <div class="radio-options search-body">
+                        <div class="radio-option">
+                            <input type="radio" name="qtdQuartos" id="" value="1"> <label
+                                for="">1</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="qtdQuartos" id="" value="2"> <label
+                                for="">2</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="qtdQuartos" id="" value="3"> <label
+                                for="">3+</label>
+                        </div>
+                    </div>
+
+                    <p class="search-title input-title ">Quantidade de banheiros</p>
+                    <div class="radio-options search-body" >
+                        <div class="radio-option">
+                            <input type="radio" name="qtdBanheiros" id="" value="1"> <label
+                                for="">1</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="qtdBanheiros" id="" value="2"> <label
+                                for="">2</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="qtdBanheiros" id="" value="3"> <label
+                                for="">3+</label>
+                        </div>
+                    </div>
+                    <p class="search-title input-title ">Quantidade de vagas</p>
+                    <div class="radio-options search-body">
+                        <div class="radio-option">
+                            <input type="radio" name="vagas" id="" value="1"> <label
+                                for="">1</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="vagas" id="" value="2"> <label
+                                for="">2</label>
+
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="vagas" id="" value="3"> <label
+                                for="">3+</label>
+                        </div>
+                    </div>
+                    <p class="search-title input-title ">Valor</p>
+                    <div class="radio-options-column search-body">
+                        <div class="radio-option">
+                            <input type="radio" name="valor" id="" value="1"> <label
+                                for="">Até
+                                R$100.000</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="valor" id="" value="2"> <label
+                                for="">Entre
+                                R$100.000 e R$300.000</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="valor" id="" value="3"> <label
+                                for="">Mais
+                                que R$300.000</label>
+                        </div>
+                    </div>
+                    <p class="search-title input-title ">Area</p>
+                    <div class="radio-options-column search-body">
+                        <div class="radio-option">
+                            <input type="radio" name="area" id="" value="1"> <label
+                                for="">Até
+                                150m<sup>2</sup></label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="area" id="" value="2"> <label
+                                for="">Entre
+                                150m<sup>2</sup> e 250m<sup>2</sup></label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="area" id="" value="3"> <label
+                                for="">Mais
+                                que 250m<sup>2</sup></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="busca-painel-btn">Procurar</button>
+                </form>
+            </div>
+        </div>
         <div id="pesquisa-result">
             @if (session('search') != null and session('search') != 'sem filtro' )
                 <div id="filtros-container">
@@ -229,9 +246,8 @@
                         <p class="produto-titulo">{{ $item->titulo }}</p>
                         <p class="produto-descricao">{{ $item->descricao }}</p>
                         <div class="produto-dados">
-                            <p class="produto-valor">{{ $item->valor }}</p>
-                            <p class="produto-vagas">{{ $item->qtdQuartos }}quartos, {{ $item->qtdBanheiros }}banheiros e
-                                {{ $item->qtdVagas }} vagas</p>
+                            <p class="produto-valor">R${{ $item->valor }},00</p>
+                            <p class="produto-valor">{{ $item->area }}m²</p>
                         </div>
                         <form action="/imoveis/{{ $item->id }}" method="post">
                             @csrf

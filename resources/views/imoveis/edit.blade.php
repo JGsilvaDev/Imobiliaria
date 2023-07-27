@@ -381,19 +381,19 @@
                                 <div class="semelhante-produto-card">
                                     @foreach ($imagemPrincipal as $path)
                                         @if($sem->id == $path->chave)
-                                            <div class="img" style="background-image: url('{{ asset($path->path) }}')"></div>
+                                            <div class="img-semelhante" style="background-image: url('{{ asset($path->path) }}')"></div>
                                         @endif
                                     @endforeach
                                     <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>
-                                    <p class="semelhante-produto-localidade">Localidade - {{ $sem->localidade }}</p>
+                                    <p class="semelhante-produto-localidade">{{ $sem->localidade }}</p>
                                     <div id="semelhante-produto-info" class="flex-row">
-                                        <p class="semelhante-produto-area">{{ $sem->area }}</p>
-                                        <p class="semelhante-produto-vagas">{{ $sem->qtdVagas }}</p>
+                                        <p class="semelhante-produto-area">{{ $sem->area }}m²</p>
+                                        <p class="semelhante-produto-vagas">R${{ $sem->valor }},00</p>
                                     </div>
                                     <form action="/imoveis/{{ $sem->id }}" method="post">
                                         @csrf
                                         <input type="hidden" name="idImovel">
-                                        <button class="produto-saber-mais" type="submit">Detalhe</button>
+                                        <button class="produto-saber-mais" type="submit">Detalhes</button>
                                     </form>
 
                                 </div>

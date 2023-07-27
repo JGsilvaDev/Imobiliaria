@@ -41,6 +41,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+.img-semelhante {
+    width: 80%;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .img-nav{
     width: 150px;
@@ -105,7 +112,7 @@ body {
     z-index: 2;
 
     color: white;
-    background-color: red;
+    /* background-color: red; */
 }
 
 #pagina-layout {
@@ -144,10 +151,14 @@ body {
 }
 
 .semelhante-produto-card {
+    padding: 10px;
     display:flex;
     flex-direction: column;
     align-items: center;
     width: 25vw;
+
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #1B657A inset;
 }
 
 
@@ -227,7 +238,14 @@ body {
 #fechar-icone {
     display: none;
 }
+.produto-saber-mais {
+    background-color:#1B657A;
+    padding: 5px 30px;
+    color: white;
+    border: none;
 
+    border-radius: 15px;
+}
 /* #fechar-icone-container {
     width:100%;
     text-align: right;

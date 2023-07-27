@@ -66,7 +66,7 @@
                         <section id="imovel-botoes" class="produto-item-flex">
                             <form action="admin/edit/{{ $item->id }}" method="post" id="imovel-editar" class="imovel-btn">
                                 @csrf
-                                <button type="submit" id="" class="imovel-btn">
+                                <button type="submit" id="imovel-editar-btn" class="imovel-btn">
                                 <span class="btn-texto">Editar</span></button>
                             </form>
 

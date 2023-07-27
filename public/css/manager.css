@@ -212,6 +212,9 @@ body {
     background-color: #1B657A;
     border-radius: 5px;
 }
+#imovel-editar-btn {
+    width:100%;
+}
 #imovel-editar:hover {
     background-color: white;
     color: #1B657A;

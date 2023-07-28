@@ -5,6 +5,7 @@ use App\Http\Controllers\masterController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\cadastroUsuarioController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\contatosController;
 use App\Http\Controllers\editController;
 use App\Http\Controllers\editUserController;
 use App\Http\Controllers\logoutController;
@@ -45,6 +46,8 @@ Route::get('/admin/editUsuario', [editUserController::class, 'user']);
 Route::post('/admin/editUsuario', [editUserController::class, 'editUser']);
 
 Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
+
+Route::get('/admin/contatos', [contatosController::class, 'index']);
 
 Route::post('/edit/imgPrincipal/{id}', [editController::class, 'alterarImgPrincipal']);
 Route::post('/salvar/{id}', [editController::class, 'update']);

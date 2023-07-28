@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('mensagem');
             $table->string('motivoContato');
+            $table->boolean('resolvido');
             $table->timestamps();
         });
     }

@@ -90,35 +90,37 @@
     </div>
 
 <script>
-function mostrarInfo(event) {
-    loadInfo(event);
-    const popup = document.getElementById('popup-informacoes')
+    //carrega as informações e então abre o painel
+    function mostrarInfo(event) {
+        loadInfo(event);
+        const popup = document.getElementById('popup-informacoes')
 
-    popup.style.display = 'flex'
-}
-
-function fecharInfo() {
-    const popup = document.getElementById('popup-informacoes')
-    popup.style.display = 'none'
-}
-
-function loadInfo(event) {
-    const client_id = event.target.id
-    const dados_nome = document.getElementById('dados-nome')
-    const dados_telefone = document.getElementById('dados-telefone')
-    const dados_email = document.getElementById('dados-email')
-    const dados_motivo = document.getElementById('dados-motivo')
-    const dados_mensagem = document.getElementById('dados-mensagem')
-
-    //arrays
-    const dados_array = [dados_nome, dados_telefone, dados_email, dados_motivo, dados_mensagem]
-    const info_array = document.getElementsByClassName(client_id)
-
-    for(let i=0; i<dados_array.length-1; i++) {
-        dados_array[i].innerHTML = info_array[i].innerHTML
+        popup.style.display = 'flex'
     }
-    dados_array[4].innerHTML = info_array[4].value
-}
+
+    //fecha o painel
+    function fecharInfo() {
+        const popup = document.getElementById('popup-informacoes')
+        popup.style.display = 'none'
+    }
+
+    //carrega as informações
+    function loadInfo(event) {
+        //arrays
+        const dados_array = [
+            document.getElementById('dados-nome'),
+            document.getElementById('dados-telefone'),
+            document.getElementById('dados-email'),
+            document.getElementById('dados-motivo'),
+            document.getElementById('dados-mensagem')
+        ]
+        const info_array = document.getElementsByClassName(client_id)
+
+        for(let i=0; i<dados_array.length-1; i++) {
+            dados_array[i].innerHTML = info_array[i].innerHTML
+        }
+        dados_array[4].innerHTML = info_array[4].value
+    }
 
 </script>
 

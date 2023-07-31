@@ -67,7 +67,7 @@
                 <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->telefone }}</td>
                 <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->email }}</td>
                 <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->motivoContato }}</td>
-                <input class=" information-{{$cont->id}}" type="hidden" name="" value="motivo da mensagem">
+                <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
                 </tbody>
             @endforeach
 

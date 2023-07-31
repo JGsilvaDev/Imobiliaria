@@ -27,7 +27,7 @@
                 </div>
                 <div class="cliente-dados-container">
                     <p class="dados-title">Mensagem</p>
-                    <p class="dados-info" id="dados-mensagem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error atque, sint non numquam soluta quaerat, molestias totam porro tenetur expedita exercitationem optio. Molestiae accusantium nesciunt quo. Sint tempora doloribus maxime repellendus aliquam eaque. Vero aut commodi dicta, totam consectetur repudiandae quam at eligendi reprehenderit deserunt, pariatur minus dolorum recusandae praesentium?</p>
+                    <p class="dados-info" id="dados-mensagem">XXXXXX</p>
                 </div>
 
             </div>

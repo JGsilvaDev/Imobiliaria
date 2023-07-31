@@ -54,13 +54,14 @@ body {
     padding: 10px;
 
     border-radius: 0 0 15px 15px;
-    text-align: center;
+    /* text-align: center; */
 }
 .cliente-dados {
     display: flex;
     flex-direction: column;
     gap: 10px;
 
+    width: 80%;
 }
 
 .cliente-botoes {

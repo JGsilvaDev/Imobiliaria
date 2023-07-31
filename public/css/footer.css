@@ -53,3 +53,20 @@ body {
 #color_squad {
     color: #383838;
 }
+
+@media (max-width: 600px) {
+    #img-logo-footer {
+        display: none;
+    }
+    .style_paragrafo {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 10px;
+        flex-direction: column;
+    }
+    #conteudo {
+        display: none;
+    }
+}

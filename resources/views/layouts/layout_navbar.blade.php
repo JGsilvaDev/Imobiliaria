@@ -52,32 +52,32 @@
 
         <div class="style_paragrafo">
             <div>
-                <p>Institutional</p>
-                <p>page page page 1</p>
-                <p>page page 1</p>
-                <p>page</p>
+                <p onclick="window.location.href='/imoveis'">Imóvel</p>
+                <p id="conteudo">page page page 1</p>
+                <p id="conteudo">page page 1</p>
+                <p id="conteudo">page</p>
             </div>
             <div>
-                <p>Institutional</p>
-                <p>page page page 1</p>
-                <p>page page 1</p>
-                <p>page</p>
+                <p onclick="window.location.href='/sobre'">Saiba mais</p>
+                <p id="conteudo">page page page 1</p>
+                <p id="conteudo">page page 1</p>
+                <p id="conteudo">page</p>
             </div>
             <div>
-                <p>Institutional</p>
-                <p>page page page 1</p>
-                <p>page page 1</p>
-                <p>page</p>
+                <p onclick="modal();">Contato</p>
+                <p id="conteudo">page page page 1</p>
+                <p id="conteudo">page page 1</p>
+                <p id="conteudo">page</p>
             </div>
             <div>
-                <p>Fale conosco</p>
-                <p>Localização</p>
-                <p>Número do whats</p>
-                <p>Robson</p>
-                <p>Clobeson</p>
+                <p onclick="window.location.href='/login'">Login</p>
+                <p id="conteudo">Localização</p>
+                <p id="conteudo">Número do whats</p>
+                <p id="conteudo">Robson</p>
+                <p id="conteudo">Clobeson</p>
             </div>
             <div>
-                <img src="{{asset('img/logo.png')}}">
+                <img id="img-logo-footer" src="{{asset('img/logo.png')}}">
             </div>
         </div>
 

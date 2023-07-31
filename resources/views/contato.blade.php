@@ -23,4 +23,6 @@
     <h1>Página não encontrada</h1>
 
     {{-- <p id="voltar-btn"><a href="#">Voltar para página inicial</a></p> --}}
+
+
 @endsection

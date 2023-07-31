@@ -1,0 +1,130 @@
+body {
+    font-family: 'Roboto',sans-serif;
+}
+
+/* classes */
+
+.table-header {
+    background-color: white;
+}
+.table-title {
+    padding: 20px;
+    background-color: #B77922;
+    color: white;
+    font-size: 18px;
+}
+
+.table-body {
+    background-color: rgb(237, 237, 237)
+}
+.body-info {
+    padding: 20px;
+    text-align: center;
+    border-bottom: #cfcfcf 1px solid;
+}
+
+.divider-left {
+    /* border-left: #888888 2px solid; */
+}
+
+.button-info {
+    cursor: pointer;
+    border:none;
+    padding: 5px;
+    text-decoration: underline;
+    background-color: rgba(0,0,0,0);
+    color: #1B657A;
+}
+
+/* classes popup */
+
+.dados-title {
+    color: white;
+    background-color: #5e5e5e;
+    padding: 10px;
+    margin: 0;
+
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+
+}
+.dados-info {
+    margin: 0;
+    background-color: #DFDFDF;
+    padding: 10px;
+
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+}
+.cliente-dados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.cliente-botoes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.cliente-btn {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+/* IDs */
+#request-table {
+    margin-top: 15px;
+    overflow:hidden;
+    border-collapse:separate;
+    border-radius: 15px;
+    width: 90%;
+}
+#request-table:last-child {
+    border: none;
+}
+#corpo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#popup-informacoes {
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding: 20px;
+    position: fixed;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+#cliente-apagar {
+    background-color: #E12B2B;
+}
+#cliente-apagar:hover {
+    background-color: white;
+    color: #E12B2B;
+    text-decoration: underline;
+}
+
+#cliente-solucionar {
+    background-color: #00CD15;
+}
+
+#btn-popup-fechar {
+    background-color: none;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    padding: 10px;
+}

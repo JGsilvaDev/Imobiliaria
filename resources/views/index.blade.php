@@ -23,6 +23,13 @@
         <input type="text" name="nome" id="" class="contato-input" placeholder="nome" required>
         <input type="text" name="telefone" id="" class="contato-input" placeholder="telefone" required>
         <input type="email" name="email" id="" class="contato-input" placeholder="email">
+
+        <select name="motivo" id="" class="contato-motivo">
+            <option value="1" class="contato-option">Compra</option>
+            <option value="2" class="contato-option">Venda</option>
+            <option value="3" class="contato-option">Anuncio</option>
+        </select>
+
         <textarea name="mensagem" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="mensagem" required></textarea>
         <button type="submit" class="contato-enviar">Enviar</button>
 

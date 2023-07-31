@@ -95,6 +95,8 @@ class masterController extends Controller
         $contatos->email = $request->email;
         $contatos->telefone = $request->telefone;
         $contatos->mensagem = $request->mensagem;
+        $contatos->motivoContato = $request->motivo;
+        $contatos->resolvido = false;
 
         $contatos->save();
 

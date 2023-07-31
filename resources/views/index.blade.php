@@ -25,9 +25,9 @@
         <input type="email" name="email" id="" class="contato-input" placeholder="email">
 
         <select name="motivo" id="" class="contato-motivo">
-            <option value="1" class="contato-option">Compra</option>
-            <option value="2" class="contato-option">Venda</option>
-            <option value="3" class="contato-option">Anuncio</option>
+            <option value="Compra" class="contato-option">Compra</option>
+            <option value="Venda" class="contato-option">Venda</option>
+            <option value="Anuncio" class="contato-option">Anuncio</option>
         </select>
 
         <textarea name="mensagem" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="mensagem" required></textarea>

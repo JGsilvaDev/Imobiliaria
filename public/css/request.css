@@ -119,6 +119,11 @@ body {
 #cliente-solucionar {
     background-color: #00CD15;
 }
+#cliente-solucionar:hover {
+    background-color: white;
+    color: #00CD15;
+    text-decoration: underline;
+}
 
 #btn-popup-fechar {
     background-color: none;

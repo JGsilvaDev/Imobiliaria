@@ -75,7 +75,7 @@ function dataURLToFile(dataURL, filename) {
 function trocarPrincipal(id){
 
     $.ajax({
-        url: '/edit/imgPrincipal/' + id.parentElement.children[1].value,
+        url: '/edit/imgPrincipal/' + id.parentElement.parentElement.children[1].value,
         type: 'POST',
         dataType: 'json',
         headers: {
@@ -89,4 +89,6 @@ function trocarPrincipal(id){
           console.error(error);
         }
     });
+
+
 }

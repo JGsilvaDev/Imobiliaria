@@ -14,9 +14,9 @@
     <title>Edit Imovel</title>
 </head>
 <body>
+<button id="btn-voltar" onclick="window.location.href = '/admin'">Voltar</button>
     <div id="title-editar">
         <p>Editar</p>
-        <a href="/admin">Voltar</a>
         <h1>{{ $item->descricao }}</h1>
     </div>
     <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">
@@ -141,16 +141,30 @@
     <div class="edit-img-frame" style="background-image: url('{{ asset($imagemPrincipal->path) }}')"></div>
 
     <label class="img-title-label">Imagens</label>
-    @foreach ($imagem as $img)
-        @if ($item->id == $img->chave)
-            <div class="image-list-container">
-                <div class="edit-img-frame" style="background-image: url('{{ asset($img->path) }}')"></div>
-                <input type="hidden" name="id" value="{{ $img->id }}">
-                <button id="bntTrocarPrincipal" onclick="trocarPrincipal(this)">Trocar</button>
-                <button id="imovel-remover" onclick="excluirImg(this);" class="btn-delete-image">Excluir</button>
+    <div class="div-center">
+
+        <div class="image-list-container">
+            <div class="div-center">
+                <div class="image-flex">
+                    @foreach ($imagem as $img)
+                        @if ($item->id == $img->chave)
+                            <div class="image-list-content">
+                                <div class="edit-img-frame" style="background-image: url('{{ asset($img->path) }}')"></div>
+                                <input type="hidden" name="id" value="{{ $img->id }}">
+            
+                                <div class="image-list-buttons">
+                                    <button id="bntTrocarPrincipal" class="image-list-button" onclick="trocarPrincipal(this)">Trocar</button>
+                                    <button id="imovel-remover" onclick="excluirImg(this);" class="image-list-button">Excluir</button>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
             </div>
-        @endif
-    @endforeach
+                
+        </div>
+    </div>
+
 
     @if(session('excluir'))
         <div class="alert alert-success flash-message">

@@ -46,14 +46,14 @@ function excluirImg(id){
       }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: '/deletar/img/' + id.parentElement.children[1].value,
+                url: '/deletar/img/' + id.parentElement.parentElement.children[1].value,
                 type: 'DELETE',
                 dataType: 'json',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response) {
-                  id.parentElement.style.display = 'none';
+                  id.parentElement.parentElement.style.display = 'none';
 
                   Swal.fire({
                     icon: 'success',

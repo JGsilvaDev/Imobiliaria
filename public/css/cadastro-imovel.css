@@ -23,18 +23,30 @@ body {
 
 }
 
+.image-warning {
+  color: red;
+}
+
+.cadastro-divisor {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.div-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.div-center-gap {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 * {
   font-family: 'roboto', sans-serif;
   box-sizing: border-box;
 }
 
-button {
-  background-color:#1B657A;
-  color: white;
-  border:none;
-
-  font-size: 18px;
-}
 
 /* abas */
 #abas {
@@ -175,7 +187,7 @@ h1 {
 .image-list-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 90%;
 
   gap: 10px;
 
@@ -183,9 +195,37 @@ h1 {
   border:#1B657A solid 1px;
   border-radius: 15px;
 }
+.image-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  justify-content: space-between;
+
+  width: 80%;
+}
+
+.image-list-buttons {
+  display:flex;
+  justify-content: space-around;
+}
+.image-list-button {
+  width:33.33%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+#bntTrocarPrincipal {
+  background-color: #1B657A;
+  color: white;
+}
+#imovel-remover {
+  background-color: red;
+  color: white;
+}
 
 .image-list-content {
-  width: 24%;
+  width: 30%;
 
   display: flex;
   flex-direction: column;

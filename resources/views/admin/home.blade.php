@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 <script src="{{ asset('js/script.js') }}"></script>
-<script src="{{ asset('js/dropDown.js') }}"></script>
 <script src="{{ asset('js/reload.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,10 +18,9 @@
         <button class="nav-btn" id="novo-imovel" onclick="window.location.href='/admin/cadastrar'">Adicionar</button>
 
         <select name="opcao" class="nav-btn" id="dropdown">
-            <option disabled selected>Editar</option>
-            @foreach ($opcoes as $op)
-                <option value="{{ $op->id }}" id="{{ $op->id }}">{{ $op->name }}</option>
-            @endforeach
+            <option disabled selected data-url="/admin">Editar</option>
+            <option value="" data-url="/admin/editUsuario">Perfil</option>
+            <option value="" data-url="/logout">Sair</option>
         </select>
 
         <form action="logout" method="POST">
@@ -116,3 +114,4 @@
 @endif
 
 <script src="{{ asset('js/check-scroll.js') }}"></script>
+<script src="{{ asset('js/dropDown.js') }}"></script>

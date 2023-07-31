@@ -1,24 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
+let select = document.querySelector('#dropdown')
 
-    let botaoLogout = document.getElementById('sair');
+select.addEventListener('change', function () {
+    let selecionada = this.options[this.selectedIndex]
+    let url = selecionada.getAttribute('data-url')
 
-    $('#dropdown').change(function() {
-        var option = $('#dropdown').find(":selected").text();
-        console.log(option);
-
-        if(option == 'Home'){
-            window.location.href = '/admin';
-        };
-
-        if(option == 'Editar Perfil' || option == 'Perfil'){
-            window.location.href = '/admin/editUsuario';
-        };
-
-        if(option == 'Sair'){
-            botaoLogout.click();
-        }
-
-    });
-
-});
-
+    if (url === '/logout') {
+        document.getElementById('sair').click()
+    }
+    else {
+        window.location.href = url
+    }
+})

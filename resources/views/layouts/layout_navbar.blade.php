@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="{{ asset('js/dropDown.js') }}"></script>
+    
     <script src="{{ asset('js/reload.js') }}"></script>
     <title>@yield('title')</title>
 </head>
@@ -30,10 +29,11 @@
             @if(session('login'))
                 <select name="opcao" class="nav-btn" id="dropdown">
                     <option disabled selected>{{ session('name') }}</option>
-                    @foreach ($opcoes as $op)
-                        <option value="{{ $op->id }}" id="{{ $op->id }}">{{ $op->name }}</option>
-                    @endforeach
+                    <option value="" data-url="/">Home</option>
+                    <option value="" data-url="/admin">Admin</option>
+                    <option value="" data-url="/logout">Sair</option>
                 </select>
+
 
                 <form action="logout" method="POST">
                     @csrf
@@ -95,13 +95,13 @@
         </div>
     </div>
 
-
+<script src="{{ asset('js/dropDown.js') }}"></script>
 <style>
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-}
+    .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+    }
 </style>

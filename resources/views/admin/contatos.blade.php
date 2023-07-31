@@ -106,6 +106,7 @@
 
     //carrega as informações
     function loadInfo(event) {
+        const client_id = event.target.id
         //arrays
         const dados_array = [
             document.getElementById('dados-nome'),

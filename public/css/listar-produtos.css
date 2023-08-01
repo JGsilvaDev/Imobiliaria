@@ -208,6 +208,7 @@ input[type='radio']:checked:after { /* quando selecionado */
 
 .produto-container {
     background-color: #EDEDED;
+    border: #1B657A 2px solid;
     border-radius: 15px;
     padding: 10px;
 
@@ -238,13 +239,17 @@ input[type='radio']:checked:after { /* quando selecionado */
     flex-direction: row;
     justify-content: space-around;
 }
+.botao-detalhes {
+    width: 100%;
+}
 .produto-saber-mais {
     background-color:#1B657A;
     color:white;
     border: none;
     padding: 10px;
-    border-radius: 15px;
-    transition:all 0.2s
+    border-radius: 5px;
+    width: 100%;
+    transition:all 0.2s;
 }
 .produto-saber-mais:hover {
     background-color:#FFFFFF;

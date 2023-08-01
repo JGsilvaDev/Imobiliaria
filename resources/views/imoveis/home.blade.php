@@ -209,6 +209,7 @@
                 </form>
             </div>
         </div>
+
         <div id="pesquisa-result">
             @if (session('search') != null and session('search') != 'sem filtro' )
                 <div id="filtros-container">
@@ -242,19 +243,19 @@
                                         @break
                                     @endif
                                 @endforeach
+                            </div>
+                            <p class="produto-titulo">{{ $item->titulo }}</p>
+                            <p class="produto-descricao">{{ $item->descricao }}</p>
+                            <div class="produto-dados">
+                                <p class="produto-valor">R${{ $item->valor }},00</p>
+                                <p class="produto-valor">{{ $item->area }}m²</p>
+                            </div>
+                            <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
+                                @csrf
+                                <input type="hidden" name="idImovel">
+                                <button class="produto-saber-mais" type="submit">Detalhes</button>
+                            </form>
                         </div>
-                        <p class="produto-titulo">{{ $item->titulo }}</p>
-                        <p class="produto-descricao">{{ $item->descricao }}</p>
-                        <div class="produto-dados">
-                            <p class="produto-valor">R${{ $item->valor }},00</p>
-                            <p class="produto-valor">{{ $item->area }}m²</p>
-                        </div>
-                        <form action="/imoveis/{{ $item->id }}" method="post">
-                            @csrf
-                            <input type="hidden" name="idImovel">
-                            <button class="produto-saber-mais" type="submit">Detalhe</button>
-                        </form>
-                    </div>
                     @else
                     <div class="alert alert-success flash-message">
                         <p>Nenhum item encontrado com esse titulo</p>

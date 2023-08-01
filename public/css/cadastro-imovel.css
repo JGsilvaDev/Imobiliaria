@@ -23,6 +23,10 @@ body {
 
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .image-warning {
   color: red;
 }
@@ -60,6 +64,9 @@ body {
 
 .aba-option {
   padding: 10px 10%;
+  background-color:#1B657A;
+  color: white;
+  border: none;
   /* transition: all 0.2s; */
 
   text-decoration: none !important;

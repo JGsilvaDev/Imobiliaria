@@ -289,14 +289,28 @@ h1 {
     font-weight: bold;
 }
 
+#salvar {
+  background-color:#1B657A;
+  color:white;
+  padding: 20px;
+  border:none;
+}
+#salvar:hover {
+  background-color:rgb(158, 158, 158);
+  color:#1B657A;
+
+}
 
 /* Voltar */
 
 #btn-voltar {
+  background-color:#1B657A;
+  color:white;
   position: fixed;
   z-index: 3;
   top: 10px;
   left: 10px;
+  border:none;
 
   padding: 10px;
   border-radius: 5px;

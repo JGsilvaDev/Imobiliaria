@@ -201,10 +201,12 @@
         <button type="submit" id="salvar">Salvar</button>
     </form>
 
-    <label>Imagem Principal</label>
-    <div class="edit-img-frame" style="background-image: url('{{ asset($imagemPrincipal->path) }}')"></div>
+    <p class="img-title-label">Imagem Principal</p>
+    <div class="div-center">
+        <div id="main-img" style="background-image: url('{{ asset($imagemPrincipal->path) }}')"></div>
+    </div>
 
-    <label class="img-title-label">Imagens</label>
+    <p class="img-title-label">Imagens</p>
     <div class="div-center">
 
         <div class="image-list-container">

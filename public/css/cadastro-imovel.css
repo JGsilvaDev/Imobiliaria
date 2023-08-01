@@ -183,6 +183,8 @@ h1 {
 /* edição de imóvel */
 .img-title-label {
   font-size: 24px;
+  text-align: center;
+  width: 100%;
 }
 .image-list-container {
   display: flex;
@@ -259,11 +261,22 @@ h1 {
 
 .edit-img-frame {
   width:100%;
-  height: 130px;
+  height: 200px;
   border-radius: 5px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 100%;  
 }
+#main-img {
+  width:50%;
+  height: 200px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: 100%;  
+}
+
 .btn-delete-image {
   width:100%;
   background-color: red;

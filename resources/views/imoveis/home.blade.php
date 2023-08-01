@@ -235,7 +235,8 @@
             <div id="lista-produtos">
                 @foreach ($imoveis as $item)
                 @if ($item->id != 0)
-                        <div class="produto-container">
+                <div class="produto-container">
+                            <span id="tipo-imovel">%TIPO DO PRODUTO%</span>
                             <div class="produto-imagem">
                                 @foreach ($imagens as $path)
                                     @if ($item->id == $path->chave)
@@ -245,7 +246,7 @@
                                 @endforeach
                             </div>
                             <p class="produto-titulo">{{ $item->titulo }}</p>
-                            <p class="produto-descricao">{{ $item->descricao }}</p>
+                            <p class="produto-descricao">{{ $item->localidade }}</p>
                             <div class="produto-dados">
                                 <p class="produto-valor">R${{ $item->valor }},00</p>
                                 <p class="produto-valor">{{ $item->area }}m²</p>

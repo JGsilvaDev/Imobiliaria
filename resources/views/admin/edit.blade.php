@@ -68,7 +68,7 @@
         <input type="number" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input">
 
         <p id="valor-label">Básico</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="agua" id="agua" @if ($item->agua == 1) checked @endif><label>Agua</label>
             <input type="checkbox" name="energia" id="energia" @if ($item->energia == 1) checked @endif><label>Energia</label>
             <input type="checkbox" name="esgoto" id="esgoto" @if ($item->esgoto == 1) checked @endif><label>Esgoto</label>
@@ -77,7 +77,7 @@
         </div>
 
         <p id="valor-label">Serviços</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="areaServico" id="areaServico" @if ($item->areaServico == 1) checked @endif><label>Área de serviço</label>
             <input type="checkbox" name="banheiroAux" id="banheiroAux" @if ($item->banheiroAuxiliar == 1) checked @endif><label>Banheiro Auxiliar</label>
             <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada" @if ($item->banheiroEmpregada == 1) checked @endif><label>Banheiro Empregada</label>
@@ -90,7 +90,7 @@
         </div>
 
         <p id="valor-label">Lazer</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="areaLazer" id="areaLazer" @if ($item->areaLazer == 1) checked @endif><label>Área de lazer</label>
             <input type="checkbox" name="churrasqueira" id="churrasqueira" @if ($item->churrasqueira == 1) checked @endif><label>Churrasqueira</label>
             <input type="checkbox" name="playground" id="playground" @if ($item->playground == 1) checked @endif><label>Playground</label>
@@ -98,19 +98,19 @@
         </div>
 
         <p id="valor-label">Social</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="varanda" id="varanda" @if ($item->varanda == 1) checked @endif><label>Varanda</label>
             <input type="checkbox" name="varandaGourmet" id="varandaGourmet" @if ($item->varandaGourmet == 1) checked @endif><label>Varanda Gourmet</label>
         </div>
 
         <p id="valor-label">Acabamento</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="pisoFrio" id="pisoFrio" @if ($item->pisoFrio == 1) checked @endif><label>Piso Frio</label>
             <input type="checkbox" name="porcelanato" id="porcelanato" @if ($item->porcelanato == 1) checked @endif><label>Porcelanato</label>
         </div>
 
         <p id="valor-label">Intima</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="lavado" id="lavado" @if ($item->lavado == 1) checked @endif><label>Lavado</label>
             <input type="checkbox" name="roupeiro" id="roupeiro" @if ($item->roupeiro == 1) checked @endif><label>Roupeiro</label>
             <input type="checkbox" name="suiteMaster" id="suiteMaster" @if ($item->suiteMaster == 1) checked @endif><label>Suite Master</label>
@@ -118,7 +118,7 @@
         </div>
 
         <p id="valor-label">Destaques</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="entradaServico" id="entradaServico" @if ($item->entradaServico == 1) checked @endif><label>Entrada de serviço</label>
             <input type="checkbox" name="escritorio" id="escritorio" @if ($item->escritorio == 1) checked @endif><label>Escritorio</label>
             <input type="checkbox" name="jardim" id="jardim" @if ($item->jardim == 1) checked @endif><label>Jardim</label>
@@ -151,7 +151,7 @@
                             <div class="image-list-content">
                                 <div class="edit-img-frame" style="background-image: url('{{ asset($img->path) }}')"></div>
                                 <input type="hidden" name="id" value="{{ $img->id }}">
-            
+
                                 <div class="image-list-buttons">
                                     <button id="bntTrocarPrincipal" class="image-list-button" onclick="trocarPrincipal(this)">Trocar</button>
                                     <button id="imovel-remover" onclick="excluirImg(this);" class="image-list-button">Excluir</button>
@@ -161,7 +161,7 @@
                     @endforeach
                 </div>
             </div>
-                
+
         </div>
     </div>
 

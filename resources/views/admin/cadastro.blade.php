@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" href="{{ asset('css/cadastro-imovel.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="{{ asset('js/slider.js') }}"></script>
     <script src="{{ asset('js/imagem.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
@@ -228,17 +227,17 @@
         <p for="" id="desc-label" class="add-label">Descrição</p>
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input"></textarea>
 
-        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">1</span></p>
-        <input type="range" name="qtd_banheiros" min="0" max="50" value="1" id="sliderBanheiroCasa" class="slider">
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheirosAp">1</span></p>
+        <input type="range" name="qtd_banheiros" min="0" max="50" value="1" id="sliderBanheirosAp" class="slider">
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites: <span id="sliderValueSuiteAp">1</span></p>
         <input type="range" name="qtd_suites" min="0" max="50" value="1" id="sliderSuiteAp" class="slider">
 
-        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">1</span></p>
-        <input type="range" name="qtd_quartos" min="0" max="50" value="1" id="sliderQuartosCasa" class="slider">
+        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosAp">1</span></p>
+        <input type="range" name="qtd_quartos" min="0" max="50" value="1" id="sliderQuartosAp" class="slider">
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasCasa">1</span></p>
-        <input type="range" name="qtd_vagas" min="0" max="50" value="1" id="sliderVagasCasa" class="slider">
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasAp">1</span></p>
+        <input type="range" name="qtd_vagas" min="0" max="50" value="1" id="sliderVagasAp" class="slider">
 
         <p id="local-label">Localidade</p>
         <input name="localidade" type="text" id="casa-local-input" min="1" class="add-input">
@@ -272,7 +271,7 @@
 
         <p id="valor-label">Básico</p>
         <div class="checkbox">
-            
+
         <div class="check-item">
                 <input type="checkbox" name="agua" id="agua"><label for="agua">Agua</label>
             </div>
@@ -445,4 +444,5 @@
     </form>
 
     <script src="{{ asset('js/cadastro-abas.js') }}"></script>
+    <script src="{{ asset('js/slider.js') }}"></script>
 @endsection

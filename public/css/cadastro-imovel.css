@@ -230,6 +230,7 @@ h1 {
     border-radius: 15px;
     background-color: #D9D9D9;
     padding: 15px 20px;
+    flex-wrap: wrap;
 }
 .check-item {
   display: flex;

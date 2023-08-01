@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <button id="btn-voltar" onclick="window.location.href = '/admin'">Voltar</button>
-    
+
     <div id="titleAdicionar">
         <h2>Adicionar</h2>
     </div>
@@ -74,63 +74,63 @@
         <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input">
 
         <p id="valor-label">Básico</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="agua" id="agua"><label for="agua">Agua</label>
             <input type="checkbox" name="energia" id="energia"><label for="energia">Energia</label>
-            <input type="checkbox" name="esgoto" id="esgoto"><label for="">Esgoto</label>
-            <input type="checkbox" name="murado" id="murado"><label for="">Murado</label>
-            <input type="checkbox" name="pavimentação" id="pavimentação"><label for="">Pavimentação</label>
+            <input type="checkbox" name="esgoto" id="esgoto"><label for="esgoto">Esgoto</label>
+            <input type="checkbox" name="murado" id="murado"><label for="murado">Murado</label>
+            <input type="checkbox" name="pavimentação" id="pavimentação"><label for="pavimentação">Pavimentação</label>
         </div>
 
         <p id="valor-label">Serviços</p>
-        <div>
-            <input type="checkbox" name="areaServico" id="areaServico"><label for="">Área de serviço</label>
-            <input type="checkbox" name="banheiroAux" id="banheiroAux"><label for="">Banheiro Auxiliar</label>
-            <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada"><label for="">Banheiro Empregada</label>
-            <input type="checkbox" name="cozinha" id="cozinha"><label for="">Cozinha</label>
-            <input type="checkbox" name="cozinhaPlanejada" id="cozinhaPlanejada"><label for="">Cozinha Planejada</label>
-            <input type="checkbox" name="despensa" id="despensa"><label for="">Despensa</label>
-            <input type="checkbox" name="lavanderias" id="lavanderias"><label for="">Lavanderia</label>
-            <input type="checkbox" name="guarita" id="guarita"><label for="">Guarita</label>
-            <input type="checkbox" name="portaria24" id="portaria24"><label for="">Portaria 24h</label>
+        <div class="checkbox">
+            <input type="checkbox" name="areaServico" id="areaServico"><label for="areaServico">Área de serviço</label>
+            <input type="checkbox" name="banheiroAux" id="banheiroAux"><label for="banheiroAux">Banheiro Auxiliar</label>
+            <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada"><label for="banheiroEmpregada">Banheiro Empregada</label>
+            <input type="checkbox" name="cozinha" id="cozinha"><label for="cozinha">Cozinha</label>
+            <input type="checkbox" name="cozinhaPlanejada" id="cozinhaPlanejada"><label for="cozinhaPlanejada">Cozinha Planejada</label>
+            <input type="checkbox" name="despensa" id="despensa"><label for="despensa">Despensa</label>
+            <input type="checkbox" name="lavanderias" id="lavanderias"><label for="lavanderias">Lavanderia</label>
+            <input type="checkbox" name="guarita" id="guarita"><label for="guarita">Guarita</label>
+            <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
         </div>
 
         <p id="valor-label">Lazer</p>
-        <div>
-            <input type="checkbox" name="areaLazer" id="areaLazer"><label for="">Área de lazer</label>
-            <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="">Churrasqueira</label>
-            <input type="checkbox" name="playground" id="playground"><label for="">Playground</label>
-            <input type="checkbox" name="quadra" id="quadra"><label for="">Quadra esportiva</label>
+        <div class="checkbox">
+            <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
+            <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
+            <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra esportiva</label>
         </div>
 
         <p id="valor-label">Social</p>
-        <div>
-            <input type="checkbox" name="varanda" id="varanda"><label for="">Varanda</label>
-            <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="">Varanda Gourmet</label>
+        <div class="checkbox">
+            <input type="checkbox" name="varanda" id="varanda"><label for="varanda">Varanda</label>
+            <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="varandaGourmet">Varanda Gourmet</label>
         </div>
 
         <p id="valor-label">Acabamento</p>
-        <div>
-            <input type="checkbox" name="pisoFrio" id="pisoFrio"><label for="">Piso Frio</label>
-            <input type="checkbox" name="porcelanato" id="porcelanato"><label for="">Porcelanato</label>
+        <div class="checkbox">
+            <input type="checkbox" name="pisoFrio" id="pisoFrio"><label for="pisoFrio">Piso Frio</label>
+            <input type="checkbox" name="porcelanato" id="porcelanato"><label for="porcelanato">Porcelanato</label>
         </div>
 
         <p id="valor-label">Intima</p>
-        <div>
-            <input type="checkbox" name="lavado" id="lavado"><label for="">Lavado</label>
-            <input type="checkbox" name="roupeiro" id="roupeiro"><label for="">Roupeiro</label>
-            <input type="checkbox" name="suiteMaster" id="suiteMaster"><label for="">Suite Master</label>
-            <input type="checkbox" name="closet" id="closet"><label for="">Closet</label>
+        <div class="checkbox">
+            <input type="checkbox" name="lavado" id="lavado"><label for="lavado">Lavado</label>
+            <input type="checkbox" name="roupeiro" id="roupeiro"><label for="roupeiro">Roupeiro</label>
+            <input type="checkbox" name="suiteMaster" id="suiteMaster"><label for="suiteMaster">Suite Master</label>
+            <input type="checkbox" name="closet" id="closet"><label for="closet">Closet</label>
         </div>
 
         <p id="valor-label">Destaques</p>
-        <div>
-            <input type="checkbox" name="entradaServico" id="entradaServico"><label for="">Entrada de serviço</label>
-            <input type="checkbox" name="escritorio" id="escritorio"><label for="">Escritorio</label>
-            <input type="checkbox" name="jardim" id="jardim"><label for="">Jardim</label>
-            <input type="checkbox" name="moveisPlanejados" id="moveisPlanejados"><label for="">Moveis planejados</label>
-            <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="">Portão eletronico</label>
-            <input type="checkbox" name="quintal" id="quintal"><label for="">Quintal</label>
+        <div class="checkbox">
+            <input type="checkbox" name="entradaServico" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>
+            <input type="checkbox" name="escritorio" id="escritorio"><label for="escritorio">Escritorio</label>
+            <input type="checkbox" name="jardim" id="jardim"><label for="jardim">Jardim</label>
+            <input type="checkbox" name="moveisPlanejados" id="moveisPlanejados"><label for="moveisPlanejados">Moveis planejados</label>
+            <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="portaoEletronico">Portão eletronico</label>
+            <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
         </div>
 
         <hr class="cadastro-divisor">
@@ -199,7 +199,7 @@
         <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input">
 
         <p id="valor-label">Básico</p>
-        <div>
+        <div class="checkbox">
             <input type="checkbox" name="agua" id="agua"><label for="agua">Agua</label>
             <input type="checkbox" name="energia" id="energia"><label for="energia">Energia</label>
             <input type="checkbox" name="esgoto" id="esgoto"><label for="esgoto">Esgoto</label>
@@ -208,56 +208,55 @@
         </div>
 
         <p id="valor-label">Serviços</p>
-        <div>
-            <input type="checkbox" name="areaServico" id="areaServico"><label for="">Área de serviço</label>
-            <input type="checkbox" name="banheiroAux" id="banheiroAux"><label for="">Banheiro Auxiliar</label>
-            <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada"><label for="">Banheiro Empregada</label>
-            <input type="checkbox" name="cozinha" id="cozinha"><label for="">Cozinha</label>
-            <input type="checkbox" name="cozinhaPlanejada" id="cozinhaPlanejada"><label for="">Cozinha Planejada</label>
-            <input type="checkbox" name="despensa" id="despensa"><label for="">Despensa</label>
-            <input type="checkbox" name="lavanderias" id="lavanderias"><label for="">Lavanderia</label>
-            <input type="checkbox" name="guarita" id="guarita"><label for="">Guarita</label>
-            <input type="checkbox" name="portaria24" id="portaria24"><label for="">Portaria 24h</label>
+        <div class="checkbox">
+            <input type="checkbox" name="areaServico" id="areaServico"><label for="areaServico">Área de serviço</label>
+            <input type="checkbox" name="banheiroAux" id="banheiroAux"><label for="banheiroAux">Banheiro Auxiliar</label>
+            <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada"><label for="banheiroEmpregada">Banheiro Empregada</label>
+            <input type="checkbox" name="cozinha" id="cozinha"><label for="cozinha">Cozinha</label>
+            <input type="checkbox" name="cozinhaPlanejada" id="cozinhaPlanejada"><label for="cozinhaPlanejada">Cozinha Planejada</label>
+            <input type="checkbox" name="despensa" id="despensa"><label for="despensa">Despensa</label>
+            <input type="checkbox" name="lavanderias" id="lavanderias"><label for="lavanderias">Lavanderia</label>
+            <input type="checkbox" name="guarita" id="guarita"><label for="guarita">Guarita</label>
+            <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
         </div>
 
         <p id="valor-label">Lazer</p>
-        <div>
-            <input type="checkbox" name="areaLazer" id="areaLazer"><label for="">Área de lazer</label>
-            <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="">Churrasqueira</label>
-            <input type="checkbox" name="playground" id="playground"><label for="">Playground</label>
-            <input type="checkbox" name="quadra" id="quadra"><label for="">Quadra esportiva</label>
+        <div class="checkbox">
+            <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
+            <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
+            <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra esportiva</label>
         </div>
 
         <p id="valor-label">Social</p>
-        <div>
-            <input type="checkbox" name="varanda" id="varanda"><label for="">Varanda</label>
-            <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="">Varanda Gourmet</label>
+        <div class="checkbox">
+            <input type="checkbox" name="varanda" id="varanda"><label for="varanda">Varanda</label>
+            <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="varandaGourmet">Varanda Gourmet</label>
         </div>
 
         <p id="valor-label">Acabamento</p>
-        <div>
-            <input type="checkbox" name="pisoFrio" id="pisoFrio"><label for="">Piso Frio</label>
-            <input type="checkbox" name="porcelanato" id="porcelanato"><label for="">Porcelanato</label>
+        <div class="checkbox">
+            <input type="checkbox" name="pisoFrio" id="pisoFrio"><label for="pisoFrio">Piso Frio</label>
+            <input type="checkbox" name="porcelanato" id="porcelanato"><label for="porcelanato">Porcelanato</label>
         </div>
 
         <p id="valor-label">Intima</p>
-        <div>
-            <input type="checkbox" name="lavado" id="lavado"><label for="">Lavado</label>
-            <input type="checkbox" name="roupeiro" id="roupeiro"><label for="">Roupeiro</label>
-            <input type="checkbox" name="suiteMaster" id="suiteMaster"><label for="">Suite Master</label>
-            <input type="checkbox" name="closet" id="closet"><label for="">Closet</label>
+        <div class="checkbox">
+            <input type="checkbox" name="lavado" id="lavado"><label for="lavado">Lavado</label>
+            <input type="checkbox" name="roupeiro" id="roupeiro"><label for="roupeiro">Roupeiro</label>
+            <input type="checkbox" name="suiteMaster" id="suiteMaster"><label for="suiteMaster">Suite Master</label>
+            <input type="checkbox" name="closet" id="closet"><label for="closet">Closet</label>
         </div>
 
         <p id="valor-label">Destaques</p>
-        <div>
-            <input type="checkbox" name="entradaServico" id="entradaServico"><label for="">Entrada de serviço</label>
-            <input type="checkbox" name="escritorio" id="escritorio"><label for="">Escritorio</label>
-            <input type="checkbox" name="jardim" id="jardim"><label for="">Jardim</label>
-            <input type="checkbox" name="moveisPlanejados" id="moveisPlanejados"><label for="">Moveis planejados</label>
-            <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="">Portão eletronico</label>
-            <input type="checkbox" name="quintal" id="quintal"><label for="">Quintal</label>
+        <div class="checkbox">
+            <input type="checkbox" name="entradaServico" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>
+            <input type="checkbox" name="escritorio" id="escritorio"><label for="escritorio">Escritorio</label>
+            <input type="checkbox" name="jardim" id="jardim"><label for="jardim">Jardim</label>
+            <input type="checkbox" name="moveisPlanejados" id="moveisPlanejados"><label for="moveisPlanejados">Moveis planejados</label>
+            <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="portaoEletronico">Portão eletronico</label>
+            <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
         </div>
-
 
         <hr class="cadastro-divisor">
 
@@ -292,6 +291,8 @@
         <p id="valor-label">Valor</p>
         <input type="number" name="valor" id="trn-valor-input" min="1" class="add-input">
 
+        <p id="valor-label">Valor condominio</p>
+        <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input">
 
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>

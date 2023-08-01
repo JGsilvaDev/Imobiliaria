@@ -224,6 +224,23 @@ h1 {
   color: white;
 }
 
+.checkbox{
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #D9D9D9;
+    padding: 15px 20px;
+}
+
+.checkbox input{
+    width: 35px;
+    height: 18px;
+}
+
+.checkbox label{
+    margin-right: 30px;
+}
+
 .image-list-content {
   width: 30%;
 
@@ -296,7 +313,7 @@ h1 {
   .aba-option {
     padding: 10px 5%;
     /* transition: all 0.2s; */
-  
+
     text-decoration: none !important;
   }
 

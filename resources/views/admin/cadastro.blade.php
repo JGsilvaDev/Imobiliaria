@@ -58,7 +58,7 @@
         <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input">
 
         <p>Aluguel ou Venda</p>
-        <select name="tp_contrato" id="">
+        <select name="tp_contrato" id="" class="add-input">
             <option value="Aluguel">Alguel</option>
             <option value="Venda">Venda</option>
         </select>
@@ -255,7 +255,7 @@
         <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input">
 
         <p>Aluguel ou Venda</p>
-        <select name="tp_contrato" id="">
+        <select name="tp_contrato" id="" class="add-input">
             <option value="Aluguel">Alguel</option>
             <option value="Venda">Venda</option>
         </select>

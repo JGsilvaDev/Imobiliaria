@@ -19,6 +19,31 @@ body {
     margin: 0 5px;
 }
 
+#title-imovel{
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+#title-imovel h1{
+    flex: 1;
+    text-align: center;
+    padding-left: 185px;
+}
+
+#title-imovel div{
+    display: flex;
+    align-items: center;
+    margin-right: 70px;
+    height: 28px;
+
+    background-color: #1B657A;
+    color: white;
+    padding: 0px 50px;
+    border-radius: 10px;
+}
+
 .area-content {
     width: 33.33%;
     /* box-shadow: inset 0 0 10px #ff0000; */
@@ -30,7 +55,7 @@ body {
 
 #produto-carrossel{
     width: 650px;
-    height: 380px;
+    height: 450px;
     margin-bottom: 20px;
 }
 
@@ -50,8 +75,8 @@ body {
 }
 
 .img-nav{
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -292,37 +317,18 @@ body {
 }
 
 #produto-layout{
-    width: 80%;
+    width: 74%;
 }
 
 /*CAROSSEL IMG*/
-.slick-slide{
-    width: 200px;
-}
-
-.slick-list{
-    margin: auto!important;
-}
 
 #produto-carrossel-nav{
     width: 100%;
 }
 
-#produto-carrossel-nav .slick-prev,
-#produto-carrossel-nav .slick-next {
-    /* Se você quiser posicionar os botões acima e abaixo do carrossel, use a propriedade 'top' e 'bottom' */
-    top: 0;
-    bottom: 0;
-    /* Posicione os botões no lado oposto do carrossel, você pode ajustar os valores conforme desejado */
-    left: -30px;
-    right: -30px;
-    /* Ajuste o espaçamento conforme desejado */
-    margin-top: auto;
-    margin-bottom: auto;
-    /* Defina a ordem do empilhamento dos elementos, caso necessário */
-    z-index: 1;
+.item-desfocado {
+    filter: blur(4px); /* Ajuste o valor do desfoque conforme desejado */
 }
-
 
 
 @media (max-width: 1250px){

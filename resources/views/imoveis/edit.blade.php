@@ -35,7 +35,14 @@
             </div> -->
             <div id="produto-layout">
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
-                    <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
+                    <div id="title-imovel">
+                        <h1>{{ $detalhes->titulo }} -  {{ $detalhes->localidade }}</h1>
+                        <div>
+                            <span class="material-symbols-outlined">star</span>
+                            <h3>{{ $detalhes->id}}</h3>
+                        </div>
+                    </div>
+
                     <div id="produto-carrossel" class="flex-center-center slider-for">
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)

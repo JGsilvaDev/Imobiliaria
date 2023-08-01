@@ -58,7 +58,7 @@ body {
 }
 
 .slick-dots{
-    display: none;
+    display: none !important;
 }
 
 .margin-spaced {
@@ -291,6 +291,37 @@ body {
     right: 49px;
 }
 
+#produto-layout{
+    width: 80%;
+}
+
+/*CAROSSEL IMG*/
+.slick-slide{
+    width: 200px;
+}
+
+.slick-list{
+    margin: auto!important;
+}
+
+#produto-carrossel-nav{
+    width: 100%;
+}
+
+#produto-carrossel-nav .slick-prev,
+#produto-carrossel-nav .slick-next {
+    /* Se você quiser posicionar os botões acima e abaixo do carrossel, use a propriedade 'top' e 'bottom' */
+    top: 0;
+    bottom: 0;
+    /* Posicione os botões no lado oposto do carrossel, você pode ajustar os valores conforme desejado */
+    left: -30px;
+    right: -30px;
+    /* Ajuste o espaçamento conforme desejado */
+    margin-top: auto;
+    margin-bottom: auto;
+    /* Defina a ordem do empilhamento dos elementos, caso necessário */
+    z-index: 1;
+}
 
 
 

@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.slider-nav').slick({
           infinite: true,
           slidesToScroll: 1,
-          slidesToShow:1,
+          slidesToShow: 4,
           asNavFor: '.slider-for',
           dots: true,
           centerMode: true,
-          focusOnSelect: true
+          focusOnSelect: true,
+          arrows: false
         });
       };
 

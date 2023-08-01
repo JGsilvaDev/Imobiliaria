@@ -37,23 +37,19 @@
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
                     <h1>{{ $detalhes->titulo }} {{ $detalhes->id}}</h1>
                     <div id="produto-carrossel" class="flex-center-center slider-for">
-                        {{-- <button id="voltar-imagem" class="img-navigation">&lt</button> --}}
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
                                 <div><div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div></div>
                             @endif
                         @endforeach
-                        {{-- <button id="mudar-imagem" class="img-navigation">&gt</button> --}}
                     </div>
 
                     <div id="produto-carrossel-nav" class="flex-center-center slider-nav">
-                        {{-- <button id="voltar-imagem" class="img-navigation">&lt</button> --}}
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
                                 <div><div class="carrossel-img-frame img-nav" style="background-image: url('{{asset($path->path)}}')"></div></div>
                             @endif
                         @endforeach
-                        {{-- <button id="mudar-imagem" class="img-navigation">&gt</button> --}}
                     </div>
 
                     <div id="imovel-dados" class="flex-row">

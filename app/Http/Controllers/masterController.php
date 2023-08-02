@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Catalogo;
 use App\Models\Contatos;
+use Illuminate\Support\Facades\Session;
 
 class masterController extends Controller
 {
@@ -22,19 +23,19 @@ class masterController extends Controller
 
         $count = Catalogo::count();
 
-        $opcoes = [
-            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
-        ];
+        Session::forget('search');
 
-        return view('index',['itens' => $catalogo, 'imagens' => $imagem, 'opcoes' => $opcoes, 'count' => $count]);
+        return view('index',['itens' => $catalogo, 'imagens' => $imagem, 'count' => $count]);
     }
 
     public function store(Request $request){
 
         $tipo = strlen($request->infoPesquisa);
+        $session = session();
 
-        if($tipo == 1){
+        $filtro = new \stdClass();
+
+        if($tipo == 1 or $tipo == 2 or $tipo == 3){
 
             $imoveis = DB::table('catalogos')
                         ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
@@ -45,6 +46,15 @@ class masterController extends Controller
             $imagem = DB::table('imagens')
                         ->select('chave','path')
                         ->get();
+
+            if($imoveis->isEmpty()){
+                return redirect('/imoveis')->with(['imoveis' => $imoveis, 'imagem' => $imagem]);
+            }else{
+                $filtro->imovel[] = 'Tipo Imovel';
+                $filtro->imovel[] = $imoveis[0]->descricao;
+
+            }
+
 
         }else{
 
@@ -57,34 +67,30 @@ class masterController extends Controller
             $imagem = DB::table('imagens')
                         ->select('chave','path')
                         ->get();
+
+            $filtro->titulo[] = 'titulo';
+            $filtro->titulo[] = $request->infoPesquisa;
         }
 
-        $opcoes = [
-            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
+        $search = [
+            'search' => $request->infoPesquisa
         ];
 
-        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem,'opcoes' => $opcoes]);
+        // dd($search);
+
+        $session->put([
+            'search' => $search
+        ]);
+
+        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem, 'filtro' => $filtro]);
     }
 
     public function sobre(){
-
-        $opcoes = [
-            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
-        ];
-
-        return view('sobre',['opcoes' => $opcoes]);
+        return view('sobre');
     }
 
     public function contato(){
-
-        $opcoes = [
-            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
-        ];
-
-        return view('contato',['opcoes' => $opcoes]);
+        return view('contato');
     }
 
     public function envioContato(Request $request){

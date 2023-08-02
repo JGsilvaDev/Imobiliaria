@@ -18,7 +18,9 @@ class imoveisController extends Controller
 
         $filtro = new \stdClass();
 
-        if($search and $search != 'sem filtro'){
+        // dd($search);
+
+        if($search and $search != 'sem filtro' and $search != null){
 
             $titulo = $search[0]->titulo;
             $localidade = $search[0]->localidade;
@@ -142,11 +144,6 @@ class imoveisController extends Controller
                     ->select('chave','path')
                     ->get();
 
-        $opcoes = [
-            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
-        ];
-
         if($imoveis->isEmpty()){
             $imagem = new \stdClass();
 
@@ -155,7 +152,7 @@ class imoveisController extends Controller
 
         // Session::forget('nItens');
 
-        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem, 'opcoes' => $opcoes, 'filtro' => $filtro]);
+        return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem, 'filtro' => $filtro]);
     }
 
     public function search(Request $request){
@@ -233,12 +230,7 @@ class imoveisController extends Controller
 
         // dd($imagem);
 
-        $opcoes = [
-            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 3, 'name' => 'Sair','path' => '/logout'],
-        ];
-
-        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'imagemPrincipal' => $imagemPrincipal, 'semelhante' => $semelhante, 'opcoes' => $opcoes]);
+        return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'imagemPrincipal' => $imagemPrincipal, 'semelhante' => $semelhante]);
     }
 
     public function maisItens(){

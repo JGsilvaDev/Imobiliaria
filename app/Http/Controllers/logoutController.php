@@ -52,13 +52,23 @@ class logoutController extends Controller
             $search[0]->area = null;
         }
 
-        if(
-            $search[0]->titulo == null and $search[0]->localidade == null and
-            $search[0]->quartos == null and $search[0]->banheiros == null and
-            $search[0]->vagas == null and $search[0]->valor == null and $search[0]->area == null)
-        {
-            Session::forget('search');
+        if($filtro != 'Tipo Imovel'){
+
+            if(
+                $search[0]->titulo == null and $search[0]->localidade == null and
+                $search[0]->quartos == null and $search[0]->banheiros == null and
+                $search[0]->vagas == null and $search[0]->valor == null and $search[0]->area == null)
+            {
+                Session::forget('search');
+            }
+        }else{
+
+            if($search != 1 or $search != 2 or $search != 3){
+                Session::forget('search');
+            }
+
         }
+
 
         return redirect('/imoveis');
     }

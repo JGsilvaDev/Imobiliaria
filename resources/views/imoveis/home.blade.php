@@ -16,7 +16,7 @@
             <p>Localidade:</p>
             <input type="text" name="localidade" id="painel-local-lateral" class="input-text"
                 placeholder="Pesquisar Localidade">
-                
+
             <div class="radio-container">
                 <p class="lateral-title">Quantidade de quartos:</p>
                 <div class="radio-options-lateral">
@@ -55,14 +55,14 @@
                     </div>
                     <div class="radio-option-lateral">
                         <input type="radio" name="qtdVagas" id=""> <label for="">2</label>
-    
+
                     </div>
                     <div class="radio-option-lateral">
                         <input type="radio" name="qtdVagas" id=""> <label for="">3+</label>
                     </div>
                 </div>
             </div>
-            
+
             <div class="radio-container">
                 <p class="lateral-title">Valor:</p>
                 <div class="radio-options-lateral-valor">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
             <div class="radio-container">
                 <p class="lateral-title">Area:</p>
@@ -236,7 +236,7 @@
                 @foreach ($imoveis as $item)
                 @if ($item->id != 0)
                 <div class="produto-container">
-                            <span id="tipo-imovel">%TIPO DO PRODUTO%</span>
+                            <span id="tipo-imovel">{{ $item->descricao }}</span>
                             <div class="produto-imagem">
                                 @foreach ($imagens as $path)
                                     @if ($item->id == $path->chave)
@@ -246,7 +246,7 @@
                                 @endforeach
                             </div>
                             <p class="produto-titulo">{{ $item->titulo }}</p>
-                            <p class="produto-descricao">{{ $item->localidade }}</p>
+                            <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span>{{ $item->localidade }}</p>
                             <div class="produto-dados">
                                 <p class="produto-valor">R${{ $item->valor }},00</p>
                                 <p class="produto-valor">{{ $item->area }}m²</p>

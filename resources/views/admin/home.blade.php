@@ -18,6 +18,7 @@
         <button class="nav-btn" id="novo-imovel" onclick="window.location.href='/admin/cadastrar'">Adicionar</button>
 
         <select name="opcao" class="nav-btn" id="dropdown">
+            <option value="" data-url="/">Home</option>
             <option disabled selected data-url="/admin">Editar</option>
             <option value="" data-url="/admin/contatos">Requisições</option>
             <option value="" data-url="/admin/editUsuario">Perfil</option>
@@ -58,7 +59,7 @@
 
                         <section id="informacoes" class="produto-item-flex">
                             <p id="imovel-titulo">{{ $item->titulo }}</p>
-                            <p id="imovel-descricao">{{ $item->descricao }}</p>
+                            <p id="imovel-descricao" class="imovel-descricao">{{ $item->descricao }}</p>
                             <p id="imovel-valor">R$ {{ $item->valor }}</p>
                         </section>
 
@@ -116,3 +117,35 @@
 
 <script src="{{ asset('js/check-scroll.js') }}"></script>
 <script src="{{ asset('js/dropDown.js') }}"></script>
+
+<script>
+    const imoveis_desc_list = document.getElementsByClassName('imovel-descricao')
+    console.log(widthLowerThan(600))
+    if (!widthLowerThan(600)) { 
+        lim = 10 
+    }
+    else {
+        lim = 75
+    }
+
+
+    function limitarStringPorPalavras(str, numeroPalavras) {
+        const palavras = str.split(' ');
+        const palavrasLimitadas = palavras.slice(0, numeroPalavras);
+        return palavrasLimitadas.join(' ');
+    }
+    function widthLowerThan(largura) {
+        if (window.screen.availWidth > largura) { return true }
+        else return false
+    }
+
+    for(i=0; i<imoveis_desc_list.length; i++) {
+
+        if(imoveis_desc_list[i].innerHTML.length > lim) {
+
+            imoveis_desc_list[i].innerHTML = limitarStringPorPalavras(imoveis_desc_list[i].innerHTML , lim) + "...";
+        }
+
+    }
+
+</script>

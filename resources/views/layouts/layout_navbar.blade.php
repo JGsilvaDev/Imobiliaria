@@ -59,7 +59,7 @@
             <input type="text" name="telefone" id="" class="contato-input" placeholder="telefone" required>
             <input type="email" name="email" id="" class="contato-input" placeholder="email">
 
-            <select name="motivo" id="" class="contato-motivo">
+            <select name="motivo" id="" class="contato-motivo contato-input">
                 <option value="Compra" class="contato-option">Compra</option>
                 <option value="Venda" class="contato-option">Venda</option>
                 <option value="Anuncio" class="contato-option">Anuncio</option>

@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/listar-produtos.css') }}">
 
-    <form action="imoveis" method="post" id="painel-pesquisa-lateral" style="display:none">
+    <form class="background-blur" action="imoveis" method="post" id="painel-pesquisa-lateral" style="display:none">
         @csrf
         <div id="painel-pesquisa-opcoes-lateral">
             <button type="button" id="painel-lateral-fechar" onclick="fecharPainel()">X</button>
@@ -107,7 +107,7 @@
     </form>
     <div id="pagina" class="enable-dark">
 
-        <div id="painel-pesquisa-float-completo">
+        <div id="painel-pesquisa-float-completo" class="background-blur">
             <div id="painel-pesquisa-titulo">
                 <h1>Pesquisa avançada</h1>
             </div>
@@ -210,7 +210,7 @@
             </div>
         </div>
 
-        <div id="pesquisa-result">
+        <div id="pesquisa-result" class="background-blur">
             @if (session('search') != null and session('search') != 'sem filtro' )
                 <div id="filtros-container">
                         <h1>Filtros:</h1>
@@ -271,7 +271,7 @@
             </form>
         </div>
 </div>
-<img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()">
+<img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()" class="background-blur">
 <script src="{{ asset('js/mostrarPainel.js') }}"></script>
 
 @endsection

@@ -15,7 +15,7 @@
 
     <button id="mostrar" onclick="changeVisibility()">Tenho interesse!</button>
 
-    <div id="pagina-layout">
+    <div id="pagina-layout" class="background-blur">
 
         <section id="interesse" class="margin-spaced padding-spaced">
             <div id="fechar-icone-container" onclick="changeVisibility()">

@@ -19,7 +19,6 @@
 
         <select name="opcao" class="nav-btn" id="dropdown">
             <option value="" data-url="/">Home</option>
-            <option disabled selected data-url="/admin">Editar</option>
             <option value="" data-url="/admin/contatos">Requisições</option>
             <option value="" data-url="/admin/editUsuario">Perfil</option>
             <option value="" data-url="/logout">Sair</option>

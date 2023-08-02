@@ -13,16 +13,16 @@
 
         <div class="user-input-container">
             <input type="text" name="nome" id="user-name" class="user-input" value="{{ $usuario->name }}" placeholder="Nome de usuário">
-            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" >
+            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" draggable="false">
         </div>
         
         <div class="user-input-container">
             <input type="text" name="telefone" id="user-fone" class="user-input" value="{{ $usuario->telefone }}" placeholder="Telefone">
-            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" >
+            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" draggable="false">
         </div>
         <div class="user-input-container">
             <input type="email" name="email" id="user-mail" class="user-input" value="{{ $usuario->email }}" placeholder="Email">
-            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" >
+            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" draggable="false">
         </div>
 
         <button type="submit" id="btn-salvar" class="user-btn">Salvar</button>

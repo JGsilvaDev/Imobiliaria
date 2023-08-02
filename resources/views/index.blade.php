@@ -49,14 +49,15 @@
 
             <div id="destaques-item" class="carousel-item">
                 @foreach ($imagens as $path)
-                    @if($iten->id == $path->chave)
+                @if($iten->id == $path->chave)
                         <div class="carrossel-img" style="background-image: url('{{asset($path->path)}}')"></div>
                         @break
                     @endif
                 @endforeach
 
                 <div id="destaque-endereco-info">
-                    <p id="endereco-info-tipo">{{ $iten->descricao }}</p>
+                    <span id="endereco-info-tipo-nome">{{ $iten->descricao }}</span>
+                    <hr style="width:100%;" >
                     <p id="endereco-info-tipo">{{ $iten->titulo }}</p>
                     <p id="endedreco-info-cidade"><span class="material-symbols-outlined">location_on</span> {{ $iten->localidade}}</p>
                 </div>

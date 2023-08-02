@@ -34,19 +34,36 @@ body {
     gap:15px;
 }
 
+/*criando*/
+
 .user-input-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: relative; /*Assim o input fica relativo a img*/
 }
-/* input */
+
 .user-input {
     width: 40vw;
     background-color: #D9D9D9;
     border: none;
     border-radius: 15px;
     padding: 15px 1vw;
+    color: #222222;
+
 }
+
+.svg-icon {
+    width: 30px; /* Mudei o tamanho para melhor visualização */
+    position: absolute; /* Posicionei o ícone de forma absoluta, diferente do relativo que deixei o container*/
+    right: 15px; /* Ajustei a posição do ícone para a direita */
+    top: 50%; /* Posicionei verticalmente o ícone no centro */
+    transform: translateY(-50%); /* Ajustei a posição vertical*/
+  }
+
+/*criando*/
+
+/* input */
 
 /* botões */
 .user-btn {
@@ -81,9 +98,6 @@ body {
     font-size: 50px;
 }
 
-.svg-icon {
-    width: 50px;
-}
 @media (max-width: 600px) {
     .user-input {
         width: 70vw;

@@ -14,6 +14,7 @@
     
     <script src="{{ asset('js/reload.js') }}"></script>
     <title>@yield('title')</title>
+    <link rel="icon" href="{{ asset('img/favicon-16x16.png') }}" type="image/fav-icon">
 </head>
 <body>
     <div id="navbar" class="background-blur enable-dark">

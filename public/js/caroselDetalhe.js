@@ -19,18 +19,42 @@ document.addEventListener('DOMContentLoaded', function() {
       //   focusOnSelect: true,
       //   arrows: false,
       // });
-      $('.fade').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        nextArrow: $('#proxima-imagem'),
-        prevArrow: $('#anterior-imagem')
-      });
+
+      if(widthLowerThan(600)){
+        $('#produto-carrossel').slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+          nextArrow: $('#proxima-imagem'),
+          prevArrow: $('#anterior-imagem')
+        });
+
+      }else{
+        $("#produto-carrossel").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          clone: false,
+          cssEase: 'linear',
+          nextArrow: $('#proxima-imagem'),
+          prevArrow: $('#anterior-imagem')
+        });
+
+      }
+      
     };
 
 });
+
+function widthLowerThan(largura) {
+  if (window.screen.availWidth < largura) { return true }
+  else return false
+} 
 
 $(window).on('resize orientationchange', function() {
   $('.carousel').slick('resize');

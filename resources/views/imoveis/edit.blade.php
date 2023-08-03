@@ -44,11 +44,10 @@
                     </div>
 
                     <div class="carrossel-container">
-
-                        <div id="produto-carrossel" class="flex-center-center fade">
+                        <div id="produto-carrossel" class="carousel-item">
                             @foreach ($imagens as $index => $path)
                                 @if($detalhes->id == $path->chave)
-                                    <div><div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div></div>
+                                    <div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div>
                                 @endif
                             @endforeach
     
@@ -56,15 +55,6 @@
                         <button id="proxima-imagem">&gt</button>
                         <button id="anterior-imagem">&lt</button>
                     </div>
-
-
-                    <!-- <div id="produto-carrossel-nav" class="flex-center-center slider-nav">
-                        @foreach ($imagens as $index => $path)
-                            @if($detalhes->id == $path->chave)
-                                <div><div class="carrossel-img-frame img-nav" style="background-image: url('{{asset($path->path)}}')"></div></div>
-                            @endif
-                        @endforeach
-                    </div> -->
 
                     <div id="imovel-dados" class="flex-row">
                         <h2 id="valor">R${{ $detalhes->valor }}</h2>

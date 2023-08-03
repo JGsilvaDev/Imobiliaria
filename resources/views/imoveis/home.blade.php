@@ -271,7 +271,7 @@
             </form>
         </div>
 </div>
-<img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()" class="background-blur" >
+<img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()" class="background-blur">
 <script src="{{ asset('js/mostrarPainel.js') }}"></script>
 
 @endsection

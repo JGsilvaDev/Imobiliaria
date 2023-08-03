@@ -23,13 +23,8 @@ class editUserController extends Controller
 
         $letras = strtoupper($primeiraLetraPrimeiraPalavra.$primeiraLetraUltimaPalavra);
 
-        $opcoes = [
-            (object) ['id' => 1, 'name' => 'Home','path' => '/admin'],
-            (object) ['id' => 2, 'name' => 'Sair','path' => '/logout'],
-        ];
-
         if($valor){
-            return view('login/editPerfil',['usuario' => $usuario, 'perfil' => $letras, 'opcoes' => $opcoes]);
+            return view('login/editPerfil',['usuario' => $usuario, 'perfil' => $letras]);
         }else{
             //Para limpar a sessão
             session()->flush();

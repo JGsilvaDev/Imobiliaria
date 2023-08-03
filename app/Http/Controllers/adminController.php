@@ -72,13 +72,8 @@ class adminController extends Controller
 
             }
 
-            $opcoes = [
-                (object) ['id' => 1, 'name' => 'Perfil', 'path' => '/admin/editUsuario'],
-                (object) ['id' => 2, 'name' => 'Sair','path' => '/logout'],
-            ];
-
             if($valor){
-                return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario, 'opcoes' => $opcoes]);
+                return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario]);
             }else{
                 //Para limpar a sessão
                 session()->flush();

@@ -31,3 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
 });
+
+$(window).on('resize orientationchange', function() {
+  $('.carousel').slick('resize');
+});

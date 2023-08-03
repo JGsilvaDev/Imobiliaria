@@ -348,10 +348,6 @@ body {
     right: 49px;
 }
 
-
-
-
-
 @media (max-width: 1250px){
     #fechar-icone {
         display: block;
@@ -409,12 +405,12 @@ body {
         align-items: center;
         flex-wrap: wrap;
     }
-    /* #produto-carrossel{
+    #produto-carrossel{
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
-    } */
+    }
     #produto-carrossel .carrossel-img-frame{
         width: 80vw;
         height: 30vh;

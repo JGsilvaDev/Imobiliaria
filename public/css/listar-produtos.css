@@ -111,6 +111,7 @@ input[type='radio']:checked:after { /* quando selecionado */
 
 /* painel de pesquisa LATERAL (para mobile) */
 #painel-pesquisa-lateral {
+    z-index: 999;
     width:100vw;
     height: 100vh;
     position: fixed; top: 0; left: 0;

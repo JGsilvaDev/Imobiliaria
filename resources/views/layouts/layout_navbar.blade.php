@@ -128,6 +128,8 @@
         </div>
     </div>
 
+    <script src="{{ asset('js/dropDown.js') }}"></script>
+
 <style>
     .material-symbols-outlined {
     font-variation-settings:

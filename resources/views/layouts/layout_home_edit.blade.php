@@ -13,7 +13,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="{{ asset('js/dropDown.js') }}"></script>
+
     <title>@yield('title')</title>
     <link rel="icon" href="{{ asset('img/favicon-16x16.png') }}" type="image/fav-icon">
 </head>
@@ -26,11 +26,12 @@
         <div id="nav-buttons">
 
             @if(session('login'))
+
                 <select name="opcao" class="nav-btn" id="dropdown">
-                    <option disabled selected>{{ session('name') }}</option>
-                    @foreach ($opcoes as $op)
-                        <option value="{{ $op->id }}" id="{{ $op->id }}">{{ $op->name }}</option>
-                    @endforeach
+                    <option value="" data-url="/">Home</option>
+                    <option value="" data-url="/admin/contatos">Requisições</option>
+                    <option value="" data-url="/admin/editUsuario">Perfil</option>
+                    <option value="" data-url="/logout">Sair</option>
                 </select>
 
                 <form action="logout" method="POST">
@@ -46,6 +47,8 @@
     @yield('content')
 </body>
 </html>
+
+<script src="{{ asset('js/dropDown.js') }}"></script>
 
 <style>
 .material-symbols-outlined {

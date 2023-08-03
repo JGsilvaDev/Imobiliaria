@@ -414,10 +414,6 @@ body {
         flex-wrap: wrap;
     }
 
-    #produto-carrossel .carrossel-img-frame{
-        width: 80vw;
-        height: 30vh;
-    }
     .semelhante-produto-card {
         width: 75vw;
         margin: 10px;

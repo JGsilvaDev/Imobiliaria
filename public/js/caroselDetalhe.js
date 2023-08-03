@@ -39,8 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
           fade: true,
           slidesToShow: 1,
           slidesToScroll: 1,
-          clone: false,
-          cssEase: 'linear',
           nextArrow: $('#proxima-imagem'),
           prevArrow: $('#anterior-imagem')
         });

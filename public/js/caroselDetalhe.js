@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }else{
         $("#produto-carrossel").slick({
           dots: true,
-          infinite: true,
+          infinite: false,
           speed: 500,
           fade: true,
           slidesToShow: 1,

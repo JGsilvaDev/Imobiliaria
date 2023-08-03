@@ -393,6 +393,9 @@ body {
     }
 }
 @media (max-width: 600px) {
+    .slick-list, .slick-track {
+        height: 500px;
+    }
     .terreno-area-container {
         flex-direction: column;
     }

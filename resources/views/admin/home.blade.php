@@ -18,6 +18,7 @@
         <button class="nav-btn" id="novo-imovel" onclick="window.location.href='/admin/cadastrar'">Adicionar</button>
 
         <select name="opcao" class="nav-btn" id="dropdown">
+            <option value="" selected>selecione</option>
             <option value="" data-url="/">Home</option>
             <option value="" data-url="/admin/contatos">Requisições</option>
             <option value="" data-url="/admin/editUsuario">Perfil</option>

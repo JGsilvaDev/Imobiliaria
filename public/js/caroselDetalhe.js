@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
         infinite: true,
         speed: 500,
         fade: true,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        nextArrow: $('#proxima-imagem'),
+        prevArrow: $('#anterior-imagem')
       });
     };
 

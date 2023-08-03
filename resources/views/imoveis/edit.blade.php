@@ -37,19 +37,26 @@
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
                     <div id="title-imovel">
                         <h1>{{ $detalhes->titulo }} -  {{ $detalhes->localidade }}</h1>
-                        <div>
-                            <span class="material-symbols-outlined">star</span>
+                        <div id="imovel-id" style="margin-left: 10px;">
+                            <span class="material-symbols-outlined">Badge</span>
                             <h3>{{ $detalhes->id}}</h3>
                         </div>
                     </div>
 
-                    <div id="produto-carrossel" class="flex-center-center fade">
-                        @foreach ($imagens as $index => $path)
-                            @if($detalhes->id == $path->chave)
-                                <div><div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div></div>
-                            @endif
-                        @endforeach
+                    <div class="carrossel-container">
+
+                        <div id="produto-carrossel" class="flex-center-center fade">
+                            @foreach ($imagens as $index => $path)
+                                @if($detalhes->id == $path->chave)
+                                    <div><div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div></div>
+                                @endif
+                            @endforeach
+    
+                        </div>
+                        <button id="proxima-imagem">&gt</button>
+                        <button id="anterior-imagem">&lt</button>
                     </div>
+
 
                     <!-- <div id="produto-carrossel-nav" class="flex-center-center slider-nav">
                         @foreach ($imagens as $index => $path)

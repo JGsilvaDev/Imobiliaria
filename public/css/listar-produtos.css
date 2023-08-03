@@ -191,7 +191,6 @@ input[type='radio']:checked:after { /* quando selecionado */
     border-radius: 100%;
     color: white;
 
-    display: none;
 }
 
 
@@ -318,18 +317,18 @@ input[type='radio']:checked:after { /* quando selecionado */
     }
     #mobile-buscar {
         display: block;
+        z-index: 999;
+    }
+}
+@media (min-width: 1265px) {
+    #mobile-buscar {
+        display: none;
     }
 }
 
-@media(max-width: 1000px ) and (min-width: 600px){
+/* @media(max-width: 1000px ) and (min-width: 600px){
     #lista-produtos {
         flex-direction: column;
-        /* justify-content: center; */
         flex-wrap: wrap;
     }
-    .produto-container {
-
-        /* padding: 10px;
-        width: 40%; */
-    }
-}
+} */

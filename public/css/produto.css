@@ -22,17 +22,18 @@ body {
 #title-imovel{
     display: flex;
     align-items: center;
+    justify-content: center;
 
     width: 100%;
 }
 
 #title-imovel h1{
-    flex: 1;
+    /* flex: 1;
     text-align: center;
-    padding-left: 185px;
+    padding-left: 185px; */
 }
 
-#title-imovel div{
+#imovel-id{
     display: flex;
     align-items: center;
     margin-right: 70px;
@@ -59,6 +60,33 @@ body {
     height: 450px;
     margin-bottom: 20px;
 
+}
+.carrossel-container {
+    position: relative;
+}
+#proxima-imagem {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+#anterior-imagem {
+    position: absolute;
+    top: 0px;
+    left: 0px; 
+}
+.slick-arrow {
+    border: none;
+    padding: 10px;
+    color:white;;
+    background-color:rgba(255, 255, 255, 0.247);
+}
+.slick-arrow:hover {
+    background-color:rgba(255, 255, 255, 0.5);
+
+}
+
+#proxima-imagem, #anterior-imagem {
+    height: 80.6%;
 }
 
 /*CAROSSEL IMG*/
@@ -333,12 +361,7 @@ body {
     width: 74%;
 }
 
-.slick-arrow {
-    border: none;
-    padding: 10px;
-    color: white;
-    background-color:#1B657A;
-}
+
 
 
 @media (max-width: 1250px){

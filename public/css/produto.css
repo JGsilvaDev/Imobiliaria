@@ -58,6 +58,7 @@ body {
     width: 650px;
     height: 450px;
     margin-bottom: 20px;
+
 }
 
 /*CAROSSEL IMG*/
@@ -169,10 +170,6 @@ body {
     background-color:white;
 }
 
-/* #produto-carrossel img{
-    width: 75vw;
-    height: 50vh;
-} */
 
 .detalhes-itens {
     display: flex;
@@ -336,6 +333,12 @@ body {
     width: 74%;
 }
 
+.slick-arrow {
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color:#1B657A;
+}
 
 
 @media (max-width: 1250px){

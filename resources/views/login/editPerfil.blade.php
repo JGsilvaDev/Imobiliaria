@@ -18,7 +18,7 @@
         
         <div class="user-input-container">
             <input type="text" name="telefone" id="user-fone" class="user-input" value="{{ $usuario->telefone }}" placeholder="Telefone">
-            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" draggable="false">
+            <img src="{{ asset('img/edit-icon.svg') }}" class="svg-icon" alt="" draggable="false"   >
         </div>
         <div class="user-input-container">
             <input type="email" name="email" id="user-mail" class="user-input" value="{{ $usuario->email }}" placeholder="Email">

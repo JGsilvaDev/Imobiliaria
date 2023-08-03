@@ -43,7 +43,7 @@
                         </div>
                     </div>
 
-                    <div id="produto-carrossel" class="flex-center-center slider-for">
+                    <div id="produto-carrossel" class="flex-center-center fade">
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
                                 <div><div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div></div>
@@ -51,13 +51,13 @@
                         @endforeach
                     </div>
 
-                    <div id="produto-carrossel-nav" class="flex-center-center slider-nav">
+                    <!-- <div id="produto-carrossel-nav" class="flex-center-center slider-nav">
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
                                 <div><div class="carrossel-img-frame img-nav" style="background-image: url('{{asset($path->path)}}')"></div></div>
                             @endif
                         @endforeach
-                    </div>
+                    </div> -->
 
                     <div id="imovel-dados" class="flex-row">
                         <h2 id="valor">R${{ $detalhes->valor }}</h2>

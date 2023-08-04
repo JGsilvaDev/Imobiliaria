@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/produto.css') }}">
 
     <script src="{{ asset('js/mostrar-interesse.js') }}"></script>
-    <script src="{{ asset('js/caroselDetalhe.js') }}"></script>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
 
-                    <div class="carrossel-container">
+                    <!-- <div class="carrossel-container">
                         <div id="produto-carrossel" class="carousel-item">
                             @foreach ($imagens as $index => $path)
                                 @if($detalhes->id == $path->chave)
@@ -54,6 +54,22 @@
                         </div>
                         <button id="proxima-imagem">&gt</button>
                         <button id="anterior-imagem">&lt</button>
+                    </div> -->
+
+                    <div id="carrossel-container">
+                        <button onclick="prevImage()">Anterior</button>
+                        <div id="carrossel-content">
+                            @foreach ($imagens as $index => $path)
+                                @if($detalhes->id == $path->chave)
+                                    <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')"></div>
+                                @endif
+                            @endforeach
+                            <!-- <div class="carrossel-item selected" style="background-color:red "></div>
+                            <div class="carrossel-item unselected" style="background-color:blue "></div>
+                            <div class="carrossel-item unselected" style="background-color:green "></div>
+                            <div class="carrossel-item unselected" style="background-color:yellow "></div> -->
+                        </div>
+                        <button onclick="nextImage()">Proximo</button>
                     </div>
 
                     <div id="imovel-dados" class="flex-row">
@@ -403,4 +419,5 @@
             </div>
     </div>
 
+    <script src="{{ asset('js/caroselDetalhe.js') }}"></script>
 @endsection

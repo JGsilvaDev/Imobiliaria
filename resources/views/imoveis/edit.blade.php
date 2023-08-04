@@ -18,19 +18,20 @@
     <div id="pagina-layout" class="background-blur">
 
         <section id="interesse" class="margin-spaced padding-spaced">
-            <form action="/contato" method="POST" autocomplete="off">
-                <div id="fechar-icone-container" onclick="changeVisibility()">
-                    <img src="{{ asset('img/fechar-icone.svg') }}" alt="" id="fechar-icone">
-                </div>
-                <div id="interesse-contato-container" class="flex-center-center-column">
+            <div id="fechar-icone-container" onclick="changeVisibility()">
+                <img src="{{ asset('img/fechar-icone.svg') }}" alt="" id="fechar-icone">
+            </div>
+            <div id="interesse-contato-container" class="flex-center-center-column">
+                <form action="/contato" method="POST" autocomplete="off">
+                    @csrf
                     <h1>Se interessou pelo imóvel? fale conosco!</h1>
-                    <input name="nome" type="text" id="interesse-contato-nome" class="interesse-contato-input" placeholder="Nome">
-                    <input name="telefone" type="text" id="interesse-contato-telefone" class="interesse-contato-input" placeholder="Telefone">
+                    <input name="nome" type="text" id="interesse-contato-nome" class="interesse-contato-input" placeholder="Nome" required>
+                    <input name="telefone" type="text" id="interesse-contato-telefone" class="interesse-contato-input" placeholder="Telefone" required>
                     <input name="email" type="text" id="interesse-contato-email" class="interesse-contato-input" placeholder="Email">
-                    <textarea name="mensagem" id="interesse-contato-texto" cols="30" rows="10" class="interesse-contato-input" placeholder="Texto (opcional)" res></textarea>
+                    <textarea name="mensagem" id="interesse-contato-texto" cols="30" rows="10" class="interesse-contato-input" placeholder="Texto (opcional)" required></textarea>
                     <button type="submit" id="interesse-btn">Enviar</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </section>
         <!-- <div class="produto-info-box">
 
@@ -83,7 +84,7 @@
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Localização</h2>
-                        <p id="desc-texto">{{ $detalhes->localidade }}</p>
+                        <p id="desc-texto"><span class="material-symbols-outlined">location_on</span> {{ $detalhes->localidade }}</p>
                     </div>
 
                     <div id="descricao-container" class="margin-spaced padding-spaced">
@@ -129,29 +130,32 @@
                         </div>
                     @endif
 
-                    <div id="descricao-container" class="margin-spaced padding-spaced">
-                        <h2 class="detalhes-titulo">Acomodações</h2>
-                        <div class="area-container">
-                            <div class="area-content">
-                                <p id="quartos">{{ $detalhes->qtdQuartos }} quarto(s)</p>
-                            </div>
-                            <div class="area-content">
-                                <p id="quartos">{{ $detalhes->qtdBanheiros }} banheiro(s)</p>
-                            </div>
-
-                            @if ($detalhes->qtdSuites != null)
+                    @if ($detalhes->descricao != 'Terreno')
+                        <div id="descricao-container" class="margin-spaced padding-spaced">
+                            <h2 class="detalhes-titulo">Acomodações</h2>
+                            <div class="area-container">
                                 <div class="area-content">
-                                    <p id="quartos"> {{ $detalhes->qtdSuites }} suite(s)</p>
+                                    <p id="quartos">{{ $detalhes->qtdQuartos }} quarto(s)</p>
                                 </div>
-                            @endif
-
-                            @if ($detalhes->qtdVagas != null)
                                 <div class="area-content">
-                                    <p id="quartos">{{ $detalhes->qtdVagas }} vaga(s)</p>
+                                    <p id="quartos">{{ $detalhes->qtdBanheiros }} banheiro(s)</p>
                                 </div>
-                            @endif
+
+                                @if ($detalhes->qtdSuites != null)
+                                    <div class="area-content">
+                                        <p id="quartos"> {{ $detalhes->qtdSuites }} suite(s)</p>
+                                    </div>
+                                @endif
+
+                                @if ($detalhes->qtdVagas != null)
+                                    <div class="area-content">
+                                        <p id="quartos">{{ $detalhes->qtdVagas }} vaga(s)</p>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
-                    </div>
+                    @endif
+
 
                 </section>
 
@@ -395,35 +399,36 @@
                     </section>
                 @endif
 
-                <section id="semelhantes" class="margin-spaced padding-spaced">
-                    <div id="semelhante-container">
-                        <h1 class="detalhes-titulo">Conheça semelhantes</h1>
-                    @if($semelhante)
-                        @foreach( $semelhante as $sem )
-                            <div id="semelhante-produtos-itens">
-                                <div class="semelhante-produto-card">
-                                    @foreach ($imagemPrincipal as $path)
-                                        @if($sem->id == $path->chave)
-                                            <div class="img-semelhante" style="background-image: url('{{ asset($path->path) }}')"></div>
-                                        @endif
-                                    @endforeach
-                                    <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>
-                                    <p class="semelhante-produto-localidade">{{ $sem->localidade }}</p>
-                                    <div id="semelhante-produto-info" class="flex-row">
-                                        <p class="semelhante-produto-area">{{ $sem->area }}m²</p>
-                                        <p class="semelhante-produto-vagas">R${{ $sem->valor }},00</p>
-                                    </div>
-                                    <form action="/imoveis/{{ $sem->id }}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="idImovel">
-                                        <button class="produto-saber-mais" type="submit">Detalhes</button>
-                                    </form>
+                @if($semelhante != '0')
+                    <section id="semelhantes" class="margin-spaced padding-spaced">
+                        <div id="semelhante-container">
+                            <h1 class="detalhes-titulo">Conheça semelhantes</h1>
+                            @foreach( $semelhante as $sem )
+                                <div id="semelhante-produtos-itens">
+                                    <div class="semelhante-produto-card">
+                                        @foreach ($imagemPrincipal as $path)
+                                            @if($sem->id == $path->chave)
+                                                <div class="img-semelhante" style="background-image: url('{{ asset($path->path) }}')"></div>
+                                            @endif
+                                        @endforeach
+                                        <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>
+                                        <p class="semelhante-produto-localidade">{{ $sem->localidade }}</p>
+                                        <div id="semelhante-produto-info" class="flex-row">
+                                            <p class="semelhante-produto-area">{{ $sem->area }}m²</p>
+                                            <p class="semelhante-produto-vagas">R${{ $sem->valor }},00</p>
+                                        </div>
+                                        <form action="/imoveis/{{ $sem->id }}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="idImovel">
+                                            <button class="produto-saber-mais" type="submit">Detalhes</button>
+                                        </form>
 
-                                </div>
-                        @endforeach
-                    @endif
-                </section>
-            </div>
+                                    </div>
+                            @endforeach
+                    </section>
+                @endif
+
+                </div>
     </div>
 
     <script src="{{ asset('js/caroselDetalhe.js') }}"></script>

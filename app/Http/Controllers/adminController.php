@@ -181,7 +181,7 @@ class adminController extends Controller
                 $catalogo->qtdQuartos = 0;
                 $catalogo->qtdVagas = 0;
                 $catalogo->areaUtil = 0;
-                $catalogo->areConstruida = 0;
+                $catalogo->areaConstruida = 0;
                 $catalogo->areaConstruida = 0;
             }
 

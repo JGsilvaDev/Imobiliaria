@@ -430,6 +430,9 @@
         <p id="valor-label">Valor condominio</p>
         <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input">
 
+        <p id="valor-label">IPTU mensal</p>
+        <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input">
+
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
         <input type="file" name="imagem[]" id="imagemTerreno" multiple required>

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
+use function PHPUnit\Framework\isEmpty;
+
 class imoveisController extends Controller
 {
     public function index(){
@@ -228,7 +230,11 @@ class imoveisController extends Controller
                     ->limit(2)
                     ->get();
 
-        // dd($imagem);
+        if($semelhante->isEmpty()){
+            $semelhante = '0';
+        }
+
+        // dd($semelhante);
 
         return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'imagemPrincipal' => $imagemPrincipal, 'semelhante' => $semelhante]);
     }

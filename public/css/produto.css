@@ -93,7 +93,7 @@ body {
     height: 80.6%;
 }
 
-/*CAROSSEL*/
+/*CARROSSEL*/
 
 .selected {
     display: block;
@@ -102,17 +102,53 @@ body {
     display: none;
 }
 
+.carrossel-btn {
+    width: 10%;
+
+    background-color: rgba(255, 255, 255, 0.29);
+    border: none;
+    color: white;
+
+    transition: all 0.2s;
+}
+.carrossel-btn:hover {
+    background-color: white;
+    color: black;
+}
+
 #carrossel-container {
     width: 80%;
+    position: relative;
+    display: flex;
+}
+
+#carrossel-content {
+    width: 100%;
 }
 
 .carrossel-item {
     width: 100%;
-    height: 350px;
+    height: 400px;
 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#next-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 100%;
+}
+
+#prev-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
 }
 
 /* ------------------ */

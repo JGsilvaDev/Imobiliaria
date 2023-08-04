@@ -57,7 +57,8 @@
                     </div> -->
 
                     <div id="carrossel-container">
-                        <button onclick="prevImage()">Anterior</button>
+                        <button onclick="prevImage()" class="carrossel-btn" id="prev-btn">&lt</button>
+
                         <div id="carrossel-content">
                             @foreach ($imagens as $index => $path)
                                 @if($detalhes->id == $path->chave)
@@ -69,7 +70,8 @@
                             <div class="carrossel-item unselected" style="background-color:green "></div>
                             <div class="carrossel-item unselected" style="background-color:yellow "></div> -->
                         </div>
-                        <button onclick="nextImage()">Proximo</button>
+
+                        <button onclick="nextImage()" class="carrossel-btn" id="next-btn">&gt</button>
                     </div>
 
                     <div id="imovel-dados" class="flex-row">

@@ -32,9 +32,10 @@ function unselectAll() {
 	}
 }
 
-function selectIndex(index) {
+function selectIndex(indice) {
 	unselectAll()
-	img_list[index].classList.replace('unselected','selected')
+	index = indice 
+	img_list[indice].classList.replace('unselected','selected')
 }
 
 // document.addEventListener('DOMContentLoaded', function() {

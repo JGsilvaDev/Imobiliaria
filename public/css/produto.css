@@ -151,6 +151,29 @@ body {
     height: 100%;
 }
 
+#carrossel-galeria {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    gap: 10px;
+
+
+    margin-top: 10px;
+
+    width: 80%;
+}
+.galeria-item {
+    flex: 0 0 auto;
+    min-height: min-content;
+
+    height: 100px;
+    width: 100px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* ------------------ */
 
 #produto-carrossel-nav{

@@ -72,6 +72,15 @@
                         </div>
 
                         <button onclick="nextImage()" class="carrossel-btn" id="next-btn">&gt</button>
+
+                    </div>
+                    <div id="carrossel-galeria">
+                        <!-- <div class="galeria-item" style="background-color:yellow; width:200px; height:100px"></div> -->
+                        @foreach ($imagens as $index => $path)
+                            @if($detalhes->id == $path->chave)
+                                <div class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" onclick="selectIndex(Array.from(document.getElementById('carrossel-galeria').children).indexOf(this))"></div>
+                            @endif
+                        @endforeach
                     </div>
 
                     <div id="imovel-dados" class="flex-row">

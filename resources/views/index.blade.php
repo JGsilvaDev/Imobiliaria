@@ -82,7 +82,7 @@
             <div id="ajuda-itens">
                 <div id="ajuda-item">
                     <img src="img/casa.svg" alt="" class="ajuda-icon">
-                    <p id="ajuda-info">alugar um imóvel</p>
+                    <p id="ajuda-info">Alugar um imóvel</p>
                 </div>
                 <div id="ajuda-item">
                     <img src="img/dinheiro.svg" alt="" class="ajuda-icon">
@@ -90,7 +90,7 @@
                 </div>
                 <div id="ajuda-item">
                     <img src="img/megafone.svg" alt="" class="ajuda-icon">
-                    <p id="ajuda-info">anunciar um imóvel</p>
+                    <p id="ajuda-info">Anunciar um imóvel</p>
                 </div>
             </div>
     </section>

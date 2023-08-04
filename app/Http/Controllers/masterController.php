@@ -106,6 +106,6 @@ class masterController extends Controller
 
         $contatos->save();
 
-        return redirect()->back();
+        return redirect('/');
     }
 }

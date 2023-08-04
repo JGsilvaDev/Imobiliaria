@@ -72,7 +72,7 @@ body {
 #anterior-imagem {
     position: absolute;
     top: 0px;
-    left: 0px; 
+    left: 0px;
 }
 .slick-arrow {
     border: none;
@@ -103,7 +103,7 @@ body {
 }
 
 .carrossel-btn {
-    width: 10%;
+    width: 5%;
 
     background-color: rgba(255, 255, 255, 0.29);
     border: none;
@@ -128,7 +128,7 @@ body {
 
 .carrossel-item {
     width: 100%;
-    height: 400px;
+    height: 420px;
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -138,17 +138,19 @@ body {
 #next-btn {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 40%;
 
-    height: 100%;
+    height: 20%;
+    border-radius: 10px 0 0 10px;
 }
 
 #prev-btn {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 40%;
 
-    height: 100%;
+    height: 20%;
+    border-radius: 0 10px 10px 0;
 }
 
 #carrossel-galeria {
@@ -156,6 +158,7 @@ body {
     display: flex;
     overflow: auto;
     gap: 10px;
+    justify-content: center;
 
 
     margin-top: 10px;
@@ -516,4 +519,4 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
-} 
+}

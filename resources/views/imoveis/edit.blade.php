@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/produto.css') }}">
 
     <script src="{{ asset('js/mostrar-interesse.js') }}"></script>
-    
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -18,17 +18,19 @@
     <div id="pagina-layout" class="background-blur">
 
         <section id="interesse" class="margin-spaced padding-spaced">
-            <div id="fechar-icone-container" onclick="changeVisibility()">
-                <img src="{{ asset('img/fechar-icone.svg') }}" alt="" id="fechar-icone">
-            </div>
-            <div id="interesse-contato-container" class="flex-center-center-column">
-                <h1>Se interessou pelo imóvel? fale conosco!</h1>
-                <input type="text" id="interesse-contato-nome" class="interesse-contato-input" placeholder="Nome">
-                <input type="text" id="interesse-contato-telefone" class="interesse-contato-input" placeholder="Telefone">
-                <input type="text" id="interesse-contato-email" class="interesse-contato-input" placeholder="Email">
-                <textarea name="" id="interesse-contato-texto" cols="30" rows="10" class="interesse-contato-input" placeholder="Texto (opcional)" res></textarea>
-                <button id="interesse-btn">Enviar</button>
-            </div>
+            <form action="/contato" method="POST" autocomplete="off">
+                <div id="fechar-icone-container" onclick="changeVisibility()">
+                    <img src="{{ asset('img/fechar-icone.svg') }}" alt="" id="fechar-icone">
+                </div>
+                <div id="interesse-contato-container" class="flex-center-center-column">
+                    <h1>Se interessou pelo imóvel? fale conosco!</h1>
+                    <input name="nome" type="text" id="interesse-contato-nome" class="interesse-contato-input" placeholder="Nome">
+                    <input name="telefone" type="text" id="interesse-contato-telefone" class="interesse-contato-input" placeholder="Telefone">
+                    <input name="email" type="text" id="interesse-contato-email" class="interesse-contato-input" placeholder="Email">
+                    <textarea name="mensagem" id="interesse-contato-texto" cols="30" rows="10" class="interesse-contato-input" placeholder="Texto (opcional)" res></textarea>
+                    <button type="submit" id="interesse-btn">Enviar</button>
+                </div>
+            </form>
         </section>
         <!-- <div class="produto-info-box">
 
@@ -43,19 +45,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="carrossel-container">
-                        <div id="produto-carrossel" class="carousel-item">
-                            @foreach ($imagens as $index => $path)
-                                @if($detalhes->id == $path->chave)
-                                    <div class="carrossel-img-frame img" style="background-image: url('{{asset($path->path)}}')"></div>
-                                @endif
-                            @endforeach
-    
-                        </div>
-                        <button id="proxima-imagem">&gt</button>
-                        <button id="anterior-imagem">&lt</button>
-                    </div> -->
-
                     <div id="carrossel-container">
                         <button onclick="prevImage()" class="carrossel-btn" id="prev-btn">&lt</button>
 
@@ -65,17 +54,12 @@
                                     <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')"></div>
                                 @endif
                             @endforeach
-                            <!-- <div class="carrossel-item selected" style="background-color:red "></div>
-                            <div class="carrossel-item unselected" style="background-color:blue "></div>
-                            <div class="carrossel-item unselected" style="background-color:green "></div>
-                            <div class="carrossel-item unselected" style="background-color:yellow "></div> -->
                         </div>
 
                         <button onclick="nextImage()" class="carrossel-btn" id="next-btn">&gt</button>
 
                     </div>
                     <div id="carrossel-galeria">
-                        <!-- <div class="galeria-item" style="background-color:yellow; width:200px; height:100px"></div> -->
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
                                 <div class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" onclick="selectIndex(Array.from(document.getElementById('carrossel-galeria').children).indexOf(this))"></div>
@@ -84,7 +68,7 @@
                     </div>
 
                     <div id="imovel-dados" class="flex-row">
-                        <h2 id="valor">R${{ $detalhes->valor }}</h2>
+                        <h1 id="valor">R${{ $detalhes->valor }}</h1>
                     </div>
                 </section>
 
@@ -117,27 +101,33 @@
                                 <p id="area">Área do terreno: {{ $detalhes->areaTerreno }} m²</p>
                             </div>
 
-                            <div class="area-content">
-                                <p id="area">Área construída: {{ $detalhes->areaConstruida }} m²</p>
-                            </div>
-                            <div class="area-content">
-                            </div>
+                            @if ($detalhes->descricao != 'Terreno')
+                                <div class="area-content">
+                                    <p id="area">Área construída: {{ $detalhes->areaConstruida }} m²</p>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
-                    <div id="descricao-container" class="margin-spaced padding-spaced">
-                        <h2 class="detalhes-titulo">Valores</h2>
+                    @if ($detalhes->valorCondominio != null or $detalhes->iptuMensal)
+                        <div id="descricao-container" class="margin-spaced padding-spaced">
+                            <h2 class="detalhes-titulo">Valores</h2>
 
-                        <div class="area-container">
-                            <div class="area-content">
-                                <p>Condomínio: R${{ $detalhes->valorCondominio }}</p>
-                            </div>
-                            <div class="area-content">
-                                <p>IPTU mensal: R${{ $detalhes->iptuMensal }}</p>
+                            <div class="area-container">
+                                @if ($detalhes->valorCondominio != null)
+                                <div class="area-content">
+                                    <p>Condomínio: R${{ $detalhes->valorCondominio }}</p>
+                                </div>
+                                @endif
+
+                                @if ($detalhes->iptuMensal != null)
+                                <div class="area-content">
+                                    <p>IPTU mensal: R${{ $detalhes->iptuMensal }}</p>
+                                </div>
+                                @endif
                             </div>
                         </div>
-
-                    </div>
+                    @endif
 
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Acomodações</h2>
@@ -148,12 +138,18 @@
                             <div class="area-content">
                                 <p id="quartos">{{ $detalhes->qtdBanheiros }} banheiro(s)</p>
                             </div>
-                            <div class="area-content">
-                                <p id="quartos"> {{ $detalhes->qtdSuites }} suite(s)</p>
-                            </div>
-                            <div class="area-content">
-                                <p id="quartos">{{ $detalhes->qtdVagas }} vaga(s)</p>
-                            </div>
+
+                            @if ($detalhes->qtdSuites != null)
+                                <div class="area-content">
+                                    <p id="quartos"> {{ $detalhes->qtdSuites }} suite(s)</p>
+                                </div>
+                            @endif
+
+                            @if ($detalhes->qtdVagas != null)
+                                <div class="area-content">
+                                    <p id="quartos">{{ $detalhes->qtdVagas }} vaga(s)</p>
+                                </div>
+                            @endif
                         </div>
                     </div>
 

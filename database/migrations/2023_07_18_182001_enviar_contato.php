@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('telefone');
             $table->string('email')->nullable();
             $table->string('mensagem');
-            $table->string('motivoContato');
+            $table->string('motivoContato')->nullable();
             $table->boolean('resolvido');
             $table->timestamps();
         });

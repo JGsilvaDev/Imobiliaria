@@ -74,7 +74,7 @@
                 <hr>
             </div>
 
-            <button class="contato-enviar-whatsapp">Fale por Whatsapp</button>
+            <a href="https://wa.me/5512991727948" target="_blank" style="text-align: center; text-decoration: none;" class="contato-enviar-whatsapp">Fale por Whatsapp</a>
         </form>
     </div>
 
@@ -105,7 +105,6 @@
             <div>
                 <p onclick="window.location.href='/login'" class="footer-link">Login</p>
                 <p id="conteudo">Localização</p>
-                <p id="conteudo">Número do whats</p>
                 <p id="conteudo">Robson</p>
                 <p id="conteudo">Clobeson</p>
             </div>
@@ -121,9 +120,8 @@
                 <p id="color_squad">©2023 Desenvolvido por pineapple squad</p>
             </div>
             <div class="separacao_icones">
-                <img src="{{asset('img/facebook.svg')}}" alt="">
-                <img src="{{asset('img/instagram.svg')}}" alt="">
-                <img src="{{asset('img/whatsapp.svg')}}" alt="">
+                <a href="" target="_blank"><img src="{{asset('img/facebook.svg')}}" alt=""></a>
+                <a href="https://wa.me/5512991727948" target="_blank"><img src="{{asset('img/whatsapp.svg')}}" alt=""></a>
             </div>
         </div>
     </div>

@@ -3,7 +3,24 @@
 @section('title','contatos')
 
 @section('content')
+
+<div id="contatos-navbar">
+    <div id="dropdown-menu">
+
+        <select name="opcao" class="nav-btn" id="dropdown">
+            <option value="" selected disabled>menu</option>
+            <option value="" data-url="/">Home</option>
+            <option value="" data-url="/admin">Meus imóveis</option>
+            <option value="" data-url="/admin/contatos">Requisições</option>
+            <option value="" data-url="/admin/editUsuario">Perfil</option>
+            <option value="" data-url="/logout">Sair</option>
+        </select>
+    </div>
+</div>
+
     <link rel="stylesheet" href="{{ asset('css/request.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminnavbar.css') }}">
+    <script src="{{ asset('js/dropDown.js') }}"></script>
     <div id="corpo">
         <div id="popup-informacoes" style="display:none">
             <button id="btn-popup-fechar" onclick="fecharInfo()">Fechar</button>
@@ -89,6 +106,9 @@
 
     </div>
 
+    <div id="admin-footer">
+        <div class="img_footer" style="background-image: url({{ asset('img/logo.png') }})"></div>
+    </div>
 <script>
     //carrega as informações e então abre o painel
     function mostrarInfo(event) {
@@ -125,5 +145,5 @@
 
 </script>
 
-
+<script src="{{ asset('js/check-scroll.js') }}"></script>
 @endsection

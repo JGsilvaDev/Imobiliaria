@@ -1,0 +1,43 @@
+#contatos-navbar {
+    background-color: #BCBCBC;
+    padding: 10px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+#dropdown {
+    background-color: #B77922;
+    color: white;
+    border: none;
+
+    padding: 10px;
+    border-radius:5px;    
+
+    font-size: 14px;
+}
+#dropdown:hover {
+    background-color: #FFFFFF;
+    color: #B77922;
+}
+
+#admin-footer {
+    background-color:#949494;
+    width:100%;
+
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_footer {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

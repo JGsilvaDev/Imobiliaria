@@ -31,7 +31,7 @@
                 <select name="opcao" class="nav-btn" id="dropdown">
                     <option disabled selected>{{ session('name') }}</option>
                     <option value="" data-url="/">Home</option>
-                    <option value="" data-url="/admin">Admin</option>
+                    <option value="" data-url="/admin">Meus imóveis</option>
                     <option value="" data-url="/logout">Sair</option>
                 </select>
 

@@ -1,5 +1,10 @@
 body {
     font-family: 'Roboto',sans-serif;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
 }
 
 /* classes */
@@ -82,7 +87,7 @@ body {
     overflow:hidden;
     border-collapse:separate;
     border-radius: 15px;
-    width: 90%;
+    width: 80%;
 }
 #request-table:last-child {
     border: none;
@@ -133,4 +138,10 @@ body {
     top: 20px;
 
     padding: 10px;
+}
+
+@media (max-width: 600px) {
+    #popup-informacoes {
+        width: 100%;
+    }
 }

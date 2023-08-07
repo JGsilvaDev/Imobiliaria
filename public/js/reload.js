@@ -20,10 +20,13 @@ function modal(){
     if(modal.style.display == 'none'){
         modal.style.display = 'block';
         for(let i=0; i<paginaSize; i++) { pagina[i].style.filter = "blur(5px)" }
+
+        document.body.style.overflow = 'hidden'
     }else{
         modal.style.display = 'none' ;
         pagina[0].style.filter = "none"
         for(let i=0; i<paginaSize; i++) { pagina[i].style.filter = "none" }
+        document.body.style.overflow = 'visible'
     }
 
 }

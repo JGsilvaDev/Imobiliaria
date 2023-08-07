@@ -89,9 +89,13 @@ body {
     border-radius: 15px;
     width: 80%;
 }
-#request-table:last-child {
-    border: none;
+#request-table tbody:nth-child(odd){
+    background-color: rgb(237, 237, 237);  
 }
+#request-table tbody:nth-child(even){
+    background-color: rgb(209, 209, 209);  
+}
+
 #corpo{
     width: 100%;
     display: flex;
@@ -103,6 +107,12 @@ body {
     border-radius: 15px;
     padding: 20px;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+
+    z-index: 999;
     width: 50%;
 
     display: flex;

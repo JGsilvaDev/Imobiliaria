@@ -2,6 +2,13 @@ body {
     margin: 0;
 }
 
+.footer-link {
+    cursor: pointer;
+}
+.footer-link:hover {
+    color:#0008ff;
+}
+
 #footer-container {
     padding-top: 50px;
     padding-bottom: 9px;

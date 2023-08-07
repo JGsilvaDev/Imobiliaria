@@ -85,25 +85,25 @@
 
         <div class="style_paragrafo">
             <div>
-                <p onclick="window.location.href='/imoveis'">Imóvel</p>
+                <p onclick="window.location.href='/imoveis'" class="footer-link">Imóvel</p>
                 <p id="conteudo">page page page 1</p>
                 <p id="conteudo">page page 1</p>
                 <p id="conteudo">page</p>
             </div>
             <div>
-                <p onclick="window.location.href='/sobre'">Saiba mais</p>
+                <p onclick="window.location.href='/sobre'" class="footer-link">Saiba mais</p>
                 <p id="conteudo">page page page 1</p>
                 <p id="conteudo">page page 1</p>
                 <p id="conteudo">page</p>
             </div>
             <div>
-                <p onclick="modal();">Contato</p>
+                <p onclick="modal();" class="footer-link">Contato</p>
                 <p id="conteudo">page page page 1</p>
                 <p id="conteudo">page page 1</p>
                 <p id="conteudo">page</p>
             </div>
             <div>
-                <p onclick="window.location.href='/login'">Login</p>
+                <p onclick="window.location.href='/login'" class="footer-link">Login</p>
                 <p id="conteudo">Localização</p>
                 <p id="conteudo">Número do whats</p>
                 <p id="conteudo">Robson</p>

@@ -54,10 +54,14 @@ body * {
 }
 #btn-nav-entrar {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+}
+#btn-nav-entrar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 600px) {

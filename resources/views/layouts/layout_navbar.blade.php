@@ -120,7 +120,7 @@
                 <p id="color_squad">©2023 Desenvolvido por pineapple squad</p>
             </div>
             <div class="separacao_icones">
-                <a href="" target="_blank"><img src="{{asset('img/facebook.svg')}}" alt=""></a>
+                <a href="https://www.facebook.com/EuniceSocolowskiImoveis/" target="_blank"><img src="{{asset('img/facebook.svg')}}" alt=""></a>
                 <a href="https://wa.me/5512991727948" target="_blank"><img src="{{asset('img/whatsapp.svg')}}" alt=""></a>
             </div>
         </div>

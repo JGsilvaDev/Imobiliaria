@@ -18,7 +18,7 @@
         <button class="nav-btn" id="novo-imovel" onclick="window.location.href='/admin/cadastrar'">Adicionar</button>
 
         <select name="opcao" class="nav-btn" id="dropdown">
-            <option value="" selected disabled>menu</option>
+            <option value="" selected disabled>Menu</option>
             <option value="" data-url="/">Home</option>
             <option value="" data-url="/admin/contatos">Requisições</option>
             <option value="" data-url="/admin/editUsuario">Perfil</option>
@@ -121,8 +121,8 @@
 <script>
     const imoveis_desc_list = document.getElementsByClassName('imovel-descricao')
     console.log(widthLowerThan(600))
-    if (!widthLowerThan(600)) { 
-        lim = 10 
+    if (!widthLowerThan(600)) {
+        lim = 10
     }
     else {
         lim = 75

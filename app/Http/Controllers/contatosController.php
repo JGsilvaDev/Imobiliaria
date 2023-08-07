@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contatos;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class contatosController extends Controller
@@ -11,6 +12,13 @@ class contatosController extends Controller
 
         $contatos = Contatos::all();
 
-        return view('admin/contatos',['contatos' => $contatos]);
+        $id_cliente = session('id');
+
+        $dadosUsuario = DB::table('usuarios')
+                    ->select('id_permissao','name','email')
+                    ->where('id', '=', $id_cliente)
+                    ->first();
+
+        return view('admin/contatos',['contatos' => $contatos, 'usuario' => $dadosUsuario]);
     }
 }

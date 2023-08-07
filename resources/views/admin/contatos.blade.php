@@ -5,10 +5,10 @@
 @section('content')
 
 <div id="contatos-navbar">
+    <p id="hello-user">Olá, {{ $usuario->name }}</p>
     <div id="dropdown-menu">
-
         <select name="opcao" class="nav-btn" id="dropdown">
-            <option value="" selected disabled>menu</option>
+            <option value="" selected disabled>Menu</option>
             <option value="" data-url="/">Home</option>
             <option value="" data-url="/admin">Meus imóveis</option>
             <option value="" data-url="/admin/contatos">Requisições</option>
@@ -55,7 +55,7 @@
         </div>
 
         <table cellspacing="0" id="request-table">
-    
+
             <thead class="table-header" cellspacing="0">
                 <th class="table-title"></th>
                 <th class="table-title">Nome</th>
@@ -89,7 +89,7 @@
             @endforeach
 
 
-            
+
 
 
             <!--

@@ -1,11 +1,23 @@
 #contatos-navbar {
     background-color: #BCBCBC;
-    padding: 10px;
+    padding: 10px 20px;
     width: 100%;
-    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#hello-user{
+    font-size: 22px;
+}
+
+#dropdown-menu{
     display: flex;
     justify-content: flex-end;
-    
+
+    width: 20%;
 }
 
 #dropdown {
@@ -14,9 +26,10 @@
     border: none;
 
     padding: 10px;
-    border-radius:5px;    
+    border-radius:5px;
+    width: 60%;
 
-    font-size: 14px;
+    font-size: 18px;
 }
 #dropdown:hover {
     background-color: #FFFFFF;

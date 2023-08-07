@@ -52,7 +52,9 @@
                         <div id="carrossel-content">
                             @foreach ($imagens as $index => $path)
                                 @if($detalhes->id == $path->chave)
-                                    <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')"></div>
+                                    <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')">
+                                        <img id="logo" src="{{ asset('img/logo.png') }}" alt="teste">
+                                    </div>
                                 @endif
                             @endforeach
                         </div>
@@ -79,8 +81,8 @@
                         <p id="desc-texto">{{ $detalhes->tp_contrato }}</p>
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
-                        <h2 class="detalhes-titulo">Descrição do produto</h2>
-                        <p id="desc-texto">{{ $detalhes->desc }}</p>
+                        <h2 class="detalhes-titulo">Descrição do Imóvel</h2>
+                        <p id="desc-texto" class="alinhado">{{ $detalhes->desc }}</p>
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Localização</h2>
@@ -94,13 +96,18 @@
                             <div class="area-content">
                                 <p id="area">Área total: {{ $detalhes->area }} m²</p>
                             </div>
-                            <div class="area-content">
-                                <p id="area">Área útil: {{ $detalhes->areaUtil }} m²</p>
-                            </div>
 
-                            <div class="area-content">
-                                <p id="area">Área do terreno: {{ $detalhes->areaTerreno }} m²</p>
-                            </div>
+                            @if ($detalhes->areaUtil != 0)
+                                <div class="area-content">
+                                    <p id="area">Área útil: {{ $detalhes->areaUtil }} m²</p>
+                                </div>
+                            @endif
+
+                            @if ($detalhes->areaTerreno != '')
+                                <div class="area-content">
+                                    <p id="area">Área do terreno: {{ $detalhes->areaTerreno }} m²</p>
+                                </div>
+                            @endif
 
                             @if ($detalhes->descricao != 'Terreno')
                                 <div class="area-content">

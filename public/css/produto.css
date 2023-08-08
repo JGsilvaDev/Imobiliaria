@@ -28,11 +28,6 @@ body {
     width: 100%;
 }
 
-#title-imovel h1{
-    /* flex: 1;
-    text-align: center;
-    padding-left: 185px; */
-}
 
 #imovel-id{
     display: flex;
@@ -48,33 +43,12 @@ body {
 
 .area-content {
     width: 33.33%;
-    /* box-shadow: inset 0 0 10px #ff0000; */
 }
 .p-align-icon {
     display: flex;
     align-items: center;
 }
 
-/* mexendo */
-/* #produto-carrossel{
-    width: 650px;
-    height: 450px;
-    margin-bottom: 20px;
-
-} */
-/* .carrossel-container {
-    position: relative;
-} */
-#proxima-imagem {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-#anterior-imagem {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
 .slick-arrow {
     border: none;
     padding: 10px;
@@ -421,10 +395,7 @@ body {
 
     border-radius: 15px;
 }
-/* #fechar-icone-container {
-    width:100%;
-    text-align: right;
-} */
+
 #mostrar-container {
     width:100%;
     display: flex;
@@ -465,6 +436,23 @@ body {
 
 #desc-texto{
     padding: 0 10px;
+}
+
+/* imagem em tela cheia */
+
+#fullscreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color:rgba(0, 0, 0, 0.597);
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 1250px){
@@ -536,11 +524,6 @@ body {
         width: 80vw;
         height: 40vh;
     }
-
-    /* #produto-carrossel{
-        width: 80vw;
-        height: 61vh;
-    } */
 
     .img{
         width: 380px !important;

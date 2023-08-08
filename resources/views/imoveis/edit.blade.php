@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/produto.css') }}">
 
     <script src="{{ asset('js/mostrar-interesse.js') }}"></script>
+    <script src="{{ asset('js/tela-cheia.js') }}"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -14,6 +15,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
     <button id="mostrar" onclick="changeVisibility()">Tenho interesse!</button>
+
+    <div id="fullscreen" style="display: none;" onclick="fechar_fullscreen()">
+        <img src="" alt="" id="img-fullscreen">
+    </div>
 
     <div id="pagina-layout" class="background-blur">
 
@@ -52,7 +57,7 @@
                         <div id="carrossel-content">
                             @foreach ($imagens as $index => $path)
                                 @if($detalhes->id == $path->chave)
-                                    <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')">
+                                    <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')" onclick="img_fullscreen('{{asset($path->path)}}')">
                                         <img id="logo" src="{{ asset('img/logo.png') }}" alt="teste">
                                     </div>
                                 @endif

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             count = 1;
         }
 
-        if(count > 3){
+        if(count >= 3){
             $("#destaques-content").slick({
                 dots: true,
                 infinite: true,
@@ -57,4 +57,4 @@ function checkRes() {
 function widthLowerThan(largura) {
     if (window.screen.availWidth > largura) { return true }
     else return false
-} 
+}

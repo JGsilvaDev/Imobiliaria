@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     button.addEventListener('click', function(event) {
                         event.preventDefault();
-                        this.classList.remove('opaco');
 
                         var divId = parseInt(this.parentNode.id);
 
@@ -42,6 +41,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         dataTransfer.items.add(fileWithName);
 
                         inputFilePrincipal.files = dataTransfer.files;
+
+                        var botoes = document.querySelectorAll('.opaco');
+
+                        botoes.forEach(function(botao) {
+                            botao.addEventListener('click', function() {
+                                // Remover a classe 'selecionado' de todos os botões
+                                botoes.forEach(function(b) {
+                                    b.classList.add('opaco');
+                                });
+
+                                // Adicionar a classe 'selecionado' ao botão clicado
+                                botao.classList.remove('opaco');
+                            });
+                        });
 
                     });
 
@@ -99,6 +112,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         inputFilePrincipal.files = dataTransfer.files;
 
+                        var botoes = document.querySelectorAll('.opaco');
+
+                        botoes.forEach(function(botao) {
+                            botao.addEventListener('click', function() {
+                                // Remover a classe 'selecionado' de todos os botões
+                                botoes.forEach(function(b) {
+                                    b.classList.add('opaco');
+                                });
+
+                                // Adicionar a classe 'selecionado' ao botão clicado
+                                botao.classList.remove('opaco');
+                            });
+                        });
+
                     });
 
                     divElement.appendChild(button);
@@ -154,6 +181,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         dataTransfer.items.add(fileWithName);
 
                         inputFilePrincipal.files = dataTransfer.files;
+
+                        var botoes = document.querySelectorAll('.opaco');
+
+                        botoes.forEach(function(botao) {
+                            botao.addEventListener('click', function() {
+                                // Remover a classe 'selecionado' de todos os botões
+                                botoes.forEach(function(b) {
+                                    b.classList.add('opaco');
+                                });
+
+                                // Adicionar a classe 'selecionado' ao botão clicado
+                                botao.classList.remove('opaco');
+                            });
+                        });
 
                     });
 

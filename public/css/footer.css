@@ -4,6 +4,7 @@ body {
 
 .footer-link {
     cursor: pointer;
+    font-size: 22px !important;
 }
 .footer-link:hover {
     color:#0008ff;

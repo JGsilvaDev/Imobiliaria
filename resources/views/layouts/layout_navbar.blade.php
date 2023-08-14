@@ -85,31 +85,31 @@
 
         <div class="style_paragrafo">
             <div>
-                <p onclick="window.location.href='/imoveis'" class="footer-link">Imóvel</p>
-                <p id="conteudo">page page page 1</p>
-                <p id="conteudo">page page 1</p>
-                <p id="conteudo">page</p>
+                <p onclick="window.location.href='/imoveis'" class="footer-link">IMÓVEL</p>
+                <p id="conteudo">Apartamentos</p>
+                <p id="conteudo">Terrenos</p>
+                <p id="conteudo">Casas</p>
             </div>
             <div>
-                <p onclick="window.location.href='/sobre'" class="footer-link">Saiba mais</p>
-                <p id="conteudo">page page page 1</p>
-                <p id="conteudo">page page 1</p>
-                <p id="conteudo">page</p>
+                <p onclick="window.location.href='/sobre'" class="footer-link">SAIBA MAIS</p>
+                <p id="conteudo">Sobre a empresa</p>
+                <p id="conteudo">Quem sou</p>
+                <p id="conteudo">Aviso</p>
             </div>
             <div>
-                <p onclick="modal();" class="footer-link">Contato</p>
-                <p id="conteudo">page page page 1</p>
-                <p id="conteudo">page page 1</p>
-                <p id="conteudo">page</p>
+                <p onclick="modal();" class="footer-link">CONTATO</p>
+                <p id="conteudo">Entre em contato</p>
+                <p id="conteudo">Fale conosco</p>
+                <p id="conteudo">WhatsApp</p>
             </div>
             <div>
-                <p onclick="window.location.href='/login'" class="footer-link">Login</p>
-                <p id="conteudo">Localização</p>
-                <p id="conteudo">Robson</p>
-                <p id="conteudo">Clobeson</p>
+                <p onclick="window.location.href='/login'" class="footer-link">PESQUISA</p>
+                <p id="conteudo">Quantidade de quartos</p>
+                <p id="conteudo">Valores</p>
+                <p id="conteudo">Área</p>
             </div>
             <div>
-                <img id="img-logo-footer" src="{{asset('img/logo.png')}}">
+                <a href="/"><img id="img-logo-footer" src="{{asset('img/logo.png')}}"></a> 
             </div>
         </div>
 

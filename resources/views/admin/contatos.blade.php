@@ -23,9 +23,6 @@
     <script src="{{ asset('js/dropDown.js') }}"></script>
     <div id="corpo">
         <div id="popup-informacoes" style="display:none">
-
-            
-            
             <button id="btn-popup-fechar" onclick="fecharInfo()">Fechar</button>
             <h1>Informações</h1>
             <div class="cliente-dados">
@@ -84,7 +81,7 @@
 
             @foreach ($contatos as $cont)
                 <tbody class="table-body">
-                    <td class="body-info" ><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)">Ver</button></td>
+                    <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)">Ver</button></td>
                     <td class="body-info divider-left information-{{$cont->id}}">{{$cont->nome}}</td>
                     <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->telefone }}</td>
                     <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->email }}</td>
@@ -141,7 +138,6 @@
             document.getElementById('dados-motivo'),
             document.getElementById('dados-mensagem')
         ]
-        
         const info_array = document.getElementsByClassName(client_id)
 
         for(let i=0; i<dados_array.length-1; i++) {
@@ -151,7 +147,7 @@
     }
 
     function solucionar(event){
-        var id = event.target.parentElement.parentElement.children[2];
+        var id = event.target.parentElement.parentElement.parentElement.children[2].children[2].children[0].children[5].value;
 
         console.log(id);
     }

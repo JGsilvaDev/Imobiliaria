@@ -23,6 +23,9 @@
     <script src="{{ asset('js/dropDown.js') }}"></script>
     <div id="corpo">
         <div id="popup-informacoes" style="display:none">
+
+            
+            
             <button id="btn-popup-fechar" onclick="fecharInfo()">Fechar</button>
             <h1>Informações</h1>
             <div class="cliente-dados">
@@ -86,6 +89,7 @@
                     <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->telefone }}</td>
                     <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->email }}</td>
                     <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->motivoContato }}</td>
+                    <input type="hidden" id="dados-id" value="{{ $cont->id }}">
                     <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
                 </tbody>
             @endforeach
@@ -137,6 +141,7 @@
             document.getElementById('dados-motivo'),
             document.getElementById('dados-mensagem')
         ]
+        
         const info_array = document.getElementsByClassName(client_id)
 
         for(let i=0; i<dados_array.length-1; i++) {

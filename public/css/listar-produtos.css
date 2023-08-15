@@ -63,7 +63,7 @@ body {
 }
 
 #painel-pesquisa-float {
-    width: 16vw;
+    width: 20vw;
     background-color: #D7D7D7;
     padding: 20px;
     border-radius: 0 0 15px 15px;
@@ -164,11 +164,11 @@ input[type='radio']:checked:after { /* quando selecionado */
     align-items: center;
 }
 .busca-painel-btn {
-
     background-color:#ffa500;
     color: white;
     border: none;
     padding: 10px 50px;
+    margin-top: 15px;
     border-radius: 15px;
 }
 
@@ -278,6 +278,10 @@ input[type='radio']:checked:after { /* quando selecionado */
     border: none;
     padding: 5px 20px;
     border-radius: 15px;
+}
+
+#btn-mostrar-mais:houver{
+    cursor: pointer;
 }
 
 .search-show {

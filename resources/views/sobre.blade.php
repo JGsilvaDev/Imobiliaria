@@ -9,10 +9,8 @@
     
         <h1 class="about-title">Saiba mais sobre a imobiliária Eunice Solowski</h1>
     
-        
         <section id="sobre-mim">
             <div class="sobre-content">
-                <h1 id="ola" class="about-subtitle">Muito prazer, seja bem-vindo!</h1>
                 <div class="image-container">
                     <img class="imgSobre" src="{{ asset('img/logo.png') }}" alt="">
                 </div>

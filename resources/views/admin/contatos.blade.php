@@ -50,9 +50,15 @@
             </div>
             <div class="cliente-botoes">
                 <button title="Apaga o contato da lista, use caso já tenha resolvido" class="cliente-btn" id="cliente-apagar">Apagar</button>
-                <button title="Marca o contato como solucionado, mas não o apaga da lista" class="cliente-btn" id="cliente-solucionar" onclick="Swal.fire('Solucionado','O contato agora está marcado como solucionado. Ele não sai da tabela','success'); fecharInfo()">Solucionar</button>
+                <button title="Marca o contato como solucionado, mas não o apaga da lista" class="cliente-btn" id="cliente-solucionar" onclick="Swal.fire('Solucionado','O contato agora está marcado como solucionado. Ele não sai da tabela','success'); fecharInfo(); solucionar(event)">Solucionar</button>
             </div>
         </div>
+
+        <form action="\admin\contatos" method="post">
+            @csrf
+            <input type="hidden" name="solucionar">
+            <button type="submit" style="display: none"></button>
+        </form>
 
         <table cellspacing="0" id="request-table">
 
@@ -74,17 +80,13 @@
             </tbody> -->
 
             @foreach ($contatos as $cont)
-                <p></p>
-                <p></p>
-                <p></p>
-
                 <tbody class="table-body">
-                <td class="body-info" ><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)">Ver</button></td>
-                <td class="body-info divider-left information-{{$cont->id}}">{{$cont->nome}}</td>
-                <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->telefone }}</td>
-                <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->email }}</td>
-                <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->motivoContato }}</td>
-                <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
+                    <td class="body-info" ><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)">Ver</button></td>
+                    <td class="body-info divider-left information-{{$cont->id}}">{{$cont->nome}}</td>
+                    <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->telefone }}</td>
+                    <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->email }}</td>
+                    <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->motivoContato }}</td>
+                    <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
                 </tbody>
             @endforeach
 
@@ -141,6 +143,12 @@
             dados_array[i].innerHTML = info_array[i].innerHTML
         }
         dados_array[4].innerHTML = info_array[4].value
+    }
+
+    function solucionar(event){
+        var id = event.target.parentElement.parentElement.children[2];
+
+        console.log(id);
     }
 
 </script>

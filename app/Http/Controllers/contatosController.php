@@ -21,4 +21,11 @@ class contatosController extends Controller
 
         return view('admin/contatos',['contatos' => $contatos, 'usuario' => $dadosUsuario]);
     }
+
+    public function store(Request $request){
+
+        $contatos = Contatos::findOrFail();
+
+
+    }
 }

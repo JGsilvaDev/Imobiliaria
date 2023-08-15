@@ -49,6 +49,7 @@ Route::post('/admin/editUsuario', [editUserController::class, 'editUser']);
 Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
 
 Route::get('/admin/contatos', [contatosController::class, 'index']);
+Route::post('/admin/contatos', [contatosController::class, 'store']);
 
 Route::post('/edit/imgPrincipal/{id}', [editController::class, 'alterarImgPrincipal']);
 Route::post('/salvar/{id}', [editController::class, 'update']);

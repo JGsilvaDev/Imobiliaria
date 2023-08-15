@@ -24,8 +24,21 @@ class contatosController extends Controller
 
     public function store(Request $request){
 
-        $contatos = Contatos::findOrFail();
+        $contato = Contatos::findOrFail($request->solucionar);
 
+        $contato->resolvido = true;
+        $contato->save();
 
+        return redirect()->back();
+
+    }
+
+    public function destroy(Request $request){
+
+        $contato = Contatos::findOrFail($request->deletar);
+
+        $contato->delete();
+
+        return redirect()->back();
     }
 }

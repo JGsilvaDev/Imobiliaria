@@ -11,6 +11,16 @@ body {
     box-sizing: border-box;
 }
 
+.imgSobre {
+    width: 230px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    align-self: center;
+}
+
 .about-title {
     background-color: #1B657A;
     color:white;
@@ -20,13 +30,43 @@ body {
     font-size: 24px;
 }
 
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+
+#sobre-texto {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #515050;
+}
+
+#ola {
+    text-align: center;
+    font-size: 24px;
+    color: #1B657A;
+    margin-bottom: 20px;
+}
+
+.sobre-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 #sobre-mim {
     margin: 0 10px;
-    display:flex;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
+
 .about-subtitle {
     font-size: 24px;
     text-align: center;
@@ -50,22 +90,32 @@ body {
 }
 
 #aviso {
-    margin: 0 10px;
+    margin: 0 auto;
     text-align: center;
-    padding: 2vw 2vh;
-    background-color: #515050;
-    color: #D9D9D9;
+    padding: 4vw 4vh;
+    color: #515050;
+    max-width: 940px;
+}
+
+#aviso h2 {
+    font-size: 30px;
+}
+
+#aviso p {
+    font-size: 25px; 
 }
 
 .divisor {
     border: solid 5px rgb(255, 255, 255);
-
     width: 100%;
 }
-.divisor-aviso {
-    border: solid 2px rgb(255, 255, 255);
 
+.divisor-aviso {
+    border: solid 3px #515050;
     width: 100%;
+    max-width: 900px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 600px) {

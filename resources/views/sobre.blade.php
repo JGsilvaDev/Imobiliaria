@@ -9,15 +9,28 @@
     
         <h1 class="about-title">Saiba mais sobre a imobiliária Eunice Solowski</h1>
     
-        <h1 id="ola" class="about-subtitle">Olá, meu nome é Eunice, muito prazer</h1>
+        
         <section id="sobre-mim">
-            <img src="{{ asset('img/eunice.png') }}" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nesciunt, dolore, consequatur veniam tempore culpa vitae, debitis rem dolorum aut sint tempora esse odio ipsa totam facere? Consectetur eius quos veritatis, fuga fugit consequatur deleniti possimus similique laborum debitis aliquid provident error iure modi sint vitae accusantium nam ratione delectus rem odit, repellat blanditiis excepturi ducimus! Aspernatur eos, tempore odit voluptatem laboriosam debitis mollitia unde magni dicta alias beatae dolorem molestias nemo non placeat pariatur recusandae quia excepturi. Eos reiciendis ducimus architecto quidem perferendis harum aperiam, sed quia incidunt amet veritatis non sit quibusdam vero illum quaerat ratione cum dignissimos error molestiae magnam maxime, sequi a! Facere aspernatur excepturi praesentium expedita magnam aliquid culpa at. Officia sequi, adipisci expedita mollitia sunt officiis culpa eaque possimus, laborum minima reiciendis saepe deserunt eos praesentium autem est iusto modi aperiam sed asperiores? Optio numquam necessitatibus expedita rerum hic odio magnam, magni inventore iste illum at consectetur in iure. Reprehenderit ducimus ut architecto aliquam, autem necessitatibus fugit veritatis ad. Non, nostrum cupiditate ipsam natus distinctio reiciendis dolorum expedita praesentium, pariatur tempore quas facilis ipsa doloribus, deleniti vero ut dolor dolore ipsum quasi provident laborum libero eum! Quasi vitae ducimus fugiat, earum deserunt sunt perferendis.</p>
+            <div class="sobre-content">
+                <h1 id="ola" class="about-subtitle">Muito prazer, seja bem-vindo!</h1>
+                <div class="image-container">
+                    <img class="imgSobre" src="{{ asset('img/logo.png') }}" alt="">
+                </div>
+                <div id="sobre-texto">
+                    <p>Somos sua porta de entrada para encontrar o lar dos seus sonhos. Com expertise no mercado imobiliário e um toque pessoal, estamos aqui para tornar sua busca por propriedades uma experiência empolgante e descomplicada. <br><br>
+        
+                    Nossa equipe apaixonada entende o significado de encontrar um espaço que se encaixa perfeitamente com seus desejos e necessidades. Seja a busca por um novo lar ou oportunidades de investimento, nossa abordagem ágil e transparente vai direto ao ponto, economizando seu tempo e energia. <br><br>
+                        
+                    Na Imobiliária Eunice Solowski, acreditamos em relações genuínas. Construímos nosso nome com base na confiança, integridade e resultados. Estamos aqui para dar vida aos seus planos imobiliários de maneira direta e eficaz. <br><br>
+                        
+                    Explore nosso site para descobrir nossa seleção de propriedades e entre em contato para dar o próximo passo emocionante na sua jornada imobiliária. <br><br></p>
+                </div>
+            </div>
         </section>
     
         <hr class="divisor">
     
-        <h1 class="about-subtitle">Depoimentos sobre a corretora</h1>
+        {{-- <h1 class="about-subtitle">Depoimentos sobre a corretora</h1>
         <section id="depoimentos">
             <div class="pessoa">
                 <img src="{{ asset('img/gabriel.png') }}" alt="">
@@ -31,14 +44,14 @@
                 <img src="{{ asset('img/gabriel.png') }}" alt="">
                 <p>Gabriel silva</p>
             </div>
-        </section>
+        </section> 
     
-        <hr class="divisor">
+        <hr class="divisor"> --}}
     
         <section id="aviso">
             <h2>Aviso sobre valores</h2>
             <hr class="divisor-aviso">
-            <p>Em alguns casos, os preços podem variar dependendo do proprietário, na dúvida, entre em contato com o proprietário antes de realizara compra.</p>
+            <p>Em alguns casos, os preços podem variar dependendo do imóvel. Em caso de dúvida, entre em contato com a imobiliária antes de realizar a compra.</p>
         </section>
     </div>
 

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     var button = document.createElement('button');
                     var icon = document.createElement('i');
-                    icon.classList.add('fas', 'fa-crown', 'fa-2x'); 
+                    icon.classList.add('fas', 'fa-crown', 'fa-2x');
                     button.appendChild(icon);
                     button.style.margin = 'auto';
                     button.classList.add('opaco');
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     var button = document.createElement('button');
                     var icon = document.createElement('i');
-                    icon.classList.add('fas', 'fa-crown', 'fa-2x'); 
+                    icon.classList.add('fas', 'fa-crown', 'fa-2x');
                     button.appendChild(icon);
                     button.style.margin = 'auto';
                     button.classList.add('opaco');
@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     button.addEventListener('click', function(event) {
                         event.preventDefault();
-                        this.classList.remove('opaco');
 
                         var divId = parseInt(this.parentNode.id);
 
@@ -167,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     var button = document.createElement('button');
                     var button = document.createElement('button');
                     var icon = document.createElement('i');
-                    icon.classList.add('fas', 'fa-crown', 'fa-2x'); 
+                    icon.classList.add('fas', 'fa-crown', 'fa-2x');
                     button.appendChild(icon);
                     button.style.margin = 'auto';
                     button.classList.add('opaco');
@@ -177,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     button.addEventListener('click', function(event) {
                         event.preventDefault();
-                        this.classList.remove('opaco');
 
                         var divId = parseInt(this.parentNode.id);
 

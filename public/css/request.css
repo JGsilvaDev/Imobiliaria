@@ -141,13 +141,20 @@ body {
 }
 
 #btn-popup-fechar {
-    background-color: none;
+    background-color: transparent;
     border: none;
     position: absolute;
     right: 20px;
     top: 20px;
-
+    cursor: pointer;
     padding: 10px;
+    transition: color 0.3s ease;
+    font-size: 18px;
+}
+
+#btn-popup-fechar:hover {
+    color: #CE990F;
+    background-color: transparent;
 }
 
 @media (max-width: 600px) {

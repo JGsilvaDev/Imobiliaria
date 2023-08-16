@@ -23,7 +23,7 @@
     <script src="{{ asset('js/dropDown.js') }}"></script>
     <div id="corpo">
         <div id="popup-informacoes" style="display:none">
-            <button id="btn-popup-fechar" onclick="fecharInfo()">Fechar</button>
+            <button id="btn-popup-fechar" onclick="fecharInfo()">X</button>
             <h1>Informações</h1>
             <div class="cliente-dados">
                 <div class="cliente-dados-container" style="display: none">

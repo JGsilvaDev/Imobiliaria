@@ -13,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="{{ asset('js/reload.js') }}"></script>
+
     <title>@yield('title')</title>
     <link rel="icon" href="{{ asset('img/favicon-16x16.png') }}" type="image/fav-icon">
 </head>
@@ -25,7 +26,7 @@
         <div id="nav-buttons">
             <a href="/imoveis"><button class="nav-btn">Imóveis</button></a>
             <a href="/sobre"><button class="nav-btn">Sobre nós</button></a>
-            <button class="nav-btn" onclick="modal();">Contato</button>
+            <button class="nav-btn" onclick="modal();" id="contato-btn">Contato</button>
 
             @if(session('login'))
                 <select name="opcao" class="nav-btn" id="dropdown">
@@ -47,6 +48,7 @@
     </div>
 
     <link rel="stylesheet" href="{{ asset('css/contato.css') }}">
+
     <div id="modalContato" class="contato-container" style="display:none">
         <div id="contato-titulo">
             <h1 class="contato-title">Fale conosco!</h1>
@@ -137,3 +139,17 @@
     'opsz' 48
     }
 </style>
+
+<script>
+    let modal_identify = document.getElementById('modalContato');
+    let modalButton = document.getElementById('contato-btn');
+
+    // Adiciona um event listener ao documento para detectar cliques em qualquer lugar na página.
+    document.addEventListener('click', function(event) {
+    // Verifica se o clique ocorreu fora do elemento desejado.
+    if (!modal_identify.contains(event.target) && !modalButton.contains(event.target)) {
+        clickClose()
+    }
+    });
+
+</script>

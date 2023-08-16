@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     divElement.id = index + i;
 
                     var button = document.createElement('button');
-                    button.textContent = 'Clique aqui';
+                    var icon = document.createElement('i');
+                    icon.classList.add('fas', 'fa-crown', 'fa-2x'); 
+                    button.appendChild(icon);
                     button.style.margin = 'auto';
                     button.classList.add('opaco');
 

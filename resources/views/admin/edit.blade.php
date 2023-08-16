@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/cadastro-imovel.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="{{ asset('js/softDelete.js') }}"></script>
     <script src="{{ asset('js/imagemEdit.js') }}"></script>
     <script src="{{ asset('js/slider.js') }}"></script>

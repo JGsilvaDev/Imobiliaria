@@ -29,9 +29,6 @@
             </div>
         @endif
         <button id="btn-logar" class="btn-reg">Entrar</button>
-        <p id="no-account"><a href="/cadastro">Ainda não tem uma conta?</a></p>
-
-
     </form>
 </div>
 

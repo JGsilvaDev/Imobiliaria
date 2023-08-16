@@ -29,8 +29,8 @@ Route::post('/contato', [masterController::class, 'envioContato']);
 Route::get('/login', [loginController::class, 'index']);
 Route::post('/login', [loginController::class, 'auth']);
 
-Route::get('/cadastro', [cadastroUsuarioController::class, 'index']);
-Route::post('/cadastro', [cadastroUsuarioController::class, 'store']);
+Route::get('/cadastro', [cadastroUsuarioController::class, 'index']); //cadastro de user
+Route::post('/cadastro', [cadastroUsuarioController::class, 'store']); //cadastro de user
 
 Route::get('/imoveis', [imoveisController::class, 'index']);
 Route::post('/imoveis', [imoveisController::class, 'search']);
@@ -40,8 +40,8 @@ Route::post('/imoveis/{id}', [imoveisController::class, 'detalhe']);
 
 Route::get('/admin', [adminController::class, 'index']);
 Route::post('/admin', [adminController::class, 'search']);
-Route::get('/admin/cadastrar', [adminController::class, 'item']);
-Route::post('/admin/cadastrar', [adminController::class, 'store']);
+Route::get('/admin/cadastrar', [adminController::class, 'item']); //cadastro de produto
+Route::post('/admin/cadastrar', [adminController::class, 'store']); //cadastro de produto
 
 Route::get('/admin/editUsuario', [editUserController::class, 'user']);
 Route::post('/admin/editUsuario', [editUserController::class, 'editUser']);

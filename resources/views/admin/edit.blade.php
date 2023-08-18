@@ -222,11 +222,13 @@
                     <div id="main-img" style="background-image: url('{{ asset($imagemPrincipal->path) }}')"></div>
                 </div>
             
+                <hr class="tab-divider">
+
                 <p class="img-title-label">Imagens</p>
                 <div class="div-center">
             
                     <div class="image-list-container">
-                        <div class="div-center">
+                        <!-- <div class="div-center"> -->
                             <div class="image-flex">
                                 @foreach ($imagem as $img)
                                     @if ($item->id == $img->chave)
@@ -242,7 +244,7 @@
                                     @endif
                                 @endforeach
                             </div>
-                        </div>
+                        <!-- </div> -->
             
                     </div>
                 </div>

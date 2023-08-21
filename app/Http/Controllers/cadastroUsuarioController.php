@@ -56,7 +56,7 @@ class cadastroUsuarioController extends Controller
 
         $usuario->save();
 
-        return redirect('/login');
+        return redirect('/admin');
 
     }
 }

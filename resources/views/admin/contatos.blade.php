@@ -96,13 +96,13 @@
                     <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
                     <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>
                     <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->motivoContato }}</td>
+                    <td class="body-info divider-left information-{{$cont->id}}" style="display: none">{{ $cont->id }}</td>
+                    <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
                     @if($cont->resolvido == 1)
                         <td class="body-info divider-left information-{{$cont->id}}">Resolvido</td>
                     @else
                         <td class="body-info divider-left information-{{$cont->id}}">Não resolvido</td>
                     @endif
-                    <td class="body-info divider-left information-{{$cont->id}}" style="display: none">{{ $cont->id }}</td>
-                    <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
                 </tbody>
             @endforeach
 

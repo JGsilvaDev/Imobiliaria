@@ -69,58 +69,53 @@
             <button id="btn-deletar" type="submit" style="display: none"></button>
         </form>
 
-        <table cellspacing="0" id="request-table">
-
-            <thead class="table-header" cellspacing="0">
-                <th class="table-title"></th>
-                <th class="table-title">Nome</th>
-                <th class="table-title">Telefone</th>
-                <th class="table-title">Email</th>
-                <th class="table-title">Motivo do contato</th>
-                <th class="table-title">Resolvido</th>
-            </thead>
-
-            <!-- <tbody class="table-body">
-                <td class="body-info" ><button class="button-info" id="information-5"  onclick="mostrarInfo(event)">Ver</button></td>
-                <td class="body-info divider-left information-5">goku</td>
-                <td class="body-info divider-left information-5">(12) 9999-9999</td>
-                <td class="body-info divider-left information-5">oieusouogoku@email.com</td>
-                <td class="body-info divider-left information-5">anúncio</td>
-                <input class=" information-5" type="hidden" name="" value="motivo da mensagem">
-            </tbody> -->
-
-            @foreach ($contatos as $cont)
-                <tbody class="table-body">
-                    <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
-                    <td class="body-info divider-left information-{{$cont->id}}" >{{$cont->nome}}</td>
-                    <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
-                    <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>
-                    <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->motivoContato }}</td>
-                    <td class="body-info divider-left information-{{$cont->id}}" style="display: none">{{ $cont->id }}</td>
-                    <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
-                    @if($cont->resolvido == 1)
-                        <td class="body-info divider-left information-{{$cont->id}}">Resolvido</td>
-                    @else
-                        <td class="body-info divider-left information-{{$cont->id}}">Não resolvido</td>
-                    @endif
-                </tbody>
-            @endforeach
-
-
-
-
-
-            <!--
-                USANDO O INFORMATION ID NA HORA DE INTEGRAR
-                A CLASSE INFORMATION ID É IMPORTANTE PARA PUXAR AS INFORMAÇÕES PRO JS
-                O JAVASCRIPT CRIA UM ARRAY BASEADO NESSA CLASSE, PORTANTO, O NOME DA CLASSE DEVE SER "information-ID_DO_CLIENTE"
-
-                FAVOR COMUNICAR O DIGAS CASO HAJA QUALQUER DÚVIDA
-
-                APAGAR ESSA MENSAGEM APÓS SE CERTIFICAR DE QUE TUDO ESTÁ RODANDO CORRETAMENTE
-            -->
-
-        </table>
+        <div class="responsive">
+            
+            <table cellspacing="0" id="request-table">
+    
+                <thead class="table-header" cellspacing="0">
+                    <th class="table-title"></th>
+                    <th class="table-title">Nome</th>
+                    <th class="table-title">Telefone</th>
+                    <th class="table-title">Email</th>
+                    <th class="table-title">Motivo do contato</th>
+                    <th class="table-title">Resolvido</th>
+                </thead>
+    
+                @foreach ($contatos as $cont)
+                    <tbody class="table-body">
+                        <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
+                        <td class="body-info divider-left information-{{$cont->id}}" >{{$cont->nome}}</td>
+                        <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
+                        <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>
+                        <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->motivoContato }}</td>
+                        <td class="body-info divider-left information-{{$cont->id}}" style="display: none">{{ $cont->id }}</td>
+                        <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
+                        @if($cont->resolvido == 1)
+                            <td class="body-info divider-left information-{{$cont->id}}">Resolvido</td>
+                        @else
+                            <td class="body-info divider-left information-{{$cont->id}}">Não resolvido</td>
+                        @endif
+                    </tbody>
+                @endforeach
+    
+    
+    
+    
+    
+                <!--
+                    USANDO O INFORMATION ID NA HORA DE INTEGRAR
+                    A CLASSE INFORMATION ID É IMPORTANTE PARA PUXAR AS INFORMAÇÕES PRO JS
+                    O JAVASCRIPT CRIA UM ARRAY BASEADO NESSA CLASSE, PORTANTO, O NOME DA CLASSE DEVE SER "information-ID_DO_CLIENTE"
+    
+                    FAVOR COMUNICAR O DIGAS CASO HAJA QUALQUER DÚVIDA
+    
+                    APAGAR ESSA MENSAGEM APÓS SE CERTIFICAR DE QUE TUDO ESTÁ RODANDO CORRETAMENTE
+                -->
+    
+            </table>
+            
+        </div>
 
     </div>
 

@@ -161,8 +161,19 @@ body {
     background-color: rgb(133, 160, 133);
 }
 
+/* teste */
+.responsive {
+    overflow-x: scroll;
+    width: 90%;
+    margin: auto;
+}
+
 @media (max-width: 600px) {
     #popup-informacoes {
         width: 100%;
+    }
+
+    #request-table {
+        border-radius: 0px;
     }
 }

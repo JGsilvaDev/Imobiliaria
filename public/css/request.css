@@ -87,7 +87,7 @@ body {
     overflow:hidden;
     border-collapse:separate;
     border-radius: 15px;
-    width: 80%;
+    width: 90%;
 }
 #request-table tbody:nth-child(odd){
     background-color: rgb(237, 237, 237);  
@@ -155,6 +155,10 @@ body {
 #btn-popup-fechar:hover {
     color: #CE990F;
     background-color: transparent;
+}
+
+.is-solved-1 {
+    background-color: rgb(133, 160, 133);
 }
 
 @media (max-width: 600px) {

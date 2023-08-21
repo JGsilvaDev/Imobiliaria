@@ -77,6 +77,7 @@
                 <th class="table-title">Telefone</th>
                 <th class="table-title">Email</th>
                 <th class="table-title">Motivo do contato</th>
+                <th class="table-title">Resolvido</th>
             </thead>
 
             <!-- <tbody class="table-body">
@@ -90,11 +91,16 @@
 
             @foreach ($contatos as $cont)
                 <tbody class="table-body">
-                    <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)">Ver</button></td>
-                    <td class="body-info divider-left information-{{$cont->id}}">{{$cont->nome}}</td>
-                    <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->telefone }}</td>
-                    <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->email }}</td>
-                    <td class="body-info divider-left information-{{$cont->id}}">{{ $cont->motivoContato }}</td>
+                    <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
+                    <td class="body-info divider-left information-{{$cont->id}}" >{{$cont->nome}}</td>
+                    <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
+                    <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>
+                    <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->motivoContato }}</td>
+                    @if($cont->resolvido == 1)
+                        <td class="body-info divider-left information-{{$cont->id}}">Resolvido</td>
+                    @else
+                        <td class="body-info divider-left information-{{$cont->id}}">Não resolvido</td>
+                    @endif
                     <td class="body-info divider-left information-{{$cont->id}}" style="display: none">{{ $cont->id }}</td>
                     <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
                 </tbody>

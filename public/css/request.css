@@ -83,11 +83,12 @@ body {
 
 /* IDs */
 #request-table {
-    margin-top: 15px;
     overflow:hidden;
     border-collapse:separate;
-    border-radius: 15px;
     width: 90%;
+    margin: auto;
+    margin-top: 15px;
+    
 }
 #request-table tbody:nth-child(odd){
     background-color: rgb(237, 237, 237);  
@@ -168,12 +169,19 @@ body {
     margin: auto;
 }
 
+@media (min-width:767px) {
+    .responsive {
+        overflow-y: hidden; 
+        overflow-x: hidden; 
+    }
+    #request-table {
+        border-radius: 15px;
+    }
+}
+
 @media (max-width: 600px) {
     #popup-informacoes {
         width: 100%;
     }
 
-    #request-table {
-        border-radius: 0px;
-    }
 }

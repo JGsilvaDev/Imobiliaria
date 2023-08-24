@@ -26,52 +26,52 @@
         <input type="hidden" name="id_produto" value="2" >
 
         <p for="" id="titulo-label" class="add-label">Título</p>
-        <input type="text" id="casa-titulo-input" name="titulo" class="add-input" >
+        <input type="text" id="casa-titulo-input" name="titulo" class="add-input" required>
 
         <p for="" id="desc-label" class="add-label">Descrição</p>
-        <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input"></textarea>
+        <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">1</span></p>
-        <input type="range" name="qtd_banheiros" min="0" max="50" value="1" id="sliderBanheiroCasa" class="slider">
+        <input type="range" name="qtd_banheiros" min="0" max="50" value="1" id="sliderBanheiroCasa" class="slider" required>
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites: <span id="sliderValueSuiteCasa">1</span></p>
-        <input type="range" name="qtd_suites" min="0" max="50" value="1" id="sliderSuiteCasa" class="slider">
+        <input type="range" name="qtd_suites" min="0" max="50" value="1" id="sliderSuiteCasa" class="slider" required>
 
         <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">1</span></p>
-        <input type="range" name="qtd_quartos" min="0" max="50" value="1" id="sliderQuartosCasa" class="slider">
+        <input type="range" name="qtd_quartos" min="0" max="50" value="1" id="sliderQuartosCasa" class="slider" required>
 
         <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasCasa">1</span></p>
-        <input type="range" name="qtd_vagas" min="0" max="50" value="1" id="sliderVagasCasa" class="slider">
+        <input type="range" name="qtd_vagas" min="0" max="50" value="1" id="sliderVagasCasa" class="slider" required>
 
         <p id="local-label">Localidade</p>
-        <input name="localidade" type="text" id="casa-local-input" min="1" class="add-input">
+        <input name="localidade" type="text" id="casa-local-input" min="1" class="add-input" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área contruida (m<sup>2</sup>)</p>
-        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p>Aluguel ou Venda</p>
-        <select name="tp_contrato" id="" class="add-input">
+        <select name="tp_contrato" id="" class="add-input" required>
             <option value="Aluguel">Alguel</option>
             <option value="Venda">Venda</option>
         </select>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="valor" id="casa-valor-input" min="1" class="add-input" step=".01" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input" step=".01">
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input" step=".01">
 
         <p id="valor-label">Básico</p>
         <div class="checkbox">
@@ -208,7 +208,7 @@
         <hr class="cadastro-divisor">
 
         <p id="imagem-label">Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
-        <input type="file" name="imagem[]" id="imagemCasa" multiple>
+        <input type="file" name="imagem[]" id="imagemCasa" multiple required>
 
         <input type="file" name="imagemCasaPrincipal" id="imagemCasaPrincipal" style="display: none">
 
@@ -223,52 +223,52 @@
         @csrf
         <input type="hidden" name="id_produto" value="3">
         <p for="" id="titulo-label" class="add-label">Título</p>
-        <input type="text" id="casa-titulo-input" name="titulo" class="add-input" >
+        <input type="text" id="casa-titulo-input" name="titulo" class="add-input" required>
 
         <p for="" id="desc-label" class="add-label">Descrição</p>
-        <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input"></textarea>
+        <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheirosAp">1</span></p>
-        <input type="range" name="qtd_banheiros" min="0" max="50" value="1" id="sliderBanheirosAp" class="slider">
+        <input type="range" name="qtd_banheiros" min="0" max="50" value="1" id="sliderBanheirosAp" class="slider" required>
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites: <span id="sliderValueSuiteAp">1</span></p>
-        <input type="range" name="qtd_suites" min="0" max="50" value="1" id="sliderSuiteAp" class="slider">
+        <input type="range" name="qtd_suites" min="0" max="50" value="1" id="sliderSuiteAp" class="slider" required>
 
         <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosAp">1</span></p>
-        <input type="range" name="qtd_quartos" min="0" max="50" value="1" id="sliderQuartosAp" class="slider">
+        <input type="range" name="qtd_quartos" min="0" max="50" value="1" id="sliderQuartosAp" class="slider" required>
 
         <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasAp">1</span></p>
-        <input type="range" name="qtd_vagas" min="0" max="50" value="1" id="sliderVagasAp" class="slider">
+        <input type="range" name="qtd_vagas" min="0" max="50" value="1" id="sliderVagasAp" class="slider" required>
 
         <p id="local-label">Localidade</p>
-        <input name="localidade" type="text" id="casa-local-input" min="1" class="add-input">
+        <input name="localidade" type="text" id="casa-local-input" min="1" class="add-input" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área contruida (m<sup>2</sup>)</p>
-        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input">
+        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p>Aluguel ou Venda</p>
-        <select name="tp_contrato" id="" class="add-input">
+        <select name="tp_contrato" id="" class="add-input" required>
             <option value="Aluguel">Alguel</option>
             <option value="Venda">Venda</option>
         </select>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="valor" id="casa-valor-input" min="1" class="add-input" step=".01" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input" step=".01">
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input" step=".01">
 
         <p id="valor-label">Básico</p>
         <div class="checkbox">
@@ -414,25 +414,25 @@
         <input type="hidden" name="id_produto" value="1">
 
         <p for="" id="titulo-label" class="add-label">Título</p>
-        <input name="titulo" type="text" id="trn-titulo-input" class="add-input">
+        <input name="titulo" type="text" id="trn-titulo-input" class="add-input" required>
 
         <p for="" id="desc-label" class="add-label">Descrição</p>
-        <textarea name="descricao" id="trn-desc-input" cols="30" rows="10" class="add-input"></textarea>
+        <textarea name="descricao" id="trn-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
         <p id="local-label">Localidade</p>
-        <input name="localidade" type="text" id="trn-local-input" min="1" class="add-input">
+        <input name="localidade" type="text" id="trn-local-input" min="1" class="add-input" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="trn-tam-area-input" min="1" class="add-input">
+        <input name="area" type="number" id="trn-tam-area-input" min="1" class="add-input" required>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="trn-valor-input" min="1" class="add-input">
+        <input type="number" name="valor" id="trn-valor-input" min="1" class="add-input" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="valorCondominio" id="casa-valor-input" min="1" class="add-input" required>
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input">
+        <input type="number" name="iptu" id="casa-valor-input" min="1" class="add-input" required>
 
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>

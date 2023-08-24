@@ -22,10 +22,14 @@ class logoutController extends Controller
         $search = session('search');
         $filtro = $request->filtro;
 
-        // dd($filtro);
+        // dd($search[0]);
 
         if($filtro == 'titulo'){
-            $search[0]->titulo = null;
+            if(isset($search[0])){
+                $search[0]->titulo = null;
+            }else{
+                $search = null;
+            }
         }
 
         if($filtro == 'localidade'){
@@ -52,8 +56,7 @@ class logoutController extends Controller
             $search[0]->area = null;
         }
 
-        if($filtro != 'Tipo Imovel'){
-
+        if($filtro != 'Tipo Imovel' and isset($search[0])){
             if(
                 $search[0]->titulo == null and $search[0]->localidade == null and
                 $search[0]->quartos == null and $search[0]->banheiros == null and
@@ -68,7 +71,6 @@ class logoutController extends Controller
             }
 
         }
-
 
         return redirect('/imoveis');
     }

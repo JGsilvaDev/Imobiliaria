@@ -24,10 +24,10 @@ return new class extends Migration
             $table->unsignedBigInteger('area');
             $table->unsignedBigInteger('areaUtil')->nullable();
             $table->unsignedBigInteger('areaTerreno')->nullable();
-            $table->unsignedBigInteger('areaConstruida')->nullable();
-            $table->unsignedBigInteger('valor');
-            $table->unsignedBigInteger('valorCondominio')->nullable();
-            $table->unsignedBigInteger('iptuMensal');
+            $table->unsignedFloat('areaConstruida')->nullable();
+            $table->unsignedFloat('valor');
+            $table->unsignedFloat('valorCondominio')->nullable();
+            $table->unsignedFloat('iptuMensal');
             $table->string('localidade');
             $table->string('tp_contrato');
             $table->boolean('agua');

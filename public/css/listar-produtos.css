@@ -170,6 +170,7 @@ input[type='radio']:checked:after { /* quando selecionado */
     padding: 10px 50px;
     margin-top: 15px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 #painel-lateral-fechar {

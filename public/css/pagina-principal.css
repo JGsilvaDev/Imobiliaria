@@ -37,7 +37,6 @@ h1 {
 #pesquisa-container {
     background-image: url("/img/fundo.png");
     background-position: center 600px;
-    background-attachment: fixed;
     background-size: 100%;
     padding:100px;
 }
@@ -200,8 +199,7 @@ backdrop-filter: blur(5.5px);
     }
 
     #pesquisa-container {
-        background-position: center 800px;
-        background-attachment: fixed;
+        background-position: center;
         background-size: 200%;
     }
 

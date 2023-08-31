@@ -100,6 +100,11 @@ backdrop-filter: blur(5.5px);
 #destaque-endereco-info p {
     text-align: center;
 }
+#endereco-info-cidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #item-dados {
     display: flex;

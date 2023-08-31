@@ -59,7 +59,7 @@
                     <span id="endereco-info-tipo-nome">{{ $iten->descricao }}</span>
                     <hr style="width:100%;" >
                     <p id="endereco-info-tipo">{{ $iten->titulo }}</p>
-                    <p id="endedreco-info-cidade"><span class="material-symbols-outlined">location_on</span> {{ $iten->localidade}}</p>
+                    <p id="endereco-info-cidade"><span class="material-symbols-outlined">location_on</span> {{ $iten->localidade}}</p>
                 </div>
                 <div id="item-dados">
                     <p id="dados-area">{{ $iten->area }}m²</p>

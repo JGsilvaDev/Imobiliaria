@@ -82,6 +82,15 @@ backdrop-filter: blur(5.5px);
 
 }
 
+.custom-icon{
+    width: 24px;
+    height: 24px;
+    background-image: url('/img/location.svg');
+    background-size: cover;
+    display: inline-block;
+    margin-right: 10px;
+}
+
 #destaques-item {
     display:flex;
     flex-direction: column;

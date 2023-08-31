@@ -23,7 +23,8 @@ function excluir(){
         confirmButtonText: 'Sim',
         confirmButtonColor: '#008000',
         cancelButtonText: 'Não',
-        cancelButtonColor: '#FF0000'
+        cancelButtonColor: '#FF0000',
+        customClass: 'tamanhoModal'
       }).then((result) => {
         if (result.isConfirmed) {
           botaoDelete.click();

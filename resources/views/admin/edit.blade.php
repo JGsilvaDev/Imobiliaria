@@ -18,7 +18,6 @@
 <button id="btn-voltar" onclick="window.location.href = '/admin'">Voltar</button>
     <div id="title-editar">
         <p>Editar</p>
-        <h1>{{ $item->descricao }}</h1>
     </div>
 
     <div id="tab-system">
@@ -225,27 +224,22 @@
                 <hr class="tab-divider">
 
                 <p class="img-title-label">Imagens</p>
-                <div class="div-center">
             
-                    <div class="image-list-container">
-                        <!-- <div class="div-center"> -->
-                            <div class="image-flex">
-                                @foreach ($imagem as $img)
-                                    @if ($item->id == $img->chave)
-                                        <div class="image-list-content">
-                                            <div class="edit-img-frame" style="background-image: url('{{ asset($img->path) }}')"></div>
-                                            <input type="hidden" name="id" value="{{ $img->id }}">
-            
-                                            <div class="image-list-buttons">
-                                                <button id="bntTrocarPrincipal" class="image-list-button" onclick="trocarPrincipal(this)">Trocar</button>
-                                                <button id="imovel-remover" onclick="excluirImg(this);" class="image-list-button">Excluir</button>
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div>
-                        <!-- </div> -->
-            
+                <div class="image-list-container">
+                    <div class="image-flex">
+                        @foreach ($imagem as $img)
+                            @if ($item->id == $img->chave)
+                                <div class="image-list-content">
+                                    <div class="edit-img-frame" style="background-image: url('{{ asset($img->path) }}')"></div>
+                                    <input type="hidden" name="id" value="{{ $img->id }}">
+    
+                                    <div class="image-list-buttons">
+                                        <button id="bntTrocarPrincipal" class="image-list-button" onclick="trocarPrincipal(this)">Trocar</button>
+                                        <button id="imovel-remover" onclick="excluirImg(this);" class="image-list-button">Excluir</button>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             

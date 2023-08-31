@@ -279,6 +279,11 @@ body {
     background-position: center;
 }
 
+.tamanhoModal{
+    width: 78%;
+}
+
+
 @media (max-width: 600px) {
     .imovel-content {
         width:70vw;

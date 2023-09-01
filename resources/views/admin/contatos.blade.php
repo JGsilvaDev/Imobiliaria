@@ -83,7 +83,7 @@
                 </thead>
     
                 @foreach ($contatos as $cont)
-                    <tbody class="table-body">
+                    <tr class="table-body solved-{{ $cont->resolvido }}">
                         <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{$cont->nome}}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
@@ -96,7 +96,7 @@
                         @else
                             <td class="body-info divider-left information-{{$cont->id}}">Não resolvido</td>
                         @endif
-                    </tbody>
+                    </tr>
                 @endforeach
     
     

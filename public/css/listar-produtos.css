@@ -3,6 +3,7 @@ body {
 }
 * {
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
     font-size: 14px;
 }
 
@@ -40,7 +41,7 @@ body {
     padding: 5px;
 }
 .input-text {
-    width: 98%;
+    width: 100%;
     border: none;
     border-radius: 15px;
     padding: 10px;

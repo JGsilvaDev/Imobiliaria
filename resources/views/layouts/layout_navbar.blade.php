@@ -42,7 +42,7 @@
                     <button class="nav-btn" id="sair" type="submit" style="display: none"></button>
                 </form>
             @else
-                <a href="/login" id="btn-nav-entrar"><button class="nav-btn">Entrar <span class="material-symbols-outlined">login</span></button></a>
+                <a href="/login" id="btn-nav-entrar"><button class="nav-btn">Entrar  <span class="enter"></span></button></a>
             @endif
         </div>
     </div>

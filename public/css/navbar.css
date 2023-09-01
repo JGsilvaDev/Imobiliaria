@@ -18,6 +18,8 @@ body * {
     border-radius: 50%;
 }
 
+
+
 #navbar {
     display: flex;
     flex-direction: row;
@@ -34,6 +36,15 @@ body * {
     flex-direction: row;
 }
 
+.enter {
+    width: 18px;
+    height: 18px;
+    background-image: url('/img/enter1.svg');
+    background-size: cover;
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .nav-btn {
     background-color: #B77922;
     border: none;
@@ -43,10 +54,14 @@ body * {
     transition: all 0.2s
 
 }
-.nav-btn:hover {
+.nav-btn:hover{
     background-color: white;
     color: #B77922;
     text-decoration: none;
+}
+
+.nav-btn:hover .enter {
+    background-image: url('/img/enter2.svg');
 }
 
 #dropdown {

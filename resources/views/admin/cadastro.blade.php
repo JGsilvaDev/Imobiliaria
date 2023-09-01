@@ -210,7 +210,7 @@
         <p id="imagem-label">Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
         <input type="file" name="imagem[]" id="imagemCasa" multiple required>
 
-        <input type="file" name="imagemCasaPrincipal" id="imagemCasaPrincipal" style="display: none">
+        <input type="file" name="imagemCasaPrincipal" id="imagemCasaPrincipal" style="display: none" required>
 
         <div id="imagePreviewCasa"></div>
 
@@ -449,4 +449,5 @@
 
     <script src="{{ asset('js/cadastro-abas.js') }}"></script>
     <script src="{{ asset('js/slider.js') }}"></script>
+    <script src="{{ asset('js/imagemPrincipalAlert.js') }}"></script>
 @endsection

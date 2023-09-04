@@ -52,7 +52,7 @@
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
         <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
-        <p id="tam-area-label">Tamanho da área contruida (m<sup>2</sup>)</p>
+        <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
         <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
@@ -249,7 +249,7 @@
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
         <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
-        <p id="tam-area-label">Tamanho da área contruida (m<sup>2</sup>)</p>
+        <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
         <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" required>
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>

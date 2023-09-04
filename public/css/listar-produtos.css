@@ -202,10 +202,11 @@ input[type='radio']:checked:after { /* quando selecionado */
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     align-items: start;
     gap: 0.5vw;
+    margin:auto;
 }
 
 #tipo-imovel {
@@ -228,6 +229,7 @@ input[type='radio']:checked:after { /* quando selecionado */
     justify-content: center;
     align-items: center;
     gap: 20px;
+    height: 550px;
 }
 
 .produto-imagem {
@@ -243,6 +245,12 @@ input[type='radio']:checked:after { /* quando selecionado */
 }
 .produto-titulo,.produto-descricao {
     text-align: center;
+}
+.produto-descricao {
+    width: 80%;
+    height: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .produto-dados {
     width: 100%;

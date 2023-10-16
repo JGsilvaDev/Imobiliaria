@@ -196,6 +196,45 @@ class adminController extends Controller
 
                 $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
 
+                // dd($fileNameFormat);
+                // testando biblioteca GD
+
+
+                $imagemOriginal = $fileNameFormat;
+
+                $marcaDagua = 'img/logo.png';
+
+                // Carregue a imagem original
+                $imagem = imagecreatefrompng($imagemOriginal);
+
+                // Carregue a imagem da marca d'água
+                $marcaDaguaImagem = imagecreatefrompng($marcaDagua);
+
+                // Obtenha as dimensões da imagem original e da marca d'água
+                $larguraImagem = imagesx($imagem);
+                $alturaImagem = imagesy($imagem);
+                $larguraMarcaDagua = imagesx($marcaDaguaImagem);
+                $alturaMarcaDagua = imagesy($marcaDaguaImagem);
+
+                // Calcule a posição para a marca d'água (por exemplo, canto inferior direito)
+                $posicaoX = $larguraImagem - $larguraMarcaDagua - 10; // 10 pixels da margem direita
+                $posicaoY = $alturaImagem - $alturaMarcaDagua - 10; // 10 pixels da margem inferior
+
+
+                // Define a cor transparente da imagem da marca d'água
+                $corTransparente = imagecolorallocatealpha($marcaDaguaImagem, 0, 0, 0, 127);
+                imagecolortransparent($marcaDaguaImagem, $corTransparente);
+
+                // Mesclar a marca d'água na imagem original com transparência
+                imagecopymerge($imagem, $marcaDaguaImagem, $posicaoX, $posicaoY, 0, 0, $larguraMarcaDagua, $alturaMarcaDagua, 50); // O último valor (50) controla a opacidade da marca d'água (0 a 100)
+
+                // Salvar a imagem resultante (substitua a imagem original ou escolha um novo nome)
+                imagejpeg($imagem, $fileNameFormat);
+
+                // Liberar recursos
+                imagedestroy($imagem);
+                imagedestroy($marcaDaguaImagem);
+
                 $imagem = new Imagens();
                 $imagem->chave = $catalogo->id;
                 $imagem->path = $fileNameFormat;

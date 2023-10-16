@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function excluir(){
+function excluir(btn){
 
-    let botaoDelete = document.getElementById('remover');
+    let botaoDelete = btn.parentElement.children[2].children[2];
 
     Swal.fire({
         title: 'Deseja excluir esse imovel?',

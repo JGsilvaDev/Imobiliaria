@@ -71,7 +71,7 @@
                                 <span class="btn-texto">Editar</span></button>
                             </form>
 
-                            <button id="imovel-remover" onclick="excluir();" class="imovel-btn">
+                            <button id="imovel-remover" onclick="excluir(this);" class="imovel-btn">
                             <span class="btn-texto">Remover</span></button>
 
                             <form action="/deletar/{{ $item->id }}" method="POST">

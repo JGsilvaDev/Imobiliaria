@@ -1,6 +1,6 @@
 /* TELA DE CONTATO */
 .contato-container {
-    z-index: 3;
+    z-index: 999;
     position: absolute;
     top: 46.5%;
     left: 50%;
@@ -9,7 +9,7 @@
     justify-content: center;
     gap: 0;
     flex-direction: column;
-    width: 45%;
+    width: 100%;
     height: 100%;
 }
 

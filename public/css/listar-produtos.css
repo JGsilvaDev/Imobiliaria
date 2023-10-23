@@ -112,7 +112,7 @@ input[type='radio']:checked:after { /* quando selecionado */
 
 /* painel de pesquisa LATERAL (para mobile) */
 #painel-pesquisa-lateral {
-    z-index: 999;
+    z-index: 998;
     width:100vw;
     height: 100vh;
     position: fixed; top: 0; left: 0;
@@ -334,7 +334,7 @@ input[type='radio']:checked:after { /* quando selecionado */
     }
     #mobile-buscar {
         display: block;
-        z-index: 999;
+        z-index: 998;
     }
 }
 @media (min-width: 1265px) {

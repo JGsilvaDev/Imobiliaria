@@ -10,7 +10,6 @@
     <div id="modalContato" class="contato-container">
         <div id="contato-titulo">
             <h1 class="contato-title">Fale conosco!</h1>
-            <button id="btn-fechar-contato" onclick="modal();">X</button>
         </div>
 
         <form action="/contato" method="POST" id="contato-content" autocomplete="off">

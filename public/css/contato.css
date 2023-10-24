@@ -1,31 +1,29 @@
 /* TELA DE CONTATO */
 .contato-container {
-    z-index: 999;
-    position: absolute;
-    top: 46.5%;
-    left: 50%;
-    transform: translate(-50%, -40%);
     display: flex;
     justify-content: center;
     gap: 0;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    margin: auto;
 }
 
+
 #contato-titulo {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     border-radius: 15px 15px 0 0;
-    background-color: #A8A8A8;
-    color: white;
     padding: 10px;
 }
 
 #contato-titulo h1{
     flex: 1;
     text-align: center;
+    padding: 20px;
+}
+
+input {
+    background-color: #cecece;
 }
 
 #contato-titulo button{
@@ -37,10 +35,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
     height: 80%;
     border-radius: 0 0 15px 15px;
-    background-color: #dfdfdf;
+    /* background-color: #dfdfdf; */
     padding: 10px;
 }
 
@@ -49,6 +46,7 @@
     border-radius: 15px;
     padding: 10px;
     height: 20%;
+    background-color: #cecece;
 }
 
 .contato-enviar {
@@ -95,4 +93,10 @@
     border: none;
     color: white;
     cursor: pointer;
+}
+
+@media (min-width:850px) {
+    .contato-container {
+        max-width: 50%;
+    }
 }

@@ -196,8 +196,7 @@ class adminController extends Controller
 
                 $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
 
-                // dd($fileNameFormat);
-                // testando biblioteca GD
+                $fileFormat = substr(strrchr($fileNameFormat, '.'), 1);
 
 
                 $imagemOriginal = $fileNameFormat;
@@ -205,7 +204,13 @@ class adminController extends Controller
                 $marcaDagua = 'img/logo.png';
 
                 // Carregue a imagem original
-                $imagem = imagecreatefrompng($imagemOriginal);
+                //verificando o formato da imagem
+                if ($fileFormat === 'png') {
+                    $imagem = imagecreatefrompng($imagemOriginal);
+                }
+                else if ($fileFormat === 'jpg') {
+                    $imagem = imagecreatefromjpeg($imagemOriginal);
+                }
 
                 // Carregue a imagem da marca d'água
                 $marcaDaguaImagem = imagecreatefrompng($marcaDagua);

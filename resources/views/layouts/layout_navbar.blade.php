@@ -26,7 +26,7 @@
         <div id="nav-buttons">
             <a href="/imoveis"><button class="nav-btn">Imóveis</button></a>
             <a href="/sobre"><button class="nav-btn">Sobre nós</button></a>
-            <button class="nav-btn" onclick="modal();" id="contato-btn">Contato</button>
+            <a href="/contato"><button class="nav-btn">Contato</button></a>
 
             @if(session('login'))
                 <select name="opcao" class="nav-btn" id="dropdown">

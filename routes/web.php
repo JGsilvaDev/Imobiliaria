@@ -56,3 +56,7 @@ Route::post('/edit/imgPrincipal/{id}', [editController::class, 'alterarImgPrinci
 Route::post('/salvar/{id}', [editController::class, 'update']);
 Route::delete('/deletar/{id}', [editController::class, 'destroy']);
 Route::delete('/deletar/img/{id}', [editController::class, 'destroyImg']);
+
+
+Route::get('/info/politica-de-privacidade', [masterController::class, 'polpriv']);
+Route::get('/info/termos-de-servico', [masterController::class, 'termservice']);

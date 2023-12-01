@@ -93,6 +93,14 @@ class masterController extends Controller
         return view('contato');
     }
 
+    public function polpriv(){
+        return view('info.politica_privacidade');
+    }
+    
+    public function termservice(){
+        return view('info.termos_servico');
+    }
+
     public function envioContato(Request $request){
 
         $contatos =  new Contatos();

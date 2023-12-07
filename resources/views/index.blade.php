@@ -59,7 +59,7 @@
                     <span id="endereco-info-tipo-nome">{{ $iten->descricao }}</span>
                     <hr style="width:100%;" >
                     <p id="endereco-info-tipo">{{ $iten->titulo }}</p>
-                    <p id="endereco-info-cidade"><span class="custom-icon"></span> {{ $iten->localidade}}</p>
+                    <p id="endereco-info-cidade"><span class="custom-icon"></span> <span class="endereco-localidade">{{ $iten->localidade}}</span></p>
                 </div>
                 <div id="item-dados">
                     <p id="dados-area">{{ $iten->area }}m²</p>
@@ -113,5 +113,39 @@
     </div>
 @endif
  -->
+
+ <script>
+    const imoveis_desc_list = document.getElementsByClassName('endereco-localidade')
+    console.log(widthLowerThan(600))
+    if (!widthLowerThan(600)) {
+        lim = 10
+    }
+    else {
+        lim = 8
+    }
+
+
+    function limitarStringPorPalavras(str, numeroPalavras) {
+        const palavras = str.split(' ');
+        const palavrasLimitadas = palavras.slice(0, numeroPalavras);
+        return palavrasLimitadas.join(' ');
+    }
+    function widthLowerThan(largura) {
+        if (window.screen.availWidth > largura) { return true }
+        else return false
+    }
+
+    for(i=0; i<imoveis_desc_list.length; i++) {
+
+        if(imoveis_desc_list[i].innerHTML.length > lim) {
+
+            imoveis_desc_list[i].innerHTML = limitarStringPorPalavras(imoveis_desc_list[i].innerHTML , lim) + "...";
+        }
+
+    }
+
+</script>
+
+
 
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.layout_navbar')
 
-@section('title', 'Todos Produtos')
+@section('title', 'Todos os Produtos')
 
 @section('content')
 
@@ -247,7 +247,7 @@
                                 @endforeach
                             </div>
                             <p class="produto-titulo">{{ $item->titulo }}</p>
-                            <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span>{{ $item->localidade }}</p>
+                            <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->localidade }}</span> </p>
                             <div class="produto-dados">
                                 <p class="produto-valor">R${{ $item->valor }},00</p>
                                 <p class="produto-valor">{{ $item->area }}m²</p>
@@ -274,5 +274,37 @@
 </div>
 <img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()" class="background-blur">
 <script src="{{ asset('js/mostrarPainel.js') }}"></script>
+
+<script>
+    const imoveis_desc_list = document.getElementsByClassName('produto-descricao-texto')
+    console.log(widthLowerThan(600))
+    if (!widthLowerThan(600)) {
+        lim = 5
+    }
+    else {
+        lim = 8
+    }
+
+
+    function limitarStringPorPalavras(str, numeroPalavras) {
+        const palavras = str.split(' ');
+        const palavrasLimitadas = palavras.slice(0, numeroPalavras);
+        return palavrasLimitadas.join(' ');
+    }
+    function widthLowerThan(largura) {
+        if (window.screen.availWidth > largura) { return true }
+        else return false
+    }
+
+    for(i=0; i<imoveis_desc_list.length; i++) {
+
+        if(imoveis_desc_list[i].innerHTML.length > lim) {
+
+            imoveis_desc_list[i].innerHTML = limitarStringPorPalavras(imoveis_desc_list[i].innerHTML , lim) + "...";
+        }
+
+    }
+
+</script>
 
 @endsection

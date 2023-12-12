@@ -14,7 +14,7 @@
             <input type="text" name="titulo" class="input-text" id="painel-titulo-lateral"
                 placeholder="Pesquisar imóvel">
             <p>Localidade:</p>
-            <input type="text" name="localidade" id="painel-local-lateral" class="input-text"
+            <input type="text" name="cidade" id="painel-local-lateral" class="input-text"
                 placeholder="Pesquisar Localidade">
 
             <div class="radio-container">
@@ -105,7 +105,7 @@
             </div>
         </div>
     </form>
-    
+
     <div id="pagina" class="enable-dark">
 
         <div id="painel-pesquisa-float-completo" class="background-blur">
@@ -247,7 +247,7 @@
                                 @endforeach
                             </div>
                             <p class="produto-titulo">{{ $item->titulo }}</p>
-                            <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->localidade }}</span> </p>
+                            <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->cidade }}</span> </p>
                             <div class="produto-dados">
                                 <p class="produto-valor">R${{ $item->valor }},00</p>
                                 <p class="produto-valor">{{ $item->area }}m²</p>

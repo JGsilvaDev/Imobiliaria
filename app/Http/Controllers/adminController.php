@@ -130,7 +130,10 @@ class adminController extends Controller
             $catalogo->descricao = $request->descricao;
             $catalogo->area = $request->area;
             $catalogo->valor = $request->valor;
-            $catalogo->localidade = $request->localidade;
+            $catalogo->cidade = $request->cidade;
+            $catalogo->bairro = $request->bairro;
+            $catalogo->ruaNumero = $request->ruaNumero;
+            $catalogo->cep = $request->cep;
             $catalogo->qtdSuites = $request->qtd_suites;
             $catalogo->valorCondominio = $request->valorCondominio;
             $catalogo->iptuMensal = $request->iptu;

@@ -28,7 +28,10 @@ return new class extends Migration
             $table->unsignedFloat('valor');
             $table->unsignedFloat('valorCondominio')->nullable();
             $table->unsignedFloat('iptuMensal');
-            $table->string('localidade');
+            $table->string('cidade');
+            $table->string('bairro');
+            $table->string('ruaNumero');
+            $table->string('cep')->nullable();
             $table->string('tp_contrato');
             $table->boolean('agua');
             $table->boolean('energia');

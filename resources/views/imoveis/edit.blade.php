@@ -44,7 +44,7 @@
             <div id="produto-layout">
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
                     <div id="title-imovel">
-                        <h1>{{ $detalhes->titulo }} -  {{ $detalhes->localidade }}</h1>
+                        <h1>{{ $detalhes->titulo }} -  {{ $detalhes->cidade }}</h1>
                         <div id="imovel-id" style="margin-left: 10px;">
                             <span class="material-symbols-outlined">Badge</span>
                             <h3>{{ $detalhes->id}}</h3>
@@ -91,7 +91,7 @@
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Localização</h2>
-                        <p id="desc-texto"><span class="material-symbols-outlined">location_on</span> {{ $detalhes->localidade }}</p>
+                        <p id="desc-texto">{{ $detalhes->cidade }}</p>
                     </div>
 
                     <div id="descricao-container" class="margin-spaced padding-spaced">
@@ -424,7 +424,7 @@
                                             @endif
                                         @endforeach
                                         <p class="semelhante-produto-titulo">{{ $sem->titulo }}</p>
-                                        <p class="semelhante-produto-localidade">{{ $sem->localidade }}</p>
+                                        <p class="semelhante-produto-localidade">{{ $sem->cidade }}</p>
                                         <div id="semelhante-produto-info" class="flex-row">
                                             <p class="semelhante-produto-area">{{ $sem->area }}m²</p>
                                             <p class="semelhante-produto-vagas">R${{ $sem->valor }},00</p>

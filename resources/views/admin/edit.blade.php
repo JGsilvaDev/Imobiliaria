@@ -56,8 +56,17 @@
                         <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasCasa">{{ $item->qtdVagas }}</span></p>
                         <input type="range" name="qtd_vagas" min="0" max="50" value="{{ $item->qtdVagas }}" id="sliderVagasCasa" class="slider">
 
-                        <label class="add-label">Localidade</label>
-                        <input type="text" name="localidade" id="localidade" value="{{ $item->localidade }}" class="add-input">
+                        <label class="add-label">Cidade</label>
+                        <input type="text" name="cidade" id="localidade" value="{{ $item->cidade }}" class="add-input">
+
+                        <label class="add-label">Bairro</label>
+                        <input type="text" name="cidade" id="bairro" value="{{ $item->bairro }}" class="add-input">
+
+                        <label class="add-label">Rua e Numero</label>
+                        <input type="text" name="ruaNumero" id="bairro" value="{{ $item->ruaNumero }}" class="add-input">
+
+                        <label class="add-label">CEP</label>
+                        <input type="text" name="cep" id="bairro" value="{{ $item->cep }}" class="add-input">
 
                         <label class="add-label">Area</label>
                         <input type="text" name="area" id="area" value="{{ $item->area }}" class="add-input">
@@ -226,8 +235,17 @@
 
                     <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required>{{ $item->desc }}</textarea>
 
-                    <label class="add-label">Localidade</label>
-                    <input type="text" name="localidade" id="localidade" value="{{ $item->localidade }}" class="add-input">
+                    <label class="add-label">Cidade</label>
+                    <input type="text" name="cidade" id="localidade" value="{{ $item->cidade }}" class="add-input">
+
+                    <label class="add-label">Bairro</label>
+                    <input type="text" name="cidade" id="bairro" value="{{ $item->bairro }}" class="add-input">
+
+                    <label class="add-label">Rua e Numero</label>
+                    <input type="text" name="ruaNumero" id="bairro" value="{{ $item->ruaNumero }}" class="add-input">
+
+                    <label class="add-label">CEP</label>
+                    <input type="text" name="cep" id="bairro" value="{{ $item->cep }}" class="add-input">
 
                     <label class="add-label">Area</label>
                     <input type="text" name="area" id="area" value="{{ $item->area }}" class="add-input">

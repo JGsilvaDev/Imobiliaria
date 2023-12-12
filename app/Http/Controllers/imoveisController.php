@@ -16,7 +16,7 @@ class imoveisController extends Controller
 
         $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',);
+                ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',);
 
         $filtro = new \stdClass();
 
@@ -25,7 +25,7 @@ class imoveisController extends Controller
         if($search and $search != 'sem filtro' and $search != null){
 
             $titulo = $search[0]->titulo;
-            $localidade = $search[0]->localidade;
+            $cidade = $search[0]->cidade;
             $quartos = $search[0]->quartos;
             $banheiros = $search[0]->banheiros;
             $vagas = $search[0]->vagas;
@@ -40,11 +40,11 @@ class imoveisController extends Controller
 
             }
 
-            if ($localidade != null) {
-                $imoveis->where('catalogos.localidade', 'like','%'.$localidade.'%');
+            if ($cidade != null) {
+                $imoveis->where('catalogos.cidade', 'like','%'.$cidade.'%');
 
-                $filtro->localidade[] = 'localidade';
-                $filtro->localidade[] = $localidade;
+                $filtro->cidade[] = 'localidade';
+                $filtro->cidade[] = $cidade;
 
             }
 
@@ -162,7 +162,7 @@ class imoveisController extends Controller
         $session = session();
 
         if(
-           $request->titulo != null or $request->localidade != null or
+           $request->titulo != null or $request->cidade != null or
            $request->qtdQuartos != null or $request->qtdBanheiros != null or
            $request->vagas != null or $request->valor != null or $request->area != null
         ){
@@ -170,7 +170,7 @@ class imoveisController extends Controller
             $search = [
                 (object) [
                     'titulo' => $request->titulo,
-                    'localidade' => $request->localidade,
+                    'localidade' => $request->cidade,
                     'quartos' => $request->qtdQuartos,
                     'banheiros' => $request->qtdBanheiros,
                     'vagas' => $request->vagas,
@@ -201,7 +201,7 @@ class imoveisController extends Controller
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                     ->select('catalogos.id','catalogos.descricao as desc','catalogos.id_tp_produto',
                       'catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo',
-                      'catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
+                      'catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
                       'catalogos.areaUtil','catalogos.areaTerreno','catalogos.areaConstruida','catalogos.valorCondominio',
                       'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
                       'catalogos.pavimentação','catalogos.areaServico','catalogos.banheiroAuxiliar','catalogos.banheiroEmpregada',
@@ -224,7 +224,7 @@ class imoveisController extends Controller
 
         $semelhante = DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao')
+                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao')
                     ->where('catalogos.id','!=',$id)
                     ->where('produtos.descricao','=',$item->descricao)
                     ->limit(2)

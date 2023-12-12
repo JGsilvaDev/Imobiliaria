@@ -22,7 +22,7 @@ class editController extends Controller
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                     ->select('catalogos.id','catalogos.descricao as desc','catalogos.id_tp_produto',
                       'catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo',
-                      'catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
+                      'catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
                       'catalogos.areaUtil','catalogos.areaTerreno','catalogos.areaConstruida','catalogos.valorCondominio',
                       'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
                       'catalogos.pavimentação','catalogos.areaServico','catalogos.banheiroAuxiliar','catalogos.banheiroEmpregada',
@@ -62,7 +62,10 @@ class editController extends Controller
         $catalogo->areaConstruida = $request->areaConstruida;
         $catalogo->areaTerreno = $request->areaTerreno;
         $catalogo->valor = $request->valor;
-        $catalogo->localidade = $request->localidade;
+        $catalogo->cidade = $request->cidade;
+        $catalogo->bairro = $request->bairro;
+        $catalogo->ruaNumero = $request->ruaNumero;
+        $catalogo->cep = $request->cep;
         $catalogo->qtdSuites = $request->qtd_suites;
         $catalogo->valorCondominio = $request->valorCondominio;
         $catalogo->iptuMensal = $request->iptu;

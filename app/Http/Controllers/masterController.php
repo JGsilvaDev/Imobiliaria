@@ -14,7 +14,7 @@ class masterController extends Controller
 
         $catalogo = DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
+                    ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
                     ->get();
 
         $imagem = DB::table('imagens_principais')
@@ -39,7 +39,7 @@ class masterController extends Controller
 
             $imoveis = DB::table('catalogos')
                         ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
+                        ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
                         ->where('produtos.id','=',$request->infoPesquisa)
                         ->get();
 
@@ -60,7 +60,7 @@ class masterController extends Controller
 
             $imoveis = DB::table('catalogos')
                         ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                        ->select('catalogos.id','catalogos.titulo','catalogos.localidade','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
+                        ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos')
                         ->where('catalogos.titulo','like','%'.$request->infoPesquisa.'%')
                         ->get();
 
@@ -96,7 +96,7 @@ class masterController extends Controller
     public function polpriv(){
         return view('info.politica_privacidade');
     }
-    
+
     public function termservice(){
         return view('info.termos_servico');
     }

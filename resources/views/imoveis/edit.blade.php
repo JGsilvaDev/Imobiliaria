@@ -58,7 +58,6 @@
                             @foreach ($imagens as $index => $path)
                                 @if($detalhes->id == $path->chave)
                                     <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')" onclick="img_fullscreen('{{asset($path->path)}}')">
-                                        <img id="logo" src="{{ asset('img/logo.png') }}" alt="teste">
                                     </div>
                                 @endif
                             @endforeach

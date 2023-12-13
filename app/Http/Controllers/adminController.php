@@ -204,7 +204,7 @@ class adminController extends Controller
 
                 $imagemOriginal = $fileNameFormat;
 
-                $marcaDagua = 'img/logo.png';
+                $marcaDagua = 'img/watermark.png';
 
                 // Carregue a imagem original
                 //verificando o formato da imagem
@@ -215,8 +215,12 @@ class adminController extends Controller
                     $imagem = imagecreatefromjpeg($imagemOriginal);
                 }
 
+
                 // Carregue a imagem da marca d'água
                 $marcaDaguaImagem = imagecreatefrompng($marcaDagua);
+                
+                // Redimensionando imagem
+                $imagem = imagescale($imagem, 1280, 720);
 
                 // Obtenha as dimensões da imagem original e da marca d'água
                 $larguraImagem = imagesx($imagem);
@@ -224,9 +228,10 @@ class adminController extends Controller
                 $larguraMarcaDagua = imagesx($marcaDaguaImagem);
                 $alturaMarcaDagua = imagesy($marcaDaguaImagem);
 
+
                 // Calcule a posição para a marca d'água (por exemplo, canto inferior direito)
-                $posicaoX = $larguraImagem - $larguraMarcaDagua - 10; // 10 pixels da margem direita
-                $posicaoY = $alturaImagem - $alturaMarcaDagua - 10; // 10 pixels da margem inferior
+                $posicaoX = $larguraImagem/2 - $larguraMarcaDagua/2; // 10 pixels da margem direita
+                $posicaoY = $alturaImagem/2 - $alturaMarcaDagua/2; // 10 pixels da margem inferior
 
 
                 // Define a cor transparente da imagem da marca d'água

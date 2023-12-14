@@ -70,6 +70,7 @@ backdrop-filter: blur(5.5px);
 }
 #form-search {
     width: 30%;
+
 }
 
 
@@ -201,7 +202,9 @@ backdrop-filter: blur(5.5px);
     display: none !important;
 }
 
-
+.filtro-mobile {
+    display: none;
+}
 
 
 @media (max-width: 1130px) {
@@ -222,6 +225,7 @@ backdrop-filter: blur(5.5px);
     }
     #form-search {
         width: 100vw;
+        display: flex;
     }
     #filtro {
         padding: 0;
@@ -236,6 +240,10 @@ backdrop-filter: blur(5.5px);
     }
     #contato-content {
         width: 100%;
+    }
+    .filtro-mobile {
+        display: block;
+        width:40%;
     }
 
 }

@@ -24,7 +24,7 @@ body{
 }
 
 .login-container {
-    width:100vw;
+    /* width:100vw; */
     height: 100vh;
 }
 
@@ -66,8 +66,8 @@ body{
     color: #000;
 }
 
-#login-input-password, #login-input-email {
-    width:50%;
+.input-log {
+    width: 50%;
 }
 
 .btn-reg {
@@ -141,6 +141,6 @@ body{
     }
 
     .input-log {
-        width:100%;
+        width:90vw;
     }
 }

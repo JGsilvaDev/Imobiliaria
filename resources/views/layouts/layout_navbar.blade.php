@@ -99,7 +99,7 @@
                 <p id="conteudo">Aviso</p>
             </div>
             <div>
-                <p onclick="modal();" class="footer-link">CONTATO</p>
+                <a onclick="window.location.href='/contato';" class="footer-link">CONTATO</a>
                 <p id="conteudo">Entre em contato</p>
                 <p id="conteudo">Fale conosco</p>
                 <p id="conteudo">WhatsApp</p>
@@ -141,15 +141,15 @@
 </style>
 
 <script>
-    let modal_identify = document.getElementById('modalContato');
-    let modalButton = document.getElementById('contato-btn');
+    // let modal_identify = document.getElementById('modalContato');
+    // let modalButton = document.getElementById('contato-btn');
 
-    // Adiciona um event listener ao documento para detectar cliques em qualquer lugar na página.
-    document.addEventListener('click', function(event) {
-    // Verifica se o clique ocorreu fora do elemento desejado.
-    if (!modal_identify.contains(event.target) && !modalButton.contains(event.target)) {
-        clickClose()
-    }
-    });
+    // // Adiciona um event listener ao documento para detectar cliques em qualquer lugar na página.
+    // document.addEventListener('click', function(event) {
+    // // Verifica se o clique ocorreu fora do elemento desejado.
+    // if (!modal_identify.contains(event.target) && !modalButton.contains(event.target)) {
+    //     clickClose()
+    // }
+    // });
 
 </script>

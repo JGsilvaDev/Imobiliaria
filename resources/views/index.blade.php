@@ -16,27 +16,32 @@
 <section id="pesquisa-container" class="background-blur">
 
         <div id="filtro">
-            <form action="" method="post">
+            <form action="" method="post" class="filtro-btn">
                 @csrf
                 <input type="hidden" name="infoPesquisa" value="3">
-                <button id="filtro-item" class="filtro-btn">Apartamento</button>
+                <button id="filtro-item" >Apartamento</button>
             </form>
 
-            <form action="" method="post">
+            <form action="" method="post" class="filtro-btn">
                 @csrf
                 <input type="hidden" name="infoPesquisa" value="1">
-                <button id="filtro-item" class="filtro-btn">Terreno</button>
+                <button id="filtro-item" >Terreno</button>
             </form>
 
-            <form action="" method="post">
+            <form action="" method="post" class="filtro-btn">
                 @csrf
                 <input type="hidden" name="infoPesquisa" value="2">
-                <button id="filtro-item" class="filtro-btn">Casa</button>
+                <button id="filtro-item" >Casa</button>
             </form>
 
             <form action="" method="post" id="form-search">
                 @csrf
                 <input type="text" name="infoPesquisa" id="filtro-input" placeholder="Pesquisa por título">
+                <select name="" id="" class="filtro-mobile">
+                    <option value="">Apartamento</option> 
+                    <option value="" selected>Casa</option>
+                    <option value="">Terreno</option>
+                </select>
             </form>
         </div>
 </section>

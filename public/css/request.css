@@ -183,5 +183,17 @@ body {
     #popup-informacoes {
         width: 100%;
     }
+    table#request-table td:nth-child(3) {
+        display:none;
+    }
+    thead#header th:nth-child(3) {
+        display:none;
+    }
+    table#request-table td:nth-child(4) {
+        display:none;
+    }
+    thead#header th:nth-child(4) {
+        display:none;
+    }
 
 }

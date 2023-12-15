@@ -37,10 +37,10 @@
             <form action="" method="post" id="form-search">
                 @csrf
                 <input type="text" name="infoPesquisa" id="filtro-input" placeholder="Pesquisa por título">
-                <select name="" id="" class="filtro-mobile">
-                    <option value="">Apartamento</option> 
-                    <option value="" selected>Casa</option>
-                    <option value="">Terreno</option>
+                <select id="filtro-mobile">
+                    <option value="1" class="mobile-option">Casa</option>
+                    <option value="2" class="mobile-option">Apartamento</option>
+                    <option value="3" class="mobile-option">Terreno</option>
                 </select>
             </form>
         </div>

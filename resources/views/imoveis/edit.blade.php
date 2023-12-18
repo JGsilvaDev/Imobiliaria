@@ -1,6 +1,6 @@
 @extends('layouts.layout_navbar')
 
-@section('title','Detalhe Produto')
+@section('title','Detalhes do Produto')
 
 @section('content')
 
@@ -8,6 +8,7 @@
 
     <script src="{{ asset('js/mostrar-interesse.js') }}"></script>
     <script src="{{ asset('js/tela-cheia.js') }}"></script>
+    <script src="{{ asset('js/numformat.js') }}"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -75,7 +76,7 @@
                     </div>
 
                     <div id="imovel-dados" class="flex-row">
-                        <h1 id="valor">R${{ $detalhes->valor }}</h1>
+                        <h1 id="valor" class="num-format">R${{ $detalhes->valor }}</h1>
                     </div>
                 </section>
 
@@ -128,13 +129,13 @@
                             <div class="area-container">
                                 @if ($detalhes->valorCondominio != null)
                                 <div class="area-content">
-                                    <p>Condomínio: R${{ $detalhes->valorCondominio }}</p>
+                                    <p>Condomínio: R$<span class="num-format">{{ $detalhes->valorCondominio }}</span></p>
                                 </div>
                                 @endif
 
                                 @if ($detalhes->iptuMensal != null)
                                 <div class="area-content">
-                                    <p>IPTU mensal: R${{ $detalhes->iptuMensal }}</p>
+                                    <p>IPTU mensal: R$<span class="num-format">{{ $detalhes->iptuMensal }}</span></p>
                                 </div>
                                 @endif
                             </div>

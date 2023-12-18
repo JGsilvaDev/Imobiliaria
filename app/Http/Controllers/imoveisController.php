@@ -137,8 +137,18 @@ class imoveisController extends Controller
         if($nItens == null){
             $imoveis->limit(9);
         }else{
-            $imoveis->limit($nItens);
+            $first = session('first');
+            $first = 1;
+
+            if($first == 1){
+                $imoveis->limit(18);
+                $first = 0;
+            }else{
+                $imoveis->limit($nItens);
+            }
         }
+
+        // dd($nItens);
 
         $imoveis = $imoveis->get();
 
@@ -240,6 +250,8 @@ class imoveisController extends Controller
     }
 
     public function maisItens(){
+
+        Session::forget('session');
 
         $session = session();
         $nItens = session('nItens');

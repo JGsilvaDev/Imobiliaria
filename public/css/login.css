@@ -126,6 +126,17 @@ body{
     margin: 20px 0;
 }
 
+#voltar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 25px;
+    font-size: 30px;
+
+    border: none;
+    border-radius: 10px;
+}
+
 @media (max-width: 600px) {
     .registro-input-layout {
         flex-direction: column;

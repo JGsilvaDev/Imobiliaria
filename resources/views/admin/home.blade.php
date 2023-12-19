@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/reload.js') }}"></script>
+<script src="{{ asset('js/numformat.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -61,7 +62,7 @@
                         <section id="informacoes" class="produto-item-flex">
                             <p id="imovel-titulo">{{ $item->titulo }}</p>
                             <p id="imovel-descricao" class="imovel-descricao">{{ $item->descricao }}</p>
-                            <p id="imovel-valor">R$ {{ $item->valor }}</p>
+                            <p id="imovel-valor">R$ <span class="num-format">{{ $item->valor }}</span></p>
                         </section>
 
                         <section id="imovel-botoes" class="produto-item-flex">

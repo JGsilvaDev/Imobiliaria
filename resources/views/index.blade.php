@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ asset('css/pagina-principal.css') }}">
 <script src="{{ asset('js/reload.js') }}"></script>
 <script src="{{ asset('js/caroselDestaque.js') }}"></script>
+<script src="{{ asset('js/numformat.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -68,7 +69,7 @@
                 </div>
                 <div id="item-dados">
                     <p id="dados-area">{{ $iten->area }}m²</p>
-                    <p id="dados-vagas">R${{ $iten->valor}}</p>
+                    <p id="dados-valor" class="num-format">R${{ $iten->valor}}</p>
                 </div>
 
                 <form action="/imoveis/{{ $iten->id }}" method="post">
@@ -78,6 +79,7 @@
             </div>
         @endforeach
     </div>
+
 </section>
 
 
@@ -121,7 +123,6 @@
 
  <script>
     const imoveis_desc_list = document.getElementsByClassName('endereco-localidade')
-    console.log(widthLowerThan(600))
     if (!widthLowerThan(600)) {
         lim = 10
     }

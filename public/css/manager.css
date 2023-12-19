@@ -254,6 +254,11 @@ body {
     font-size: 18px;
 }
 
+#imovel-valor *{
+    font-size: 28px;
+    color: #247B22;
+    margin-top: 10px;
+}
 #imovel-valor{
     font-size: 28px;
     color: #247B22;

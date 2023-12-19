@@ -5,6 +5,7 @@
 @section('content')
 
     <link rel="stylesheet" href="{{ asset('css/listar-produtos.css') }}">
+    <script src="{{ asset('js/numformat.js') }}"></script>
 
     <form class="background-blur" action="imoveis" method="post" id="painel-pesquisa-lateral" style="display:none">
         @csrf
@@ -249,7 +250,7 @@
                             <p class="produto-titulo">{{ $item->titulo }}</p>
                             <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->cidade }}</span> </p>
                             <div class="produto-dados">
-                                <p class="produto-valor">R${{ $item->valor }},00</p>
+                                <p class="produto-valor">R$<span class="num-format">{{ $item->valor }}</span>,00</p>
                                 <p class="produto-valor">{{ $item->area }}m²</p>
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">

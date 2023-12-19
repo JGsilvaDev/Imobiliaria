@@ -11,6 +11,7 @@ use App\Http\Controllers\editUserController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\emailController;
 use App\Http\Controllers\imoveisController;
+use App\Http\Controllers\clienteController;
 
 Route::get('/', [masterController::class, 'index']);
 Route::post('/', [masterController::class, 'store']);
@@ -51,6 +52,9 @@ Route::post('/admin/edit/{id}', [editController::class, 'processaDados']);
 Route::get('/admin/contatos', [contatosController::class, 'index']);
 Route::post('/admin/contatos', [contatosController::class, 'store']);
 Route::post('/admin/contatos/delete', [contatosController::class, 'destroy']);
+
+Route::get('/admin/clientes', [clienteController::class, 'index']);
+Route::post('/admin/clientes', [clienteController::class, 'store']);
 
 Route::post('/edit/imgPrincipal/{id}', [editController::class, 'alterarImgPrincipal']);
 Route::post('/salvar/{id}', [editController::class, 'update']);

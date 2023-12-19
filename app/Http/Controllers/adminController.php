@@ -297,4 +297,29 @@ class adminController extends Controller
         }
     }
 
+    public function vendidoAlugado($id){
+        $valor = session('login');
+
+        if($valor){
+            $catalogo = Catalogo::findOrFail($id);
+
+            if($catalogo->tp_contrato == 'Aluguel'){
+                $catalogo->vendidoAlugado = 'Alugado';
+                Session::flash('vendidoAlugado', 'O imovel alugado');
+            }
+
+            $catalogo->vendidoAlugado = 'Venda';
+            $catalogo->save();
+
+            Session::flash('vendidoAlugado', 'O imovel vendido');
+
+            return redirect()->back();
+        }else{
+            //Para limpar a sessão
+            session()->flush();
+            return redirect('login');
+        }
+
+    }
+
 }

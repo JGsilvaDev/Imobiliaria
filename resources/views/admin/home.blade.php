@@ -80,6 +80,11 @@
                                 @method('DELETE')
                                 <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
                             </form>
+
+                            <form action="/admin/vendidoAlugado/{{ $item->id }}" method="POST">
+                                @csrf
+                                <button type="submit" id="vendidoAlugado" class="imovel-btn"></button>
+                            </form>
                         </section>
                     </section>
                 </div>
@@ -114,6 +119,12 @@
 @if(session('excluir'))
     <div class="alert alert-success" id="flash-message">
         {{ session('excluir') }}
+    </div>
+@endif
+
+@if(session('vendidoAlugado'))
+    <div class="alert alert-success" id="flash-message">
+        {{ session('vendidoAlugado') }}
     </div>
 @endif
 

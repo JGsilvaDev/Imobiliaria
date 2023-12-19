@@ -66,6 +66,7 @@ return new class extends Migration
             $table->boolean('moveisPlanejados');
             $table->boolean('portaoEletronico');
             $table->boolean('quintal');
+            $table->string('vendidoAlugado');
             $table->timestamps();
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');

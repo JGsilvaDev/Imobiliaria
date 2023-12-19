@@ -41,6 +41,7 @@ Route::post('/imoveis/{id}', [imoveisController::class, 'detalhe']);
 
 Route::get('/admin', [adminController::class, 'index']);
 Route::post('/admin', [adminController::class, 'search']);
+Route::post('/admin/vendidoAlugado/{id}', [adminController::class, 'vendidoAlugado']);
 Route::get('/admin/cadastrar', [adminController::class, 'item']); //cadastro de produto
 Route::post('/admin/cadastrar', [adminController::class, 'store']); //cadastro de produto
 

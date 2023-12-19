@@ -20,7 +20,8 @@ return new class extends Migration
             $table->integer('qtdBanheiros')->nullable();
             $table->integer('qtdSuites')->nullable();
             $table->integer('qtdQuartos')->nullable();
-            $table->integer('qtdVagas')->nullable();
+            $table->integer('qtdGaragemCobertas')->nullable();
+            $table->integer('qtdGaragemNaoCobertas')->nullable();
             $table->unsignedBigInteger('area');
             $table->unsignedBigInteger('areaUtil')->nullable();
             $table->unsignedBigInteger('areaTerreno')->nullable();

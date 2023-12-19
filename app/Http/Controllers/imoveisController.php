@@ -16,7 +16,7 @@ class imoveisController extends Controller
 
         $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos',);
+                ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos',);
 
         $filtro = new \stdClass();
 
@@ -77,14 +77,14 @@ class imoveisController extends Controller
             }
 
             if ($vagas != 3 and $vagas != null) {
-                $imoveis->where('catalogos.qtdVagas', '=', $vagas);
+                $imoveis->where('catalogos.qtdGaragemCobertas', '=', $vagas);
 
                 $filtro->vagas[] = 'vagas';
                 $filtro->vagas[] = $vagas;
             }
 
             if ($vagas == 3 and $vagas != null) {
-                $imoveis->where('catalogos.qtdVagas', '>', 3);
+                $imoveis->where('catalogos.qtdGaragemCobertas', '>', 3);
 
                 $filtro->vagas[] = 'vagas';
                 $filtro->vagas[] = $vagas;
@@ -210,7 +210,7 @@ class imoveisController extends Controller
         $item =  DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                     ->select('catalogos.id','catalogos.descricao as desc','catalogos.id_tp_produto',
-                      'catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo',
+                      'catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo',
                       'catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
                       'catalogos.areaUtil','catalogos.areaTerreno','catalogos.areaConstruida','catalogos.valorCondominio',
                       'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
@@ -234,7 +234,7 @@ class imoveisController extends Controller
 
         $semelhante = DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdVagas','catalogos.qtdQuartos','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao')
+                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao')
                     ->where('catalogos.id','!=',$id)
                     ->where('produtos.descricao','=',$item->descricao)
                     ->limit(2)

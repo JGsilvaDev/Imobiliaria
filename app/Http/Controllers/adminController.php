@@ -174,7 +174,8 @@ class adminController extends Controller
                 $catalogo->tp_contrato = $request->tp_contrato;
                 $catalogo->qtdBanheiros = $request->qtd_banheiros;
                 $catalogo->qtdQuartos = $request->qtd_quartos;
-                $catalogo->qtdVagas = $request->qtd_vagas;
+                $catalogo->qtdGaragemCobertas = $request->qtdGaragemCobertas;
+                $catalogo->qtdGaragemNaoCobertas = $request->qtdGaragemNaoCobertas;
                 $catalogo->areaUtil = $request->areaUtil;
                 $catalogo->areaConstruida = $request->areaConstruida;
                 $catalogo->areaTerreno = $request->areaTerreno;
@@ -182,7 +183,8 @@ class adminController extends Controller
                 $catalogo->tp_contrato = 'Venda';
                 $catalogo->qtdBanheiros = 0;
                 $catalogo->qtdQuartos = 0;
-                $catalogo->qtdVagas = 0;
+                $catalogo->qtdGaragemCobertas = 0;
+                $catalogo->qtdGaragemNaoCobertas = 0;
                 $catalogo->areaUtil = 0;
                 $catalogo->areaConstruida = 0;
                 $catalogo->areaConstruida = 0;
@@ -218,7 +220,7 @@ class adminController extends Controller
 
                 // Carregue a imagem da marca d'água
                 $marcaDaguaImagem = imagecreatefrompng($marcaDagua);
-                
+
                 // Redimensionando imagem
                 $imagem = imagescale($imagem, 1280, 720);
 

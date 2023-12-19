@@ -53,8 +53,11 @@
                         <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">{{ $item->qtdQuartos }}</span></p>
                         <input type="range" name="qtd_quartos" min="0" max="50" value="{{ $item->qtdQuartos }}" id="sliderQuartosCasa" class="slider">
 
-                        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasCasa">{{ $item->qtdVagas }}</span></p>
-                        <input type="range" name="qtd_vagas" min="0" max="50" value="{{ $item->qtdVagas }}" id="sliderVagasCasa" class="slider">
+                        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura: <span id="sliderValueVagasCasa">{{ $item->qtdGaragemCobertas }}</span></p>
+                        <input type="range" name="qtd_vagas" min="0" max="50" value="{{ $item->qtdGaragemCobertas }}" id="sliderVagasCasa" class="slider">
+
+                        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasCasa">{{ $item->qtdGaragemNaoCobertas }}</span></p>
+                        <input type="range" name="qtd_vagas" min="0" max="50" value="{{ $item->qtdGaragemNaoCobertas }}" id="sliderVagasCasa" class="slider">
 
                         <label class="add-label">Cidade</label>
                         <input type="text" name="cidade" id="localidade" value="{{ $item->cidade }}" class="add-input">

@@ -40,8 +40,11 @@
         <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">1</span></p>
         <input type="range" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartosCasa" class="slider" required>
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasCasa">1</span></p>
-        <input type="range" name="qtd_vagas" min="0" max="20" value="1" id="sliderVagasCasa" class="slider" required>
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura: <span id="sliderValueVagasCasa">1</span></p>
+        <input type="range" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagasCasa" class="slider" required>
+
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasCasa">1</span></p>
+        <input type="range" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasCasa" class="slider" required>
 
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" min="1" class="add-input" required>
@@ -246,8 +249,11 @@
         <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosAp">1</span></p>
         <input type="range" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartosAp" class="slider" required>
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de vagas: <span id="sliderValueVagasAp">1</span></p>
-        <input type="range" name="qtd_vagas" min="0" max="20" value="1" id="sliderVagasAp" class="slider" required>
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura: <span id="sliderValueVagasAp">1</span></p>
+        <input type="range" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagasAp" class="slider" required>
+
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasAp">1</span></p>
+        <input type="range" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasAp" class="slider" required>
 
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" min="1" class="add-input" required>

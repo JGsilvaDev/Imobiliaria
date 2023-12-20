@@ -26,14 +26,14 @@ class adminController extends Controller
             if($dadosUsuario->id_permissao == 2){
                 if($search){
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
                                 ->where('id_cliente', '=', $id_cliente)
                                 ->where('titulo', 'like','%'. $search.'%')
                                 ->get();
 
                 }else{
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
                                 ->where('id_cliente', '=', $id_cliente)
                                 ->get();
                 }
@@ -51,12 +51,12 @@ class adminController extends Controller
             }else{
                 if($search){
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
                                 ->where('titulo', 'like','%'. $search .'%')
                                 ->get();
                 }else{
                     $itens = DB::table('catalogos')
-                                    ->select('id','id_tp_produto','titulo','descricao','area','valor')
+                                    ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
                                     ->get();
                 }
 

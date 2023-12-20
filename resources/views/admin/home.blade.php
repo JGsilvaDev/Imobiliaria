@@ -72,6 +72,19 @@
                                 <span class="btn-texto">Editar</span></button>
                             </form>
 
+                            
+
+                            <form action="/admin/vendidoAlugado/{{ $item->id }}" method="POST">
+                                @csrf
+
+                                @if($item->vendidoAlugado != null)
+                                    <button type="submit" id="vendidoAlugado" class="imovel-btn" disabled>{{ $item->vendidoAlugado }}</button>
+                                @else
+                                    <button type="submit" id="vendidoAlugado" class="imovel-btn">Vender/alugar</button>
+                                @endif
+
+                            </form>
+
                             <button id="imovel-remover" onclick="excluir(this);" class="imovel-btn">
                             <span class="btn-texto">Remover</span></button>
 
@@ -79,11 +92,6 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
-                            </form>
-
-                            <form action="/admin/vendidoAlugado/{{ $item->id }}" method="POST">
-                                @csrf
-                                <button type="submit" id="vendidoAlugado" class="imovel-btn"></button>
                             </form>
                         </section>
                     </section>

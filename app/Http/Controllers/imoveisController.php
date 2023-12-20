@@ -220,7 +220,7 @@ class imoveisController extends Controller
                       'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
-                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.tp_contrato')
+                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.tp_contrato', 'vendidoAlugado')
                     ->where('catalogos.id','=',$id)
                     ->first();
 
@@ -234,7 +234,7 @@ class imoveisController extends Controller
 
         $semelhante = DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao')
+                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao', 'vendidoAlugado')
                     ->where('catalogos.id','!=',$id)
                     ->where('produtos.descricao','=',$item->descricao)
                     ->limit(2)

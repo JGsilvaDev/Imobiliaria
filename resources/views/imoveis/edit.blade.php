@@ -76,7 +76,11 @@
                     </div>
 
                     <div id="imovel-dados" class="flex-row">
-                        <h1 id="valor" class="num-format">R${{ $detalhes->valor }}</h1>
+                        @if($detalhes->vendidoAlugado != null)
+                            <h1 id="valor" class="num-format">VENDIDO</h1>
+                        @else
+                            <h1 id="valor" class="num-format">R${{ $detalhes->valor }}</h1>
+                        @endif
                     </div>
                 </section>
 

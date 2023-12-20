@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const sliderVagaCasa = document.getElementById('sliderVagasCasa');
     const outputVagaCasa = document.getElementById('sliderValueVagasCasa');
 
+    const sliderVagaNaoCobertaCasa = document.getElementById('sliderVagasNaoCobertoCasa');
+    const outputVagaNaoCobertaCasa = document.getElementById('sliderValueVagasNaoCobertoCasa');
+
     const sliderSuiteCasa = document.getElementById('sliderSuiteCasa');
     const outputSuiteCasa = document.getElementById('sliderValueSuiteCasa');
 
@@ -28,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         outputSuiteCasa.textContent = sliderSuiteCasa.value;
     });
 
+    sliderVagaNaoCobertaCasa.addEventListener('input', function() {
+        outputVagaNaoCobertaCasa.textContent = sliderVagaNaoCobertaCasa.value;
+    });
+
+
     const sliderBanheiroAp = document.getElementById('sliderBanheirosAp');
     const outputBanheiroAp = document.getElementById('sliderValueBanheirosAp');
 
@@ -36,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const sliderVagaAp = document.getElementById('sliderVagasAp');
     const outputVagaAp = document.getElementById('sliderValueVagasAp');
+
+    const sliderVagaNaoCobertaAp = document.getElementById('sliderVagasNaoCobertoAp');
+    const outputVagaNaoCobertaAp = document.getElementById('sliderValueVagasNaoCobertoAp');
 
     const sliderSuiteAp = document.getElementById('sliderSuiteAp');
     const outputSuiteAp = document.getElementById('sliderValueSuiteAp');
@@ -54,5 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sliderSuiteAp.addEventListener('input', function() {
         outputSuiteAp.textContent = sliderSuiteAp.value;
+    });
+
+    sliderVagaNaoCobertaAp.addEventListener('input', function() {
+        outputVagaNaoCobertaAp.textContent = sliderVagaNaoCobertaAp.value;
     });
 });

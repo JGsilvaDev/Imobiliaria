@@ -1,3 +1,7 @@
+:root {
+    --laranja: #B77922;
+}
+
 body {
     margin: 0;
     box-sizing: border-box;
@@ -45,7 +49,7 @@ body * {
 }
 
 .nav-btn {
-    background-color: #B77922;
+    background-color: var(--laranja);
     border: none;
     color: white;
     width: 10vw;
@@ -55,7 +59,7 @@ body * {
 }
 .nav-btn:hover{
     background-color: white;
-    color: #B77922;
+    color: var(--laranja);
     text-decoration: none;
 }
 

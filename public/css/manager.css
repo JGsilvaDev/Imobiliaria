@@ -251,13 +251,13 @@ body {
 
 #imovel-vender {
     margin: 0;
-    background-color: #2ec700;
+    background-color: #229100;
     border-radius: 5px;
     width: 100%;
 }
 #imovel-vender:hover {
     background-color: white;
-    color: #2ec700;
+    color: #229100;
     text-decoration: none;
 }
 

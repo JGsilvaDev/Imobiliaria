@@ -16,7 +16,6 @@ use App\Http\Controllers\clienteController;
 Route::get('/', [masterController::class, 'index']);
 Route::post('/', [masterController::class, 'store']);
 
-Route::post('/enviarEnviar', [emailController::class, 'store']);
 Route::post('/logout', [logoutController::class, 'index']);
 Route::post('/admin/logout', [logoutController::class, 'index']);
 Route::post('/limparFiltro', [logoutController::class, 'filtro']);
@@ -61,7 +60,6 @@ Route::post('/edit/imgPrincipal/{id}', [editController::class, 'alterarImgPrinci
 Route::post('/salvar/{id}', [editController::class, 'update']);
 Route::delete('/deletar/{id}', [editController::class, 'destroy']);
 Route::delete('/deletar/img/{id}', [editController::class, 'destroyImg']);
-
 
 Route::get('/info/politica-de-privacidade', [masterController::class, 'polpriv']);
 Route::get('/info/termos-de-servico', [masterController::class, 'termservice']);

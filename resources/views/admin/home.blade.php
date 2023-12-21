@@ -72,13 +72,6 @@
                                 <button type="submit" id="imovel-editar-btn" class="imovel-btn"><span class="btn-texto">Editar</span></button>
                             </form>
 
-                            
-                            <button id="imovel-remover" onclick="excluir(this);" class="imovel-btn"><span class="btn-texto">Remover</span></button>
-                            <form action="/deletar/{{ $item->id }}" method="POST" style="display:none">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
-                            </form>
 
                             <form action="/admin/vendidoAlugado/{{ $item->id }}" method="POST" id="form-vender">
                                 @csrf
@@ -91,7 +84,13 @@
 
                             </form>
 
-                            
+                            <button id="imovel-remover" onclick="excluir(this);" class="imovel-btn"><span class="btn-texto">Remover</span></button>
+                            <form action="/deletar/{{ $item->id }}" method="POST" style="display:none">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
+                            </form>
+
 
                         </section>
                     </section>

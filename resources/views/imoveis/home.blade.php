@@ -250,8 +250,12 @@
                             <p class="produto-titulo">{{ $item->titulo }}</p>
                             <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->cidade }}</span> </p>
                             <div class="produto-dados">
-                                <p class="produto-valor">R$<span class="num-format">{{ $item->valor }}</span>,00</p>
                                 <p class="produto-valor">{{ $item->area }}m²</p>
+                                @if ($item->vendidoAlugado == null)
+                                    <p class="produto-valor">R$<span class="num-format">{{ $item->valor }}</span>,00</p>
+                                @else
+                                    <p id="dados-valor" class="num-format">{{ $item->vendidoAlugado}}</p>
+                                @endif
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
                                 @csrf

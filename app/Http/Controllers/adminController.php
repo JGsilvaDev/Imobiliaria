@@ -306,12 +306,12 @@ class adminController extends Controller
             if($catalogo->tp_contrato == 'Aluguel'){
                 $catalogo->vendidoAlugado = 'Alugado';
                 Session::flash('vendidoAlugado', 'O imovel alugado');
+            }else{
+                $catalogo->vendidoAlugado = 'Vendido';
+                Session::flash('vendidoAlugado', 'O imovel vendido');
             }
 
-            $catalogo->vendidoAlugado = 'Venda';
             $catalogo->save();
-
-            Session::flash('vendidoAlugado', 'O imovel vendido');
 
             return redirect()->back();
         }else{

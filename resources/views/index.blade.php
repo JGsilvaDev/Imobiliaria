@@ -69,7 +69,11 @@
                 </div>
                 <div id="item-dados">
                     <p id="dados-area">{{ $iten->area }}m²</p>
-                    <p id="dados-valor" class="num-format">R${{ $iten->valor}}</p>
+                    @if ($iten->vendidoAlugado == null)
+                        <p id="dados-valor" class="num-format">R${{ $iten->valor}}</p>
+                    @else
+                        <p id="dados-valor" class="num-format">{{ $iten->vendidoAlugado}}</p>
+                    @endif
                 </div>
 
                 <form action="/imoveis/{{ $iten->id }}" method="post">

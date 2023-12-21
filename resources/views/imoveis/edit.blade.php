@@ -163,9 +163,15 @@
                                     </div>
                                 @endif
 
-                                @if ($detalhes->qtdVagas != null)
+                                @if ($detalhes->qtdGaragemCobertas != null)
                                     <div class="area-content">
-                                        <p id="quartos">{{ $detalhes->qtdVagas }} vaga(s)</p>
+                                        <p id="quartos">{{ $detalhes->qtdGaragemCobertas }} vaga(s) cobertas</p>
+                                    </div>
+                                @endif
+
+                                @if ($detalhes->qtdGaragemNaoCobertas != null)
+                                    <div class="area-content">
+                                        <p id="quartos">{{ $detalhes->qtdGaragemNaoCobertas }} vaga(s) não cobertas</p>
                                     </div>
                                 @endif
                             </div>

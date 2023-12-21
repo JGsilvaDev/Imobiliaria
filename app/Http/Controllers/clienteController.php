@@ -13,9 +13,10 @@ class clienteController extends Controller
     public function index(){
 
         $valor = session('login');
+        $clientes = Clientes::all();
 
         if($valor){
-            return view('cliente.index');
+            return view('cliente.index',['clientes' => $clientes]);
         }else{
             //Para limpar a sessão
             session()->flush();
@@ -45,7 +46,7 @@ class clienteController extends Controller
                 $clientes->email = $request->email;
                 $clientes->telefone = $request->telefone;
                 $clientes->tp_cliente = $request->tp_cliente;
-                $cliente->idImovel = $request->idImovel;
+                $clientes->idImovel = $request->idImovel;
 
                 $clientes->save();
 

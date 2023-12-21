@@ -1,4 +1,6 @@
-
+:root {
+    --laranja: #B77922;
+}
 /* alert */
 
 .alert {
@@ -78,7 +80,7 @@ body {
 
 .imovel-btn:hover {
     background-color: white;
-    color: #247B22;
+    color: #747474;
     text-decoration: none;
 }
 
@@ -92,13 +94,13 @@ body {
 
 #novo-imovel {
 
-    background-color:#C9801A;
+    background-color:var(--laranja);
 
     transition: all 0.2s;
 }
 #novo-imovel:hover {
     background-color: white;
-    color: #C9801A;
+    color: var(--laranja);
     text-decoration: none;
 }
 
@@ -237,6 +239,7 @@ body {
     text-decoration: none;
 }
 #imovel-remover {
+    margin: 0;
     background-color: #E12B2B;
     border-radius: 5px;
 }
@@ -244,6 +247,29 @@ body {
     background-color: white;
     color: #FF0000;
     text-decoration: none;
+}
+
+#imovel-vender {
+    margin: 0;
+    background-color: #2ec700;
+    border-radius: 5px;
+    width: 100%;
+}
+#imovel-vender:hover {
+    background-color: white;
+    color: #2ec700;
+    text-decoration: none;
+}
+
+#disable-vender {
+    margin: 0;
+    background-color: #666666;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#form-vender {
+    margin: 0;
 }
 
 #imovel-titulo{

@@ -66,28 +66,27 @@
                         </section>
 
                         <section id="imovel-botoes" class="produto-item-flex">
+
                             <form action="admin/edit/{{ $item->id }}" method="post" id="imovel-editar" class="imovel-btn">
                                 @csrf
-                                <button type="submit" id="imovel-editar-btn" class="imovel-btn">
-                                <span class="btn-texto">Editar</span></button>
+                                <button type="submit" id="imovel-editar-btn" class="imovel-btn"><span class="btn-texto">Editar</span></button>
                             </form>
 
-                            <button id="imovel-remover" onclick="excluir(this);" class="imovel-btn">
-                                <span class="btn-texto">Remover</span></button>
-    
-                                <form action="/deletar/{{ $item->id }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
-                                </form>
+                            
+                            <button id="imovel-remover" onclick="excluir(this);" class="imovel-btn"><span class="btn-texto">Remover</span></button>
+                            <form action="/deletar/{{ $item->id }}" method="POST" style="display:none">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
+                            </form>
 
-                            <form action="/admin/vendidoAlugado/{{ $item->id }}" method="POST">
+                            <form action="/admin/vendidoAlugado/{{ $item->id }}" method="POST" id="form-vender">
                                 @csrf
 
                                 @if($item->vendidoAlugado != null)
-                                    <button type="submit" id="vendidoAlugado" class="imovel-btn" disabled>{{ $item->vendidoAlugado }}</button>
+                                    <button type="submit" id="disable-vender" class="imovel-btn disable-venda" disabled>{{ $item->vendidoAlugado }}</button>
                                 @else
-                                    <button type="submit" id="vendidoAlugado" class="imovel-btn">Vender/alugar</button>
+                                    <button type="submit" id="imovel-vender" class="imovel-btn">Vender/alugar</button>
                                 @endif
 
                             </form>

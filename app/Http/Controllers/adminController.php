@@ -297,18 +297,27 @@ class adminController extends Controller
         }
     }
 
-    public function vendidoAlugado($id){
+    public function vendidoAlugado(Request $request, $id){
         $valor = session('login');
 
         if($valor){
             $catalogo = Catalogo::findOrFail($id);
 
-            if($catalogo->tp_contrato == 'Aluguel'){
-                $catalogo->vendidoAlugado = 'Alugado';
-                Session::flash('vendidoAlugado', 'O imovel alugado');
+            if($request->type == '1'){
+                $catalogo->vendidoAlugado = null;
+                if($catalogo->tp_contrato == 'Aluguel'){
+                    Session::flash('vendidoAlugado', 'O imovel foi desalugado');
+                }else{
+                    Session::flash('vendidoAlugado', 'O imovel desvendido');
+                }
             }else{
-                $catalogo->vendidoAlugado = 'Vendido';
-                Session::flash('vendidoAlugado', 'O imovel vendido');
+                if($catalogo->tp_contrato == 'Aluguel'){
+                    $catalogo->vendidoAlugado = 'Alugado';
+                    Session::flash('vendidoAlugado', 'O imovel alugado');
+                }else{
+                    $catalogo->vendidoAlugado = 'Vendido';
+                    Session::flash('vendidoAlugado', 'O imovel vendido');
+                }
             }
 
             $catalogo->save();
@@ -321,5 +330,4 @@ class adminController extends Controller
         }
 
     }
-
 }

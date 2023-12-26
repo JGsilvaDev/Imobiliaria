@@ -77,7 +77,8 @@
                                 @csrf
 
                                 @if($item->vendidoAlugado != null)
-                                    <button type="submit" id="disable-vender" class="imovel-btn disable-venda" disabled>{{ $item->vendidoAlugado }}</button>
+                                    <input type="text" name="type" value="1" style="display: none">
+                                    <button type="submit" id="disable-vender" class="imovel-btn disable-venda">{{ $item->vendidoAlugado }}</button>
                                 @else
                                     <button type="submit" id="imovel-vender" class="imovel-btn">Vender/alugar</button>
                                 @endif
@@ -89,6 +90,11 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" id="remover" class="imovel-btn" style="display: none"></button>
+                            </form>
+
+                            <form action="/admin/desVenderAlugar/{{ $item->id }}" method="post">
+                                @csrf
+                                <button type="submit" style="display: none"></button>
                             </form>
 
 

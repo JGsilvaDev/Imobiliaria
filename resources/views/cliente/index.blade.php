@@ -17,6 +17,22 @@
     @endif
 
     <link rel="stylesheet" href="{{ asset('css/cadastro-cliente.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
+
+
+    <div id="imovel-header">
+        <p id="hello-user">Gerenciador de clientes</p>
+        <section id="header-botoes">
+            <button class="nav-btn" id="novo-imovel" onclick="window.location.href='/admin'">Voltar</button>
+
+            <form action="logout" method="POST">
+                @csrf
+                <button class="nav-btn" id="sair" type="submit" style="display: none"></button>
+            </form>
+        </section>
+
+    </div>
 
     <div id="tab-buttons">
         <button onclick="openTab(0,'block')" class="tab-button tab-selected">Cadastro</button>
@@ -26,6 +42,7 @@
     <div id="tabs">
         <section id="aba-cadastro">
             <form action="clientes" method="post" autocomplete="off" id="cadastro-cliente">
+                <img src="{{ asset('img/watermark.png') }}" alt="" style="width:150px">
                 @csrf
 
                 <input type="text" name="nome" id="nome" placeholder="Insira o nome" class="cliente-input">
@@ -42,11 +59,10 @@
         </section>
 
         <section id="aba-clientes">
-            <h2>Aqui vai a lista de clientes</h2>
-            <table cellspacing="0" id="request-table">
+            <table cellspacing="0" id="client-table">
 
                 <thead class="table-header" cellspacing="0">
-                    <th class="table-title"></th>
+                    <!-- <th class="table-title"></th> -->
                     <th class="table-title">Nome</th>
                     <th class="table-title">Email</th>
                     <th class="table-title">Telefone</th>
@@ -67,7 +83,6 @@
         </section>
 
     </div>
-
 
 
     <script>
@@ -105,6 +120,11 @@
             botoes[i].classList.replace('tab-selected','tab-unselected')
         }
     }
+
+
+
+    // REMOVER ESSA LINHA DEPOIS
+    openTab(1,'block')
 </script>
 
 @endsection

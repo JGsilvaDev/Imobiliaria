@@ -124,7 +124,6 @@
 
 
     // REMOVER ESSA LINHA DEPOIS
-    openTab(1,'block')
 </script>
 
 @endsection

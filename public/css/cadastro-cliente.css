@@ -30,20 +30,33 @@
     background-color: rgb(206, 206, 206);
 }
 
+#tab-buttons {
+    margin: auto;
+}
+
 .tab-button {
-    background-color: white;
+    /* background-color: white;
     border: none;
     text-decoration: underline;
 
-    font-size: 15px;
+    font-size: 15px; */
+
+    border: none;
+    padding: 20px 50px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
 }
 .tab-button:hover {
     cursor: pointer;
-    color: blue;
+    /* color: blue; */
 }
 
 .tab-selected {
-    color: blue;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    text-decoration: underline;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 2px -4px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 

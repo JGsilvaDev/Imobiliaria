@@ -50,6 +50,7 @@ class clienteController extends Controller
 
                 $clientes->save();
 
+                Session::flash('success', 'Cliente cadastrado com sucesso');
             }else{
                 Session::flash('warning', 'O imovel com o id '.$idImovel.' não existe');
             }

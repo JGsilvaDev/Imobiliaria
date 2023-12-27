@@ -9,6 +9,13 @@
             {{ Session::get('warning') }}
         </div>
     @endif
+
+    @if(Session::has('success'))
+        <div class="alert alert-warning">
+            {{ Session::get('success') }}
+        </div>
+    @endif
+
     <link rel="stylesheet" href="{{ asset('css/cadastro-cliente.css') }}">
 
     <div id="tab-buttons">

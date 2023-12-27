@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function excluir(btn){
 
-    let botaoDelete = btn.parentElement.children[2].children[2];
+    let botaoDelete = btn.parentElement.children[3].children[2];
 
     Swal.fire({
         title: 'Deseja excluir esse imovel?',

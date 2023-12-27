@@ -56,7 +56,7 @@
         <input name="ruaNumero" type="text" id="casa-local-input" min="1" class="add-input" required>
 
         <p id="local-label">CEP</p>
-        <input name="cep" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
+        <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
         <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
@@ -265,7 +265,7 @@
         <input name="ruaNumero" type="text" id="casa-local-input" min="1" class="add-input" required>
 
         <p id="local-label">CEP</p>
-        <input name="cep" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
+        <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
         <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
@@ -453,7 +453,7 @@
         <input name="ruaNumero" type="text" id="casa-local-input" min="1" class="add-input" required>
 
         <p id="local-label">CEP</p>
-        <input name="cep" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
+        <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
         <input name="area" type="number" id="trn-tam-area-input" min="1" class="add-input" required>

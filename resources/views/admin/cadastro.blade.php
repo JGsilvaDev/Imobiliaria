@@ -72,7 +72,7 @@
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="" class="add-input" required>
-            <option value="Aluguel">Alguel</option>
+            <option value="Aluguel">Aluguel</option>
             <option value="Venda">Venda</option>
         </select>
 
@@ -281,7 +281,7 @@
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="" class="add-input" required>
-            <option value="Aluguel">Alguel</option>
+            <option value="Aluguel">Aluguel</option>
             <option value="Venda">Venda</option>
         </select>
 

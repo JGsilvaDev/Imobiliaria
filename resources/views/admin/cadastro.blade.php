@@ -181,7 +181,7 @@
         <p id="valor-label">Intima</p>
         <div class="checkbox">
             <div class="check-item">
-                <input type="checkbox" name="lavado" id="lavado"><label for="lavado">Lavado</label>
+                <input type="checkbox" name="lavado" id="lavado"><label for="lavado">Lavabo</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="roupeiro" id="roupeiro"><label for="roupeiro">Roupeiro</label>
@@ -384,7 +384,7 @@
         <p id="valor-label">Intima</p>
         <div class="checkbox">
         <div class="check-item">
-                <input type="checkbox" name="lavado" id="lavado"><label for="lavado">Lavado</label>
+                <input type="checkbox" name="lavado" id="lavado"><label for="lavado">Lavabo</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="roupeiro" id="roupeiro"><label for="roupeiro">Roupeiro</label>

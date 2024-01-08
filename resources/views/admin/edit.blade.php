@@ -63,7 +63,7 @@
                     <input type="text" name="cidade" id="localidade" value="{{ $item->cidade }}" class="add-input">
 
                     <label class="add-label">Bairro</label>
-                    <input type="text" name="cidade" id="bairro" value="{{ $item->bairro }}" class="add-input">
+                    <input type="text" name="bairro" id="bairro" value="{{ $item->bairro }}" class="add-input">
 
                     <label class="add-label">Rua e Numero</label>
                     <input type="text" name="ruaNumero" id="bairro" value="{{ $item->ruaNumero }}" class="add-input">
@@ -242,7 +242,7 @@
                 <input type="text" name="cidade" id="localidade" value="{{ $item->cidade }}" class="add-input">
 
                 <label class="add-label">Bairro</label>
-                <input type="text" name="cidade" id="bairro" value="{{ $item->bairro }}" class="add-input">
+                <input type="text" name="bairro" id="bairro" value="{{ $item->bairro }}" class="add-input">
 
                 <label class="add-label">Rua e Numero</label>
                 <input type="text" name="ruaNumero" id="bairro" value="{{ $item->ruaNumero }}" class="add-input">

@@ -77,13 +77,13 @@
         </select>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="casa-valor-input" class="add-input" step=".01" lang="pt-BR" required>
+        <input type="text" name="valor" id="casa-valor-input" class="add-input" step=".01" lang="pt-BR" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input" lang="pt-BR" step=".01">
+        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input" lang="pt-BR" step=".01">
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" class="add-input" lang="pt-BR" step=".01">
+        <input type="text" name="iptu" id="casa-valor-input" class="add-input" lang="pt-BR" step=".01">
 
         <p id="valor-label">Básico</p>
         <div class="checkbox">

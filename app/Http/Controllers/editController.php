@@ -61,14 +61,14 @@ class editController extends Controller
         $catalogo->areaUtil = $request->areaUtil;
         $catalogo->areaConstruida = $request->areaConstruida;
         $catalogo->areaTerreno = $request->areaTerreno;
-        $catalogo->valor = $request->valor;
+        $catalogo->valor = doubleval(explode(',',str_replace('.','',$request->valor))[0]);
         $catalogo->cidade = $request->cidade;
         $catalogo->bairro = $request->bairro;
         $catalogo->ruaNumero = $request->ruaNumero;
         $catalogo->cep = $request->cep;
         $catalogo->qtdSuites = $request->qtd_suites;
-        $catalogo->valorCondominio = $request->valorCondominio;
-        $catalogo->iptuMensal = $request->iptu;
+        $catalogo->valorCondominio = doubleval(explode(',',str_replace('.','',$request->valorCondominio))[0]);
+        $catalogo->iptuMensal = doubleval(explode(',',str_replace('.','',$request->iptu))[0]);
         $catalogo->agua = ($request->agua) ? true : false;
         $catalogo->energia = ($request->energia) ? true : false;
         $catalogo->esgoto = ($request->esgoto) ? true : false;

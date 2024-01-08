@@ -61,14 +61,14 @@ class editController extends Controller
         $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
         $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
         $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
-        $catalogo->valor = doubleval(explode(',',str_replace('.','',$request->valor))[0]);
+        $catalogo->valor = doubleval(str_replace(',','.',str_replace('.','',$request->valor)));
         $catalogo->cidade = $request->cidade;
         $catalogo->bairro = $request->bairro;
         $catalogo->ruaNumero = $request->ruaNumero;
         $catalogo->cep = $request->cep;
         $catalogo->qtdSuites = $request->qtd_suites;
-        $catalogo->valorCondominio = doubleval(explode(',',str_replace('.','',$request->valorCondominio))[0]);
-        $catalogo->iptuMensal = doubleval(explode(',',str_replace('.','',$request->iptu))[0]);
+        $catalogo->valorCondominio = doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)));
+        $catalogo->iptuMensal = doubleval(str_replace(',','.',str_replace('.','',$request->iptu)));
         $catalogo->agua = ($request->agua) ? true : false;
         $catalogo->energia = ($request->energia) ? true : false;
         $catalogo->esgoto = ($request->esgoto) ? true : false;

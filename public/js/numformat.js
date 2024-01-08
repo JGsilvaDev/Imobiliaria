@@ -9,6 +9,8 @@ function formatarInput() {
     for(item of formataveis) {
         item.value = item.value.replace(/[^\d,]/g, '');
     }
+
+    return true
 }
 
 function formatarFront(classname) {

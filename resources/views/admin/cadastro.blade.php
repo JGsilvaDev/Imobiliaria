@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{ asset('js/imagem.js') }}"></script>
+    <script src="{{ asset('js/numformat.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <button id="btn-voltar" onclick="window.location.href = '/admin'">Voltar</button>
@@ -59,16 +60,16 @@
         <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="area" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="areaUtil" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
-        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="areaConstruida" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="areaTerreno" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="" class="add-input" required>
@@ -77,13 +78,13 @@
         </select>
 
         <p id="valor-label">Valor</p>
-        <input type="text" name="valor" id="casa-valor-input" class="add-input" step=".01" lang="pt-BR" required>
+        <input type="text" name="valor" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input" lang="pt-BR" step=".01">
+        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" step=".01">
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="text" name="iptu" id="casa-valor-input" class="add-input" lang="pt-BR" step=".01">
+        <input type="text" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR" step=".01">
 
         <p id="valor-label">Básico</p>
         <div class="checkbox">
@@ -268,16 +269,16 @@
         <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
-        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input" step=".01" lang="pt-BR" required>
+        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="" class="add-input" required>
@@ -286,13 +287,13 @@
         </select>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="casa-valor-input" class="add-input" step=".01" lang="pt-BR" required>
+        <input type="number" name="valor" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input" step=".01" lang="pt-BR">
+        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" class="add-input" step=".01" lang="pt-BR">
+        <input type="number" name="iptu" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p id="valor-label">Básico</p>
         <div class="checkbox">
@@ -456,16 +457,16 @@
         <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="trn-tam-area-input" min="1" class="add-input" required>
+        <input name="area" type="number" id="trn-tam-area-input" min="1" class="add-input input-format" required>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="trn-valor-input" class="add-input" lang="pt-BR" required>
+        <input type="number" name="valor" id="trn-valor-input" class="add-input input-format" lang="pt-BR" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input" lang="pt-BR" required>
+        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" class="add-input" lang="pt-BR" required>
+        <input type="number" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
 
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
@@ -483,18 +484,33 @@
     <script src="{{ asset('js/cadastro-abas.js') }}"></script>
     <script src="{{ asset('js/slider.js') }}"></script>
     <script src="{{ asset('js/imagemPrincipalAlert.js') }}"></script>
-@endsection
-
+    
+    
+    <script>
+        function formatarCEP(input) {
+            // Remove caracteres não numéricos
+            let cep = input.value.replace(/\D/g, '');
+            
+            // Adiciona a máscara
+            if (cep.length === 8) {
+                cep = cep.replace(/(\d{5})(\d{3})/, '$1-$2');
+                input.value = cep;
+            }
+        }
+    </script>
 
 <script>
-    function formatarCEP(input) {
-      // Remove caracteres não numéricos
-      let cep = input.value.replace(/\D/g, '');
+    /*
+        document.getElementById('adicionar-casa-container').addEventListener('submit', function(event) {
+            // Impede o envio padrão do formulário
+        event.preventDefault();
 
-      // Adiciona a máscara
-      if (cep.length === 8) {
-        cep = cep.replace(/(\d{5})(\d{3})/, '$1-$2');
-        input.value = cep;
-      }
-    }
-  </script>
+            // Chame a função antesDoEnvio() e envie o formulário apenas se a função retornar true
+            if (formatarInput()) {
+            this.submit(); // Isso envia o formulário
+            }
+        })
+    */
+</script>
+
+@endsection

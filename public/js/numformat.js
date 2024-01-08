@@ -7,7 +7,7 @@ function formatarNumero(numero) {
 function formatarInput() {
     const formataveis = document.getElementsByClassName("input-format") 
     for(item of formataveis) {
-        item.value = item.value.replace(/[^\d,]/g, '');
+        item.value = item.value.replace(/,/g, '');
     }
 
     return true

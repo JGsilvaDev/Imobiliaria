@@ -269,16 +269,16 @@
         <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="area" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-        <input name="areaUtil" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="areaUtil" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
-        <input name="areaConstruida" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="areaConstruida" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-        <input name="areaTerreno" type="number" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="areaTerreno" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="" class="add-input" required>
@@ -287,13 +287,13 @@
         </select>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input type="text" name="valor" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR">
+        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR">
+        <input type="text" name="iptu" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p id="valor-label">Básico</p>
         <div class="checkbox">
@@ -457,16 +457,16 @@
         <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="number" id="trn-tam-area-input" min="1" class="add-input input-format" required>
+        <input name="area" type="text" id="trn-tam-area-input" min="1" class="add-input input-format" required>
 
         <p id="valor-label">Valor</p>
-        <input type="number" name="valor" id="trn-valor-input" class="add-input input-format" lang="pt-BR" required>
+        <input type="text" name="valor" id="trn-valor-input" class="add-input input-format" lang="pt-BR" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
+        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="number" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
+        <input type="text" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
 
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>

@@ -1,5 +1,5 @@
 function formatarNumero(numero) {
-    return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
 
@@ -7,7 +7,7 @@ function formatarNumero(numero) {
 function formatarInput() {
     const formataveis = document.getElementsByClassName("input-format") 
     for(item of formataveis) {
-        item.value = item.value.replace(/,/g, '');
+        // item.value = item.value.replace(/,/g, '');
     }
 
     return true

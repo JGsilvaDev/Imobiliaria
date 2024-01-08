@@ -252,7 +252,7 @@
                             <div class="produto-dados">
                                 <p class="produto-valor">{{ $item->area }}m²</p>
                                 @if ($item->vendidoAlugado == null)
-                                    <p class="produto-valor">R$<span class="num-format">{{ $item->valor }}</span>,00</p>
+                                    <p class="produto-valor">R$<span class="num-format">{{ $item->valor }}</span></p>
                                 @else
                                     <p id="dados-valor" class="num-format">{{ $item->vendidoAlugado}}</p>
                                 @endif

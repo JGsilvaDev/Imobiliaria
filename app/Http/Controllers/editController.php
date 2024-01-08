@@ -57,10 +57,10 @@ class editController extends Controller
         $catalogo->id_cliente = $id_cliente;
         $catalogo->titulo = $request->titulo;
         $catalogo->descricao = $request->descricao;
-        $catalogo->area = $request->area;
-        $catalogo->areaUtil = $request->areaUtil;
-        $catalogo->areaConstruida = $request->areaConstruida;
-        $catalogo->areaTerreno = $request->areaTerreno;
+        $catalogo->area = intval(explode(',',str_replace('.','',$request->area))[0]);
+        $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
+        $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
+        $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
         $catalogo->valor = doubleval(explode(',',str_replace('.','',$request->valor))[0]);
         $catalogo->cidade = $request->cidade;
         $catalogo->bairro = $request->bairro;

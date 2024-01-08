@@ -126,7 +126,7 @@ class adminController extends Controller
             $catalogo->id_cliente = $id_cliente;
             $catalogo->titulo = $request->titulo;
             $catalogo->descricao = $request->descricao;
-            $catalogo->area = $request->area;
+            $catalogo->area = intval(explode(',',str_replace('.','',$request->area))[0]);
             $catalogo->valor = doubleval(explode(',',str_replace('.','',$request->valor))[0]);
             $catalogo->cidade = $request->cidade;
             $catalogo->bairro = $request->bairro;
@@ -174,9 +174,9 @@ class adminController extends Controller
                 $catalogo->qtdQuartos = $request->qtd_quartos;
                 $catalogo->qtdGaragemCobertas = $request->qtdGaragemCobertas;
                 $catalogo->qtdGaragemNaoCobertas = $request->qtdGaragemNaoCobertas;
-                $catalogo->areaUtil = $request->areaUtil;
-                $catalogo->areaConstruida = $request->areaConstruida;
-                $catalogo->areaTerreno = $request->areaTerreno;
+                $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
+                $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
+                $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
             }else{
                 $catalogo->tp_contrato = 'Venda';
                 $catalogo->qtdBanheiros = 0;

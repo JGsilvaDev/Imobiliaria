@@ -221,6 +221,7 @@ class adminController extends Controller
 
                 // Redimensionando imagem
                 $imagem = imagescale($imagem, 1280, 720);
+                $marcaDaguaImagem = imagescale($marcaDaguaImagem, 150, 150);
 
                 // Obtenha as dimensões da imagem original e da marca d'água
                 $larguraImagem = imagesx($imagem);
@@ -230,7 +231,7 @@ class adminController extends Controller
 
 
                 // Calcule a posição para a marca d'água (por exemplo, canto inferior direito)
-                $posicaoX = $larguraImagem - $larguraMarcaDagua-30; // 10 pixels da margem direita
+                $posicaoX = $larguraImagem - $larguraMarcaDagua; // 10 pixels da margem direita
                 $posicaoY = $alturaImagem - $alturaMarcaDagua-60; // 10 pixels da margem inferior
 
 

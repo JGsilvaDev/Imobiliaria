@@ -47,9 +47,6 @@
         <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasNaoCobertoCasa">1</span></p>
         <input type="range" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCobertoCasa" class="slider" required>
 
-        <p id="qtd-vagas-label" class="slider-label">Número de sacadas: <span id="sliderValueSacadasCasa">1</span></p>
-        <input type="range" name="qtdGaragemNaoCobertas" min="0" max="5" value="1" id="sliderSacadasCasa" class="slider" required>
-
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" class="add-input" required>
 
@@ -267,6 +264,9 @@
         <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasNaoCobertoAp">1</span></p>
         <input type="range" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCobertoAp" class="slider" required>
 
+        <p id="qtd-vagas-label" class="slider-label">Número de sacadas: <span id="sliderValueSacadasCasa">1</span></p>
+        <input type="range" name="qtdSacadasCobertas" min="0" max="5" value="1" id="sliderSacadasCasa" class="slider" required>
+
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" min="1" class="add-input" required>
 
@@ -348,7 +348,7 @@
             </div>
         </div>
 
-        
+
 
         <p id="valor-label">Social</p>
         <div class="checkbox">

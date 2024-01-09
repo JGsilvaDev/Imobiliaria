@@ -178,9 +178,14 @@ class adminController extends Controller
                 $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
                 $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
             }elseif($request->id_produto == 3){
+                $catalogo->tp_contrato = $request->tp_contrato;
+                $catalogo->qtdBanheiros = $request->qtd_banheiros;
+                $catalogo->qtdQuartos = $request->qtd_quartos;
+                $catalogo->qtdGaragemCobertas = $request->qtdGaragemCobertas;
+                $catalogo->qtdGaragemNaoCobertas = $request->qtdGaragemNaoCobertas;
                 $catalogo->areaUtil = 0;
                 $catalogo->areaConstruida = 0;
-                $catalogo->areaConstruida = 0;
+                $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
             }else{
                 $catalogo->tp_contrato = 'Venda';
                 $catalogo->qtdBanheiros = 0;
@@ -189,7 +194,7 @@ class adminController extends Controller
                 $catalogo->qtdGaragemNaoCobertas = 0;
                 $catalogo->areaUtil = 0;
                 $catalogo->areaConstruida = 0;
-                $catalogo->areaConstruida = 0;
+                $catalogo->qtdSacadasCobertas = 0;
             }
 
             $catalogo->save();

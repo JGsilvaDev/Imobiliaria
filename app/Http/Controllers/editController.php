@@ -31,7 +31,7 @@ class editController extends Controller
                       'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
-                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal')
+                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.qtdSacadasCobertas')
                     ->where('catalogos.id','=',$id)
                     ->first();
 
@@ -62,6 +62,7 @@ class editController extends Controller
         $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
         $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
         $catalogo->valor = doubleval(str_replace(',','.',str_replace('.','',$request->valor)));
+        $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
         $catalogo->cidade = $request->cidade;
         $catalogo->bairro = $request->bairro;
         $catalogo->ruaNumero = $request->ruaNumero;

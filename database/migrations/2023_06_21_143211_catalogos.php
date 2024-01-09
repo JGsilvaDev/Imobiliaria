@@ -40,7 +40,7 @@ return new class extends Migration
             $table->boolean('murado');
             $table->boolean('pavimentação');
             $table->boolean('areaServico');
-            $table->boolean('banheiroAuxiliar');
+            $table->boolean('gasEncanado');
             $table->boolean('banheiroEmpregada');
             $table->boolean('cozinha');
             $table->boolean('cozinhaPlanejada');

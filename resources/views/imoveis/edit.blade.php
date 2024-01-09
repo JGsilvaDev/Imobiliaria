@@ -118,7 +118,7 @@
                                 </div>
                             @endif
 
-                            @if ($detalhes->descricao != 'Terreno')
+                            @if ($detalhes->descricao != 'Terreno' and $detalhes->areaConstruida != 0)
                                 <div class="area-content">
                                     <p id="area">Área construída: {{ $detalhes->areaConstruida }} m²</p>
                                 </div>
@@ -174,6 +174,12 @@
                                         <p id="quartos">{{ $detalhes->qtdGaragemNaoCobertas }} vaga(s) não cobertas</p>
                                     </div>
                                 @endif
+
+                                @if ($detalhes->qtdSacadasCobertas != null)
+                                    <div class="area-content">
+                                        <p id="quartos">{{ $detalhes->qtdSacadasCobertas }} sacada(s)</p>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endif
@@ -186,7 +192,7 @@
                         <h2 class="detalhes-titulo">Mais detalhes</h2>
                         <div id="mais-detalhes-container">
                             @if($detalhes->agua == 1 or $detalhes->esgoto == 1 or $detalhes->energia == 1
-                                or $detalhes->murado == 1 or $detalhes->pavimentação == 1)
+                                or $detalhes->murado == 1 or $detalhes->pavimentação == 1 or $detalhes->qtdSacadasCobertas)
                                 <h3>Básico</h3>
                                 <div class="area-container">
                                     @if($detalhes->agua == 1)
@@ -218,10 +224,16 @@
                                             <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Pavimentação</p>
                                         </div>
                                     @endif
+
+                                    @if($detalhes->qtdSacadasCobertas == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sacadas</p>
+                                        </div>
+                                    @endif
                                 </div>
                             @endif
 
-                            @if($detalhes->areaServico == 1 or $detalhes->banheiroAuxiliar == 1 or $detalhes->banheiroEmpregada == 1
+                            @if($detalhes->areaServico == 1 or $detalhes->banheiroEmpregada == 1
                                 or $detalhes->cozinha == 1 or $detalhes->cozinhaPlanejada == 1 or $detalhes->despensa == 1
                                 or $detalhes->lavanderias == 1 or $detalhes->guarita == 1 or $detalhes->portaria24h == 1)
                                 <h3>Serviços</h3>
@@ -230,12 +242,6 @@
                                     @if($detalhes->areaServico == 1)
                                         <div class="area-content">
                                             <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Area de Serviço</p>
-                                        </div>
-                                    @endif
-
-                                    @if($detalhes->banheiroAuxiliar == 1)
-                                        <div class="area-content">
-                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Banheiro Auxiliar</p>
                                         </div>
                                     @endif
 

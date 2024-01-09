@@ -1,73 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sliderBanheiroCasa = document.getElementById('sliderBanheiroCasa');
-    const outputBanheiroCasa = document.getElementById('sliderValueBanheiroCasa');
 
-    const sliderQuartoCasa = document.getElementById('sliderQuartosCasa');
-    const outputQuartoCasa = document.getElementById('sliderValueQuartosCasa');
+    const sliders = [document.getElementById('sliderBanheiroCasa'), document.getElementById('sliderQuartosCasa'), document.getElementById('sliderVagasCasa'), document.getElementById('sliderVagasNaoCobertoCasa'), document.getElementById('sliderSacadasCasa'), document.getElementById('sliderSuiteCasa'), document.getElementById('sliderBanheirosAp'), document.getElementById('sliderQuartosAp'), document.getElementById('sliderVagasAp'), document.getElementById('sliderVagasNaoCobertoAp'), document.getElementById('sliderSuiteAp')]
 
-    const sliderVagaCasa = document.getElementById('sliderVagasCasa');
-    const outputVagaCasa = document.getElementById('sliderValueVagasCasa');
+    const slidersValue = [document.getElementById('sliderValueBanheiroCasa'), document.getElementById('sliderValueQuartosCasa'), document.getElementById('sliderValueVagasCasa'), document.getElementById('sliderValueVagasNaoCobertoCasa'), document.getElementById('sliderValueSacadasCasa'), document.getElementById('sliderValueSuiteCasa'), document.getElementById('sliderValueBanheirosAp'), document.getElementById('sliderValueQuartosAp'), document.getElementById('sliderValueVagasAp'), document.getElementById('sliderValueVagasNaoCobertoAp'), document.getElementById('sliderValueSuiteAp')]
 
-    const sliderVagaNaoCobertaCasa = document.getElementById('sliderVagasNaoCobertoCasa');
-    const outputVagaNaoCobertaCasa = document.getElementById('sliderValueVagasNaoCobertoCasa');
-
-    const sliderSuiteCasa = document.getElementById('sliderSuiteCasa');
-    const outputSuiteCasa = document.getElementById('sliderValueSuiteCasa');
-
-
-    sliderBanheiroCasa.addEventListener('input', function() {
-        outputBanheiroCasa.textContent = sliderBanheiroCasa.value;
-    });
-
-    sliderQuartoCasa.addEventListener('input', function() {
-        outputQuartoCasa.textContent = sliderQuartoCasa.value;
-    });
-
-    sliderVagaCasa.addEventListener('input', function() {
-        outputVagaCasa.textContent = sliderVagaCasa.value;
-    });
-
-    sliderSuiteCasa.addEventListener('input', function() {
-        outputSuiteCasa.textContent = sliderSuiteCasa.value;
-    });
-
-    sliderVagaNaoCobertaCasa.addEventListener('input', function() {
-        outputVagaNaoCobertaCasa.textContent = sliderVagaNaoCobertaCasa.value;
-    });
-
-
-    const sliderBanheiroAp = document.getElementById('sliderBanheirosAp');
-    const outputBanheiroAp = document.getElementById('sliderValueBanheirosAp');
-
-    const sliderQuartoAp = document.getElementById('sliderQuartosAp');
-    const outputQuartoAp = document.getElementById('sliderValueQuartosAp');
-
-    const sliderVagaAp = document.getElementById('sliderVagasAp');
-    const outputVagaAp = document.getElementById('sliderValueVagasAp');
-
-    const sliderVagaNaoCobertaAp = document.getElementById('sliderVagasNaoCobertoAp');
-    const outputVagaNaoCobertaAp = document.getElementById('sliderValueVagasNaoCobertoAp');
-
-    const sliderSuiteAp = document.getElementById('sliderSuiteAp');
-    const outputSuiteAp = document.getElementById('sliderValueSuiteAp');
-
-    sliderBanheiroAp.addEventListener('input', function() {
-        outputBanheiroAp.textContent = sliderBanheiroAp.value;
-    });
-
-    sliderQuartoAp.addEventListener('input', function() {
-        outputQuartoAp.textContent = sliderQuartoAp.value;
-    });
-
-    sliderVagaAp.addEventListener('input', function() {
-        outputVagaAp.textContent = sliderVagaAp.value;
-    });
-
-    sliderSuiteAp.addEventListener('input', function() {
-        outputSuiteAp.textContent = sliderSuiteAp.value;
-    });
-
-    sliderVagaNaoCobertaAp.addEventListener('input', function() {
-        outputVagaNaoCobertaAp.textContent = sliderVagaNaoCobertaAp.value;
-    });
+    sliders.forEach(function(elem, index) {
+        elem.addEventListener('input', function() {
+            slidersValue[index].textContent = elem.value
+        })
+    })
 });

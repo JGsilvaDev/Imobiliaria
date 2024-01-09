@@ -104,6 +104,9 @@
             <div class="check-item">
                 <input type="checkbox" name="pavimentação" id="pavimentação"><label for="pavimentação">Pavimentação</label>
             </div>
+            <div class="check-item">
+                <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás Encanado</label>
+            </div>
 
         </div>
 
@@ -111,9 +114,6 @@
         <div class="checkbox">
             <div class="check-item">
                 <input type="checkbox" name="areaServico" id="areaServico"><label for="areaServico">Área de serviço</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="banheiroAux" id="banheiroAux"><label for="banheiroAux">Banheiro Auxiliar</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada"><label for="banheiroEmpregada">Banheiro Empregada</label>
@@ -271,15 +271,6 @@
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
         <input name="area" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
-        <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-        <input name="areaUtil" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
-
-        <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
-        <input name="areaConstruida" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
-
-        <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-        <input name="areaTerreno" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
-
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="" class="add-input" required>
             <option value="Aluguel">Aluguel</option>
@@ -313,15 +304,15 @@
             <div class="check-item">
                 <input type="checkbox" name="pavimentação" id="pavimentação"><label for="pavimentação">Pavimentação</label>
             </div>
+            <div class="check-item">
+                <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás Encanado</label>
+            </div>
         </div>
 
         <p id="valor-label">Serviços</p>
         <div class="checkbox">
         <div class="check-item">
                 <input type="checkbox" name="areaServico" id="areaServico"><label for="areaServico">Área de serviço</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="banheiroAux" id="banheiroAux"><label for="banheiroAux">Banheiro Auxiliar</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada"><label for="banheiroEmpregada">Banheiro Empregada</label>
@@ -484,13 +475,13 @@
     <script src="{{ asset('js/cadastro-abas.js') }}"></script>
     <script src="{{ asset('js/slider.js') }}"></script>
     <script src="{{ asset('js/imagemPrincipalAlert.js') }}"></script>
-    
-    
+
+
     <script>
         function formatarCEP(input) {
             // Remove caracteres não numéricos
             let cep = input.value.replace(/\D/g, '');
-            
+
             // Adiciona a máscara
             if (cep.length === 8) {
                 cep = cep.replace(/(\d{5})(\d{3})/, '$1-$2');
@@ -500,7 +491,7 @@
     </script>
 
 <script>
-    
+
     document.getElementById('adicionar-casa-container').addEventListener('submit', function(event) {
         // Impede o envio padrão do formulário
     event.preventDefault();
@@ -510,7 +501,7 @@
         this.submit(); // Isso envia o formulário
         }
     })
-    
+
 </script>
 
 @endsection

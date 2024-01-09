@@ -141,7 +141,7 @@ class adminController extends Controller
             $catalogo->murado = ($request->murado) ? true : false;
             $catalogo->pavimentação = ($request->pavimentação) ? true : false;
             $catalogo->areaServico = ($request->areaServico) ? true : false;
-            $catalogo->banheiroAuxiliar = ($request->banheiroAux) ? true : false;
+            $catalogo->gasEncanado = ($request->gasEncanado) ? true : false;
             $catalogo->banheiroEmpregada = ($request->banheiroEmpregada) ? true : false;
             $catalogo->cozinha = ($request->cozinha) ? true : false;
             $catalogo->cozinhaPlanejada = ($request->cozinhaPlanejada) ? true : false;
@@ -168,7 +168,7 @@ class adminController extends Controller
             $catalogo->portaoEletronico = ($request->portaoEletronico) ? true : false;
             $catalogo->quintal = ($request->quintal) ? true : false;
 
-            if($request->id_produto != 1 ){
+            if($request->id_produto == 2 ){
                 $catalogo->tp_contrato = $request->tp_contrato;
                 $catalogo->qtdBanheiros = $request->qtd_banheiros;
                 $catalogo->qtdQuartos = $request->qtd_quartos;
@@ -177,6 +177,10 @@ class adminController extends Controller
                 $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
                 $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
                 $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
+            }elseif($request->id_produto == 3){
+                $catalogo->areaUtil = 0;
+                $catalogo->areaConstruida = 0;
+                $catalogo->areaConstruida = 0;
             }else{
                 $catalogo->tp_contrato = 'Venda';
                 $catalogo->qtdBanheiros = 0;

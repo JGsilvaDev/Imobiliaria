@@ -142,31 +142,23 @@
 
         </div>
 
-        <p id="valor-label">Lazer</p>
-        <div class="checkbox">
-
-            <div class="check-item">
-                <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra esportiva</label>
-            </div>
-
-        </div>
 
         <p id="valor-label">Social</p>
         <div class="checkbox">
             <div class="check-item">
                 <input type="checkbox" name="varanda" id="varanda"><label for="varanda">Varanda</label>
             </div>
+
             <div class="check-item">
                 <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="varandaGourmet">Varanda Gourmet</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="sacada" id="sacada"><label for="sacada">Sacada</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="sacadaGourmet" id="sacadaGourmet"><label for="sacadaGourmet">Sacada Gourmet</label>
             </div>
         </div>
 
@@ -218,7 +210,23 @@
             <div class="check-item">
                 <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
             </div>
+        </div>
 
+        <p id="valor-label">Lazer</p>
+        <div class="checkbox">
+
+            <div class="check-item">
+                <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra esportiva</label>
+            </div>
         </div>
 
         <hr class="cadastro-divisor">
@@ -340,21 +348,7 @@
             </div>
         </div>
 
-        <p id="valor-label">Lazer</p>
-        <div class="checkbox">
-        <div class="check-item">
-                <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra esportiva</label>
-            </div>
-        </div>
+        
 
         <p id="valor-label">Social</p>
         <div class="checkbox">
@@ -411,6 +405,22 @@
             </div>
             <div class="check-item">
                 <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
+            </div>
+        </div>
+
+        <p id="valor-label">Lazer</p>
+        <div class="checkbox">
+        <div class="check-item">
+                <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra esportiva</label>
             </div>
         </div>
 

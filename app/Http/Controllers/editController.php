@@ -28,7 +28,7 @@ class editController extends Controller
                       'catalogos.pavimentação','catalogos.areaServico','catalogos.gasEncanado','catalogos.banheiroEmpregada',
                       'catalogos.cozinha','catalogos.cozinhaPlanejada','catalogos.despensa','catalogos..lavanderias',
                       'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira',
-                      'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet',
+                      'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet','catalogos.sacadaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
                       'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.qtdSacadasCobertas')
@@ -90,6 +90,7 @@ class editController extends Controller
         $catalogo->quadra = ($request->quadra) ? true : false;
         $catalogo->varanda = ($request->varanda) ? true : false;
         $catalogo->varandaGourmet = ($request->varandaGourmet) ? true : false;
+        $catalogo->sacadaGourmet = ($request->sacadaGourmet) ? true : false;
         $catalogo->pisoFrio = ($request->pisoFrio) ? true : false;
         $catalogo->porcelanato = ($request->porcelanato) ? true : false;
         $catalogo->lavado = ($request->lavado) ? true : false;

@@ -155,6 +155,7 @@ class adminController extends Controller
             $catalogo->quadra = ($request->quadra) ? true : false;
             $catalogo->varanda = ($request->varanda) ? true : false;
             $catalogo->varandaGourmet = ($request->varandaGourmet) ? true : false;
+            $catalogo->sacadaGourmet = ($request->sacadaGourmet) ? true : false;
             $catalogo->pisoFrio = ($request->pisoFrio) ? true : false;
             $catalogo->porcelanato = ($request->porcelanato) ? true : false;
             $catalogo->lavado = ($request->lavado) ? true : false;

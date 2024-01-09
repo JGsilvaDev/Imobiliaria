@@ -55,6 +55,7 @@ return new class extends Migration
             $table->boolean('quadra');
             $table->boolean('varanda');
             $table->boolean('varandaGourmet');
+            $table->boolean('sacadaGourmet');
             $table->boolean('lavado');
             $table->boolean('roupeiro');
             $table->boolean('suiteMaster');

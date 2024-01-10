@@ -30,9 +30,6 @@ body {
     width: 100%;
 }
 
-#imovel-titulo-label {
-    /* text-align: center; */
-}
 #imovel-id-icone {
     text-align: center;
 }
@@ -114,7 +111,7 @@ body {
     width: 100%;
     height: 420px;
 
-    background-size: cover;
+    background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -64,7 +64,7 @@
                 <div id="destaque-endereco-info">
                     <span id="endereco-info-tipo-nome">{{ $iten->descricao }}</span>
                     <hr style="width:100%;" >
-                    <p id="endereco-info-tipo">{{ $iten->titulo }}</p>
+                    <p class="endereco-info-tipo">{{ $iten->titulo }}</p>
                     <p id="endereco-info-cidade"><span class="custom-icon"></span> <span class="endereco-localidade">{{ $iten->cidade}}</span></p>
                 </div>
                 <div id="item-dados">
@@ -127,6 +127,8 @@
 
  <script>
     const imoveis_desc_list = document.getElementsByClassName('endereco-localidade')
+    const imoveis_title_list = document.getElementsByClassName('endereco-info-tipo')
+
     if (!widthLowerThan(600)) {
         lim = 10
     }
@@ -150,6 +152,15 @@
         if(imoveis_desc_list[i].innerHTML.length > lim) {
 
             imoveis_desc_list[i].innerHTML = limitarStringPorPalavras(imoveis_desc_list[i].innerHTML , lim) + "...";
+        }
+
+    }
+
+    for(i=0; i<imoveis_title_list.length; i++) {
+
+        if(imoveis_title_list[i].innerHTML.length > lim) {
+
+            imoveis_title_list[i].innerHTML = limitarStringPorPalavras(imoveis_title_list[i].innerHTML , lim) + "...";
         }
 
     }

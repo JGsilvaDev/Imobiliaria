@@ -22,22 +22,31 @@ body {
 
 #title-imovel{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 
     width: 100%;
+}
+
+#imovel-titulo-label {
+    /* text-align: center; */
+}
+#imovel-id-icone {
+    text-align: center;
 }
 
 
 #imovel-id{
     display: flex;
     align-items: center;
-    margin-right: 70px;
+    justify-content: center;
     height: 28px;
+    width: 50%;
 
     background-color: #1B657A;
     color: white;
-    padding: 0px 50px;
     border-radius: 10px;
 }
 

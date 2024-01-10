@@ -468,6 +468,11 @@ body {
     align-items: center;
 }
 
+#img-fullscreen {
+    width: 100%;
+    height: auto;
+}
+
 @media (max-width: 1250px){
     #fechar-icone {
         display: block;

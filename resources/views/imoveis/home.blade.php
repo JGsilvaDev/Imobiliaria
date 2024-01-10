@@ -282,6 +282,8 @@
 
 <script>
     const imoveis_desc_list = document.getElementsByClassName('produto-descricao-texto')
+    const imoveis_title_list = document.getElementsByClassName('produto-titulo')
+
     console.log(widthLowerThan(600))
     if (!widthLowerThan(600)) {
         lim = 5
@@ -306,6 +308,14 @@
         if(imoveis_desc_list[i].innerHTML.length > lim) {
 
             imoveis_desc_list[i].innerHTML = limitarStringPorPalavras(imoveis_desc_list[i].innerHTML , lim) + "...";
+        }
+
+    }
+    for(i=0; i<imoveis_title_list.length; i++) {
+
+        if(imoveis_title_list[i].innerHTML.length > lim) {
+
+            imoveis_title_list[i].innerHTML = limitarStringPorPalavras(imoveis_title_list[i].innerHTML , lim) + "...";
         }
 
     }

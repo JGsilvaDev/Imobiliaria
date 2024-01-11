@@ -63,13 +63,13 @@
         <input name="area" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
 
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-        <input name="areaUtil" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="areaUtil" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
-        <input name="areaConstruida" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="areaConstruida" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-        <input name="areaTerreno" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="areaTerreno" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p>Aluguel ou Venda</p>
         <select name="tp_contrato" id="" class="add-input" required>
@@ -240,6 +240,7 @@
         </div>
     </form>
 
+<!-- APARTAMENTO -->
     <form id="adicionar-apartamento-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
         @csrf
         <input type="hidden" name="id_produto" value="3">
@@ -426,6 +427,7 @@
 
         <hr class="cadastro-divisor">
 
+        <!-- TERRENO -->
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
         <input type="file" name="imagem[]" id="imagemAp" multiple required>
 
@@ -467,10 +469,10 @@
         <input type="text" name="valor" id="trn-valor-input" class="add-input input-format" lang="pt-BR" required>
 
         <p id="valor-label">Valor condominio</p>
-        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
+        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR">
 
         <p id="valor-label">IPTU mensal</p>
-        <input type="text" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR" required>
+        <input type="text" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR">
 
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>

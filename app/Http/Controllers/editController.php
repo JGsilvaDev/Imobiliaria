@@ -27,7 +27,7 @@ class editController extends Controller
                       'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
                       'catalogos.pavimentação','catalogos.areaServico','catalogos.gasEncanado','catalogos.banheiroEmpregada',
                       'catalogos.cozinha','catalogos.cozinhaPlanejada','catalogos.despensa','catalogos..lavanderias',
-                      'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira',
+                      'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira','catalogos.churrasqueiraCondominio',
                       'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet','catalogos.sacadaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
@@ -86,6 +86,7 @@ class editController extends Controller
         $catalogo->portaria24h = ($request->portaria24) ? true : false;
         $catalogo->areaLazer = ($request->areaLazer) ? true : false;
         $catalogo->churrasqueira = ($request->churrasqueira) ? true : false;
+        $catalogo->churrasqueiraCondominio = ($request->churrasqueiraCondominio) ? true : false;
         $catalogo->playground = ($request->playground) ? true : false;
         $catalogo->quadra = ($request->quadra) ? true : false;
         $catalogo->varanda = ($request->varanda) ? true : false;

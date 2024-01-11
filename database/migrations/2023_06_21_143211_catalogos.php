@@ -51,6 +51,7 @@ return new class extends Migration
             $table->boolean('portaria24h');
             $table->boolean('areaLazer');
             $table->boolean('churrasqueira');
+            $table->boolean('churrasqueiraCondominio');
             $table->boolean('playground');
             $table->boolean('quadra');
             $table->boolean('varanda');

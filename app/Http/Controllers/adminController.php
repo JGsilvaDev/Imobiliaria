@@ -151,6 +151,7 @@ class adminController extends Controller
             $catalogo->portaria24h = ($request->portaria24) ? true : false;
             $catalogo->areaLazer = ($request->areaLazer) ? true : false;
             $catalogo->churrasqueira = ($request->churrasqueira) ? true : false;
+            $catalogo->churrasqueiraCondominio = ($request->churrasqueiraCondominio) ? true : false;
             $catalogo->playground = ($request->playground) ? true : false;
             $catalogo->quadra = ($request->quadra) ? true : false;
             $catalogo->varanda = ($request->varanda) ? true : false;

@@ -216,7 +216,7 @@ class imoveisController extends Controller
                       'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
                       'catalogos.pavimentação','catalogos.areaServico','catalogos.gasEncanado','catalogos.banheiroEmpregada',
                       'catalogos.cozinha','catalogos.cozinhaPlanejada','catalogos.despensa','catalogos..lavanderias',
-                      'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira',
+                      'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira','catalogos.churrasqueiraCondominio',
                       'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',

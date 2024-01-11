@@ -140,7 +140,7 @@
         </div>
 
 
-        <p id="valor-label">Social</p>
+        <p id="valor-label">Área comum</p>
         <div class="checkbox">
             <div class="check-item">
                 <input type="checkbox" name="varanda" id="varanda"><label for="varanda">Varanda</label>
@@ -156,6 +156,10 @@
 
             <div class="check-item">
                 <input type="checkbox" name="sacadaGourmet" id="sacadaGourmet"><label for="sacadaGourmet">Sacada Gourmet</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
             </div>
         </div>
 
@@ -351,13 +355,17 @@
 
 
 
-        <p id="valor-label">Social</p>
+        <p id="valor-label">Área comum</p>
         <div class="checkbox">
         <div class="check-item">
                 <input type="checkbox" name="varanda" id="varanda"><label for="varanda">Varanda</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="varandaGourmet">Varanda Gourmet</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
             </div>
         </div>
 

@@ -232,11 +232,14 @@ class adminController extends Controller
                 $imagem = imagescale($imagem, 1280, 720);
 
                 // Obter as dimensões da imagem original e da marca d'água
-                $imagemOriginalInfo = getimagesize($imagemOriginal);
-                $marcaDaguaInfo = getimagesize($marcaDagua);
+                // $imagemOriginalInfo = getimagesize($imagem);
+                // $marcaDaguaInfo = getimagesize($marcaDagua);
+                $imagemOriginalInfo = [imagesx($imagem),imagesy($imagem)];
+                $marcaDaguaInfo = [imagesx($marcaDaguaImg),imagesy($marcaDaguaImg)];
+
 
                 // Calcular as coordenadas para posicionar a marca d'água
-                $posX = ($imagemOriginalInfo[0] - $marcaDaguaInfo[0]) - 350; // Centralizar horizontalmente
+                $posX = ($imagemOriginalInfo[0] - $marcaDaguaInfo[0]); // Centralizar horizontalmente
                 $posY = ($imagemOriginalInfo[1] - $marcaDaguaInfo[1]) / 2; // Centralizar verticalmente
 
                 // Adicionar a marca d'água à imagem original

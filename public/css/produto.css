@@ -86,15 +86,11 @@ body {
 .carrossel-btn {
     width: 5%;
 
-    background-color: rgba(255, 255, 255, 0.29);
-    border: none;
-    color: white;
-
-    transition: all 0.2s;
-}
-.carrossel-btn:hover {
     background-color: white;
     color: black;
+    border: none;
+
+    transition: all 0.2s;
 }
 
 #carrossel-container {

@@ -243,7 +243,7 @@ class adminController extends Controller
 
                 // Calcule a posição para a marca d'água (por exemplo, canto inferior direito)
                 $posicaoX = $larguraImagem - $larguraMarcaDagua; // 10 pixels da margem direita
-                $posicaoY = $alturaImagem - $alturaMarcaDagua-60; // 10 pixels da margem inferior
+                $posicaoY = $alturaImagem - $alturaMarcaDagua/2; // 10 pixels da margem inferior
 
 
                 // Define a cor transparente da imagem da marca d'água

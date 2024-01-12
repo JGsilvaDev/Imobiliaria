@@ -226,39 +226,28 @@ class adminController extends Controller
                     $imagem = imagecreatefromjpeg($imagemOriginal);
                 }
 
+                // Carregar a imagem da marca d'água
+                $marcaDaguaImg = imagecreatefrompng($marcaDagua);
 
-                // Carregue a imagem da marca d'água
-                $marcaDaguaImagem = imagecreatefrompng($marcaDagua);
-
-                // Redimensionando imagem
                 $imagem = imagescale($imagem, 1280, 720);
-                $marcaDaguaImagem = imagescale($marcaDaguaImagem, 150, 150);
 
-                // Obtenha as dimensões da imagem original e da marca d'água
-                $larguraImagem = imagesx($imagem);
-                $alturaImagem = imagesy($imagem);
-                $larguraMarcaDagua = imagesx($marcaDaguaImagem);
-                $alturaMarcaDagua = imagesy($marcaDaguaImagem);
+                // Obter as dimensões da imagem original e da marca d'água
+                $imagemOriginalInfo = getimagesize($imagemOriginal);
+                $marcaDaguaInfo = getimagesize($marcaDagua);
 
+                // Calcular as coordenadas para posicionar a marca d'água
+                $posX = ($imagemOriginalInfo[0] - $marcaDaguaInfo[0]) - 350; // Centralizar horizontalmente
+                $posY = ($imagemOriginalInfo[1] - $marcaDaguaInfo[1]) / 2; // Centralizar verticalmente
 
-                // Calcule a posição para a marca d'água (por exemplo, canto inferior direito)
-                $posicaoX = $larguraImagem - $larguraMarcaDagua; // 10 pixels da margem direita
-                $posicaoY = $alturaImagem - $alturaMarcaDagua/2; // 10 pixels da margem inferior
+                // Adicionar a marca d'água à imagem original
+                imagecopy($imagem, $marcaDaguaImg, $posX, $posY, 0, 0, $marcaDaguaInfo[0], $marcaDaguaInfo[1]);
 
-
-                // Define a cor transparente da imagem da marca d'água
-                $corTransparente = imagecolorallocatealpha($marcaDaguaImagem, 0, 0, 0, 10);
-                imagecolortransparent($marcaDaguaImagem, $corTransparente);
-
-                // Mesclar a marca d'água na imagem original com transparência
-                imagecopymerge($imagem, $marcaDaguaImagem, $posicaoX, $posicaoY, 0, 0, $larguraMarcaDagua, $alturaMarcaDagua, 50); // O último valor (50) controla a opacidade da marca d'água (0 a 100)
-
-                // Salvar a imagem resultante (substitua a imagem original ou escolha um novo nome)
+                // Salvar a imagem com marca d'água
                 imagejpeg($imagem, $fileNameFormat);
 
-                // Liberar recursos
+                // Liberar recursos da memória
                 imagedestroy($imagem);
-                imagedestroy($marcaDaguaImagem);
+                imagedestroy($marcaDaguaImg);
 
                 $imagem = new Imagens();
                 $imagem->chave = $catalogo->id;

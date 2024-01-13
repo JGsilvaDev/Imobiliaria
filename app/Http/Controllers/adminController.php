@@ -215,10 +215,10 @@ class adminController extends Controller
 
                 $imagemOriginal = $fileNameFormat;
 
+                // Busca pela marca d'água, geralmente ela se encontra em public/img
                 $marcaDagua = 'img/watermark.png';
 
-                // Carregue a imagem original
-                //verificando o formato da imagem
+                // Verifica o formato da imagem e a carrega adequadamente
                 if ($fileFormat === 'png') {
                     $imagem = imagecreatefrompng($imagemOriginal);
                 }
@@ -226,29 +226,28 @@ class adminController extends Controller
                     $imagem = imagecreatefromjpeg($imagemOriginal);
                 }
 
-                // Carregar a imagem da marca d'água
+                // Carrega a imagem da marca d'água
                 $marcaDaguaImg = imagecreatefrompng($marcaDagua);
 
                 $imagem = imagescale($imagem, 1280, 720);
 
-                // Obter as dimensões da imagem original e da marca d'água
-                // $imagemOriginalInfo = getimagesize($imagem);
-                // $marcaDaguaInfo = getimagesize($marcaDagua);
+                // Pega o x e y da imagem e da marca d'água
+                // Organizado em formato de array, por conveniência
                 $imagemOriginalInfo = [imagesx($imagem),imagesy($imagem)];
                 $marcaDaguaInfo = [imagesx($marcaDaguaImg),imagesy($marcaDaguaImg)];
 
 
-                // Calcular as coordenadas para posicionar a marca d'água
+                // Calcula a posição X e Y da marca d'água
                 $posX = ($imagemOriginalInfo[0] - $marcaDaguaInfo[0]); // Centralizar horizontalmente
                 $posY = ($imagemOriginalInfo[1] - $marcaDaguaInfo[1]) / 2; // Centralizar verticalmente
 
-                // Adicionar a marca d'água à imagem original
+                // Junta a imagem com marca d'água com a imagem original
                 imagecopy($imagem, $marcaDaguaImg, $posX, $posY, 0, 0, $marcaDaguaInfo[0], $marcaDaguaInfo[1]);
 
-                // Salvar a imagem com marca d'água
+                // Salva a imagem
                 imagejpeg($imagem, $fileNameFormat);
 
-                // Liberar recursos da memória
+                // Libera memória
                 imagedestroy($imagem);
                 imagedestroy($marcaDaguaImg);
 

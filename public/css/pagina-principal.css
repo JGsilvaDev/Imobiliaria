@@ -216,29 +216,11 @@ backdrop-filter: blur(5.5px);
 /* <select> styles */
 #filtro-mobile {
     display: none;
-    /* Reset */
-    appearance: none;
-    border: 0;
-    outline: 0;
     font: inherit;
-    /* Personalize */
-    /* width: 20rem; */
-    padding: 1rem 4rem 1rem 1rem;
-    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
-      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
-    /* color: white; */
     border-radius: 0 0 5px 5px;
-    /* box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2); */
+    background-color: white;
+
     cursor: pointer;
-    /* Remove IE arrow */
-    &::-ms-expand {
-      display: none;
-    }
-    /* Remove focus outline */
-    &:focus {
-      outline: none;
-    }
-    /* <option> colors */
     option {
       color: inherit;
       background-color: var(--option-bg);
@@ -255,9 +237,13 @@ backdrop-filter: blur(5.5px);
     }
 
     #pesquisa-container {
-        background-position: center;
-        background-size: 200%;
+        background-image: url("/img/fundo.png");
+        background-position: center 0;
+        background-size: 100%;
+        /* padding:100px; */
+        padding: 100px 0;
     }
+    
 
     #ajuda-itens {
         flex-direction: column;
@@ -265,9 +251,12 @@ backdrop-filter: blur(5.5px);
     #form-search {
         width: 100vw;
         display: flex;
+        flex-direction: column;
     }
     #filtro {
         padding: 0;
+        width: 80%;
+        margin: auto;
     }
     .carousel-item {
         flex: 0; /* Distribui os itens igualmente em 3 colunas */

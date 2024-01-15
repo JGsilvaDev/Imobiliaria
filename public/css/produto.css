@@ -94,9 +94,10 @@ body {
 }
 
 #carrossel-container {
-    width: 80%;
+    width: 100%;
     position: relative;
     display: flex;
+    background-color: black;
 }
 
 #carrossel-content {
@@ -362,6 +363,7 @@ body {
 
 .interesse-contato-input {
     border: #1B657A solid 3px;
+    background-color: white;
     width:100%;
 }
 #interesse-contato-container input {
@@ -511,6 +513,16 @@ body {
     }
     .terreno-area-container {
         flex-direction: column;
+    }
+    .area-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .area-content {
+        width: 100%;
+    }
+    .area-content p {
+        margin: 0;
     }
     #pagina-layout {
         width: 100vw;

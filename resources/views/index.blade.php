@@ -34,16 +34,6 @@
                 <input type="hidden" name="infoPesquisa" value="2">
                 <button id="filtro-item" >Casa</button>
             </form>
-
-            <form action="" method="post" id="form-search">
-                @csrf
-                <input type="text" name="infoPesquisa" id="filtro-input" placeholder="Pesquisa por título">
-                <select id="filtro-mobile">
-                    <option value="1" class="mobile-option">Casa</option>
-                    <option value="2" class="mobile-option">Apartamento</option>
-                    <option value="3" class="mobile-option">Terreno</option>
-                </select>
-            </form>
         </div>
 </section>
     <input type="hidden" id="count" value="{{ $count }}">

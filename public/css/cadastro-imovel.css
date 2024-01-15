@@ -399,6 +399,14 @@ h1 {
     text-decoration: none !important;
   }
 
+  .tab-button {
+    width: 20%;
+    text-align: center;
+  }
+  .tab-buttons {
+    margin: auto;
+  }
+
   .checkbox {
     flex-direction: column;
     justify-content: flex-start;

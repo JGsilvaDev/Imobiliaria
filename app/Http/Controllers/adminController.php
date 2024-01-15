@@ -229,7 +229,7 @@ class adminController extends Controller
                 // Carrega a imagem da marca d'água
                 $marcaDaguaImg = imagecreatefrompng($marcaDagua);
 
-                $imagem = imagescale($imagem, 1280, 720);
+                // $imagem = imagescale($imagem, 1280, 720);
 
                 // Pega o x e y da imagem e da marca d'água
                 // Organizado em formato de array, por conveniência

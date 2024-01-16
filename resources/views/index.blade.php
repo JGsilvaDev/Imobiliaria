@@ -34,6 +34,11 @@
                 <input type="hidden" name="infoPesquisa" value="2">
                 <button id="filtro-item" >Casa</button>
             </form>
+
+            <form action="" method="post" id="form-search">
+                @csrf
+                <input type="text" name="infoPesquisa" id="filtro-input" placeholder="Pesquisa por título">
+            </form>
         </div>
 </section>
     <input type="hidden" id="count" value="{{ $count }}">

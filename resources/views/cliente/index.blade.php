@@ -3,6 +3,7 @@
 @section('title','Cadastrar Cliente')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 
     @if(Session::has('warning'))
         <div class="alert alert-warning">

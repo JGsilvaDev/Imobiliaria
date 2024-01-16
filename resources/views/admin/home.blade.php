@@ -3,6 +3,7 @@
 @section('title','Gerenciador de imóveis')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 
 <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">

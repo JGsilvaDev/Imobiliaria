@@ -4,7 +4,7 @@
 
 @section('content')
 
-    
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 <link rel="stylesheet" href="{{ asset('css/contato.css') }}">
 
     <div id="modalContato" class="contato-container">

@@ -15,6 +15,7 @@
     <title>Edit Imovel</title>
 </head>
 <body>
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 <button id="btn-voltar" onclick="window.location.href = '/admin'">Voltar</button>
 <div id="title-editar">
     <p>Editar</p>
@@ -75,22 +76,22 @@
                     <input type="text" name="area" id="area" value="{{ $item->area }}" class="add-input">
 
                     <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
-                    <input name="areaUtil" type="number" id="casa-tam-area-input" value="{{ $item->areaUtil }}" class="add-input">
+                    <input name="areaUtil" type="text" id="casa-tam-area-input" value="{{ $item->areaUtil }}" class="add-input">
 
                     <p id="tam-area-label">Tamanho da área contruida (m<sup>2</sup>)</p>
-                    <input name="areaConstruida" type="number" id="casa-tam-area-input" value="{{ $item->areaConstruida }}" class="add-input">
+                    <input name="areaConstruida" type="text" id="casa-tam-area-input" value="{{ $item->areaConstruida }}" class="add-input">
 
                     <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
-                    <input name="areaTerreno" type="number" id="casa-tam-area-input" value="{{ $item->areaTerreno }}" class="add-input">
+                    <input name="areaTerreno" type="text" id="casa-tam-area-input" value="{{ $item->areaTerreno }}" class="add-input">
 
                     <label class="add-label">Valor</label>
                     <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input">
 
                     <p id="valor-label">Valor condomínio</p>
-                    <input type="number" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input">
+                    <input type="text" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input">
 
                     <p id="valor-label">IPTU mensal</p>
-                    <input type="number" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input">
+                    <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input">
 
                     <p id="valor-label">Básico</p>
                     <div class="checkbox">

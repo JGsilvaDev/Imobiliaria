@@ -3,6 +3,7 @@
 @section('title','Detalhes do Produto')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/produto.css') }}">
 

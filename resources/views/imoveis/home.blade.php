@@ -3,6 +3,7 @@
 @section('title', 'Todos os Produtos')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/listar-produtos.css') }}">
     <script src="{{ asset('js/numformat.js') }}"></script>

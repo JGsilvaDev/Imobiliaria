@@ -3,6 +3,7 @@
 @section('title','Imobiliária Eunice')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 
 <link rel="stylesheet" href="{{ asset('css/pagina-principal.css') }}">
 <script src="{{ asset('js/reload.js') }}"></script>

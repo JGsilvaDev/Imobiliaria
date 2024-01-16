@@ -3,7 +3,7 @@
 @section('title','contatos')
 
 @section('content')
-
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 <div id="contatos-navbar">
     <p id="hello-user">Olá, {{ $usuario->name }}</p>
     <div id="dropdown-menu">

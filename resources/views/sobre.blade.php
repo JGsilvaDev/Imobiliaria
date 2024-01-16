@@ -3,6 +3,7 @@
 @section('title','Sobre nós')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
     <div class="background-blur">
 
         <link rel="stylesheet" href="{{ asset('css/about.css') }}">

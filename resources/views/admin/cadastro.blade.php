@@ -105,7 +105,10 @@
                 <input type="checkbox" name="pavimentação" id="pavimentação"><label for="pavimentação">Pavimentação</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás Encanado</label>
+                <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás encanado</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="gasEncanado" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>
             </div>
 
         </div>
@@ -136,6 +139,9 @@
             <div class="check-item">
                 <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
             </div>
+            <div class="check-item">
+                <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletrônico</label>
+            </div>
 
         </div>
 
@@ -160,6 +166,10 @@
 
             <div class="check-item">
                 <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="cozinhaConjugada" id="cozinhaConjugada"><label for="cozinhaConjugada">Cozinha conjugada</label>
             </div>
         </div>
 
@@ -321,7 +331,10 @@
                 <input type="checkbox" name="pavimentação" id="pavimentação"><label for="pavimentação">Pavimentação</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás Encanado</label>
+                <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás encanado</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="gasEncanado" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>
             </div>
         </div>
 
@@ -351,6 +364,9 @@
             <div class="check-item">
                 <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
             </div>
+            <div class="check-item">
+                <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletrônico</label>
+            </div>
         </div>
 
 
@@ -366,6 +382,9 @@
 
             <div class="check-item">
                 <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="cozinhaConjugada" id="cozinhaConjugada"><label for="cozinhaConjugada">Cozinha conjugada</label>
             </div>
         </div>
 

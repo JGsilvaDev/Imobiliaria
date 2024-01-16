@@ -334,7 +334,7 @@
                 <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás encanado</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="gasEncanado" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>
+                <input type="checkbox" name="entradaServico" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>
             </div>
         </div>
 

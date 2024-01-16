@@ -135,15 +135,19 @@ body {
 #carrossel-galeria {
     flex: 1;
     display: flex;
-    overflow: auto;
+    /* overflow: auto; */
+    /* width: 300px; */
+    overflow-x: scroll;
+    white-space: nowrap;
+    /* flex-wrap: wrap; */
     gap: 10px;
-    justify-content: center;
-
+    justify-content: flex-start;
 
     margin-top: 10px;
-
-    width: 80%;
+    width: 550px;
+    height: 100px;
 }
+
 .galeria-item {
     flex: 0 0 auto;
     min-height: min-content;
@@ -555,5 +559,14 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+    }
+
+    #carrossel-galeria {
+        width: 330px;
+    }
+}
+@media (max-width: 350px) {
+    #carrossel-galeria {
+        width: 100px;
     }
 }

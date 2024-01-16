@@ -515,15 +515,15 @@
 
 <script>
 
-    document.getElementById('adicionar-casa-container').addEventListener('submit', function(event) {
-        // Impede o envio padrão do formulário
-    event.preventDefault();
+    // document.getElementById('adicionar-casa-container').addEventListener('submit', function(event) {
+    //     // Impede o envio padrão do formulário
+    // event.preventDefault();
 
-        // Chame a função antesDoEnvio() e envie o formulário apenas se a função retornar true
-        if (formatarInput()) {
-        this.submit(); // Isso envia o formulário
-        }
-    })
+    //     // Chame a função antesDoEnvio() e envie o formulário apenas se a função retornar true
+    //     if (formatarInput()) {
+    //     this.submit(); // Isso envia o formulário
+    //     }
+    // })
 
 </script>
 

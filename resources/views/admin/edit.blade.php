@@ -86,7 +86,7 @@
                     <label class="add-label">Valor</label>
                     <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input">
 
-                    <p id="valor-label">Valor condominio</p>
+                    <p id="valor-label">Valor condomínio</p>
                     <input type="number" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input">
 
                     <p id="valor-label">IPTU mensal</p>
@@ -256,11 +256,11 @@
                 <label class="add-label">Valor</label>
                 <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input">
 
-                <p id="valor-label">Valor condominio</p>
-                <input type="number" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input">
+                <p id="valor-label">Valor condomínio</p>
+                <input type="text" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input">
 
                 <p id="valor-label">IPTU mensal</p>
-                <input type="number" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input">
+                <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input">
 
                 <label class="add-label">Inserir novas Imagens</label>
                 <input type="file" name="imagem[]" id="imagemEdit" multiple>

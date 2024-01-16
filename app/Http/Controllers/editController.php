@@ -61,15 +61,30 @@ class editController extends Controller
         $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
         $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
         $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
-        $catalogo->valor = doubleval(str_replace(',','.',str_replace('.','',$request->valor)));
+
+        if($catalogo->valor != doubleval(str_replace(',','.',str_replace('.','',$request->valor)))) {
+            $catalogo->valor = doubleval(str_replace(',','.',str_replace('.','',$request->valor)));
+        }
+        $catalogo->valor = doubleval(str_replace(',','.',$request->valor));
+
+        if($catalogo->valorcondominio != doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)))) {
+            $catalogo->valorCondominio = doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)));
+        }
+        $catalogo->valorCondominio = doubleval(str_replace(',','.',$request->valorCondominio));
+        
+        if($catalogo->iptuMensal != doubleval(str_replace(',','.',str_replace('.','',$request->iptuMensal)))) {
+            $catalogo->iptuMensal = doubleval(str_replace(',','.',str_replace('.','',$request->iptuMensal)));
+        }
+        $catalogo->iptuMensal = doubleval(str_replace(',','.',$request->iptu));
+
         $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
         $catalogo->cidade = $request->cidade;
         $catalogo->bairro = $request->bairro;
         $catalogo->ruaNumero = $request->ruaNumero;
         $catalogo->cep = $request->cep;
         $catalogo->qtdSuites = $request->qtd_suites;
-        $catalogo->valorCondominio = doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)));
-        $catalogo->iptuMensal = doubleval(str_replace(',','.',str_replace('.','',$request->iptu)));
+        
+
         $catalogo->agua = ($request->agua) ? true : false;
         $catalogo->energia = ($request->energia) ? true : false;
         $catalogo->esgoto = ($request->esgoto) ? true : false;

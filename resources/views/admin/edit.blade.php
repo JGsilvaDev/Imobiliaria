@@ -85,13 +85,13 @@
                     <input name="areaTerreno" type="text" id="casa-tam-area-input" value="{{ $item->areaTerreno }}" class="add-input">
 
                     <label class="add-label">Valor</label>
-                    <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input">
+                    <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input input-format-edit">
 
                     <p id="valor-label">Valor condomínio</p>
-                    <input type="text" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input">
+                    <input type="text" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input input-format-edit">
 
                     <p id="valor-label">IPTU mensal</p>
-                    <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input">
+                    <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input input-format-edit">
 
                     <p id="valor-label">Básico</p>
                     <div class="checkbox">
@@ -255,13 +255,13 @@
                 <input type="text" name="area" id="area" value="{{ $item->area }}" class="add-input">
 
                 <label class="add-label">Valor</label>
-                <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input">
+                <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input input-format-edit">
 
                 <p id="valor-label">Valor condomínio</p>
-                <input type="text" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input">
+                <input type="text" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input input-format-edit">
 
                 <p id="valor-label">IPTU mensal</p>
-                <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input">
+                <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input input-format-edit">
 
                 <label class="add-label">Inserir novas Imagens</label>
                 <input type="file" name="imagem[]" id="imagemEdit" multiple>
@@ -322,6 +322,7 @@
 </body>
 </html>
 
+<!-- Sistema de abas -->
 <script>
     //sistema de abas
     const abas = [
@@ -357,4 +358,31 @@
             botoes[i].classList.replace('tab-selected','tab-unselected')
         }
     }
+</script>
+
+<!-- Formatação numérica -->
+<script>
+    const forms = document.getElementsByClassName('add-layout')
+    const inputs = document.getElementsByClassName('input-format-edit')
+
+
+    for(let item of forms) {
+        item.addEventListener('submit', function(event) {
+            // Impede o envio padrão do formulário
+            event.preventDefault();
+    
+            // Chame a função antesDoEnvio() e envie o formulário apenas se a função retornar true
+            if (formatNum()) {
+                this.submit(); // Isso envia o formulário
+            }
+        })
+    }
+
+    function formatNum() {
+        for(let item of inputs) {
+            item.value = item.value.replace(',','.')
+        }
+        return true
+    }
+
 </script>

@@ -69,6 +69,7 @@ return new class extends Migration
             $table->boolean('moveisPlanejados');
             $table->boolean('portaoEletronico');
             $table->boolean('quintal');
+            $table->boolean('cozinhaConjugada');
             $table->string('vendidoAlugado')->nullable();
             $table->timestamps();
 

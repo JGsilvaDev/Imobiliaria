@@ -220,7 +220,7 @@ class imoveisController extends Controller
                       'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
-                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.tp_contrato', 'catalogos.vendidoAlugado', 'catalogos.qtdSacadasCobertas')
+                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.tp_contrato', 'catalogos.vendidoAlugado', 'catalogos.qtdSacadasCobertas', 'catalogos.cozinhaConjugada')
                     ->where('catalogos.id','=',$id)
                     ->first();
 

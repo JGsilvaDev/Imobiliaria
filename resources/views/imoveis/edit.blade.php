@@ -320,8 +320,8 @@
                                 </div>
                             @endif
 
-                            @if($detalhes->varanda == 1 or $detalhes->varandaGourmet)
-                                <h3>Social</h3>
+                            @if($detalhes->varanda == 1 or $detalhes->varandaGourmet or $detalhes->cozinhaConjugada)
+                                <h3>Área comum</h3>
                                 <div class="area-container">
                                     @if($detalhes->varanda == 1)
                                         <div class="area-content">
@@ -332,6 +332,12 @@
                                     @if($detalhes->varandaGourmet == 1)
                                         <div class="area-content">
                                             <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Varanda Gourmet</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->cozinhaConjugada == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Cozinha Conjugada</p>
                                         </div>
                                     @endif
                                 </div>

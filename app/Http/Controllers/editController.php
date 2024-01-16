@@ -31,7 +31,7 @@ class editController extends Controller
                       'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet','catalogos.sacadaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
-                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.qtdSacadasCobertas')
+                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.qtdSacadasCobertas', 'catalogos.cozinhaConjugada')
                     ->where('catalogos.id','=',$id)
                     ->first();
 
@@ -104,6 +104,7 @@ class editController extends Controller
         $catalogo->moveisPlanejados = ($request->moveisPlanejados) ? true : false;
         $catalogo->portaoEletronico = ($request->portaoEletronico) ? true : false;
         $catalogo->quintal = ($request->quintal) ? true : false;
+        $catalogo->cozinhaConjugada = ($request->cozinhaConjugada) ? true : false;
 
         $catalogo->save();
 

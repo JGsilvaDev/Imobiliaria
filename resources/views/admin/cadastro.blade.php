@@ -139,10 +139,6 @@
             <div class="check-item">
                 <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
             </div>
-            <div class="check-item">
-                <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletrônico</label>
-            </div>
-
         </div>
 
 
@@ -363,9 +359,6 @@
             </div>
             <div class="check-item">
                 <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletrônico</label>
             </div>
         </div>
 

@@ -118,9 +118,6 @@
                             <input type="checkbox" name="areaServico" id="areaServico" @if ($item->areaServico == 1) checked @endif><label>Área de serviço</label>
                         </div>
                         <div class="check-item">
-                            <input type="checkbox" name="banheiroAux" id="banheiroAux" @if ($item->banheiroAuxiliar == 1) checked @endif><label>Banheiro Auxiliar</label>
-                        </div>
-                        <div class="check-item">
                             <input type="checkbox" name="banheiroEmpregada" id="banheiroEmpregada" @if ($item->banheiroEmpregada == 1) checked @endif><label>Banheiro Empregada</label>
                         </div>
                         <div class="check-item">
@@ -159,13 +156,16 @@
                         </div>
                     </div>
 
-                    <p id="valor-label">Social</p>
+                    <p id="valor-label">Área comum</p>
                     <div class="checkbox">
                         <div class="check-item">
                             <input type="checkbox" name="varanda" id="varanda" @if ($item->varanda == 1) checked @endif><label>Varanda</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="varandaGourmet" id="varandaGourmet" @if ($item->varandaGourmet == 1) checked @endif><label>Varanda Gourmet</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="cozinhaConjugada" id="cozinhaConjugada" @if ($item->cozinhaConjugada == 1) checked @endif><label for="cozinhaConjugada">Cozinha conjugada</label>
                         </div>
                     </div>
 

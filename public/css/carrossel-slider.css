@@ -1,0 +1,28 @@
+.slider-wrapper {
+    /* position:relative;
+    max-width: 80%;
+    margin: 0 auto;    */
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+    width: 100%;
+    height: 100%;
+
+    /* scroll invisivel */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+}

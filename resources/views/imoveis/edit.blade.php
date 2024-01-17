@@ -3,9 +3,9 @@
 @section('title','Detalhes do Produto')
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
     <link rel="stylesheet" href="{{ asset('css/produto.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carrossel-slider.css') }}">
 
     <script src="{{ asset('js/mostrar-interesse.js') }}"></script>
     <script src="{{ asset('js/tela-cheia.js') }}"></script>
@@ -54,24 +54,38 @@
                     </div>
 
                     <div id="carrossel-container">
-                        <button onclick="prevImage()" class="carrossel-btn" id="prev-btn">&lt</button>
+                        <!-- <button onclick="prevImage()" class="carrossel-btn" id="prev-btn">&lt</button> -->
 
-                        <div id="carrossel-content">
+                        <!-- <div id="carrossel-content">
                             @foreach ($imagens as $index => $path)
                                 @if($detalhes->id == $path->chave)
                                     <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')" onclick="img_fullscreen('{{asset($path->path)}}')">
                                     </div>
                                 @endif
                             @endforeach
+                        </div> -->
+
+                        <div id="carrossel-content" class="slider-wrapper" draggable="false">
+                            <div class="slider" draggable="false">
+
+                                @foreach ($imagens as $index => $path)
+                                    @if($detalhes->id == $path->chave)
+                                        <img src="{{asset($path->path)}}" alt="" id="{{asset($path->path)}}" draggable="false">
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
 
-                        <button onclick="nextImage()" class="carrossel-btn" id="next-btn">&gt</button>
+                        <!-- <button onclick="nextImage()" class="carrossel-btn" id="next-btn">&gt</button> -->
 
                     </div>
                     <div id="carrossel-galeria">
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
-                                <div class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" onclick="selectIndex(Array.from(document.getElementById('carrossel-galeria').children).indexOf(this))"></div>
+                                <!-- <div class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" onclick="selectIndex(Array.from(document.getElementById('carrossel-galeria').children).indexOf(this))"></div> -->
+                                <a class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" href="#{{asset($path->path)}}" onclick="document.getElementById('carrossel-content').focus()"></a>
+                                
+
                             @endif
                         @endforeach
                     </div>

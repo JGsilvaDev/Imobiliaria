@@ -135,17 +135,17 @@ body {
 #carrossel-galeria {
     flex: 1;
     display: flex;
-    /* overflow: auto; */
-    /* width: 300px; */
     overflow-x: scroll;
-    white-space: nowrap;
-    /* flex-wrap: wrap; */
+    /* white-space: nowrap; */
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-start;
 
-    margin-top: 10px;
-    width: 550px;
-    height: 100px;
+    /* margin-top: 10px; */
+    margin: 10px auto;
+    width: 540px;
+
+    /* background-color:red; */
 }
 
 .galeria-item {
@@ -562,11 +562,11 @@ body {
     }
 
     #carrossel-galeria {
-        width: 330px;
+        width: calc(100vw - 110px);
     }
 }
-@media (max-width: 350px) {
+/* @media (max-width: 430px) {
     #carrossel-galeria {
-        width: 100px;
+        width: 320px;
     }
-}
+} */

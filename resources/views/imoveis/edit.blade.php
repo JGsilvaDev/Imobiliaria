@@ -18,8 +18,28 @@
 
     <button id="mostrar" onclick="changeVisibility()">Tenho interesse!</button>
 
-    <div id="fullscreen" style="display: none;" onclick="fechar_fullscreen()">
-        <img src="" alt="" id="img-fullscreen">
+    <div id="fullscreen" style="display: none;" class="fs-switch">
+        <div id="fechar-icone-container" onclick="fechar_fullscreen()" style="left: 10px; top: 10px;" class="fs-switch">
+                <img src="{{ asset('img/fechar-icone.svg') }}" alt="" id="fechar-imagem">
+        </div>
+
+        <div id="carrossel-content" class="slider-wrapper fs-switch" draggable="false">
+            <div class="slider-fs" draggable="false">
+
+                @foreach ($imagens as $index => $path)
+                    @if($detalhes->id == $path->chave)
+                        <img src="{{asset($path->path)}}" alt="" id="{{asset($path->path)}}-fs" draggable="false">
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        <div id="carrossel-galeria" style="max-width: 80%; overflow-x: scroll; flex-wrap:nowrap;" class="fs-switch">
+            @foreach ($imagens as $index => $path)
+                @if($detalhes->id == $path->chave)
+                    <a class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" href="#{{asset($path->path)}}-fs" onclick="document.getElementById('carrossel-content').focus()"></a>
+                @endif
+            @endforeach
+        </div>
     </div>
 
     <div id="pagina-layout" class="background-blur">
@@ -54,18 +74,8 @@
                     </div>
 
                     <div id="carrossel-container">
-                        <!-- <button onclick="prevImage()" class="carrossel-btn" id="prev-btn">&lt</button> -->
 
-                        <!-- <div id="carrossel-content">
-                            @foreach ($imagens as $index => $path)
-                                @if($detalhes->id == $path->chave)
-                                    <div class="carrossel-item unselected" style="background-image: url('{{asset($path->path)}}')" onclick="img_fullscreen('{{asset($path->path)}}')">
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div> -->
-
-                        <div id="carrossel-content" class="slider-wrapper" draggable="false">
+                        <div id="carrossel-content" class="slider-wrapper" draggable="false" onclick="abrir_fullscreen()">
                             <div class="slider" draggable="false">
 
                                 @foreach ($imagens as $index => $path)
@@ -76,16 +86,11 @@
                             </div>
                         </div>
 
-                        <!-- <button onclick="nextImage()" class="carrossel-btn" id="next-btn">&gt</button> -->
-
                     </div>
                     <div id="carrossel-galeria">
                         @foreach ($imagens as $index => $path)
                             @if($detalhes->id == $path->chave)
-                                <!-- <div class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" onclick="selectIndex(Array.from(document.getElementById('carrossel-galeria').children).indexOf(this))"></div> -->
                                 <a class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" href="#{{asset($path->path)}}" onclick="document.getElementById('carrossel-content').focus()"></a>
-                                
-
                             @endif
                         @endforeach
                     </div>
@@ -485,7 +490,6 @@
 <script>
     const imoveis_title_list = document.getElementsByClassName('semelhante-produto-titulo')
 
-    console.log(widthLowerThan(600))
     if (!widthLowerThan(600)) {
         lim = 5
     }
@@ -513,6 +517,5 @@
 
     }
 </script>
-
 
 @endsection

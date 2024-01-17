@@ -1,9 +1,10 @@
-function img_fullscreen(url) {
+function abrir_fullscreen() {
     let fullframe = document.getElementById('fullscreen')
-    let img_fullscreen = document.getElementById('img-fullscreen')
-
-    fullframe.style.display = 'flex'
-    img_fullscreen.src = url
+    const fselements = document.getElementsByClassName('fs-switch')
+    fselements[0].style.display = 'block'
+    fselements[1].style.display = 'block'
+    fselements[2].style.display = 'flex'
+    // fullframe.style.display = 'flex'
 }
 
 addEventListener('keydown', function(e) {

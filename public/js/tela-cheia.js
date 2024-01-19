@@ -5,6 +5,7 @@ function abrir_fullscreen() {
     fselements[1].style.display = 'block'
     fselements[2].style.display = 'flex'
     // fullframe.style.display = 'flex'
+    document.body.style.overflow = 'hidden'
 }
 
 addEventListener('keydown', function(e) {
@@ -17,5 +18,5 @@ function fechar_fullscreen() {
     let fullframe = document.getElementById('fullscreen')
     
     fullframe.style.display = 'none'
-
+    document.body.style.overflow = 'auto'
 }

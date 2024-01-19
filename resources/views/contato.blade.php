@@ -17,12 +17,14 @@
             <input type="text" name="nome" id="" class="contato-input" placeholder="nome" required>
             <input type="text" name="telefone" id="" class="contato-input" placeholder="telefone" required>
             <input type="email" name="email" id="" class="contato-input" placeholder="email">
-
+            
             <select name="motivo" id="" class="contato-motivo contato-input">
                 <option value="Compra" class="contato-option">Compra</option>
                 <option value="Venda" class="contato-option">Venda</option>
                 <option value="Anuncio" class="contato-option">Anuncio</option>
             </select>
+            
+            <input type="text" name="cod_imovel_form" id="" class="contato-input" placeholder="Código do imóvel" required>
 
             <textarea name="mensagem" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="mensagem" required></textarea>
             <button type="submit" class="contato-enviar">Enviar</button>

@@ -75,16 +75,18 @@
     
                 <thead class="table-header" cellspacing="0">
                     <th class="table-title"></th>
+                    <th class="table-title">Código do Imóvel</th>
                     <th class="table-title">Nome</th>
                     <th class="table-title">Telefone</th>
                     <th class="table-title">Email</th>
-                    <th class="table-title">Motivo do contato</th>
+                    <th class="table-title">Motivo do Contato</th>
                     <th class="table-title">Resolvido</th>
                 </thead>
     
                 @foreach ($contatos as $cont)
                     <tr class="table-body solved-{{ $cont->resolvido }}">
                         <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
+                        <td class="body-info divider-left information-{{$cont->id}}" >{{$cont->cod_imovel}}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{$cont->nome}}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>

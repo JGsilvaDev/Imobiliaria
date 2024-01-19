@@ -114,6 +114,7 @@ class masterController extends Controller
         $contatos->telefone = $request->telefone;
         $contatos->mensagem = $request->mensagem;
         $contatos->motivoContato = $request->motivo;
+        $contatos->cod_imovel = $request->cod_imovel_form;
         $contatos->resolvido = false;
 
         $contatos->save();

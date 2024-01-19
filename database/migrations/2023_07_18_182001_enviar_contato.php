@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('mensagem');
             $table->string('motivoContato')->nullable();
+            $table->string('cod_imovel')->nullable();
             $table->boolean('resolvido');
             $table->timestamps();
+
+            // $table->foreign('cod_imovel')->references('cod_imovel')->on('catalogos');
         });
     }
 

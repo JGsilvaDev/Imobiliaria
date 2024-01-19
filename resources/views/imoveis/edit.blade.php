@@ -56,6 +56,7 @@
                     <input name="telefone" type="text" id="interesse-contato-telefone" class="interesse-contato-input" placeholder="Telefone" required>
                     <input name="email" type="text" id="interesse-contato-email" class="interesse-contato-input" placeholder="Email">
                     <textarea name="mensagem" id="interesse-contato-texto" cols="30" rows="10" class="interesse-contato-input" placeholder="Texto (opcional)" required></textarea>
+                    <input type="hidden" name="cod_imovel_form" value="{{ $detalhes->cod_imovel }}">
                     <button type="submit" id="interesse-btn">Enviar</button>
                 </form>
             </div>

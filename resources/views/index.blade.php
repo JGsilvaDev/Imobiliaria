@@ -68,7 +68,7 @@
                     @if ($iten->vendidoAlugado == null)
                         <p id="dados-valor" class="num-format">R${{ $iten->valor}}</p>
                     @else
-                        <p id="dados-valor" class="num-format">{{ $iten->vendidoAlugado}}</p>
+                        <p id="dados-valor" class="num-format">INDISPONÍVEL</p>
                     @endif
                 </div>
 

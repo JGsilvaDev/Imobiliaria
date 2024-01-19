@@ -27,7 +27,8 @@
     border-radius: 5px;
 }
 .cliente-btn {
-    background-color: rgb(206, 206, 206);
+    background-color: #B77922;
+    color: white;
 }
 
 #tab-buttons {
@@ -64,19 +65,17 @@
 
 #client-table{
     text-align: center;
-    border: solid 1px black;
     margin: auto;
 }
 
 #client-table th {
-    background-color: gray;
+    background-color: #B77922;
     color: white;
 }
 
 #client-table tr:nth-child(even) {
     background-color:rgb(228, 228, 228);
 }
-
 
 #client-table td,
 #client-table th {

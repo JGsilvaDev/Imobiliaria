@@ -26,14 +26,14 @@ class adminController extends Controller
             if($dadosUsuario->id_permissao == 2){
                 if($search){
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
                                 ->where('id_cliente', '=', $id_cliente)
                                 ->where('titulo', 'like','%'. $search.'%')
                                 ->get();
 
                 }else{
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
                                 ->where('id_cliente', '=', $id_cliente)
                                 ->get();
                 }
@@ -43,7 +43,7 @@ class adminController extends Controller
                     $imagem->chave = 0;
 
                 }else{
-                    $imagem = DB::table('imagens_principais')
+                    $imagem = DB::table('imagens_principais', 'cod_imovel')
                                 ->select('chave','path')
                                 ->get();
                 }
@@ -51,12 +51,12 @@ class adminController extends Controller
             }else{
                 if($search){
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
                                 ->where('titulo', 'like','%'. $search .'%')
                                 ->get();
                 }else{
                     $itens = DB::table('catalogos')
-                                    ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado')
+                                    ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
                                     ->get();
                 }
 

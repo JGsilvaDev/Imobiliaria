@@ -63,6 +63,7 @@
                         @endif
 
                         <section id="informacoes" class="produto-item-flex">
+                            <p id="imovel-titulo" style="color: gray; margin-bottom: 7px;">{{ $item->cod_imovel }}</p>
                             <p id="imovel-titulo">{{ $item->titulo }}</p>
                             <p id="imovel-descricao" class="imovel-descricao">{{ $item->descricao }}</p>
                             <p id="imovel-valor">R$ <span class="num-format">{{ $item->valor }}</span></p>

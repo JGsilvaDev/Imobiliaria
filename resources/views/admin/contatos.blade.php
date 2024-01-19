@@ -121,9 +121,6 @@
 
     </div>
 
-    <div id="admin-footer">
-        <div class="img_footer" style="background-image: url({{ asset('img/logo.png') }})"></div>
-    </div>
 <script>
     //carrega as informações e então abre o painel
     function mostrarInfo(event) {

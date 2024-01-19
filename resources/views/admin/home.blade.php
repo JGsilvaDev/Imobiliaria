@@ -110,9 +110,6 @@
         </div>
 @endif
 
-<div id="admin-footer">
-    <div class="img_footer" style="background-image: url({{ asset('img/logo.png') }})"></div>
-</div>
 
 {{-- <div id="conteudo">
     <p>{{ $item->id }}</p>

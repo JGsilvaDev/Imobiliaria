@@ -41,7 +41,7 @@ class masterController extends Controller
 
             $imoveis = DB::table('catalogos')
                 ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
-                ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao', 'catalogos.qtdBanheiros', 'catalogos.qtdVagas', 'catalogos.qtdQuartos')
+                ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos')
                 ->where('produtos.id', '=', $request->infoPesquisa)
                 ->get();
 
@@ -59,7 +59,7 @@ class masterController extends Controller
 
             $imoveis = DB::table('catalogos')
                 ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
-                ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao', 'catalogos.qtdBanheiros', 'catalogos.qtdVagas', 'catalogos.qtdQuartos')
+                ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos')
                 ->where('catalogos.titulo', 'like', '%' . $request->infoPesquisa . '%')
                 ->get();
 

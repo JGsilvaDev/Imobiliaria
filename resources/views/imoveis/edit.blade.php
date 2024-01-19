@@ -98,7 +98,7 @@
                     <div id="imovel-dados" class="flex-row">
                         <h1>{{ $detalhes->tp_contrato }}</h1>
                         @if($detalhes->vendidoAlugado != null)
-                            <h1 id="valor" class="num-format">VENDIDO</h1>
+                            <h1 id="valor" class="num-format">INDISPONÍVEL</h1>
                         @else
                             <h1 id="valor" class="num-format">R${{ $detalhes->valor }}</h1>
                         @endif

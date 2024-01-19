@@ -215,6 +215,9 @@
                 <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="portaoEletronico">Portão eletronico</label>
             </div>
             <div class="check-item">
+                <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletronico</label>
+            </div>
+            <div class="check-item">
                 <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
             </div>
         </div>
@@ -423,6 +426,9 @@
             </div>
             <div class="check-item">
                 <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="portaoEletronico">Portão eletronico</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletronico</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>

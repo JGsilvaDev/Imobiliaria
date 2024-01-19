@@ -213,6 +213,9 @@
                             <input type="checkbox" name="portaoEletronico" id="portaoEletronico" @if ($item->portaoEletronico == 1) checked @endif><label>Portão eletronico</label>
                         </div>
                         <div class="check-item">
+                            <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico" @if ($item->porteiroEletronico == 1) checked @endif><label>Portão eletronico</label>
+                        </div>
+                        <div class="check-item">
                             <input type="checkbox" name="quintal" id="quintal" @if ($item->quintal == 1) checked @endif><label>Quintal</label>
                         </div>
                     </div>

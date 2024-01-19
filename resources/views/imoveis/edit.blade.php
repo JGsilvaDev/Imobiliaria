@@ -414,7 +414,7 @@
                             @endif
 
                             @if($detalhes->entradaServico == 1 or $detalhes->escritorio == 1 or $detalhes->jardim == 1 or $detalhes->moveisPlanejados == 1
-                                or $detalhes->portaoEletronico == 1 or $detalhes->quintal == 1)
+                                or $detalhes->portaoEletronico == 1 or $detalhes->quintal == 1 or $detalhes->porteiroEletronico == 1)
                                 <h3>Destaque</h3>
                                 <div class="area-container">
                                     @if($detalhes->entradaServico == 1)
@@ -444,6 +444,12 @@
                                     @if($detalhes->portaoEletronico == 1)
                                         <div class="area-content">
                                             <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portão eletronico</p>
+                                        </div>
+                                    @endif
+
+                                    @if($detalhes->porteiroEletronico == 1)
+                                        <div class="area-content">
+                                            <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Porteiro eletronico</p>
                                         </div>
                                     @endif
 

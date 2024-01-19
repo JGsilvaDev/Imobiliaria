@@ -124,7 +124,11 @@
 
                         <div class="area-container">
                             <div class="area-content">
-                                <p id="area">Área total: {{ $detalhes->area }} m²</p>
+                                @if ($detalhes->id_tp_produto == 2)
+                                    <p id="area">Área total: {{ $detalhes->area }} m²</p>
+                                @else ($detalhes->id_tp_produto == 3)
+                                    <p id="area">Área construída: {{ $detalhes->area }} m²</p>
+                                @endif
                             </div>
 
                             @if ($detalhes->areaUtil != 0)

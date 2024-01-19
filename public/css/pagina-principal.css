@@ -227,9 +227,6 @@ backdrop-filter: blur(5.5px);
     }
   }
 
-
-@media (max-width: 1130px) {
-}
 /* Caso a tela em questão seja menor que 600px */
 @media (max-width: 600px) {
     .filtro-btn {
@@ -246,7 +243,7 @@ backdrop-filter: blur(5.5px);
     
 
     #ajuda-itens {
-        flex-direction: column;
+        /* flex-direction: column; */
     }
     #form-search {
         width: 100vw;

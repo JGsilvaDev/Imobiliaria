@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('telefone');
             $table->string('tp_cliente');
+            $table->string('cod_imovel');
             $table->unsignedBigInteger('idImovel');
 
             $table->foreign('idImovel')->references('id')->on('catalogos');

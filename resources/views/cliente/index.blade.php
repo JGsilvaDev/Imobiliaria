@@ -53,7 +53,7 @@
                     <option value="proprietario">Proprietario</option>
                     <option value="cliente">Cliente</option>
                 </select>
-                <input type="number" name="idImovel" id="idImovel" placeholder="Insira o id do Imovel" class="cliente-input">
+                <input type="text" name="cod_imovel" id="idImovel" placeholder="Insira o código do Imovel" class="cliente-input">
 
                 <button type="submit" class="cliente-input cliente-btn">Cadastrar</button>
             </form>
@@ -68,7 +68,7 @@
                     <th class="table-title">Email</th>
                     <th class="table-title">Telefone</th>
                     <th class="table-title">Tipo Cliente</th>
-                    <th class="table-title">Id do Imovel</th>
+                    <th class="table-title">Código do Imovel</th>
                 </thead>
 
                 @foreach ($clientes as $cli)
@@ -77,7 +77,7 @@
                         <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->email }}</td>
                         <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->telefone }}</td>
                         <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->tp_cliente }}</td>
-                        <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->idImovel }}</td>
+                        <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->cod_imovel }}</td>
                     </tr>
                 @endforeach
             </table>

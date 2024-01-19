@@ -28,12 +28,9 @@ class clienteController extends Controller
         $valor = session('login');
 
         if($valor){
-
-            $idImovel = $request->idImovel;
-
             $imoveis = DB::table('catalogos')
-                    ->select('id')
-                    ->where('id', '=', $idImovel)
+                    ->select('cod_imovel', 'id')
+                    ->where('cod_imovel', '=', $request->cod_imovel)
                     ->first();
 
             // dd($imoveis);
@@ -46,13 +43,14 @@ class clienteController extends Controller
                 $clientes->email = $request->email;
                 $clientes->telefone = $request->telefone;
                 $clientes->tp_cliente = $request->tp_cliente;
-                $clientes->idImovel = $request->idImovel;
+                $clientes->idImovel = $imoveis->id;
+                $clientes->cod_imovel = $request->cod_imovel;
 
                 $clientes->save();
 
                 Session::flash('success', 'Cliente cadastrado com sucesso');
             }else{
-                Session::flash('warning', 'O imovel com o id '.$idImovel.' não existe');
+                Session::flash('warning', 'O imovel com o código '.$request->cod_imovel.' não existe');
             }
 
             return redirect()->back();

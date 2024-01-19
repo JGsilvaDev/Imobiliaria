@@ -122,6 +122,16 @@ class adminController extends Controller
 
             $catalogo = new Catalogo();
 
+            if($request->id_produto == 1) {
+                $catalogo->cod_imovel = 'TE001'.substr(strval(hexdec(uniqid())),9,17);
+            }
+            else if($request->id_produto == 2) {
+                $catalogo->cod_imovel = 'CA001'.substr(strval(hexdec(uniqid())),9,17);
+            }
+            else if($request->id_produto == 3) {
+                $catalogo->cod_imovel = 'AP001'.substr(strval(hexdec(uniqid())),9,17);
+            }
+
             $catalogo->id_tp_produto = $request->id_produto;
             $catalogo->id_cliente = $id_cliente;
             $catalogo->titulo = $request->titulo;

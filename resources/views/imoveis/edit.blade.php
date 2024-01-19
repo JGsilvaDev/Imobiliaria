@@ -66,10 +66,10 @@
             <div id="produto-layout">
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
                     <div id="title-imovel">
-                        <h1 id="imovel-titulo-label">{{ $detalhes->titulo }} -  {{ $detalhes->cidade }}</h1>
+                        <h1 id="imovel-titulo-label">{{ $detalhes->titulo }}</h1>
                         <div id="imovel-id" style="margin-left: 10px;">
                             <span class="material-symbols-outlined">Badge</span>
-                            <h3>{{ $detalhes->id}}</h3>
+                            <h3>{{ $detalhes->cod_imovel}}</h3>
                         </div>
                     </div>
 

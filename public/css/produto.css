@@ -473,6 +473,14 @@ body {
 
 }
 
+#icone-tela-cheia {
+    color: white;
+    position:relative;
+    top: 0;
+    left: 0;
+    font-size: 32px !important;
+}
+
 @media (max-width: 1250px){
     #fechar-icone {
         display: block;

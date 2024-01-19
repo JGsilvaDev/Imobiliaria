@@ -74,7 +74,7 @@
                     </div>
 
                     <div id="carrossel-container">
-
+                    <span class="material-symbols-outlined" id="icone-tela-cheia" onclick="abrir_fullscreen()">open_in_full</span>
                         <div id="carrossel-content" class="slider-wrapper" draggable="false" onclick="abrir_fullscreen()">
                             <div class="slider" draggable="false">
 

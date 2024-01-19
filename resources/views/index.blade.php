@@ -38,7 +38,7 @@
 
             <form action="" method="post" id="form-search">
                 @csrf
-                <input type="text" name="infoPesquisa" id="filtro-input" placeholder="Pesquisa por título">
+                <input type="text" name="infoPesquisa" id="filtro-input" placeholder="Pesquisa">
             </form>
         </div>
 </section>

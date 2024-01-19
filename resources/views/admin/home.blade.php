@@ -66,7 +66,7 @@
                             <p id="imovel-titulo" style="color: gray; margin-bottom: 7px;">{{ $item->cod_imovel }}</p>
                             <p id="imovel-titulo">{{ $item->titulo }}</p>
                             <p id="imovel-descricao" class="imovel-descricao">{{ $item->descricao }}</p>
-                            <p id="imovel-valor">R$ <span class="num-format">{{ $item->valor }}</span></p>
+                            <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valor }}</span></p>
                         </section>
 
                         <section id="imovel-botoes" class="produto-item-flex">
@@ -147,7 +147,6 @@
 
 <script>
     const imoveis_desc_list = document.getElementsByClassName('imovel-descricao')
-    console.log(widthLowerThan(600))
     if (!widthLowerThan(600)) {
         lim = 10
     }
@@ -175,4 +174,8 @@
 
     }
 
+</script>
+
+<script>
+    trocaPonto()
 </script>

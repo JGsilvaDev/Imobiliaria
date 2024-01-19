@@ -2,16 +2,16 @@ function formatarNumero(numero) {
     return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
 
+function trocaPonto() {
+    const trocaveis = document.getElementsByClassName('troca-ponto')
 
-
-// function formatarInput() {
-//     const formataveis = document.getElementsByClassName("input-format") 
-//     for(item of formataveis) {
-//         // item.value = item.value.replace(/,/g, '');
-//     }
-
-//     return true
-// }
+    for (item of trocaveis) {
+        item.innerHTML = item.innerHTML.replace('.',',')
+        if (!item.innerHTML.includes(',')) {
+            item.innerHTML += ',00'
+        }
+    }
+}
 
 function formatarFront(classname) {
     const formataveis = document.getElementsByClassName(classname) 

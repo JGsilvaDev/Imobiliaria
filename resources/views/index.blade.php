@@ -66,9 +66,9 @@
                 <div id="item-dados">
                     <p id="dados-area">{{ $iten->area }}m²</p>
                     @if ($iten->vendidoAlugado == null)
-                        <p id="dados-valor" class="num-format">R${{ $iten->valor}}</p>
+                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valor}}</p>
                     @else
-                        <p id="dados-valor" class="num-format">INDISPONÍVEL</p>
+                        <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                     @endif
                 </div>
 
@@ -163,6 +163,8 @@
 
 </script>
 
-
+<script>
+    trocaPonto()
+</script>
 
 @endsection

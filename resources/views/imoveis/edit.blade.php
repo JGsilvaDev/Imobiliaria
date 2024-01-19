@@ -101,7 +101,7 @@
                         @if($detalhes->vendidoAlugado != null)
                             <h1 id="valor" class="num-format">INDISPONÍVEL</h1>
                         @else
-                            <h1 id="valor" class="num-format">R${{ $detalhes->valor }}</h1>
+                            <h1 id="valor" class="num-format troca-ponto">R${{ $detalhes->valor }}</h1>
                         @endif
                     </div>
                 </section>
@@ -159,13 +159,13 @@
                             <div class="area-container">
                                 @if ($detalhes->valorCondominio != null)
                                 <div class="area-content">
-                                    <p>Condomínio: R$<span class="num-format">{{ $detalhes->valorCondominio }}</span></p>
+                                    <p>Condomínio: R$<span class="num-format troca-ponto">{{ $detalhes->valorCondominio }}</span></p>
                                 </div>
                                 @endif
 
                                 @if ($detalhes->iptuMensal != null)
                                 <div class="area-content">
-                                    <p>IPTU mensal: R$<span class="num-format">{{ $detalhes->iptuMensal }}</span></p>
+                                    <p>IPTU mensal: R$<span class="num-format troca-ponto">{{ $detalhes->iptuMensal }}</span></p>
                                 </div>
                                 @endif
                             </div>
@@ -481,7 +481,7 @@
                                         <p class="semelhante-produto-localidade">{{ $sem->cidade }}</p>
                                         <div id="semelhante-produto-info" class="flex-row">
                                             <p class="semelhante-produto-area">{{ $sem->area }}m²</p>
-                                            <p class="semelhante-produto-vagas">R${{ $sem->valor }},00</p>
+                                            <p class="semelhante-produto-vagas troca-ponto">R${{ $sem->valor }}</p>
                                         </div>
                                         <form action="/imoveis/{{ $sem->id }}" method="post">
                                             @csrf
@@ -528,6 +528,10 @@
         }
 
     }
+</script>
+
+<script>
+    trocaPonto()
 </script>
 
 @endsection

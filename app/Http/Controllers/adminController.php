@@ -182,6 +182,7 @@ class adminController extends Controller
             $catalogo->portaoEletronico = ($request->portaoEletronico) ? true : false;
             $catalogo->quintal = ($request->quintal) ? true : false;
             $catalogo->cozinhaConjugada = ($request->cozinhaConjugada) ? true : false;
+            $catalogo->porteiroEletronico = ($request->porteiroEletronico) ? true : false;
 
             if($request->id_produto == 2 ){
                 $catalogo->tp_contrato = $request->tp_contrato;

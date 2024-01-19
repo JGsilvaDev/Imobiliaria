@@ -70,6 +70,7 @@ return new class extends Migration
             $table->boolean('portaoEletronico');
             $table->boolean('quintal');
             $table->boolean('cozinhaConjugada');
+            $table->boolean('porteiroEletronico');
             $table->string('vendidoAlugado')->nullable();
             $table->timestamps();
 

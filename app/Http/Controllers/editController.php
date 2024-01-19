@@ -120,6 +120,7 @@ class editController extends Controller
         $catalogo->portaoEletronico = ($request->portaoEletronico) ? true : false;
         $catalogo->quintal = ($request->quintal) ? true : false;
         $catalogo->cozinhaConjugada = ($request->cozinhaConjugada) ? true : false;
+        $catalogo->porteiroEletronico = ($request->porteiroEletronico) ? true : false;
 
         $catalogo->save();
 

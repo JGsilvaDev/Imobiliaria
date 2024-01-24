@@ -11,7 +11,6 @@
     <script src="{{ asset('js/tela-cheia.js') }}"></script>
     <script src="{{ asset('js/numformat.js') }}"></script>
 
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -33,7 +32,7 @@
                 @endforeach
             </div>
         </div>
-        <div id="carrossel-galeria" style="max-width: 80%; overflow-x: scroll; flex-wrap:nowrap;" class="fs-switch">
+        <div id="carrossel-galeria" style="max-width: 80%; overflow-x: scroll; flex-wrap:nowrap;">
             @foreach ($imagens as $index => $path)
                 @if($detalhes->id == $path->chave)
                     <a class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" href="#{{asset($path->path)}}-fs" onclick="document.getElementById('carrossel-content').focus()"></a>
@@ -43,7 +42,6 @@
     </div>
 
     <div id="pagina-layout" class="background-blur">
-
         <section id="interesse" class="margin-spaced padding-spaced">
             <div id="fechar-icone-container" onclick="changeVisibility()">
                 <img src="{{ asset('img/fechar-icone.svg') }}" alt="" id="fechar-icone">
@@ -61,9 +59,7 @@
                 </form>
             </div>
         </section>
-        <!-- <div class="produto-info-box">
 
-            </div> -->
             <div id="produto-layout">
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
                     <div id="title-imovel">
@@ -75,26 +71,24 @@
                     </div>
 
                     <div id="carrossel-container">
-                    <span class="material-symbols-outlined" id="icone-tela-cheia" onclick="abrir_fullscreen()">open_in_full</span>
-                        <div id="carrossel-content" class="slider-wrapper" draggable="false" onclick="abrir_fullscreen()">
+                        <div id="carrossel-content" class="slider-wrapper principal-img" draggable="false">
                             <div class="slider" draggable="false">
-
-                                @foreach ($imagens as $index => $path)
-                                    @if($detalhes->id == $path->chave)
-                                        <img src="{{asset($path->path)}}" alt="" id="{{asset($path->path)}}" draggable="false">
-                                    @endif
-                                @endforeach
+                                <img src="{{asset($path->path)}}" alt="" id="{{asset($path->path)}}" draggable="false">
                             </div>
                         </div>
 
+                        <img src="{{ asset('img/seta-esquerda.svg') }}" alt="" class="seta-esquerda">
+                        <img src="{{ asset('img/seta-direita.svg') }}" alt="" class="seta-direita">
+                        <img src="{{ asset('img/expand.svg') }}" alt="" class="expand">
+
                     </div>
-                    <div id="carrossel-galeria">
-                        @foreach ($imagens as $index => $path)
-                            @if($detalhes->id == $path->chave)
-                                <a class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" href="#{{asset($path->path)}}" onclick="document.getElementById('carrossel-content').focus()"></a>
-                            @endif
-                        @endforeach
-                    </div>
+                        <div id="carrossel-galeria" class="slider-carrossel">
+                            @foreach ($imagens as $index => $path)
+                                @if($detalhes->id == $path->chave)
+                                    <a class="galeria-item" style="background-image: url('{{asset($path->path)}}')" style="width:200px; height:100px" href="#{{asset($path->path)}}" onclick="document.getElementById('carrossel-content').focus()"></a>
+                                @endif
+                            @endforeach
+                        </div>
 
                     <div id="imovel-dados" class="flex-row">
                         <h1>{{ $detalhes->tp_contrato }}</h1>
@@ -126,27 +120,27 @@
                         <div class="area-container">
                             <div class="area-content">
                                 @if ($detalhes->id_tp_produto == 2)
-                                    <p id="area">Área total: {{ $detalhes->area }} m²</p>
+                                    <p id="area"><span>Área total:</span> {{ $detalhes->area }} m²</p>
                                 @else ($detalhes->id_tp_produto == 3)
-                                    <p id="area">Área construída: {{ $detalhes->area }} m²</p>
+                                    <p id="area"><span>Área construída:</span> {{ $detalhes->area }} m²</p>
                                 @endif
                             </div>
 
                             @if ($detalhes->areaUtil != 0)
                                 <div class="area-content">
-                                    <p id="area">Área útil: {{ $detalhes->areaUtil }} m²</p>
+                                    <p id="area"><span>Área útil:</span> {{ $detalhes->areaUtil }} m²</p>
                                 </div>
                             @endif
 
                             @if ($detalhes->areaTerreno != '')
                                 <div class="area-content">
-                                    <p id="area">Área do terreno: {{ $detalhes->areaTerreno }} m²</p>
+                                    <p id="area"><span>Área do terreno:</span> {{ $detalhes->areaTerreno }} m²</p>
                                 </div>
                             @endif
 
                             @if ($detalhes->descricao != 'Terreno' and $detalhes->areaConstruida != 0)
                                 <div class="area-content">
-                                    <p id="area">Área construída: {{ $detalhes->areaConstruida }} m²</p>
+                                    <p id="area"><span>Área construída:</span> {{ $detalhes->areaConstruida }} m²</p>
                                 </div>
                             @endif
                         </div>
@@ -159,13 +153,13 @@
                             <div class="area-container">
                                 @if ($detalhes->valorCondominio != null)
                                 <div class="area-content">
-                                    <p>Condomínio: R$<span class="num-format troca-ponto">{{ $detalhes->valorCondominio }}</span></p>
+                                    <p>Condomínio:<span class="num-format troca-ponto">R$ {{ $detalhes->valorCondominio }}</span></p>
                                 </div>
                                 @endif
 
                                 @if ($detalhes->iptuMensal != null)
                                 <div class="area-content">
-                                    <p>IPTU mensal: R$<span class="num-format troca-ponto">{{ $detalhes->iptuMensal }}</span></p>
+                                    <p>IPTU mensal:<span class="num-format troca-ponto">R${{ $detalhes->iptuMensal }}</span></p>
                                 </div>
                                 @endif
                             </div>
@@ -209,8 +203,6 @@
                             </div>
                         </div>
                     @endif
-
-
                 </section>
 
                 @if ($detalhes->descricao != 'Terreno')
@@ -498,6 +490,7 @@
     </div>
 
     <script src="{{ asset('js/caroselDetalhe.js') }}"></script>
+    <script src="{{ asset('js/swiper.js') }}"></script>
 
 <script>
     const imoveis_title_list = document.getElementsByClassName('semelhante-produto-titulo')

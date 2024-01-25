@@ -72,7 +72,87 @@ return new class extends Migration
             $table->boolean('quintal');
             $table->boolean('cozinhaConjugada');
             $table->boolean('porteiroEletronico');
-            $table->string('vendidoAlugado')->nullable();
+            $table->boolean('tvCabo');
+            $table->boolean('arCondicionado');
+            $table->boolean('alarme');
+            $table->boolean('aguaSolar');
+            $table->boolean('mobiliado');
+            $table->boolean('depEmpregados');
+            $table->boolean('lareira');
+            $table->boolean('caseiro');
+            $table->boolean('edicula');
+            $table->boolean('piscina');
+            $table->boolean('piscinaCondominio');
+            $table->boolean('terraco');
+            $table->boolean('hidromassagem');
+            $table->boolean('jardimInverno');
+            $table->boolean('pisoAquecido');
+            $table->boolean('pisoArdosia');
+            $table->boolean('pisoBioquete');
+            $table->boolean('pisoCarpete');
+            $table->boolean('pisoCeramica');
+            $table->boolean('pisoCimentoQueimado');
+            $table->boolean('pisoEmborrachado');
+            $table->boolean('pisoTacoMadeira');
+            $table->boolean('contraPiso');
+            $table->boolean('pisoTabua');            
+            $table->boolean('granito');
+            $table->boolean('marmore');
+            $table->boolean('armarioCozinha');
+            $table->boolean('armarioCorredor');
+            $table->boolean('armarioCloset');
+            $table->boolean('armarioQuarto');
+            $table->boolean('armarioBanheiro');
+            $table->boolean('armarioSala');
+            $table->boolean('armarioEscritorio');
+            $table->boolean('armarioDepEmp');
+            $table->boolean('armarioAreaServico');
+            
+            $table->text('extraInfo', 3000)->nullable();
+
+            $table->boolean('salaCinema');
+            $table->boolean('adega');
+            $table->boolean('sauna');
+            $table->boolean('campFut');
+            $table->boolean('salaJogos');
+            $table->boolean('salaFestas');
+            $table->boolean('salaGinastica');
+            $table->boolean('estacionamentoVisita');
+            $table->text('vendidoAlugado')->nullable();
+            
+            $table->integer('qtdSalas')->nullable();
+            $table->integer('qtdDorms')->nullable();
+
+
+            // Opções do terreno
+                        
+            $table->unsignedFloat('metragemFrente')->nullable();
+            $table->unsignedFloat('metragemFundo')->nullable();
+            $table->unsignedFloat('metragemDireita')->nullable();
+            $table->unsignedFloat('metragemEsquerda')->nullable();
+            $table->text('posTerreno',500);
+            $table->text('formaTerreno',500);
+            $table->text('vegetacao',500);
+            $table->text('protecao',500);
+            $table->text('topografia',500);
+            $table->boolean('acessoEnergia');
+            $table->boolean('escola');
+            $table->boolean('comercio');
+            
+            // Opções do comércio
+            
+            $table->string('tipoComercio',500);
+            $table->boolean('elevador');
+            $table->boolean('copa');
+            $table->boolean('recepcao');
+            $table->boolean('mesanino');
+            $table->boolean('luminarias');
+            $table->boolean('acessoDeficiente');
+            $table->boolean('geradorEnergia');
+            $table->boolean('telefonia');
+            $table->boolean('rede');
+
+
             $table->timestamps();
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');

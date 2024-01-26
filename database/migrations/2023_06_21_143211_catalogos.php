@@ -107,9 +107,6 @@ return new class extends Migration
             $table->boolean('armarioEscritorio');
             $table->boolean('armarioDepEmp');
             $table->boolean('armarioAreaServico');
-            
-            $table->text('extraInfo', 3000)->nullable();
-
             $table->boolean('salaCinema');
             $table->boolean('adega');
             $table->boolean('sauna');
@@ -118,10 +115,13 @@ return new class extends Migration
             $table->boolean('salaFestas');
             $table->boolean('salaGinastica');
             $table->boolean('estacionamentoVisita');
-            $table->text('vendidoAlugado')->nullable();
-            
+
+            $table->text('extraInfo', 3000)->nullable();
             $table->integer('qtdSalas')->nullable();
             $table->integer('qtdDorms')->nullable();
+            
+            $table->text('vendidoAlugado')->nullable();
+            
 
 
             // Opções do terreno

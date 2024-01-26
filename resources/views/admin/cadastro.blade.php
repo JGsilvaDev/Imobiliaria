@@ -377,9 +377,6 @@
             <div class="check-item">
                 <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita"><label for="estacionamentoVisita">Estacionamento para Visita</label>
             </div>
-
-
-
         </div>
 
         <hr class="cadastro-divisor">

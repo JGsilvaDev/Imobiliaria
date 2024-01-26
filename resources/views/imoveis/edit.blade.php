@@ -101,10 +101,10 @@
                 </section>
 
                 <section id="descricao" >
-                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                    <!-- <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Tipo de contrato</h2>
                         <p id="desc-texto">{{ $detalhes->tp_contrato }}</p>
-                    </div>
+                    </div> -->
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Descrição do Imóvel</h2>
                         <p id="desc-texto" class="alinhado">{{ $detalhes->desc }}</p>
@@ -120,9 +120,13 @@
                         <div class="area-container">
                             <div class="area-content">
                                 @if ($detalhes->id_tp_produto == 2)
-                                    <p id="area"><span>Área total:</span> {{ $detalhes->area }} m²</p>
+                                    @if($detalhes->area != 0)
+                                        <p id="area"><span>Área total:</span> {{ $detalhes->area }} m²</p>
+                                    @endif
                                 @else ($detalhes->id_tp_produto == 3)
-                                    <p id="area"><span>Área construída:</span> {{ $detalhes->area }} m²</p>
+                                    @if($detalhes->area != 0)
+                                        <p id="area"><span>Área construída:</span> {{ $detalhes->area }} m²</p>
+                                    @endif
                                 @endif
                             </div>
 

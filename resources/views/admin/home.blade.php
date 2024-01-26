@@ -82,7 +82,7 @@
 
                                 @if($item->vendidoAlugado != null)
                                     <input type="text" name="type" value="1" style="display: none">
-                                    <button type="submit" id="disable-vender" class="imovel-btn disable-venda">{{ $item->vendidoAlugado }}</button>
+                                    <button type="submit" id="disable-vender" class="imovel-btn disable-venda">INDISPONÍVEL</button>
                                 @else
                                     <button type="submit" id="imovel-vender" class="imovel-btn">Vender/alugar</button>
                                 @endif

@@ -40,20 +40,26 @@
         <p for="" id="desc-label" class="add-label">Descrição</p>
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
-        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">1</span></p>
-        <input type="range" name="qtd_banheiros" min="0" max="20" value="1" id="sliderBanheiroCasa" class="slider" required>
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiro">1</span></p>
+        <input type="range" name="qtd_banheiros" min="0" max="20" value="1" id="sliderBanheiro" class="slider" required>
 
-        <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites: <span id="sliderValueSuiteCasa">1</span></p>
-        <input type="range" name="qtd_suites" min="0" max="20" value="1" id="sliderSuiteCasa" class="slider" required>
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites: <span id="sliderValueSuite">1</span></p>
+        <input type="range" name="qtd_suites" min="0" max="20" value="1" id="sliderSuite" class="slider" required>
 
-        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">1</span></p>
-        <input type="range" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartosCasa" class="slider" required>
+        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartos">1</span></p>
+        <input type="range" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="slider" required>
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura: <span id="sliderValueVagasCasa">1</span></p>
-        <input type="range" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagasCasa" class="slider" required>
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura: <span id="sliderValueVagas">1</span></p>
+        <input type="range" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagas" class="slider" required>
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasNaoCobertoCasa">1</span></p>
-        <input type="range" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCobertoCasa" class="slider" required>
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasNaoCoberto">1</span></p>
+        <input type="range" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCoberto" class="slider" required>
+
+        <p id="qtd-salas-label" class="slider-label">Quantidade de Salas: <span id="sliderValueSalas">1</span></p>
+        <input type="range" name="qtdSalas" min="0" max="20" value="1" id="sliderSalas" class="slider" required>
+
+        <p id="qtd-dorms-label" class="slider-label">Quantidade de Dormitórios: <span id="sliderValueDorms">1</span></p>
+        <input type="range" name="qtdDorms" min="0" max="20" value="1" id="sliderDorms" class="slider" required>
 
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" class="add-input" required>

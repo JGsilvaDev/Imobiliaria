@@ -105,6 +105,13 @@
                         <h2 class="detalhes-titulo">Tipo de contrato</h2>
                         <p id="desc-texto">{{ $detalhes->tp_contrato }}</p>
                     </div> -->
+                    
+                    @if($detalhes->id_tp_produto == 5)
+                        <div id="descricao-container" class="margin-spaced padding-spaced">
+                            <h2 class="detalhes-titulo">Tipo de Comércio</h2>
+                            <p id="desc-texto" class="alinhado">{{ $detalhes->tipoComercio }}</p>
+                        </div>
+                    @endif
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Descrição do Imóvel</h2>
                         <p id="desc-texto" class="alinhado">{{ $detalhes->desc }}</p>
@@ -147,6 +154,55 @@
                                     <p id="area"><span>Área construída:</span> {{ $detalhes->areaConstruida }} m²</p>
                                 </div>
                             @endif
+
+                            @if ($detalhes->descricao == 'Terreno')
+                                @if ($detalhes->metragemFrente != 0)
+                                    <div class="area-content">
+                                        <p id="area"><span>Metragem dianteira:</span> {{ $detalhes->metragemFrente }} m</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->metragemFundo != 0)
+                                    <div class="area-content">
+                                        <p id="area"><span>Metragem Lateral:</span> {{ $detalhes->metragemFundo }} m</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->metragemDireita != 0)
+                                    <div class="area-content">
+                                        <p id="area"><span>Metragem Direita:</span> {{ $detalhes->metragemDireita }} m</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->metragemEsquerda != 0)
+                                    <div class="area-content">
+                                        <p id="area"><span>Metragem Esquerda:</span> {{ $detalhes->metragemEsquerda }} m</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->posTerreno)
+                                    <div class="area-content">
+                                        <p id="area"><span>Posição do Terreno:</span> {{ $detalhes->posTerreno }}</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->formaTerreno)
+                                    <div class="area-content">
+                                        <p id="area"><span>Forma do terreno:</span> {{ $detalhes->formaTerreno }}</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->vegetacao)
+                                    <div class="area-content">
+                                        <p id="area"><span>Vegetação:</span> {{ $detalhes->vegetacao }}</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->protecao)
+                                    <div class="area-content">
+                                        <p id="area"><span>Proteção:</span> {{ $detalhes->protecao }}</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->topografia)
+                                    <div class="area-content">
+                                        <p id="area"><span>Topografia:</span> {{ $detalhes->topografia }}</p>
+                                    </div>
+                                @endif
+                            @endif
+
                         </div>
                     </div>
 
@@ -202,6 +258,18 @@
                                 @if ($detalhes->qtdSacadasCobertas != null)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdSacadasCobertas }} sacada(s)</p>
+                                    </div>
+                                @endif
+
+                                @if ($detalhes->qtdSalas != null)
+                                    <div class="area-content">
+                                        <p id="quartos">{{ $detalhes->qtdSalas }} sala(s)</p>
+                                    </div>
+                                @endif
+
+                                @if ($detalhes->qtdDorms != null)
+                                    <div class="area-content">
+                                        <p id="quartos">{{ $detalhes->qtdDorms }} dormitório(s)</p>
                                     </div>
                                 @endif
                             </div>

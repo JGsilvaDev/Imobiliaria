@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const sliders = [document.getElementById('sliderBanheiroCasa'), document.getElementById('sliderQuartosCasa'), document.getElementById('sliderVagasCasa'), document.getElementById('sliderVagasNaoCobertoCasa'), document.getElementById('sliderSacadasCasa'), document.getElementById('sliderSuiteCasa'), document.getElementById('sliderBanheirosAp'), document.getElementById('sliderQuartosAp'), document.getElementById('sliderVagasAp'), document.getElementById('sliderVagasNaoCobertoAp'), document.getElementById('sliderSuiteAp')]
+    const sliders = [document.getElementById('sliderBanheiro'), document.getElementById('sliderQuartos'), document.getElementById('sliderVagas'), document.getElementById('sliderVagasNaoCoberto'), document.getElementById('sliderSacadas'), document.getElementById('sliderSuite'), document.getElementById('sliderBanheirosAp'), document.getElementById('sliderQuartosAp'), document.getElementById('sliderVagasAp'), document.getElementById('sliderVagasNaoCobertoAp'), document.getElementById('sliderSuiteAp')]
 
-    const slidersValue = [document.getElementById('sliderValueBanheiroCasa'), document.getElementById('sliderValueQuartosCasa'), document.getElementById('sliderValueVagasCasa'), document.getElementById('sliderValueVagasNaoCobertoCasa'), document.getElementById('sliderValueSacadasCasa'), document.getElementById('sliderValueSuiteCasa'), document.getElementById('sliderValueBanheirosAp'), document.getElementById('sliderValueQuartosAp'), document.getElementById('sliderValueVagasAp'), document.getElementById('sliderValueVagasNaoCobertoAp'), document.getElementById('sliderValueSuiteAp')]
+    const slidersValue = [document.getElementById('sliderValueBanheiro'), document.getElementById('sliderValueQuartos'), document.getElementById('sliderValueVagas'), document.getElementById('sliderValueVagasNaoCoberto'), document.getElementById('sliderValueSacadas'), document.getElementById('sliderValueSuite'), document.getElementById('sliderValueBanheirosAp'), document.getElementById('sliderValueQuartosAp'), document.getElementById('sliderValueVagasAp'), document.getElementById('sliderValueVagasNaoCobertoAp'), document.getElementById('sliderValueSuiteAp')]
+
 
     sliders.forEach(function(elem, index) {
         elem.addEventListener('input', function() {

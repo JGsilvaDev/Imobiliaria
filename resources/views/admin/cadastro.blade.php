@@ -22,6 +22,7 @@
         <button id="btn-aba-apartamento" onclick="openApartamento()" class="aba-option">Pt. Comercial</button>
         <button id="btn-aba-terreno" onclick="openTerreno()" class="aba-option">Terreno</button>
     </div>
+    
     <form id="adicionar-casa-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
         @csrf
         <!-- <input type="hidden" name="id_produto" value="2" > -->

@@ -16,6 +16,8 @@ return new class extends Migration
             ['id' => 1, 'descricao' => 'Terreno'],
             ['id' => 2, 'descricao' => 'Casa'],
             ['id' => 3, 'descricao' => 'Apartamento'],
+            ['id' => 4, 'descricao' => 'Chacara'],
+            ['id' => 5, 'descricao' => 'PTComercial'],
 
             // Adicione mais registros, se necessário
         ]);

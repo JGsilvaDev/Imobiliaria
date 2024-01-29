@@ -123,13 +123,19 @@ class adminController extends Controller
             $catalogo = new Catalogo();
 
             if($request->id_produto == 1) {
-                $catalogo->cod_imovel = 'TE'.substr(strval(hexdec(uniqid())),11,17);
+                $catalogo->cod_imovel = 'COD. TE'.substr(strval(hexdec(uniqid())),11,17);
             }
             else if($request->id_produto == 2) {
-                $catalogo->cod_imovel = 'CA'.substr(strval(hexdec(uniqid())),11,17);
+                $catalogo->cod_imovel = 'COD. CA'.substr(strval(hexdec(uniqid())),11,17);
             }
             else if($request->id_produto == 3) {
-                $catalogo->cod_imovel = 'AP'.substr(strval(hexdec(uniqid())),11,17);
+                $catalogo->cod_imovel = 'COD. AP'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 4) {
+                $catalogo->cod_imovel = 'COD. CH'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 5) {
+                $catalogo->cod_imovel = 'COD. PC'.substr(strval(hexdec(uniqid())),11,17);
             }
 
             $catalogo->id_tp_produto = $request->id_produto;
@@ -263,7 +269,7 @@ class adminController extends Controller
             $catalogo->telefonia = ($request->telefonia) ? true : false;
             $catalogo->rede = ($request->rede) ? true : false;
 
-            if($request->id_produto == 2 ){
+            if($request->id_produto == 2 or $request->id_produto == 4){
                 $catalogo->tp_contrato = $request->tp_contrato;
                 $catalogo->qtdBanheiros = $request->qtd_banheiros;
                 $catalogo->qtdQuartos = $request->qtd_quartos;
@@ -272,7 +278,7 @@ class adminController extends Controller
                 $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
                 $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
                 $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
-            }elseif($request->id_produto == 3){
+            }elseif($request->id_produto == 3 ){
                 $catalogo->tp_contrato = $request->tp_contrato;
                 $catalogo->qtdBanheiros = $request->qtd_banheiros;
                 $catalogo->qtdQuartos = $request->qtd_quartos;
@@ -281,7 +287,8 @@ class adminController extends Controller
                 $catalogo->areaUtil = 0;
                 $catalogo->areaConstruida = 0;
                 $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
-            }else{
+            }
+            else{
                 $catalogo->tp_contrato = 'Venda';
                 $catalogo->qtdBanheiros = 0;
                 $catalogo->qtdQuartos = 0;

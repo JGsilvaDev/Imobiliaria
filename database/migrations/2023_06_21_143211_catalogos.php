@@ -72,6 +72,7 @@ return new class extends Migration
             $table->boolean('quintal');
             $table->boolean('cozinhaConjugada');
             $table->boolean('porteiroEletronico');
+            
             $table->boolean('tvCabo');
             $table->boolean('arCondicionado');
             $table->boolean('alarme');

@@ -130,18 +130,18 @@ return new class extends Migration
             $table->unsignedFloat('metragemFundo')->nullable();
             $table->unsignedFloat('metragemDireita')->nullable();
             $table->unsignedFloat('metragemEsquerda')->nullable();
-            $table->text('posTerreno',500);
-            $table->text('formaTerreno',500);
-            $table->text('vegetacao',500);
-            $table->text('protecao',500);
-            $table->text('topografia',500);
-            $table->boolean('acessoEnergia');
-            $table->boolean('escola');
-            $table->boolean('comercio');
+            $table->text('posTerreno',500)->nullable();
+            $table->text('formaTerreno',500)->nullable();
+            $table->text('vegetacao',500)->nullable();
+            $table->text('protecao',500)->nullable();
+            $table->text('topografia',500)->nullable();
+            $table->boolean('acessoEnergia')->nullable();
+            $table->boolean('escola')->nullable();
+            $table->boolean('comercio')->nullable();
             
             // Opções do comércio
             
-            $table->string('tipoComercio',500);
+            $table->string('tipoComercio',500)->nullable();
             $table->boolean('elevador');
             $table->boolean('copa');
             $table->boolean('recepcao');

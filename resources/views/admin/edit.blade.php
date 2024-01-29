@@ -41,8 +41,11 @@
                     <p for="" id="titulo-label" class="add-label">Título</p>
                     <input type="text" id="casa-titulo-input" name="titulo" class="add-input" value="{{ $item->titulo }}" required>
 
+                    @if($item->id_tp_produto == 5)
+                        <p for="" id="desc-label" class="add-label">Tipo de Comércio</p>
+                        <textarea name="descricao" id="casa-desc-input" cols="30" rows="1" class="add-input" maxlength="500" required>{{ $item->tipoComercio }}</textarea>
+                    @endif
                     <p for="" id="desc-label" class="add-label">Descrição</p>
-
                     <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required>{{ $item->desc }}</textarea>
 
                     <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">{{ $item->qtdBanheiros }}</span></p>
@@ -78,7 +81,7 @@
                     <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
                     <input name="areaUtil" type="text" id="casa-tam-area-input" value="{{ $item->areaUtil }}" class="add-input">
 
-                    <p id="tam-area-label">Tamanho da área contruida (m<sup>2</sup>)</p>
+                    <p id="tam-area-label">Tamanho da área construida (m<sup>2</sup>)</p>
                     <input name="areaConstruida" type="text" id="casa-tam-area-input" value="{{ $item->areaConstruida }}" class="add-input">
 
                     <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
@@ -93,8 +96,9 @@
                     <p id="valor-label">IPTU mensal</p>
                     <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input input-format-edit">
 
-                    <p id="valor-label">Básico</p>
+                    <p id="valor-label">Características do imóvel</p>
                     <div class="checkbox">
+                        @if($item->id_tp_produto != 5)
                         <div class="check-item">
                             <input type="checkbox" name="agua" id="agua" @if ($item->agua == 1) checked @endif><label>Agua</label>
                         </div>
@@ -110,10 +114,6 @@
                         <div class="check-item">
                             <input type="checkbox" name="pavimentação" id="pavimentação" @if ($item->pavimentação == 1) checked @endif><label>Pavimentação</label>
                         </div>
-                    </div>
-
-                    <p id="valor-label">Serviços</p>
-                    <div class="checkbox">
                         <div class="check-item">
                             <input type="checkbox" name="areaServico" id="areaServico" @if ($item->areaServico == 1) checked @endif><label>Área de serviço</label>
                         </div>
@@ -138,10 +138,6 @@
                         <div class="check-item">
                             <input type="checkbox" name="portaria24" id="portaria24" @if ($item->portaria24h == 1) checked @endif><label>Portaria 24h</label>
                         </div>
-                    </div>
-
-                    <p id="valor-label">Lazer</p>
-                    <div class="checkbox">
                         <div class="check-item">
                             <input type="checkbox" name="areaLazer" id="areaLazer" @if ($item->areaLazer == 1) checked @endif><label>Área de lazer</label>
                         </div>
@@ -154,10 +150,6 @@
                         <div class="check-item">
                             <input type="checkbox" name="quadra" id="quadra" @if ($item->quadra == 1) checked @endif><label>Quadra esportiva</label>
                         </div>
-                    </div>
-
-                    <p id="valor-label">Área comum</p>
-                    <div class="checkbox">
                         <div class="check-item">
                             <input type="checkbox" name="varanda" id="varanda" @if ($item->varanda == 1) checked @endif><label>Varanda</label>
                         </div>
@@ -167,20 +159,12 @@
                         <div class="check-item">
                             <input type="checkbox" name="cozinhaConjugada" id="cozinhaConjugada" @if ($item->cozinhaConjugada == 1) checked @endif><label for="cozinhaConjugada">Cozinha conjugada</label>
                         </div>
-                    </div>
-
-                    <p id="valor-label">Acabamento</p>
-                    <div class="checkbox">
                         <div class="check-item">
                             <input type="checkbox" name="pisoFrio" id="pisoFrio" @if ($item->pisoFrio == 1) checked @endif><label>Piso Frio</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="porcelanato" id="porcelanato" @if ($item->porcelanato == 1) checked @endif><label>Porcelanato</label>
                         </div>
-                    </div>
-
-                    <p id="valor-label">Intima</p>
-                    <div class="checkbox">
                         <div class="check-item">
                             <input type="checkbox" name="lavado" id="lavado" @if ($item->lavado == 1) checked @endif><label>Lavado</label>
                         </div>
@@ -193,10 +177,6 @@
                         <div class="check-item">
                             <input type="checkbox" name="closet" id="closet" @if ($item->closet == 1) checked @endif><label>Closet</label>
                         </div>
-                    </div>
-
-                    <p id="valor-label">Destaques</p>
-                    <div class="checkbox">
                         <div class="check-item">
                             <input type="checkbox" name="entradaServico" id="entradaServico" @if ($item->entradaServico == 1) checked @endif><label>Entrada de serviço</label>
                         </div>
@@ -218,6 +198,222 @@
                         <div class="check-item">
                             <input type="checkbox" name="quintal" id="quintal" @if ($item->quintal == 1) checked @endif><label>Quintal</label>
                         </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="areaLazer" id="areaLazer" @if ($item->areaLazer == 1) checked @endif><label for="areaLazer">Área de lazer</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="churrasqueira" id="churrasqueira" @if ($item->churrasqueira == 1) checked @endif><label for="churrasqueira">Churrasqueira</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="playground" id="playground" @if ($item->playground == 1) checked @endif><label for="playground">Playground</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="quadra" id="quadra" @if ($item->quadra == 1) checked @endif><label for="quadra">Quadra Esportiva</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="tvCabo" id="tvCabo" @if ($item->tvCabo == 1) checked @endif><label for="tvCabo">TV a Cabo</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="arCondicionado" id="arCondicionado" @if ($item->arCondicionado == 1) checked @endif><label for="arCondicionado">Ar Condicionado</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="alarme" id="alarme" @if ($item->alarme == 1) checked @endif><label for="alarme">Alarme</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="aguaSolar" id="aguaSolar" @if ($item->aguaSolar == 1) checked @endif><label for="aguaSolar">Agua Aquecida por Energia Solar</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="mobiliado" id="mobiliado" @if ($item->mobiliado == 1) checked @endif><label for="mobiliado">Mobiliado</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="depEmpregados" id="depEmpregados" @if ($item->depEmpregados == 1) checked @endif><label for="depEmpregados">Dep. Empregados</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="lareira" id="lareira" @if ($item->lareira == 1) checked @endif><label for="lareira">Lareira</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="caseiro" id="caseiro" @if ($item->caseiro == 1) checked @endif><label for="caseiro">Caseiro</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="edicula" id="edicula" @if ($item->edicula == 1) checked @endif><label for="edicula">Edícula</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="piscina" id="piscina" @if ($item->piscina == 1) checked @endif><label for="piscina">Piscina</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="piscinaCondominio" id="piscinaCondominio" @if ($item->piscinaCondominio == 1) checked @endif><label for="piscinaCondominio">Piscina Condomínio</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="terraco" id="terraco" @if ($item->terraco == 1) checked @endif><label for="terraco">Terraço</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="hidromassagem" id="hidromassagem" @if ($item->hidromassagem == 1) checked @endif><label for="hidromassagem">Hidromassagem</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="jardimInverno" id="jardimInverno" @if ($item->jardimInverno == 1) checked @endif><label for="jardimInverno">Jardim de Inverno</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoAquecido" id="pisoAquecido" @if ($item->pisoAquecido == 1) checked @endif><label for="pisoAquecido">Piso Aquecido</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoArdosia" id="pisoArdosia" @if ($item->pisoArdosia == 1) checked @endif><label for="pisoArdosia">Piso Ardosia</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoBioquete" id="pisoBioquete" @if ($item->pisoBioquete == 1) checked @endif><label for="pisoBioquete">Piso Bioquete</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoCarpete" id="pisoCarpete" @if ($item->pisoCarpete == 1) checked @endif><label for="pisoCarpete">Piso Carpete</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoCeramica" id="pisoCeramica" @if ($item->pisoCeramica == 1) checked @endif><label for="pisoCeramica">Piso cerâmica</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoCimentoQueimado" id="pisoCimentoQueimado" @if ($item->pisoCimentoQueimado == 1) checked @endif><label for="pisoCimentoQueimado">Piso Cimento Queimado</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoEmborrachado" id="pisoEmborrachado" @if ($item->pisoEmborrachado == 1) checked @endif><label for="pisoEmborrachado">Piso Emborrachado</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoTacoMadeira" id="pisoTacoMadeira" @if ($item->pisoTacoMadeira == 1) checked @endif><label for="pisoTacoMadeira">Piso de Taco de Madeira</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="contraPiso" id="contraPiso" @if ($item->contraPiso == 1) checked @endif><label for="contraPiso">Contra Piso</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="pisoTabua" id="pisoTabua" @if ($item->pisoTabua == 1) checked @endif><label for="pisoTabua">Piso de Tábua</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="granito" id="granito" @if ($item->granito == 1) checked @endif><label for="granito">Granito</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="marmore" id="marmore" @if ($item->marmore == 1) checked @endif><label for="marmore">Mármore</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioCozinha" id="armarioCozinha" @if ($item->armarioCozinha == 1) checked @endif><label for="armarioCozinha">Armário Cozinha</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioCorredor" id="armarioCorredor" @if ($item->armarioCorredor == 1) checked @endif><label for="armarioCorredor">Armário Corredor</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioCloset" id="armarioCloset" @if ($item->armarioCloset == 1) checked @endif><label for="armarioCloset">Armário Closet</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioQuarto" id="armarioQuarto" @if ($item->armarioQuarto == 1) checked @endif><label for="armarioQuarto">Armário Quarto</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioBanheiro" id="armarioBanheiro" @if ($item->armarioBanheiro == 1) checked @endif><label for="armarioBanheiro">Armário Banheiro</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioSala" id="armarioSala" @if ($item->armarioSala == 1) checked @endif><label for="armarioSala">Armário Sala</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioEscritorio" id="armarioEscritorio" @if ($item->armarioEscritorio == 1) checked @endif><label for="armarioEscritorio">Armário Escritório</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioDepEmp" id="armarioDepEmp" @if ($item->armarioDepEmp == 1) checked @endif><label for="armarioDepEmp">Armário Dep. Empregado</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="armarioAreaServico" id="armarioAreaServico" @if ($item->armarioAreaServico == 1) checked @endif><label for="armarioAreaServico">Armário Área de Serviço</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="salaCinema" id="salaCinema" @if ($item->salaCinema == 1) checked @endif><label for="salaCinema">Sala de Cinema</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="adega" id="adega" @if ($item->adega == 1) checked @endif><label for="adega">Adega</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="sauna" id="sauna" @if ($item->sauna == 1) checked @endif><label for="sauna">Sauna</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="campFut" id="campFut" @if ($item->campFut == 1) checked @endif><label for="campFut">Campo de Futebol</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="salaJogos" id="salaJogos" @if ($item->salaJogos == 1) checked @endif><label for="salaJogos">Sala de Jogos</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="salaFestas" id="salaFestas" @if ($item->salaFestas == 1) checked @endif><label for="salaFestas">Sala de Festas</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="salaGinastica" id="salaGinastica" @if ($item->salaGinastica == 1) checked @endif><label for="salaGinastica">Sala de Ginástica</label>
+                        </div>
+
+                        <div class="check-item">
+                            <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita" @if ($item->estacionamentoVisita == 1) checked @endif><label for="estacionamentoVisita">Estacionamento para Visita</label>
+                        </div>
+                        @endif
+                        <!-- Ponto comercial -->
+                        @if($item->id_tp_produto == 5)
+                        <div class="check-item">
+                            <input type="checkbox" name="elevador" id="elevador" @if ($item->elevador == 1) checked @endif><label>Elevador</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="copa" id="copa" @if ($item->copa == 1) checked @endif><label>Copa</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="recepcao" id="recepcao" @if ($item->recepcao == 1) checked @endif><label>Recepcao</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="mesanino" id="mesanino" @if ($item->mesanino == 1) checked @endif><label>Mesanino</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="luminarias" id="luminarias" @if ($item->luminarias == 1) checked @endif><label>Luminarias</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="acessoDeficiente" id="acessoDeficiente" @if ($item->acessoDeficiente == 1) checked @endif><label>Acesso para Deficiente</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="geradorEnergia" id="geradorEnergia" @if ($item->geradorEnergia == 1) checked @endif><label>Gerador de Energia</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="telefonia" id="telefonia" @if ($item->telefonia == 1) checked @endif><label>Telefonia</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="rede" id="rede" @if ($item->rede == 1) checked @endif><label>Rede de Internet</label>
+                        </div>
+                        @endif
                     </div>
 
                     <label class="add-label">Inserir novas Imagens</label>
@@ -265,6 +461,65 @@
 
                 <p id="valor-label">IPTU mensal</p>
                 <input type="text" name="iptu" id="casa-valor-input" value="{{ $item->iptuMensal }}" class="add-input input-format-edit">
+                <p id="tam-area-label">Metragem da Frente</p>
+                <input name="metragemFrente" type="text" id="trn-tam-area-input" value="{{ $item->metragemFrente }}" min="1" class="add-input input-format" required>
+
+                <p id="tam-area-label">Metragem Lateral</p>
+                <input name="metragemFundo" type="text" id="trn-tam-area-input" value="{{ $item->metragemFundo }}" min="1" class="add-input input-format" required>
+
+                <p id="tam-area-label">Lateral Esquerda</p>
+                <input name="metragemDireita" type="text" id="trn-tam-area-input" value="{{ $item->metragemEsquerda }}" min="1" class="add-input input-format" required>
+
+                <p id="tam-area-label">Lateral Direita</p>
+                <input name="metragemEsquerda" type="text" id="trn-tam-area-input" value="{{ $item->metragemDireita }}" min="1" class="add-input input-format" required>
+
+                <p id="tam-area-label">Posição do terreno</p>
+                <select name="posTerreno" id="tipo-produto-ddl" class="add-input">
+                    <option value="meio de quadra" selected>meio de quadra</option>
+                    <option value="esquina">esquina</option>
+                    <option value="divisa com muro">divisa com muro</option>
+                </select>
+
+                <p id="tam-area-label">Forma do terreno</p>
+                <select name="formaTerreno" id="tipo-produto-ddl" class="add-input">
+                    <option value="regular" selected>regular</option>
+                    <option value="irregular">irregular</option>
+                    <option value="poligonal">poligonal</option>
+                </select>
+
+                <p id="tam-area-label">Vegetação</p>
+                <select name="vegetacao" id="tipo-produto-ddl" class="add-input">
+                    <option value="mato" selected>mato</option>
+                    <option value="gramado">gramado</option>
+                    <option value="limpo">limpo</option>
+                </select>
+
+                <p id="tam-area-label">Proteção</p>
+                <select name="protecao" id="tipo-produto-ddl" class="add-input">
+                    <option value="muro" selected>muro</option>
+                    <option value="cerca">cerca</option>
+                    <option value="divisão com prédio">divisão com prédio</option>
+                </select>
+
+                <p id="tam-area-label">Topografia</p>
+                <select name="topografia" id="tipo-produto-ddl" class="add-input">
+                    <option value="plano" selected>plano</option>
+                    <option value="aclive">aclive</option>
+                    <option value="declive">declive</option>
+                </select>
+
+                <p id="valor-label">Características do imóvel</p>
+                    <div class="checkbox">
+                        <div class="check-item">
+                            <input type="checkbox" name="acessoEnergia" id="acessoEnergia" @if ($item->acessoEnergia == 1) checked @endif><label>Acesso a Energia Elétrica</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="escola" id="escola" @if ($item->escola == 1) checked @endif><label>Escola</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="comercio" id="comercio" @if ($item->comercio == 1) checked @endif><label>Comércio</label>
+                        </div>
+                    </div>
 
                 <label class="add-label">Inserir novas Imagens</label>
                 <input type="file" name="imagem[]" id="imagemEdit" multiple>

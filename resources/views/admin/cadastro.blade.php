@@ -102,7 +102,6 @@
 
         <p id="valor-label">Caracterísitcas do imóvel</p>
         <div class="checkbox">
-
             <div class="check-item">
                 <input type="checkbox" name="agua" id="agua"><label for="agua">Agua</label>
             </div>
@@ -366,7 +365,7 @@
             </div>
 
             <div class="check-item">
-                <input type="checkbox" name="campoFut" id="campoFut"><label for="campoFut">Campo de Futebol</label>
+                <input type="checkbox" name="campFut" id="campFut"><label for="campFut">Campo de Futebol</label>
             </div>
 
             <div class="check-item">

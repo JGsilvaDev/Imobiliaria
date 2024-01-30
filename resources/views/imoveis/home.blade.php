@@ -248,6 +248,7 @@
                                     @endif
                                 @endforeach
                             </div>
+                            <p class="">{{ $item->cod_imovel }}</p>
                             <p class="produto-titulo">{{ $item->titulo }}</p>
                             <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->cidade }}</span> </p>
                             <div class="produto-dados">

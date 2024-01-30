@@ -58,6 +58,7 @@
                 @endforeach
 
                 <div id="destaque-endereco-info">
+                    <p id="endereco-info-tipo-nome">{{ $iten->cod_imovel }}</p>
                     <span id="endereco-info-tipo-nome">{{ $iten->descricao }}</span>
                     <hr style="width:100%;" >
                     <p class="endereco-info-tipo">{{ $iten->titulo }}</p>

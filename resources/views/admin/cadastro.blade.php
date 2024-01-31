@@ -411,7 +411,13 @@
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
         <p for="" id="desc-label" class="add-label">Tipo de Comercial</p>
-        <textarea name="tipoComercio" id="casa-desc-input" cols="30" rows="10" class="add-input" maxlength="500" required></textarea>
+        <!-- <textarea name="tipoComercio" id="casa-desc-input" cols="30" rows="10" class="add-input" maxlength="500" required></textarea> -->
+        <select name="tipoComercio" id="tipoComercio" class="add-input">
+            <option value="Escritório">Escritório</option>
+            <option value="Salão">Salão</option>
+            <option value="Loja em Shopping">Loja em Shopping</option>
+            <option value="Loja em centro comercial">Loja em centro comercial</option>
+        </select>
 
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" min="1" class="add-input" required>

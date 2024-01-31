@@ -43,7 +43,12 @@
 
                     @if($item->id_tp_produto == 5)
                         <p for="" id="desc-label" class="add-label">Tipo de Comércio</p>
-                        <textarea name="descricao" id="casa-desc-input" cols="30" rows="1" class="add-input" maxlength="500" required>{{ $item->tipoComercio }}</textarea>
+                        <select name="tipoComercio" id="tipoComercio" class="add-input">
+                            <option value="Escritório" @if($item->tipoComercio == "Escritório") selected @endif>Escritório</option>
+                            <option value="Salão" @if($item->tipoComercio == "Salão") selected @endif>Salão</option>
+                            <option value="Loja em Shopping" @if($item->tipoComercio == "Loja em Shopping") selected @endif>Loja em Shopping</option>
+                            <option value="Loja em centro comercial" @if($item->tipoComercio == "Loja em centro comercial") selected @endif>Loja em centro comercial</option>
+                        </select>
                     @endif
                     <p for="" id="desc-label" class="add-label">Descrição</p>
                     <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required>{{ $item->desc }}</textarea>

@@ -136,6 +136,9 @@
                 <input type="checkbox" name="cozinhaPlanejada" id="cozinhaPlanejada"><label for="cozinhaPlanejada">Cozinha Planejada</label>
             </div>
             <div class="check-item">
+                <input type="checkbox" name="copa" id="copa"><label for="copa">Copa</label>
+            </div>
+            <div class="check-item">
                 <input type="checkbox" name="despensa" id="despensa"><label for="despensa">Despensa</label>
             </div>
             <div class="check-item">
@@ -153,9 +156,7 @@
             <div class="check-item">
                 <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="varandaGourmet">Varanda Gourmet</label>
             </div>
-            <div class="check-item">
-                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
-            </div>
+            
             <div class="check-item">
                 <input type="checkbox" name="cozinhaConjugada" id="cozinhaConjugada"><label for="cozinhaConjugada">Cozinha conjugada</label>
             </div>
@@ -195,22 +196,16 @@
             <div class="check-item">
                 <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletronico</label>
             </div>
-            <div class="check-item">
-                <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
-            </div>
+            
             <div class="check-item">
                 <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
             </div>
-            <div class="check-item">
-                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
-            </div>
+            
 
-            <div class="check-item">
-                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra Esportiva</label>
-            </div>
+            
 
             <div class="check-item">
                 <input type="checkbox" name="tvCabo" id="tvCabo"><label for="tvCabo">TV a Cabo</label>
@@ -220,9 +215,7 @@
                 <input type="checkbox" name="arCondicionado" id="arCondicionado"><label for="arCondicionado">Ar Condicionado</label>
             </div>
 
-            <div class="check-item">
-                <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
-            </div>
+            
 
             <div class="check-item">
                 <input type="checkbox" name="aguaSolar" id="aguaSolar"><label for="aguaSolar">Agua Aquecida por Energia Solar</label>
@@ -248,8 +241,10 @@
                 <input type="checkbox" name="edicula" id="edicula"><label for="edicula">Edícula</label>
             </div>
 
+            
+
             <div class="check-item">
-                <input type="checkbox" name="piscina" id="piscina"><label for="piscina">Piscina</label>
+                <input type="checkbox" name="sacada" id="sacada"><label for="sacada">Sacada</label>
             </div>
 
             <div class="check-item">
@@ -266,6 +261,10 @@
 
             <div class="check-item">
                 <input type="checkbox" name="jardimInverno" id="jardimInverno"><label for="jardimInverno">Jardim de Inverno</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="closet" id="closet"><label for="closet">Closet</label>
             </div>
 
             <div class="check-item">
@@ -310,6 +309,9 @@
 
             <div class="check-item">
                 <input type="checkbox" name="granito" id="granito"><label for="granito">Granito</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="laminado" id="laminado"><label for="laminado">Piso Laminado</label>
             </div>
 
             <div class="check-item">
@@ -356,32 +358,66 @@
                 <input type="checkbox" name="salaCinema" id="salaCinema"><label for="salaCinema">Sala de Cinema</label>
             </div>
 
+            
+
+            
+
+            
+
+            
+
+            
+        </div>
+
+        <p id="valor-label">Características da área comum</p>
+        <div class="checkbox">
+            <div class="check-item">
+                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            </div>
             <div class="check-item">
                 <input type="checkbox" name="adega" id="adega"><label for="adega">Adega</label>
             </div>
-
+            <div class="check-item">
+                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra Esportiva</label>
+            </div>
             <div class="check-item">
                 <input type="checkbox" name="sauna" id="sauna"><label for="sauna">Sauna</label>
             </div>
-
+            <div class="check-item">
+                <input type="checkbox" name="vestiário" id="vestiário"><label for="vestiário">Vestiário</label>
+            </div>
             <div class="check-item">
                 <input type="checkbox" name="campFut" id="campFut"><label for="campFut">Campo de Futebol</label>
             </div>
-
+            <div class="check-item">
+                <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="piscina" id="piscina"><label for="piscina">Piscina</label>
+            </div>
             <div class="check-item">
                 <input type="checkbox" name="salaJogos" id="salaJogos"><label for="salaJogos">Sala de Jogos</label>
             </div>
-
             <div class="check-item">
                 <input type="checkbox" name="salaFestas" id="salaFestas"><label for="salaFestas">Salão de Festas</label>
             </div>
-
             <div class="check-item">
                 <input type="checkbox" name="salaGinastica" id="salaGinastica"><label for="salaGinastica">Sala de Ginástica</label>
             </div>
-
+            <div class="check-item">
+                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
+            </div>
             <div class="check-item">
                 <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita"><label for="estacionamentoVisita">Estacionamento para Visita</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="portaoEletronico">Portão eletronico</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
             </div>
         </div>
 

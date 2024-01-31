@@ -40,7 +40,7 @@ return new class extends Migration
             $table->boolean('energia');
             $table->boolean('esgoto');
             $table->boolean('murado');
-            $table->boolean('pavimentação');
+            $table->boolean('pavimentacao');
             $table->boolean('areaServico');
             $table->boolean('gasEncanado');
             $table->boolean('banheiroEmpregada');
@@ -139,11 +139,12 @@ return new class extends Migration
             $table->boolean('acessoEnergia')->nullable();
             $table->boolean('escola')->nullable();
             $table->boolean('comercio')->nullable();
+            $table->boolean('aguaEncanada')->nullable();
+            $table->boolean('sistemaEsgoto')->nullable();
             
             // Opções do comércio
-            
+            $table->integer('elevadores')->nullable();
             $table->string('tipoComercio',500)->nullable();
-            $table->boolean('elevador');
             $table->boolean('copa');
             $table->boolean('recepcao');
             $table->boolean('mesanino');
@@ -152,6 +153,9 @@ return new class extends Migration
             $table->boolean('geradorEnergia');
             $table->boolean('telefonia');
             $table->boolean('rede');
+            $table->boolean('sistemaIncendio');
+            $table->boolean('aquecimentoCentral');
+            $table->boolean('vigilancia24h');
 
 
             $table->timestamps();

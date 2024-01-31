@@ -40,26 +40,26 @@
         <p for="" id="desc-label" class="add-label">Descrição</p>
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
-        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiro">1</span></p>
-        <input type="range" name="qtd_banheiros" min="0" max="20" value="1" id="sliderBanheiro" class="slider" required>
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros:</p>
+        <input type="number" name="qtd_banheiros" min="0" max="20" value="1" id="sliderBanheiro" class="add-input" required>
 
-        <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites: <span id="sliderValueSuite">1</span></p>
-        <input type="range" name="qtd_suites" min="0" max="20" value="1" id="sliderSuite" class="slider" required>
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites:</p>
+        <input type="number" name="qtd_suites" min="0" max="20" value="1" id="sliderSuite" class="add-input" required>
 
-        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartos">1</span></p>
-        <input type="range" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="slider" required>
+        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
+        <input type="number" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="add-input" required>
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura: <span id="sliderValueVagas">1</span></p>
-        <input type="range" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagas" class="slider" required>
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura:</p>
+        <input type="number" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagas" class="add-input" required>
 
-        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasNaoCoberto">1</span></p>
-        <input type="range" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCoberto" class="slider" required>
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura:</p>
+        <input type="number" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCoberto" class="add-input" required>
 
-        <p id="qtd-salas-label" class="slider-label">Quantidade de Salas: <span id="sliderValueSalas">1</span></p>
-        <input type="range" name="qtdSalas" min="0" max="20" value="1" id="sliderSalas" class="slider" required>
+        <p id="qtd-salas-label" class="slider-label">Quantidade de Salas:</p>
+        <input type="number" name="qtdSalas" min="0" max="20" value="1" id="sliderSalas" class="add-input" required>
 
-        <p id="qtd-dorms-label" class="slider-label">Quantidade de Dormitórios: <span id="sliderValueDorms">1</span></p>
-        <input type="range" name="qtdDorms" min="0" max="20" value="1" id="sliderDorms" class="slider" required>
+        <p id="qtd-dorms-label" class="slider-label">Quantidade de Dormitórios:</p>
+        <input type="number" name="qtdDorms" min="0" max="20" value="1" id="sliderDorms" class="add-input" required>
 
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" class="add-input" required>
@@ -115,7 +115,7 @@
                 <input type="checkbox" name="murado" id="murado"><label for="murado">Murado</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="pavimentação" id="pavimentação"><label for="pavimentação">Pavimentação</label>
+                <input type="checkbox" name="pavimentacao" id="pavimentacao"><label for="pavimentacao">Pavimentação</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="gasEncanado" id="gasEncanado"><label for="gasEncanado">Gás encanado</label>
@@ -357,16 +357,6 @@
             <div class="check-item">
                 <input type="checkbox" name="salaCinema" id="salaCinema"><label for="salaCinema">Sala de Cinema</label>
             </div>
-
-            
-
-            
-
-            
-
-            
-
-            
         </div>
 
         <p id="valor-label">Características da área comum</p>
@@ -447,7 +437,6 @@
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
         <p for="" id="desc-label" class="add-label">Tipo de Comercial</p>
-        <!-- <textarea name="tipoComercio" id="casa-desc-input" cols="30" rows="10" class="add-input" maxlength="500" required></textarea> -->
         <select name="tipoComercio" id="tipoComercio" class="add-input">
             <option value="Escritório">Escritório</option>
             <option value="Salão">Salão</option>
@@ -458,14 +447,17 @@
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros:</p>
         <input type="number" name="qtd_banheiros" min="0" max="20" value="1" id="sliderBanheiro" class="add-input" required>
 
-        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
-        <input type="number" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="add-input" required>
+        <p id="qtd-salas-label" class="slider-label">Quantidade de Salas:</p>
+        <input type="number" name="qtdSalas" min="0" max="20" value="1" id="sliderSalas" class="add-input" required>
 
         <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura:</p>
         <input type="number" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagas" class="add-input" required>
 
         <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura:</p>
         <input type="number" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCoberto" class="add-input" required>
+
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Elevadores:</p>
+        <input type="number" name="elevadores" min="0" max="20" value="1" id="sliderVagasNaoCoberto" class="add-input" required>
 
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" min="1" class="add-input" required>
@@ -499,17 +491,13 @@
 
         <p id="valor-label">Características</p>
         <div class="checkbox">
-
-            <div class="check-item">
-                <input type="checkbox" name="elevador" id="elevador"><label for="elevador">Elevador</label>
-            </div>
             
             <div class="check-item">
                 <input type="checkbox" name="copa" id="copa"><label for="copa">Copa</label>
             </div>
 
             <div class="check-item">
-                <input type="checkbox" name="recepcao" id="recepcao"><label for="recepcao">Recepcao</label>
+                <input type="checkbox" name="recepcao" id="recepcao"><label for="recepcao">Recepção</label>
             </div>
 
             <div class="check-item">
@@ -546,6 +534,18 @@
             </div>
             <div class="check-item">
                 <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita"><label for="estacionamentoVisita">Estacionamento para Visita</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="sistemaIncencio" id="sistemaIncencio"><label for="sistemaIncencio">Sistema de Incêndio</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="aquecimentoCentral" id="aquecimentoCentral"><label for="aquecimentoCentral">Aquecimento Central</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="vigilancia24h" id="vigilancia24h"><label for="vigilancia24h">Vigilância 24h</label>
             </div>
         </div>
 
@@ -657,7 +657,7 @@
                 <input type="checkbox" name="escola" id="escola"><label for="escola">Escola</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="comercio" id="comercio"><label for="comercio">Comercio</label>
+                <input type="checkbox" name="comercio" id="comercio"><label for="comercio">Comércio</label>
             </div>
         </div>
 
@@ -710,6 +710,15 @@
             </div>
             <div class="check-item">
                 <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="aguaEncanada" id="aguaEncanada"><label for="aguaEncanada">Água Encanada</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="sistemaEsgoto" id="sistemaEsgoto"><label for="sistemaEsgoto">Sistema de Esgoto</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="pavimentacao" id="pavimentacao"><label for="pavimentacao">Pavimentação</label>
             </div>
         </div>
 

@@ -167,7 +167,7 @@ class adminController extends Controller
             $catalogo->energia = ($request->energia) ? true : false;
             $catalogo->esgoto = ($request->esgoto) ? true : false;
             $catalogo->murado = ($request->murado) ? true : false;
-            $catalogo->pavimentação = ($request->pavimentação) ? true : false;
+            $catalogo->pavimentacao = ($request->pavimentacao) ? true : false;
             $catalogo->areaServico = ($request->areaServico) ? true : false;
             $catalogo->gasEncanado = ($request->gasEncanado) ? true : false;
             $catalogo->banheiroEmpregada = ($request->banheiroEmpregada) ? true : false;

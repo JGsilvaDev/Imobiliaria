@@ -661,6 +661,58 @@
             </div>
         </div>
 
+        <p id="valor-label">Infraestrutura da área comum</p>
+        <div class="checkbox">
+            <div class="check-item">
+                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="adega" id="adega"><label for="adega">Adega</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra Esportiva</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="sauna" id="sauna"><label for="sauna">Sauna</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="vestiário" id="vestiário"><label for="vestiário">Vestiário</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="campFut" id="campFut"><label for="campFut">Campo de Futebol</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="piscina" id="piscina"><label for="piscina">Piscina</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="salaJogos" id="salaJogos"><label for="salaJogos">Sala de Jogos</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="salaFestas" id="salaFestas"><label for="salaFestas">Salão de Festas</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="salaGinastica" id="salaGinastica"><label for="salaGinastica">Sala de Ginástica</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita"><label for="estacionamentoVisita">Estacionamento para Visita</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="portaoEletronico">Portão eletronico</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
+            </div>
+        </div>
+
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
         <input type="file" name="imagem[]" id="imagemTerreno" multiple required>

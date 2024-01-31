@@ -707,6 +707,10 @@
                                 @endif
 
                             </div>
+                            <h3>Outras informações</h3>
+                            <div class="area-container" id="extraDivCampo">
+                                <span id="extraInfo" style="display: none;">{{ $detalhes->extraInfo }}</span>
+                            </div>
                     </div>
                 </section>
 
@@ -780,5 +784,19 @@
     trocaPonto()
 </script>
 
+<script>
+    const extraInfoDiv = document.getElementById('extraDivCampo')
+    var extraInfo = document.getElementById('extraInfo').innerHTML.split(";")
+
+    console.log(extraInfo)
+
+    for (info of extraInfo) {
+        console.log(info)
+        if (info != "") {
+            extraInfoDiv.innerHTML += `<div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>${info}</p> </div>`
+        }
+    }
+
+</script>
 
 @endsection

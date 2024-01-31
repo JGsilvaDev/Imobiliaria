@@ -413,7 +413,7 @@
                             <input type="checkbox" name="churrasqueira" id="churrasqueira" @if ($item->churrasqueira == 1) checked @endif><label>Churrasqueira</label>
                         </div>
                         <div class="check-item">
-                            <input type="checkbox" name="vestiario" id="vestiario" @if ($item->vestiario == 1) checked @endif><label for="vestiario" >vestiario</label>
+                            <input type="checkbox" name="vestiario" id="vestiario" @if ($item->vestiario == 1) checked @endif><label for="vestiario" >Vestiário</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="adega" id="adega" @if ($item->adega == 1) checked @endif><label for="adega">Adega</label>

@@ -43,12 +43,13 @@
 
                     @if($item->id_tp_produto == 5)
                         <p for="" id="desc-label" class="add-label">Tipo de Comércio</p>
-                        <select name="tipoComercio" id="tipoComercio" class="add-input">
+                        <input type="text" name="tipoComercio" class="add-input"  value="{{ $item->tipoComercio }}"required>
+                        <!-- <select name="tipoComercio" id="tipoComercio" class="add-input">
                             <option value="Escritório" @if($item->tipoComercio == "Escritório") selected @endif>Escritório</option>
                             <option value="Salão" @if($item->tipoComercio == "Salão") selected @endif>Salão</option>
                             <option value="Loja em Shopping" @if($item->tipoComercio == "Loja em Shopping") selected @endif>Loja em Shopping</option>
                             <option value="Loja em centro comercial" @if($item->tipoComercio == "Loja em centro comercial") selected @endif>Loja em centro comercial</option>
-                        </select>
+                        </select> -->
                     @endif
                     <p for="" id="desc-label" class="add-label">Descrição</p>
                     <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required>{{ $item->desc }}</textarea>
@@ -248,9 +249,6 @@
                         <div class="check-item">
                             <input type="checkbox" name="edicula" id="edicula" @if ($item->edicula == 1) checked @endif><label for="edicula">Edícula</label>
                         </div>
-
-                        
-
                         <div class="check-item">
                             <input type="checkbox" name="piscinaCondominio" id="piscinaCondominio" @if ($item->piscinaCondominio == 1) checked @endif><label for="piscinaCondominio">Piscina Condomínio</label>
                         </div>
@@ -469,6 +467,9 @@
                             <input type="checkbox" name="alarme" id="alarme" @if ($item->alarme == 1) checked @endif><label for="alarme">Alarme</label>
                         </div>
                     </div>
+
+                    <p id="local-label">Informações extras (separar por ponto e vírgula)</p>
+                    <input name="extraInfo" type="text" id="casa-local-input" class="add-input" maxlength="3000" value="{{ $item->extraInfo }}">
 
                     <label class="add-label">Inserir novas Imagens</label>
                     <input type="file" name="imagem[]" id="imagemEdit" multiple>

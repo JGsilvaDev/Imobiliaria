@@ -414,6 +414,9 @@
             </div>
         </div>
 
+        <p id="local-label">Informações extras (separar por ponto e vírgula)</p>
+        <input name="extraInfo" type="text" id="casa-local-input" class="add-input" maxlength="3000">
+
         <hr class="cadastro-divisor">
 
         <p id="imagem-label">Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
@@ -440,12 +443,13 @@
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
         <p for="" id="desc-label" class="add-label">Tipo de Comercial</p>
-        <select name="tipoComercio" id="tipoComercio" class="add-input">
+        <input type="text" name="tipoComercio" class="add-input" required>
+        <!-- <select name="tipoComercio" id="tipoComercio" class="add-input">
             <option value="Escritório">Escritório</option>
             <option value="Salão">Salão</option>
             <option value="Loja em Shopping">Loja em Shopping</option>
             <option value="Loja em centro comercial">Loja em centro comercial</option>
-        </select>
+        </select> -->
 
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros:</p>
         <input type="number" name="qtd_banheiros" min="0" max="20" value="1" id="sliderBanheiro" class="add-input" required>
@@ -603,6 +607,9 @@
             </div>
         </div>
 
+        <p id="local-label">Informações extras (separar por ponto e vírgula)</p>
+        <input name="extraInfo" type="text" id="casa-local-input" class="add-input" maxlength="3000">
+
         <hr class="cadastro-divisor">
 
         <!-- TERRENO -->
@@ -713,6 +720,15 @@
             <div class="check-item">
                 <input type="checkbox" name="comercio" id="comercio"><label for="comercio">Comércio</label>
             </div>
+            <div class="check-item">
+                <input type="checkbox" name="aguaEncanada" id="aguaEncanada"><label for="aguaEncanada">Água Encanada</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="sistemaEsgoto" id="sistemaEsgoto"><label for="sistemaEsgoto">Sistema de Esgoto</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="pavimentacao" id="pavimentacao"><label for="pavimentacao">Pavimentação</label>
+            </div>
         </div>
 
         <p id="valor-label">Infraestrutura da área comum</p>
@@ -765,16 +781,12 @@
             <div class="check-item">
                 <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
             </div>
-            <div class="check-item">
-                <input type="checkbox" name="aguaEncanada" id="aguaEncanada"><label for="aguaEncanada">Água Encanada</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="sistemaEsgoto" id="sistemaEsgoto"><label for="sistemaEsgoto">Sistema de Esgoto</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="pavimentacao" id="pavimentacao"><label for="pavimentacao">Pavimentação</label>
-            </div>
+            
+            
         </div>
+
+        <p id="local-label">Informações extras (separar por ponto e vírgula)</p>
+        <input name="extraInfo" type="text" id="casa-local-input" class="add-input" maxlength="3000">
 
         <hr class="cadastro-divisor">
         <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>

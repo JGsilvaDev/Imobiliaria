@@ -143,9 +143,15 @@
                                 </div>
                             @endif
 
-                            @if ($detalhes->areaTerreno != '')
+                            @if ($detalhes->areaTerreno != 0)
                                 <div class="area-content">
                                     <p id="area"><span>Área do terreno:</span> {{ $detalhes->areaTerreno }} m²</p>
+                                </div>
+                            @endif
+
+                            @if ($detalhes->elevadores != '')
+                                <div class="area-content">
+                                    <p id="area"><span>Elevador(es):</span> {{ $detalhes->elevadores }}</p>
                                 </div>
                             @endif
 
@@ -306,7 +312,7 @@
                                     </div>
                                 @endif
 
-                                @if($detalhes->pavimentação == 1)
+                                @if($detalhes->pavimentacao == 1)
                                     <div class="area-content">
                                         <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Pavimentação</p>
                                     </div>
@@ -666,10 +672,6 @@
 
                                 @if($detalhes->comercio == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Escola</p> </div>
-                                @endif
-
-                                @if($detalhes->elevador == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Comercio</p> </div>
                                 @endif
 
                                 @if($detalhes->copa == 1)

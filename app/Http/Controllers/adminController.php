@@ -273,6 +273,7 @@ class adminController extends Controller
             $catalogo->vigilancia24h = ($request->vigilancia24h) ? true : false;
             $catalogo->vestiario = ($request->vestiario) ? true : false;
             $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
+            $catalogo->extraInfo = $request->extraInfo;
             
 
             if($request->id_produto == 2 or $request->id_produto == 4){

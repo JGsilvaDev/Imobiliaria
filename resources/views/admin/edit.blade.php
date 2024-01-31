@@ -53,24 +53,27 @@
                     <p for="" id="desc-label" class="add-label">Descrição</p>
                     <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required>{{ $item->desc }}</textarea>
 
-                    <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros: <span id="sliderValueBanheiroCasa">{{ $item->qtdBanheiros }}</span></p>
-                    <input type="range" name="qtd_banheiros" min="0" max="50" value="{{ $item->qtdBanheiros }}" id="sliderBanheiroCasa" class="slider">
+                    <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros:</p>
+                    <input type="number" name="qtd_banheiros" min="0" max="50" value="{{ $item->qtdBanheiros }}" id="sliderBanheiroCasa" class="add-input">
 
-                    <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites: <span id="sliderValueSuiteAp">{{ $item->qtdSuites }}</span></p>
-                    <input type="range" name="qtd_suites" min="0" max="50" value="{{ $item->qtdSuites }}" id="sliderSuiteAp" class="slider">
+                    <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites:</p>
+                    <input type="number" name="qtd_suites" min="0" max="50" value="{{ $item->qtdSuites }}" id="sliderSuiteAp" class="add-input">
 
-                    <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos: <span id="sliderValueQuartosCasa">{{ $item->qtdQuartos }}</span></p>
-                    <input type="range" name="qtd_quartos" min="0" max="50" value="{{ $item->qtdQuartos }}" id="sliderQuartosCasa" class="slider">
+                    <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
+                    <input type="number" name="qtd_quartos" min="0" max="50" value="{{ $item->qtdQuartos }}" id="sliderQuartosCasa" class="add-input">
 
-                    <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura: <span id="sliderValueVagasCasa">{{ $item->qtdGaragemCobertas }}</span></p>
-                    <input type="range" name="qtd_vagas" min="0" max="50" value="{{ $item->qtdGaragemCobertas }}" id="sliderVagasCasa" class="slider">
+                    <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura:</p>
+                    <input type="number" name="qtd_garagemCobertas" min="0" max="50" value="{{ $item->qtdGaragemCobertas }}" id="sliderVagasCasa" class="add-input">
 
-                    <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasCasa">{{ $item->qtdGaragemNaoCobertas }}</span></p>
-                    <input type="range" name="qtd_vagas" min="0" max="50" value="{{ $item->qtdGaragemNaoCobertas }}" id="sliderVagasCasa" class="slider">
+                    <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura:</p>
+                    <input type="number" name="qtd_garagemNaoCobertas" min="0" max="50" value="{{ $item->qtdGaragemNaoCobertas }}" id="sliderVagasCasa" class="add-input">
+
+                    <p id="qtd-vagas-label" class="slider-label">Quantidade de Sacadas:</p>
+                    <input type="number" name="qtd_sacadasCobertas" min="0" max="50" value="{{ $item->qtdSacadasCobertas }}" id="sliderVagasCasa" class="add-input">
 
                     @if($item->id_tp_produto == 5)
-                        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura: <span id="sliderValueVagasCasa">{{ $item->qtdGaragemNaoCobertas }}</span></p>
-                        <input type="number" name="elevadores" min="0" max="50" value="{{ $item->elevadores }}" id="sliderVagasCasa" class="slider">
+                        <p id="qtd-vagas-label" class="slider-label">Quantidade de Elevadores:</p>
+                        <input type="number" name="elevadores" min="0" max="50" value="{{ $item->elevadores }}" id="sliderVagasCasa" class="add-input">
                     @endif
 
                     <label class="add-label">Cidade</label>
@@ -412,7 +415,7 @@
                             <input type="checkbox" name="churrasqueira" id="churrasqueira" @if ($item->churrasqueira == 1) checked @endif><label>Churrasqueira</label>
                         </div>
                         <div class="check-item">
-                            <input type="checkbox" name="vestiário" id="vestiário"><label for="vestiário">Vestiário</label>
+                            <input type="checkbox" name="vestiario" id="vestiario" @if ($item->vestiario == 1) checked @endif><label for="vestiario" >vestiario</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="adega" id="adega" @if ($item->adega == 1) checked @endif><label for="adega">Adega</label>

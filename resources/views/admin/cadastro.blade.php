@@ -61,6 +61,9 @@
         <p id="qtd-dorms-label" class="slider-label">Quantidade de Dormitórios:</p>
         <input type="number" name="qtdDorms" min="0" max="20" value="1" id="sliderDorms" class="add-input" required>
 
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Sacadas:</p>
+        <input type="number" name="qtdSacadasCobertas" min="0" max="50" value="1" id="sliderVagasCasa" class="add-input">
+
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" class="add-input" required>
 
@@ -491,44 +494,36 @@
 
         <p id="valor-label">Características</p>
         <div class="checkbox">
-            
-            <div class="check-item">
-                <input type="checkbox" name="copa" id="copa"><label for="copa">Copa</label>
-            </div>
-
-            <div class="check-item">
-                <input type="checkbox" name="recepcao" id="recepcao"><label for="recepcao">Recepção</label>
-            </div>
-
-            <div class="check-item">
-                <input type="checkbox" name="mesanino" id="mesanino"><label for="mesanino">Mezanimo</label>
-            </div>
-            
-            <div class="check-item">
-                <input type="checkbox" name="luminarias" id="luminarias"><label for="luminarias">Luminarias</label>
-            </div>
-
-            <div class="check-item">
-                <input type="checkbox" name="acessoDeficiente" id="acessoDeficiente"><label for="acessoDeficiente">Acesso para Deficientes</label>
-            </div>
-
-            <div class="check-item">
-                <input type="checkbox" name="geradorEnergia" id="geradorEnergia"><label for="geradorEnergia">Gerador de Energia Elétrica</label>
-            </div>
-
-            <div class="check-item">
-                <input type="checkbox" name="telefonia" id="telefonia"><label for="telefonia">Telefonia</label>
-            </div>
-
-            <div class="check-item">
-                <input type="checkbox" name="rede" id="rede"><label for="rede">Rede de Internet</label>
+        <div class="check-item">
+                <input type="checkbox" name="copa" id="copa"><label>Copa</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="cozinha" id="cozinha"><label for="cozinha">Cozinha</label>
+                <input type="checkbox" name="recepcao" id="recepcao"><label>Recepção</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
+                <input type="checkbox" name="mesanino" id="mesanino"><label>Mezanimo</label>
             </div>
+            <div class="check-item">
+                <input type="checkbox" name="luminarias" id="luminarias"><label>Luminarias</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="acessoDeficiente" id="acessoDeficiente"><label>Acesso para Deficiente</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="geradorEnergia" id="geradorEnergia"><label>Gerador de Energia</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="telefonia" id="telefonia"><label>Telefonia</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="rede" id="rede" ><label>Rede de Internet</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="cozinha" id="cozinha" ><label>Cozinha</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaria24" id="portaria24" ><label>Portaria 24h</label>
+            </div>  
             <div class="check-item">
                 <input type="checkbox" name="arCondicionado" id="arCondicionado"><label for="arCondicionado">Ar Condicionado</label>
             </div>
@@ -536,16 +531,75 @@
                 <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita"><label for="estacionamentoVisita">Estacionamento para Visita</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="sistemaIncencio" id="sistemaIncencio"><label for="sistemaIncencio">Sistema de Incêndio</label>
+                <input type="checkbox" name="sistemaIncendio" id="sistemaIncendio"><label for="sistemaIncendio">Sistema de Incêndio</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="aquecimentoCentral" id="aquecimentoCentral"><label for="aquecimentoCentral">Aquecimento Central</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="vigilancia24h" id="vigilancia24h"><label for="vigilancia24h">Vigilância 24h</label>
+            </div>
+            
+        </div>
+
+        <p id="valor-label">Características da Área Comum</p>
+        <div class="checkbox">
+            <div class="check-item">
+                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label>Churrasqueira</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="vestiario" id="vestiario"><label for="vestiario">Vestiário</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="adega" id="adega" ><label for="adega">Adega</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="sauna" id="sauna" ><label for="sauna">Sauna</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="campFut" id="campFut" ><label for="campFut">Campo de Futebol</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="salaJogos" id="salaJogos" ><label for="salaJogos">Sala de Jogos</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="salaFestas" id="salaFestas" ><label for="salaFestas">Salão de Festas</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="salaGinastica" id="salaGinastica" ><label for="salaGinastica">Sala de Ginástica</label>
+            </div>
+
+            <div class="check-item">
+                <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita" ><label for="estacionamentoVisita">Estacionamento para Visita</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="quadra" id="quadra" ><label>Quadra esportiva</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="quintal" id="quintal" ><label>Quintal</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="piscina" id="piscina" ><label for="piscina">Piscina</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="playground" id="playground" ><label>Playground</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaria24" id="portaria24" ><label>Portaria 24h</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita" ><label for="estacionamentoVisita">Estacionamento para Visita</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaoEletronico" id="portaoEletronico" ><label>Portão eletronico</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="alarme" id="alarme" ><label for="alarme">Alarme</label>
             </div>
         </div>
 

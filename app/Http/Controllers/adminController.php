@@ -259,7 +259,7 @@ class adminController extends Controller
             $catalogo->protecao = $request->protecao;
             $catalogo->topografia = $request->topografia;
             $catalogo->tipoComercio = $request->tipoComercio;
-            $catalogo->elevador = ($request->elevador) ? true : false;
+            $catalogo->elevadores = $request->elevadores;
             $catalogo->copa = ($request->copa) ? true : false;
             $catalogo->recepcao = ($request->recepcao) ? true : false;
             $catalogo->mesanino = ($request->mesanino) ? true : false;
@@ -268,6 +268,12 @@ class adminController extends Controller
             $catalogo->geradorEnergia = ($request->geradorEnergia) ? true : false;
             $catalogo->telefonia = ($request->telefonia) ? true : false;
             $catalogo->rede = ($request->rede) ? true : false;
+            $catalogo->sistemaIncendio = ($request->sistemaIncendio) ? true : false;
+            $catalogo->aquecimentoCentral = ($request->aquecimentoCentral) ? true : false;
+            $catalogo->vigilancia24h = ($request->vigilancia24h) ? true : false;
+            $catalogo->vestiario = ($request->vestiario) ? true : false;
+            $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
+            
 
             if($request->id_produto == 2 or $request->id_produto == 4){
                 $catalogo->tp_contrato = $request->tp_contrato;
@@ -286,7 +292,7 @@ class adminController extends Controller
                 $catalogo->qtdGaragemNaoCobertas = $request->qtdGaragemNaoCobertas;
                 $catalogo->areaUtil = 0;
                 $catalogo->areaConstruida = 0;
-                $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
+                
             }
             else{
                 $catalogo->tp_contrato = 'Venda';
@@ -297,6 +303,8 @@ class adminController extends Controller
                 $catalogo->areaUtil = 0;
                 $catalogo->areaConstruida = 0;
                 $catalogo->qtdSacadasCobertas = 0;
+                $catalogo->aguaEncanada = ($request->aguaEncanada) ? true : false;
+                $catalogo->sistemaEsgoto = ($request->sistemaEsgoto) ? true : false;
             }
 
             $catalogo->save();

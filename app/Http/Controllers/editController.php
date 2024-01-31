@@ -25,13 +25,13 @@ class editController extends Controller
                       'catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
                       'catalogos.areaUtil','catalogos.areaTerreno','catalogos.areaConstruida','catalogos.valorCondominio',
                       'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
-                      'catalogos.pavimentação','catalogos.areaServico','catalogos.gasEncanado','catalogos.banheiroEmpregada',
+                      'catalogos.pavimentacao','catalogos.areaServico','catalogos.gasEncanado','catalogos.banheiroEmpregada',
                       'catalogos.cozinha','catalogos.cozinhaPlanejada','catalogos.despensa','catalogos..lavanderias',
                       'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira','catalogos.churrasqueiraCondominio',
                       'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet','catalogos.sacadaGourmet',
                       'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
                       'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
-                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.qtdSacadasCobertas', 'catalogos.cozinhaConjugada', 'catalogos.porteiroEletronico', 'catalogos.quintal', 'catalogos.tvCabo', 'catalogos.arCondicionado', 'catalogos.alarme', 'catalogos.aguaSolar', 'catalogos.mobiliado', 'catalogos.depEmpregados', 'catalogos.lareira', 'catalogos.caseiro', 'catalogos.edicula', 'catalogos.piscina', 'catalogos.piscinaCondominio', 'catalogos.terraco', 'catalogos.hidromassagem', 'catalogos.jardimInverno', 'catalogos.pisoAquecido', 'catalogos.pisoArdosia', 'catalogos.pisoBioquete', 'catalogos.pisoCarpete', 'catalogos.pisoCeramica', 'catalogos.pisoCimentoQueimado', 'catalogos.pisoEmborrachado', 'catalogos.pisoTacoMadeira', 'catalogos.contraPiso', 'catalogos.pisoTabua', 'catalogos.granito', 'catalogos.marmore', 'catalogos.armarioCozinha', 'catalogos.armarioCorredor', 'catalogos.armarioCloset', 'catalogos.armarioQuarto', 'catalogos.armarioBanheiro', 'catalogos.armarioSala', 'catalogos.armarioEscritorio', 'catalogos.armarioDepEmp', 'catalogos.armarioAreaServico', 'catalogos.salaCinema', 'catalogos.adega', 'catalogos.sauna', 'catalogos.campFut', 'catalogos.salaJogos', 'catalogos.salaFestas', 'catalogos.salaGinastica', 'catalogos.estacionamentoVisita', 'catalogos.acessoEnergia', 'catalogos.escola', 'catalogos.comercio', 'catalogos.elevador', 'catalogos.copa', 'catalogos.recepcao', 'catalogos.mesanino', 'catalogos.luminarias', 'catalogos.acessoDeficiente', 'catalogos.geradorEnergia', 'catalogos.telefonia', 'catalogos.rede', 'catalogos.qtdSalas', 'catalogos.qtdDorms', 'catalogos.metragemFrente', 'catalogos.metragemFundo','catalogos.metragemDireita','catalogos.metragemEsquerda','catalogos.posTerreno','catalogos.formaTerreno','catalogos.topografia', 'catalogos.vegetacao', 'catalogos.protecao','catalogos.tipoComercio')
+                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.qtdSacadasCobertas', 'catalogos.cozinhaConjugada', 'catalogos.porteiroEletronico', 'catalogos.quintal', 'catalogos.tvCabo', 'catalogos.arCondicionado', 'catalogos.alarme', 'catalogos.aguaSolar', 'catalogos.mobiliado', 'catalogos.depEmpregados', 'catalogos.lareira', 'catalogos.caseiro', 'catalogos.edicula', 'catalogos.piscina', 'catalogos.piscinaCondominio', 'catalogos.terraco', 'catalogos.hidromassagem', 'catalogos.jardimInverno', 'catalogos.pisoAquecido', 'catalogos.pisoArdosia', 'catalogos.pisoBioquete', 'catalogos.pisoCarpete', 'catalogos.pisoCeramica', 'catalogos.pisoCimentoQueimado', 'catalogos.pisoEmborrachado', 'catalogos.pisoTacoMadeira', 'catalogos.contraPiso', 'catalogos.pisoTabua', 'catalogos.granito', 'catalogos.marmore', 'catalogos.armarioCozinha', 'catalogos.armarioCorredor', 'catalogos.armarioCloset', 'catalogos.armarioQuarto', 'catalogos.armarioBanheiro', 'catalogos.armarioSala', 'catalogos.armarioEscritorio', 'catalogos.armarioDepEmp', 'catalogos.armarioAreaServico', 'catalogos.salaCinema', 'catalogos.adega', 'catalogos.sauna', 'catalogos.campFut', 'catalogos.salaJogos', 'catalogos.salaFestas', 'catalogos.salaGinastica', 'catalogos.estacionamentoVisita', 'catalogos.acessoEnergia', 'catalogos.escola', 'catalogos.comercio', 'catalogos.elevadores', 'catalogos.copa', 'catalogos.recepcao', 'catalogos.mesanino', 'catalogos.luminarias', 'catalogos.acessoDeficiente', 'catalogos.geradorEnergia', 'catalogos.telefonia', 'catalogos.rede', 'catalogos.qtdSalas', 'catalogos.qtdDorms', 'catalogos.metragemFrente', 'catalogos.metragemFundo','catalogos.metragemDireita','catalogos.metragemEsquerda','catalogos.posTerreno','catalogos.formaTerreno','catalogos.topografia', 'catalogos.vegetacao', 'catalogos.protecao','catalogos.tipoComercio', 'catalogos.sistemaIncendio', 'catalogos.aquecimentoCentral','catalogos.vigilancia24h', 'catalogos.vestiario')
                     ->where('catalogos.id','=',$id)
                     ->first();
 
@@ -77,7 +77,7 @@ class editController extends Controller
         }
         $catalogo->iptuMensal = doubleval(str_replace(',','.',$request->iptu));
 
-        $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
+        $catalogo->qtdSacadasCobertas = $request->qtd_sacadasCobertas;
         $catalogo->cidade = $request->cidade;
         $catalogo->bairro = $request->bairro;
         $catalogo->ruaNumero = $request->ruaNumero;
@@ -89,7 +89,7 @@ class editController extends Controller
         $catalogo->energia = ($request->energia) ? true : false;
         $catalogo->esgoto = ($request->esgoto) ? true : false;
         $catalogo->murado = ($request->murado) ? true : false;
-        $catalogo->pavimentação = ($request->pavimentação) ? true : false;
+        $catalogo->pavimentacao = ($request->pavimentacao) ? true : false;
         $catalogo->areaServico = ($request->areaServico) ? true : false;
         $catalogo->gasEncanado = ($request->banheiroAux) ? true : false;
         $catalogo->banheiroEmpregada = ($request->banheiroEmpregada) ? true : false;
@@ -169,19 +169,22 @@ class editController extends Controller
         $catalogo->acessoEnergia = ($request->acessoEnergia) ? true : false;
         $catalogo->escola = ($request->escola) ? true : false;
         $catalogo->comercio = ($request->comercio) ? true : false;
-        $catalogo->qtdSalas = $request->qtdSalas;
-        $catalogo->qtdDorms = $request->qtdDorms;
+        $catalogo->qtdSalas = $request->qtd_salas;
+        $catalogo->qtdDorms = $request->qtd_dorms;
+        $catalogo->qtdBanheiros = $request->qtd_banheiros;
+        $catalogo->qtdGaragemCobertas = $request->qtd_garagemCobertas;
+        $catalogo->qtdGaragemNaoCobertas = $request->qtd_garagemNaoCobertas;
+        $catalogo->qtdQuartos = $request->qtd_quartos;
         $catalogo->metragemFrente = intval(explode(',',str_replace('.','',$request->metragemFrente))[0]);
         $catalogo->metragemFundo = intval(explode(',',str_replace('.','',$request->metragemFundo))[0]);
         $catalogo->metragemDireita = intval(explode(',',str_replace('.','',$request->metragemDireita))[0]);
         $catalogo->metragemEsquerda = intval(explode(',',str_replace('.','',$request->metragemEsquerda))[0]);
-        $catalogo->qtdDorms = $request->qtdDorms;
         $catalogo->formaTerreno = $request->formaTerreno;
         $catalogo->vegetacao = $request->vegetacao;
         $catalogo->protecao = $request->protecao;
         $catalogo->topografia = $request->topografia;
         $catalogo->tipoComercio = $request->tipoComercio;
-        $catalogo->elevador = ($request->elevador) ? true : false;
+        $catalogo->elevadores = $request->elevadores;
         $catalogo->copa = ($request->copa) ? true : false;
         $catalogo->recepcao = ($request->recepcao) ? true : false;
         $catalogo->mesanino = ($request->mesanino) ? true : false;

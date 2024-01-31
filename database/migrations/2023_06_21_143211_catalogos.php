@@ -156,6 +156,7 @@ return new class extends Migration
             $table->boolean('sistemaIncendio');
             $table->boolean('aquecimentoCentral');
             $table->boolean('vigilancia24h');
+            $table->boolean('vestiario');
 
 
             $table->timestamps();

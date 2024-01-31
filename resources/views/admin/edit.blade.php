@@ -389,6 +389,7 @@
                             <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita" @if ($item->estacionamentoVisita == 1) checked @endif><label for="estacionamentoVisita">Estacionamento para Visita</label>
                         </div>
                         @endif
+
                         <!-- Ponto comercial -->
                         @if($item->id_tp_produto == 5)
                         <div class="check-item">
@@ -401,7 +402,7 @@
                             <input type="checkbox" name="recepcao" id="recepcao" @if ($item->recepcao == 1) checked @endif><label>Recepcao</label>
                         </div>
                         <div class="check-item">
-                            <input type="checkbox" name="mesanino" id="mesanino" @if ($item->mesanino == 1) checked @endif><label>Mesanino</label>
+                            <input type="checkbox" name="mesanino" id="mesanino" @if ($item->mesanino == 1) checked @endif><label>Mezanimo</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="luminarias" id="luminarias" @if ($item->luminarias == 1) checked @endif><label>Luminarias</label>
@@ -417,6 +418,18 @@
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="rede" id="rede" @if ($item->rede == 1) checked @endif><label>Rede de Internet</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="cozinha" id="cozinha" @if ($item->cozinha == 1) checked @endif><label>Cozinha</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="portaria24" id="portaria24" @if ($item->portaria24h == 1) checked @endif><label>Portaria 24h</label>
+                        </div>  
+                        <div class="check-item">
+                            <input type="checkbox" name="arCondicionado" id="arCondicionado" @if ($item->arCondicionado == 1) checked @endif><label for="arCondicionado">Ar Condicionado</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="alarme" id="alarme" @if ($item->alarme == 1) checked @endif><label for="alarme">Alarme</label>
                         </div>
                         @endif
                     </div>

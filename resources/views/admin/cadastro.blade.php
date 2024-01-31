@@ -419,6 +419,18 @@
             <option value="Loja em centro comercial">Loja em centro comercial</option>
         </select>
 
+        <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros:</p>
+        <input type="number" name="qtd_banheiros" min="0" max="20" value="1" id="sliderBanheiro" class="add-input" required>
+
+        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
+        <input type="number" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="add-input" required>
+
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura:</p>
+        <input type="number" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagas" class="add-input" required>
+
+        <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem sem Cobertura:</p>
+        <input type="number" name="qtdGaragemNaoCobertas" min="0" max="20" value="1" id="sliderVagasNaoCoberto" class="add-input" required>
+
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" min="1" class="add-input" required>
 
@@ -465,7 +477,7 @@
             </div>
 
             <div class="check-item">
-                <input type="checkbox" name="mesanino" id="mesanino"><label for="mesanino">Mesanino</label>
+                <input type="checkbox" name="mesanino" id="mesanino"><label for="mesanino">Mezanimo</label>
             </div>
             
             <div class="check-item">
@@ -483,11 +495,22 @@
             <div class="check-item">
                 <input type="checkbox" name="telefonia" id="telefonia"><label for="telefonia">Telefonia</label>
             </div>
+
             <div class="check-item">
                 <input type="checkbox" name="rede" id="rede"><label for="rede">Rede de Internet</label>
             </div>
-
-             
+            <div class="check-item">
+                <input type="checkbox" name="cozinha" id="cozinha"><label for="cozinha">Cozinha</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="arCondicionado" id="arCondicionado"><label for="arCondicionado">Ar Condicionado</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
+            </div>
         </div>
 
         <hr class="cadastro-divisor">

@@ -649,7 +649,7 @@
                                 @endif
 
                                 @if($detalhes->salaGinastica == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sala de Festas</p> </div>
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Salão de Festas</p> </div>
                                 @endif
 
                                 @if($detalhes->estacionamentoVisita == 1)

@@ -373,7 +373,7 @@
             </div>
 
             <div class="check-item">
-                <input type="checkbox" name="salaFestas" id="salaFestas"><label for="salaFestas">Sala de Festas</label>
+                <input type="checkbox" name="salaFestas" id="salaFestas"><label for="salaFestas">Salão de Festas</label>
             </div>
 
             <div class="check-item">

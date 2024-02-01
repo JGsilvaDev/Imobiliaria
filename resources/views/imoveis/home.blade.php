@@ -12,6 +12,8 @@
         @csrf
         <div id="painel-pesquisa-opcoes-lateral">
             <button type="button" id="painel-lateral-fechar" onclick="fecharPainel()">X</button>
+            <p>Código do imóvel</p>
+            <input type="text" name="cod_imovel" class="input-text" id="painel-titulo" placeholder="Código do imóvel">
             <p>Título do imóvel:</p>
             <input type="text" name="titulo" class="input-text" id="painel-titulo-lateral"
                 placeholder="Pesquisar imóvel">
@@ -19,7 +21,22 @@
             <input type="text" name="cidade" id="painel-local-lateral" class="input-text"
                 placeholder="Pesquisar Localidade">
 
-            <div class="radio-container">
+            <p>Tipo de contrato</p>
+            <select name="" id="" class="input-text">
+                <option value="">Aluguel</option>
+                <option value="">Venda</option>
+            </select>
+
+            <p>Tipo de imóvel</p>
+            <select name="" id="" class="input-text">
+                <option value="">Apartamento</option>
+                <option value="">Casa</option>
+                <option value="">Terreno</option>
+                <option value="">Chácara</option>
+                <option value="">Ponto Comercial</option>
+            </select>
+
+            <!-- <div class="radio-container">
                 <p class="lateral-title">Quantidade de quartos:</p>
                 <div class="radio-options-lateral">
                     <div class="radio-option-lateral">
@@ -32,9 +49,9 @@
                         <input type="radio" name="qtdQuartos" id=""> <label for="">3+</label>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="radio-container">
+            <!-- <div class="radio-container">
                 <p class="lateral-title">Quantidade de banheiros:</p>
                 <div class="radio-options-lateral">
                     <div class="radio-option-lateral">
@@ -47,9 +64,9 @@
                         <input type="radio" name="qtdBanheiros" id=""> <label for="">3+</label>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="radio-container">
+            <!-- <div class="radio-container">
                 <p class="lateral-title">Quantidade de vagas:</p>
                 <div class="radio-options-lateral">
                     <div class="radio-option-lateral">
@@ -63,7 +80,7 @@
                         <input type="radio" name="qtdVagas" id=""> <label for="">3+</label>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="radio-container">
                 <p class="lateral-title">Valor:</p>
@@ -119,11 +136,28 @@
                 <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
                     @csrf
                     <div class="input-search-group">
+                        <p>Código do imóvel</p>
+                        <input type="text" name="cod_imovel" class="input-text" id="painel-titulo" placeholder="Código do imóvel">
                         <p>Título do imóvel</p>
                         <input type="text" name="titulo" class="input-text" id="painel-titulo" placeholder="Pesquisar imóvel">
                         <p id="localidade-titulo">Localidade</p>
                         <input type="text" name="localidade" id="painel-local" class="input-text" placeholder="localidade">
                     </div>
+
+                    <p>Tipo de contrato</p>
+                    <select name="" id="" class="input-text">
+                        <option value="Aluguel">Aluguel</option>
+                        <option value="Venda">Venda</option>
+                    </select>
+
+                    <p>Tipo de imóvel</p>
+                    <select name="" id="" class="input-text">
+                        <option value="1">Apartamento</option>
+                        <option value="2">Terreno</option>
+                        <option value="3">Casa</option>
+                        <option value="4">Chácara</option>
+                        <option value="5">Ponto Comercial</option>
+                    </select>
 
                     <p class="search-title input-title ">Quantidade de quartos</p>
                     <div class="radio-options search-body">

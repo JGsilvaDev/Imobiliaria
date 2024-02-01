@@ -366,11 +366,7 @@
                                     </div>
                                 @endif
 
-                                @if($detalhes->portaria24h == 1)
-                                    <div class="area-content">
-                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portaria 24h</p>
-                                    </div>
-                                @endif
+                                
 
                                 @if($detalhes->areaLazer == 1)
                                     <div class="area-content">
@@ -378,23 +374,11 @@
                                     </div>
                                 @endif
 
-                                @if($detalhes->churrasqueira == 1)
-                                    <div class="area-content">
-                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Churrasqueira</p>
-                                    </div>
-                                @endif
+                                
 
-                                @if($detalhes->playground == 1)
-                                    <div class="area-content">
-                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Playground</p>
-                                    </div>
-                                @endif
+                                
 
-                                @if($detalhes->quadra == 1)
-                                    <div class="area-content">
-                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quadra</p>
-                                    </div>
-                                @endif
+                                
 
                                 @if($detalhes->varanda == 1)
                                     <div class="area-content">
@@ -472,11 +456,7 @@
                                     </div>
                                 @endif
 
-                                @if($detalhes->portaoEletronico == 1)
-                                    <div class="area-content">
-                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portão eletronico</p>
-                                    </div>
-                                @endif
+                                
 
                                 @if($detalhes->porteiroEletronico == 1)
                                     <div class="area-content">
@@ -484,11 +464,7 @@
                                     </div>
                                 @endif
 
-                                @if($detalhes->quintal == 1)
-                                    <div class="area-content">
-                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quintal</p>
-                                    </div>
-                                @endif
+                                
 
                                 @if($detalhes->tvCabo == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>TV a Cabo</p> </div>
@@ -498,9 +474,7 @@
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Ar Condicionado</p> </div>
                                 @endif
 
-                                @if($detalhes->alarme == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Alarme</p> </div>
-                                @endif
+                                
 
                                 @if($detalhes->aguaSolar == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Água Aquecida por Energia Solar</p> </div>
@@ -526,9 +500,7 @@
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Edicula</p> </div>
                                 @endif
 
-                                @if($detalhes->piscina == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Piscina</p> </div>
-                                @endif
+                                
 
                                 @if($detalhes->piscinaCondominio == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Piscina</p> </div>
@@ -638,9 +610,7 @@
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sala de Cinema</p> </div>
                                 @endif
 
-                                @if($detalhes->sauna == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Adega</p> </div>
-                                @endif
+                                
 
                                 @if($detalhes->campFut == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sauna</p> </div>
@@ -650,17 +620,11 @@
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Campo de Futebol</p> </div>
                                 @endif
 
-                                @if($detalhes->salaFestas == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sala de Jogos</p> </div>
-                                @endif
+                                
 
-                                @if($detalhes->salaGinastica == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Salão de Festas</p> </div>
-                                @endif
+                                
 
-                                @if($detalhes->estacionamentoVisita == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sala de Ginastica</p> </div>
-                                @endif
+                                
 
                                 @if($detalhes->acessoEnergia == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Estacionamento para Visita</p> </div>
@@ -707,6 +671,84 @@
                                 @endif
 
                             </div>
+                            <h3>Características da Área Comum</h3>
+                            <div class="area-container" id="db-check-container">
+
+                                @if($detalhes->churrasqueira == 1)
+                                <div class="area-content">
+                                    <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Churrasqueira</p>
+                                </div>
+                                @endif
+
+                                @if($detalhes->adega == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Adega</p> </div>
+                                @endif
+
+                                @if($detalhes->quadra == 1)
+                                    <div class="area-content">
+                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quadra</p>
+                                    </div>
+                                @endif
+
+                                @if($detalhes->sauna == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sauna</p> </div>
+                                @endif
+
+                                @if($detalhes->vestiario == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Vestiário</p> </div>
+                                @endif
+
+                                @if($detalhes->salaJogos == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sala de Jogos</p> </div>
+                                @endif
+
+                                @if($detalhes->quintal == 1)
+                                    <div class="area-content">
+                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Quintal</p>
+                                    </div>
+                                @endif
+
+                                @if($detalhes->piscina == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Piscina</p> </div>
+                                @endif
+
+                                @if($detalhes->salaFestas == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Salão de Festas</p> </div>
+                                @endif
+
+                                @if($detalhes->salaGinastica == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Salão de Ginastica</p> </div>
+                                @endif
+
+                                @if($detalhes->playground == 1)
+                                    <div class="area-content">
+                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Playground</p>
+                                    </div>
+                                @endif
+
+                                @if($detalhes->portaria24h == 1)
+                                    <div class="area-content">
+                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portaria 24h</p>
+                                    </div>
+                                @endif
+
+                                @if($detalhes->estacionamentoVisita == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Estacionamento de visita</p> </div>
+                                @endif
+
+                                @if($detalhes->portaoEletronico == 1)
+                                    <div class="area-content">
+                                        <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Portão eletronico</p>
+                                    </div>
+                                @endif
+
+                                @if($detalhes->alarme == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Alarme</p> </div>
+                                @endif
+
+
+                            </div> 
+
                             <h3>Outras informações</h3>
                             <div class="area-container" id="extraDivCampo">
                                 <span id="extraInfo" style="display: none;">{{ $detalhes->extraInfo }}</span>

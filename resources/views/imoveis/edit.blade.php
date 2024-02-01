@@ -236,44 +236,49 @@
                         <div id="descricao-container" class="margin-spaced padding-spaced">
                             <h2 class="detalhes-titulo">Acomodações</h2>
                             <div class="area-container">
-                                <div class="area-content">
-                                    <p id="quartos">{{ $detalhes->qtdQuartos }} quarto(s)</p>
-                                </div>
+                                @if ($detalhes->qtdQuartos != 0)
+                                    <div class="area-content">
+                                        <p id="quartos">{{ $detalhes->qtdQuartos }} quarto(s)</p>
+                                    </div>
+                                @endif
+
+                                @if ($detalhes->qtdBanheiros != 0)
                                 <div class="area-content">
                                     <p id="quartos">{{ $detalhes->qtdBanheiros }} banheiro(s)</p>
                                 </div>
+                                @endif
 
-                                @if ($detalhes->qtdSuites != null)
+                                @if ($detalhes->qtdSuites != null or $detalhes->qtdSuites != 0)
                                     <div class="area-content">
                                         <p id="quartos"> {{ $detalhes->qtdSuites }} suite(s)</p>
                                     </div>
                                 @endif
 
-                                @if ($detalhes->qtdGaragemCobertas != null)
+                                @if ($detalhes->qtdGaragemCobertas != null or $detalhes->qtdGaragemCobertas != 0)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdGaragemCobertas }} vaga(s) cobertas</p>
                                     </div>
                                 @endif
 
-                                @if ($detalhes->qtdGaragemNaoCobertas != null)
+                                @if ($detalhes->qtdGaragemNaoCobertas != null or $detalhes->qtdGaragemNaoCobertas != 0)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdGaragemNaoCobertas }} vaga(s) não cobertas</p>
                                     </div>
                                 @endif
 
-                                @if ($detalhes->qtdSacadasCobertas != null)
+                                @if ($detalhes->qtdSacadasCobertas != null or $detalhes->qtdSacadasCobertas != 0)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdSacadasCobertas }} sacada(s)</p>
                                     </div>
                                 @endif
 
-                                @if ($detalhes->qtdSalas != null)
+                                @if ($detalhes->qtdSalas != null or $detalhes->qtdSalas != 0)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdSalas }} sala(s)</p>
                                     </div>
                                 @endif
 
-                                @if ($detalhes->qtdDorms != null)
+                                @if ($detalhes->qtdDorms != null or $detalhes->qtdDorms != 0)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdDorms }} dormitório(s)</p>
                                     </div>

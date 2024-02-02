@@ -12,8 +12,9 @@
             <h1 class="contato-title">Fale conosco!</h1>
         </div>
 
-        <h1>Eu quero!</h1>
         <form action="/contato" method="POST" id="contato-content" autocomplete="off">
+            <h1>Eu quero!</h1>
+            <h1 style="color:gray">Imóvel em Pindamonhangaba, fora da região somente sob consulta.</h1>
             @csrf
 
             <p>Finalidade</p>

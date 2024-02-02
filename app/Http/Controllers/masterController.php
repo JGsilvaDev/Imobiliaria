@@ -94,6 +94,11 @@ class masterController extends Controller
         return view('contato');
     }
 
+    public function anuncio()
+    {
+        return view('anuncio');
+    }
+
     public function polpriv()
     {
         return view('info.politica_privacidade');

@@ -24,6 +24,7 @@ Route::post('/limparFiltroIndidual', [logoutController::class, 'limpaFiltro']);
 Route::get('/sobre', [masterController::class, 'sobre']);
 
 Route::get('/contato', [masterController::class, 'contato']);
+Route::get('/anuncio', [masterController::class, 'anuncio']);
 Route::post('/contato', [masterController::class, 'envioContato']);
 
 Route::get('/login', [loginController::class, 'index']);

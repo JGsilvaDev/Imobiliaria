@@ -25,12 +25,16 @@ class imoveisController extends Controller
         if($search and $search != 'sem filtro' and $search != null){
 
             $titulo = $search[0]->titulo;
-            $cidade = $search[0]->cidade;
+            $cidade = $search[0]->localidade;
+            $bairro = $search[0]->bairro;
             $quartos = $search[0]->quartos;
             $banheiros = $search[0]->banheiros;
             $vagas = $search[0]->vagas;
             $area = $search[0]->area;
             $valor = $search[0]->valor;
+            $cod_imovel = $search[0]->cod_imovel;
+            $tp_contrato = $search[0]->tp_contrato;
+            $id_tp_produto = $search[0]->id_tp_produto;
 
             if ($titulo != null) {
                 $imoveis->where('catalogos.titulo', 'like','%'.$titulo.'%');
@@ -45,6 +49,13 @@ class imoveisController extends Controller
 
                 $filtro->cidade[] = 'localidade';
                 $filtro->cidade[] = $cidade;
+
+            }
+            if ($bairro != null) {
+                $imoveis->where('catalogos.bairro', 'like','%'.$bairro.'%');
+
+                $filtro->bairro[] = 'bairro';
+                $filtro->bairro[] = $bairro;
 
             }
 
@@ -132,6 +143,29 @@ class imoveisController extends Controller
                 $filtro->area[] = 'Acima de 250m²';
             }
 
+            if($cod_imovel != null or $cod_imovel != "") {
+                $imoveis->where('catalogos.cod_imovel','=',$cod_imovel);
+
+                $filtro->cod_imovel[] = "código";
+                $filtro->cod_imovel[] = $cod_imovel;
+            }
+
+            if($id_tp_produto != "Todos") {
+                $imoveis->where('catalogos.id_tp_produto','=',$id_tp_produto);
+
+                $tp_imovel_label = ["Terreno","Casa","Apartamento","Chácara","Ponto Comercial"];
+
+                $filtro->id_tp_produto[] = "Tipo de imóvel";
+                $filtro->id_tp_produto[] = $tp_imovel_label[$id_tp_produto-1];
+            }
+
+            if($tp_contrato != "Todos") {
+                $imoveis->where('catalogos.tp_contrato','=',$tp_contrato);
+
+                $filtro->tp_contrato[] = "Tipo de contrato";
+                $filtro->tp_contrato[] = $tp_contrato;
+            }
+
         }
 
         if($nItens == null){
@@ -172,20 +206,26 @@ class imoveisController extends Controller
         $session = session();
 
         if(
-           $request->titulo != null or $request->cidade != null or
+           $request->titulo != null or $request->localidade != null or $request->bairro != null or
            $request->qtdQuartos != null or $request->qtdBanheiros != null or
-           $request->vagas != null or $request->valor != null or $request->area != null
+           $request->vagas != null or $request->valor != null or $request->area != null or
+           $request->cod_imovel != null or $request->id_tp_produto != "Todos" or
+           $request->tp_contrato != "Todos"
         ){
 
             $search = [
                 (object) [
                     'titulo' => $request->titulo,
-                    'localidade' => $request->cidade,
+                    'localidade' => $request->localidade,
+                    'bairro' => $request->bairro,
                     'quartos' => $request->qtdQuartos,
                     'banheiros' => $request->qtdBanheiros,
                     'vagas' => $request->vagas,
                     'valor' => $request->valor,
-                    'area' => $request->area
+                    'area' => $request->area,
+                    'cod_imovel' => $request->cod_imovel,
+                    'id_tp_produto' => $request->id_tp_produto,
+                    'tp_contrato' => $request->tp_contrato
                 ],
             ];
 

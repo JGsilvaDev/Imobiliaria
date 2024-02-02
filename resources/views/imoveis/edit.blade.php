@@ -118,7 +118,8 @@
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Localização</h2>
-                        <p id="desc-texto">{{ $detalhes->cidade }}</p>
+                        <p id="desc-texto">Cidade: {{ $detalhes->cidade }}</p>
+                        <p id="desc-texto">Bairro: {{ $detalhes->bairro }}</p>
                     </div>
 
                     <div id="descricao-container" class="margin-spaced padding-spaced">

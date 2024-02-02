@@ -17,23 +17,26 @@
             <p>Título do imóvel:</p>
             <input type="text" name="titulo" class="input-text" id="painel-titulo-lateral"
                 placeholder="Pesquisar imóvel">
-            <p>Localidade:</p>
-            <input type="text" name="cidade" id="painel-local-lateral" class="input-text"
-                placeholder="Pesquisar Localidade">
+            <p>Cidade:</p>
+            <input type="text" name="cidade" id="painel-local-lateral" class="input-text" placeholder="Pesquisar Localidade">
+            <p>Bairro:</p>
+            <input type="text" name="bairro" id="painel-local-lateral" class="input-text" placeholder="Pesquisar Localidade">
 
             <p>Tipo de contrato</p>
-            <select name="" id="" class="input-text">
-                <option value="">Aluguel</option>
-                <option value="">Venda</option>
+            <select name="tp_contrato" id="" class="input-text">
+                <option value="Todos" selected>Todos</option>
+                <option value="Aluguel">Aluguel</option>
+                <option value="Venda">Venda</option>
             </select>
 
             <p>Tipo de imóvel</p>
-            <select name="" id="" class="input-text">
-                <option value="">Apartamento</option>
-                <option value="">Casa</option>
-                <option value="">Terreno</option>
-                <option value="">Chácara</option>
-                <option value="">Ponto Comercial</option>
+            <select name="id_tp_produto" id="" class="input-text">
+                <option value="Todos" selected>Todos</option>
+                <option value="1">Terreno</option>
+                <option value="2">Casa</option>
+                <option value="3">Apartamento</option>
+                <option value="4">Chácara</option>
+                <option value="5">Ponto Comercial</option>
             </select>
 
             <!-- <div class="radio-container">
@@ -135,29 +138,33 @@
             <div id="painel-pesquisa-float">
                 <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
                     @csrf
+                    <p>Tipo de imóvel</p>
+                    <select name="id_tp_produto" id="" class="input-text">
+                        <option value="Todos" seleced>Todos</option>
+                        <option value="1">Terreno</option>
+                        <option value="2">Casa</option>
+                        <option value="3">Apartamento</option>
+                        <option value="4">Chácara</option>
+                        <option value="5">Ponto Comercial</option>
+                    </select>
                     <div class="input-search-group">
                         <p>Código do imóvel</p>
                         <input type="text" name="cod_imovel" class="input-text" id="painel-titulo" placeholder="Código do imóvel">
                         <p>Título do imóvel</p>
                         <input type="text" name="titulo" class="input-text" id="painel-titulo" placeholder="Pesquisar imóvel">
-                        <p id="localidade-titulo">Localidade</p>
-                        <input type="text" name="localidade" id="painel-local" class="input-text" placeholder="localidade">
+                        <p>Cidade:</p>
+                        <input type="text" name="cidade" id="painel-local-lateral" class="input-text" placeholder="Pesquisar cidade">
+                        <p>Bairro:</p>
+                        <input type="text" name="bairro" id="painel-local-lateral" class="input-text" placeholder="Pesquisar bairro">
                     </div>
 
                     <p>Tipo de contrato</p>
-                    <select name="" id="" class="input-text">
+                    <select name="tp_contrato" id="" class="input-text">
+                        <option value="Todos" selected>Todos</option>
                         <option value="Aluguel">Aluguel</option>
                         <option value="Venda">Venda</option>
                     </select>
 
-                    <p>Tipo de imóvel</p>
-                    <select name="" id="" class="input-text">
-                        <option value="1">Apartamento</option>
-                        <option value="2">Terreno</option>
-                        <option value="3">Casa</option>
-                        <option value="4">Chácara</option>
-                        <option value="5">Ponto Comercial</option>
-                    </select>
 
                     <p class="search-title input-title ">Quantidade de quartos</p>
                     <div class="radio-options search-body">

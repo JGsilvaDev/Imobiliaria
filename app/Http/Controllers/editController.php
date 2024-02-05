@@ -195,6 +195,7 @@ class editController extends Controller
         $catalogo->geradorEnergia = ($request->geradorEnergia) ? true : false;
         $catalogo->telefonia = ($request->telefonia) ? true : false;
         $catalogo->rede = ($request->rede) ? true : false;
+        $catalogo->vestiario = ($request->vestiario) ? true : false;
 
         $catalogo->save();
 

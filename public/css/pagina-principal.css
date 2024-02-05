@@ -143,6 +143,11 @@ backdrop-filter: blur(5.5px);
     justify-content: center;
     align-items: center;
 }
+
+#ajuda-item:hover{
+    cursor: pointer;
+}
+
 #ajuda-item p {
     text-align: center;
 }

@@ -377,7 +377,7 @@
                 <input type="checkbox" name="sauna" id="sauna"><label for="sauna">Sauna</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="vestiário" id="vestiário"><label for="vestiário">Vestiário</label>
+                <input type="checkbox" name="vestiario" id="vestiario"><label for="vestiario">Vestiário</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="campFut" id="campFut"><label for="campFut">Campo de Futebol</label>
@@ -746,7 +746,7 @@
                 <input type="checkbox" name="sauna" id="sauna"><label for="sauna">Sauna</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="vestiário" id="vestiário"><label for="vestiário">Vestiário</label>
+                <input type="checkbox" name="vestiario" id="vestiario"><label for="vestiario">Vestiário</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="campFut" id="campFut"><label for="campFut">Campo de Futebol</label>

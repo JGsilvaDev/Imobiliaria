@@ -113,6 +113,7 @@
                     <p id="valor-label">Características do Imóvel</p>
                     <div class="checkbox">
                         @if($item->id_tp_produto != 5)
+                        
                         <div class="check-item">
                             <input type="checkbox" name="agua" id="agua" @if ($item->agua == 1) checked @endif><label>Agua</label>
                         </div>
@@ -583,6 +584,7 @@
                         <div class="check-item">
                             <input type="checkbox" name="pavimentacao" id="pavimentacao" @if ($item->pavimentacao == 1) checked @endif><label>Pavimentação</label>
                         </div>
+            
                     </div>
                     <p id="valor-label">Infraestrutura do Condomínio</p>
                     <div class="checkbox">
@@ -590,7 +592,7 @@
                             <input type="checkbox" name="churrasqueira" id="churrasqueira" @if ($item->churrasqueira == 1) checked @endif><label>Churrasqueira</label>
                         </div>
                         <div class="check-item">
-                            <input type="checkbox" name="vestiário" id="vestiário"><label for="vestiário">Vestiário</label>
+                            <input type="checkbox" name="vestiario" id="vestiario" @if ($item->vestiario == 1) checked @endif><label for="vestiario">Vestiário</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="adega" id="adega" @if ($item->adega == 1) checked @endif><label for="adega">Adega</label>

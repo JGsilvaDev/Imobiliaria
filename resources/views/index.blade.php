@@ -88,15 +88,15 @@
     <h1 class="section-title">Como podemos ajudar?</h1>
     <section id="ajuda">
             <div id="ajuda-itens">
-                <div id="ajuda-item">
+                <div id="ajuda-item" onclick="window.location.href='/imoveis'">
                     <img src="img/casa.svg" alt="" class="ajuda-icon">
                     <p id="ajuda-info">Alugar um imóvel</p>
                 </div>
-                <div id="ajuda-item">
+                <div id="ajuda-item" onclick="window.location.href='/imoveis'">
                     <img src="img/dinheiro.svg" alt="" class="ajuda-icon">
                     <p id="ajuda-info">Comprar um imóvel</p>
                 </div>
-                <div id="ajuda-item">
+                <div id="ajuda-item" onclick="window.location.href='/anuncio'">
                     <img src="img/megafone.svg" alt="" class="ajuda-icon">
                     <p id="ajuda-info">Anunciar um imóvel</p>
                 </div>

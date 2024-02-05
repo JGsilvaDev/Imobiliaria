@@ -3,6 +3,7 @@ function formatarNumero(numero) {
   }
 
 function trocaPonto() {
+    console.log("Função executada")
     const trocaveis = document.getElementsByClassName('troca-ponto')
 
     for (item of trocaveis) {

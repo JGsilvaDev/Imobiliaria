@@ -32,50 +32,32 @@ class masterController extends Controller
     public function store(Request $request)
     {
 
-        $tipo = strlen($request->infoPesquisa);
         $session = session();
 
         $filtro = new \stdClass();
 
-        if ($tipo == 1 or $tipo == 2 or $tipo == 3) {
+        $imoveis = DB::table('catalogos')
+            ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
+            ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado', 'catalogos.tp_contrato', 'produtos.descricao', 'catalogos.cod_imovel')
+            ->where('catalogos.tp_contrato', '=', $request->infoPesquisa)
+            ->get();
 
-            $imoveis = DB::table('catalogos')
-                ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
-                ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado')
-                ->where('produtos.id', '=', $request->infoPesquisa)
-                ->get();
+        $imagem = DB::table('imagens')
+            ->select('chave', 'path')
+            ->get();
 
-            $imagem = DB::table('imagens')
-                ->select('chave', 'path')
-                ->get();
-
-            if ($imoveis->isEmpty()) {
-                return redirect('/imoveis')->with(['imoveis' => $imoveis, 'imagem' => $imagem]);
-            } else {
-                $filtro->imovel[] = 'Tipo Imovel';
-                $filtro->imovel[] = $imoveis[0]->descricao;
-            }
+        $filtro->imovel[] = 'Tipo de contrato';
+        
+        if ($request->infoPesquisa == "Venda") {
+            $filtro->imovel[] = 'Venda';
         } else {
-
-            $imoveis = DB::table('catalogos')
-                ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
-                ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado')
-                ->where('produtos.descricao', 'like', '%' . $request->infoPesquisa . '%')
-                ->get();
-
-            $imagem = DB::table('imagens')
-                ->select('chave', 'path')
-                ->get();
-
-            $filtro->imovel[] = 'Tipo Imovel';
-            $filtro->imovel[] = $request->infoPesquisa;
+            $filtro->imovel[] = 'Aluguel';
         }
 
         $search = [
             'search' => $request->infoPesquisa
         ];
 
-        // dd($search);
 
         $session->put([
             'search' => $search

@@ -20,19 +20,18 @@
         <div id="filtro">
             <form action="" method="post" class="filtro-btn">
                 @csrf
-                <input type="hidden" name="infoPesquisa" value="3">
+                <input type="hidden" name="infoPesquisa" value="Aluguel">
                 <button id="filtro-item" >Alugar</button>
             </form>
 
             <form action="" method="post" class="filtro-btn">
                 @csrf
-                <input type="hidden" name="infoPesquisa" value="1">
+                <input type="hidden" name="infoPesquisa" value="Venda">
                 <button id="filtro-item" >Comprar</button>
             </form>
 
             <form action="" method="post" class="filtro-btn">
                 @csrf
-                <input type="hidden" name="infoPesquisa" value="2">
                 <button type="button" id="filtro-item" onclick="window.location.href = '/anuncio'">Anunciar</button>
             </form>
 

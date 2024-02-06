@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Clientes;
+use App\Models\Anuncio;
 
 class clienteController extends Controller
 {
@@ -14,9 +15,10 @@ class clienteController extends Controller
 
         $valor = session('login');
         $clientes = Clientes::all();
+        $anuncios = Anuncio::all();
 
         if($valor){
-            return view('cliente.index',['clientes' => $clientes]);
+            return view('cliente.index',['clientes' => $clientes, 'anuncios' => $anuncios]);
         }else{
             //Para limpar a sessão
             session()->flush();

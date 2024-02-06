@@ -38,6 +38,7 @@
     <div id="tab-buttons">
         <button onclick="openTab(0,'block')" class="tab-button tab-selected">Cadastro</button>
         <button onclick="openTab(1,'block')" class="tab-button tab-unselected">Clientes</button>
+        <button onclick="openTab(2,'block')" class="tab-button tab-unselected">Anuncio</button>
     </div>
 
     <div id="tabs">
@@ -83,6 +84,37 @@
             </table>
         </section>
 
+        <section id="aba-anuncio">
+            <table cellspacing="0" id="client-table">
+
+            <thead class="table-header" cellspacing="0">
+                <!-- <th class="table-title"></th> -->
+                <th class="table-title">Nome</th>
+                <th class="table-title">Email</th>
+                <th class="table-title">Telefone</th>
+                <th class="table-title">Finalidade</th>
+                <th class="table-title">Tipo de imóvel</th>
+                <th class="table-title">Endereço</th>
+                <th class="table-title">Valor</th>
+                <th class="table-title">Observação</th>
+            </thead>
+
+            @foreach ($anuncios as $anuncio)
+                <tr class="table-body solved">
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->nome}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->email}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->telefone}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->finalidade}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->tpImovel}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->condominio}} - {{$anuncio->endereco}} - {{$anuncio->bairro}} - {{$anuncio->cidade}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->valor}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->observacao}}</td>
+                </tr>
+            @endforeach
+            </table>
+
+        </section>
+
     </div>
 
 
@@ -90,7 +122,8 @@
     //sistema de abas
     const abas = [
         document.getElementById('aba-cadastro'),
-        document.getElementById('aba-clientes')
+        document.getElementById('aba-clientes'),
+        document.getElementById('aba-anuncio')
     ]
     const botoes = document.getElementsByClassName('tab-button')
 

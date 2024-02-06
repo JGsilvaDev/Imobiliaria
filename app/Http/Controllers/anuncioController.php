@@ -31,8 +31,10 @@ class anuncioController extends Controller
         $anuncio->cidade = $request->cidade;
         $anuncio->observacao = $request->observacao;
 
+        // dd($anuncio);
+
         $anuncio->save();
 
-        return redirect()->back();
+        return redirect("/anuncio");
     }
 }

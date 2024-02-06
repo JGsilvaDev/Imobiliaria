@@ -5,6 +5,7 @@ use App\Http\Controllers\masterController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\cadastroUsuarioController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\anuncioController;
 use App\Http\Controllers\contatosController;
 use App\Http\Controllers\editController;
 use App\Http\Controllers\editUserController;
@@ -25,8 +26,8 @@ Route::get('/sobre', [masterController::class, 'sobre']);
 
 Route::get('/contato', [masterController::class, 'contato']);
 
-Route::get('/anuncio', [masterController::class, 'anuncio']);
-Route::post('/anuncio', [masterController::class, 'store']);
+Route::get('/anuncio', [anuncioController::class, 'index']);
+Route::post('/anuncio', [anuncioController::class, 'store']);
 
 Route::post('/contato', [masterController::class, 'envioContato']);
 

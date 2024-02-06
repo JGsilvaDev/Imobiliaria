@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/listar-produtos.css') }}">
-    <script src="{{ asset('js/numformat.js') }}"></script>
 
     <form class="background-blur" action="imoveis" method="post" id="painel-pesquisa-lateral" style="display:none">
         @csrf
@@ -295,9 +294,9 @@
                             <div class="produto-dados">
                                 <p class="produto-valor">{{ $item->area }}m²</p>
                                 @if ($item->vendidoAlugado == null)
-                                    <p class="produto-valor">R$<span class="num-format">{{ $item->valor }}</span></p>
+                                    <p class="produto-valor">R$<span class="num-format troca-ponto">{{ $item->valor }}</span></p>
                                 @else
-                                    <p id="dados-valor" class="num-format">{{ $item->vendidoAlugado}}</p>
+                                    <p id="dados-valor" class="num-format troca-ponto">{{ $item->vendidoAlugado}}</p>
                                 @endif
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
@@ -322,6 +321,7 @@
 </div>
 <img src="{{ asset('img/pesquisa.svg') }}" alt="" id="mobile-buscar" onclick="abrirPainel()" class="background-blur">
 <script src="{{ asset('js/mostrarPainel.js') }}"></script>
+<script src="{{ asset('js/numformat.js') }}"></script>
 
 <script>
     const imoveis_desc_list = document.getElementsByClassName('produto-descricao-texto')
@@ -362,6 +362,11 @@
         }
 
     }
+
+</script>
+
+<script>
+    trocaPonto()
 
 </script>
 

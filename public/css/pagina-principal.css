@@ -247,7 +247,7 @@ backdrop-filter: blur(5.5px);
     
 
     #ajuda-itens {
-        /* flex-direction: column; */
+        flex-direction: column;
     }
     #form-search {
         width: 100vw;

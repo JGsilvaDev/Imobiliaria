@@ -658,6 +658,9 @@ body {
     }
 }
 @media (max-width: 600px) {
+    #ajuda-itens {
+        flex-direction: column;
+    }
     #pagina-layout {
         width: 98%;
         margin: 0 auto;

@@ -21,25 +21,25 @@
             <form action="" method="post" class="filtro-btn">
                 @csrf
                 <input type="hidden" name="infoPesquisa" value="3">
-                <button id="filtro-item" >Apartamento</button>
+                <button id="filtro-item" >Alugar</button>
             </form>
 
             <form action="" method="post" class="filtro-btn">
                 @csrf
                 <input type="hidden" name="infoPesquisa" value="1">
-                <button id="filtro-item" >Terreno</button>
+                <button id="filtro-item" >Comprar</button>
             </form>
 
             <form action="" method="post" class="filtro-btn">
                 @csrf
                 <input type="hidden" name="infoPesquisa" value="2">
-                <button id="filtro-item" >Casa</button>
+                <button type="button" id="filtro-item" onclick="window.location.href = '/anuncio'">Anunciar</button>
             </form>
 
-            <form action="" method="post" id="form-search">
+            <!-- <form action="" method="post" id="form-search">
                 @csrf
                 <input type="text" name="infoPesquisa" id="filtro-input" placeholder="Pesquisa">
-            </form>
+            </form> -->
         </div>
 </section>
     <input type="hidden" id="count" value="{{ $count }}">

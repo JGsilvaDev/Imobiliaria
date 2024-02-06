@@ -81,3 +81,15 @@
 #client-table th {
     padding: 20px;
 }
+
+@media (max-width: 970px) {
+    #cadastro-cliente {
+        width: 100%;
+    }
+    #cadastro-cliente * {
+        width: 100%;
+    }
+    .tab-button {
+        padding: 20px 2rem;
+    }
+}

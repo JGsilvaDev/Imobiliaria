@@ -570,6 +570,50 @@ body {
 
 }
 
+.section-title {
+    font-size: 24px !important;
+    color: #1B657A;
+    text-align: center;
+    margin-top: 50px
+}
+#ajuda-container {
+    width: 90%;
+    margin: auto;
+}
+
+#ajuda {
+    background-color: #EDEDED;
+    border-radius: 15px;
+    margin-bottom: 100px;
+}
+
+#ajuda-itens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:5vw;
+    flex-wrap: wrap;
+}
+
+
+.ajuda-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajuda-item:hover{
+    cursor: pointer;
+}
+
+.ajuda-item p {
+    text-align: center;
+}
+.ajuda-icon {
+    width: 10vw;
+}
+
 #icone-tela-cheia {
     color: white;
     position:relative;
@@ -665,6 +709,8 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
+
+    
 
     @media screen and (max-width: 600px) {
         #mostrar {

@@ -768,7 +768,26 @@
                 @endif
 
                 </div>
-    </div>
+            </div>
+            <div id="ajuda-container" class="background-blur">
+                <h1 class="section-title" style="">Como podemos ajudar?</h1>
+                <section id="ajuda">
+                        <div id="ajuda-itens">
+                            <div class="ajuda-item" onclick="window.location.href='/imoveis'" >
+                                <img src="{{ asset('img/casa.svg') }}" alt="" class="ajuda-icon">
+                                <p class="ajuda-info">Alugar um imóvel</p>
+                            </div>
+                            <div class="ajuda-item" onclick="window.location.href='/imoveis'">
+                                <img src="{{ asset('img/dinheiro.svg') }}" alt="" class="ajuda-icon">
+                                <p class="ajuda-info">Comprar um imóvel</p>
+                            </div>
+                            <div class="ajuda-item" onclick="window.location.href='/anuncio'">
+                                <img src="{{ asset('img/megafone.svg') }}" alt="" class="ajuda-icon">
+                                <p class="ajuda-info">Anunciar um imóvel</p>
+                            </div>
+                        </div>
+                </section>
+            </div>
 
     <script src="{{ asset('js/caroselDetalhe.js') }}"></script>
     <script src="{{ asset('js/swiper.js') }}"></script>

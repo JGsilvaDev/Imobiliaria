@@ -137,23 +137,22 @@ backdrop-filter: blur(5.5px);
     flex-wrap: wrap;
 }
 
-#ajuda-item {
+.ajuda-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#ajuda-item:hover{
+.ajuda-item:hover{
     cursor: pointer;
 }
 
-#ajuda-item p {
+.ajuda-item p {
     text-align: center;
 }
 .ajuda-icon {
     width: 10vw;
-
 }
 
 /* Carosel */

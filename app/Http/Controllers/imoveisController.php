@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Session;
 
 use function PHPUnit\Framework\isEmpty;
 
+
 class imoveisController extends Controller
 {
     public function index(){
+        Session::forget('search');
         $search = session('search');
         $nItens = session('nItens');
 

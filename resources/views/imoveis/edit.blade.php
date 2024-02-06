@@ -770,21 +770,25 @@
                 </div>
             </div>
             <div id="ajuda-container" class="background-blur">
-                <h1 class="section-title" style="">Como podemos ajudar?</h1>
+                <h1 class="section-title" style="text-align: center; font-size: 24px !important; margin-top: 50px">Como podemos ajudar?</h1>
                 <section id="ajuda">
                         <div id="ajuda-itens">
-                            <div class="ajuda-item" onclick="window.location.href='/imoveis'" >
+                            <form class="ajuda-item" action="/" method="POST" onclick="submit()">
+                                @csrf
+                                <input type="hidden" name="infoPesquisa" value="Aluguel">
                                 <img src="{{ asset('img/casa.svg') }}" alt="" class="ajuda-icon">
                                 <p class="ajuda-info">Alugar um imóvel</p>
-                            </div>
-                            <div class="ajuda-item" onclick="window.location.href='/imoveis'">
+                            </form>
+                            <form class="ajuda-item" action="/" method="POST" onclick="submit()">
+                                @csrf
+                                <input type="hidden" name="infoPesquisa" value="Venda">
                                 <img src="{{ asset('img/dinheiro.svg') }}" alt="" class="ajuda-icon">
                                 <p class="ajuda-info">Comprar um imóvel</p>
-                            </div>
-                            <div class="ajuda-item" onclick="window.location.href='/anuncio'">
+                            </form>
+                            <form class="ajuda-item" onclick="window.location.href='/anuncio'">
                                 <img src="{{ asset('img/megafone.svg') }}" alt="" class="ajuda-icon">
                                 <p class="ajuda-info">Anunciar um imóvel</p>
-                            </div>
+                            </form>
                         </div>
                 </section>
             </div>

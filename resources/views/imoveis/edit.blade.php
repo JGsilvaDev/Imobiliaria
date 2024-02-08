@@ -237,11 +237,11 @@
                         <div id="descricao-container" class="margin-spaced padding-spaced">
                             <h2 class="detalhes-titulo">Acomodações</h2>
                             <div class="area-container">
-                                @if ($detalhes->qtdQuartos != 0)
+                                {{-- @if ($detalhes->qtdQuartos != 0)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdQuartos }} quarto(s)</p>
                                     </div>
-                                @endif
+                                @endif --}}
 
                                 @if ($detalhes->qtdBanheiros != 0)
                                 <div class="area-content">

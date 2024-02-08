@@ -46,8 +46,8 @@
         <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites:</p>
         <input type="number" name="qtd_suites" min="0" max="20" value="1" id="sliderSuite" class="add-input" required>
 
-        <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
-        <input type="number" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="add-input" required>
+        {{-- <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
+        <input type="number" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="add-input" required> --}}
 
         <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura:</p>
         <input type="number" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagas" class="add-input" required>
@@ -181,9 +181,9 @@
             <div class="check-item">
                 <input type="checkbox" name="closet" id="closet"><label for="closet">Closet</label>
             </div>
-            <div class="check-item">
+            {{-- <div class="check-item">
                 <input type="checkbox" name="entradaServico" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>
-            </div>
+            </div> --}}
             <div class="check-item">
                 <input type="checkbox" name="escritorio" id="escritorio"><label for="escritorio">Escritorio</label>
             </div>

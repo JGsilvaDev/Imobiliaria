@@ -60,8 +60,8 @@
                     <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites:</p>
                     <input type="number" name="qtd_suites" min="0" max="50" value="{{ $item->qtdSuites }}" id="sliderSuiteAp" class="add-input">
 
-                    <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
-                    <input type="number" name="qtd_quartos" min="0" max="50" value="{{ $item->qtdQuartos }}" id="sliderQuartosCasa" class="add-input">
+                    {{-- <p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>
+                    <input type="number" name="qtd_quartos" min="0" max="50" value="{{ $item->qtdQuartos }}" id="sliderQuartosCasa" class="add-input"> --}}
 
                     <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura:</p>
                     <input type="number" name="qtd_garagemCobertas" min="0" max="50" value="{{ $item->qtdGaragemCobertas }}" id="sliderVagasCasa" class="add-input">
